@@ -25,6 +25,7 @@ export function Footer() {
             <Link to="/voor-werkgevers" className={linkCls}>Voor werkgevers & HR</Link>
             <Link to="/coaching-voor-mij" className={linkCls}>Voor medewerkers</Link>
             <Link to="/uwv-traject" className={linkCls}>UWV-traject</Link>
+            <Link to="/leiderschap" className={linkCls}>Leiderschap & talentontwikkeling</Link>
           </div>
 
           <div>
