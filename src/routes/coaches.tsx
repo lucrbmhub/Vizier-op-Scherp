@@ -15,7 +15,7 @@ type Coach = {
   role: string;
   quote: string;
   bio: string;
-  tags: string[];
+  tags: Tag[];
   linkedin: string;
 };
 
@@ -26,7 +26,11 @@ const coaches: Coach[] = [
     role: "Loopbaancoach, trainer & organisatieadviseur",
     quote: "Ik geloof dat er voor ieder mens een juiste plek is.",
     bio: "Maaike liep zelf ooit vast in een baan die niet bij haar paste, en weet hoe het is om de vraag te stellen: wat wil ik nou eigenlijk? Ze werkt veel met mensen in onderwijs en zorg, met jonge ouders en met leidinggevenden. Rustig, betrokken en altijd gericht op een concrete volgende stap.",
-    tags: ["Onderwijs & zorg", "Jonge ouders", "Leidinggevenden"],
+    tags: [
+      { label: "Onderwijs & zorg" },
+      { label: "Jonge ouders" },
+      { label: "Leidinggevenden" },
+    ],
     linkedin:
       "https://www.linkedin.com/in/maaike-pannekoek-h%C3%A4nschen-6093b094/",
   },
@@ -36,7 +40,11 @@ const coaches: Coach[] = [
     role: "Loopbaancoach, trainer & psycholoog",
     quote: "Kom in beweging en ontdek waar je blij van wordt.",
     bio: "Psycholoog en yogadocent. Lianne helpt je om van binnenuit te voelen wat je nodig hebt, zodat je keuzes maakt vanuit wat echt bij je past, en niet vanuit wat je omgeving verwacht. Ze werkt aan het evenwicht tussen denken, doen en voelen.",
-    tags: ["Persoonlijk leiderschap", "Psycholoog", "Energie in werk"],
+    tags: [
+      { label: "Psycholoog", reg: true },
+      { label: "Persoonlijk leiderschap" },
+      { label: "Energie in werk" },
+    ],
     linkedin: "https://www.linkedin.com/in/lianneboth/",
   },
   {
@@ -46,7 +54,12 @@ const coaches: Coach[] = [
     quote:
       "Neem je volgende stap vanuit gevoel en het kennen van je behoeften.",
     bio: "Psychosociaal therapeut met een achtergrond in sociaal ondernemerschap, de creatieve industrie en het hoger onderwijs. Zelah helpt je je zelfinzicht en zelfvertrouwen te vergroten, zodat je je ontwikkeling vormgeeft op een manier die bij je past. Open, positief en analytisch. Werkt vanuit een eigen praktijk in het centrum van Amsterdam.",
-    tags: ["Zingeving", "Therapeutische achtergrond", "Regio Amsterdam"],
+    tags: [
+      { label: "RBCZ-geregistreerd", reg: true },
+      { label: "ACT & acceptance therapie" },
+      { label: "Zingeving" },
+      { label: "Amsterdam" },
+    ],
     linkedin: "https://www.linkedin.com/in/zelah-dorrestijn/",
   },
   {
@@ -55,7 +68,12 @@ const coaches: Coach[] = [
     role: "Loopbaancoach & trainer",
     quote: "Inzicht is pas waardevol als het leidt tot beweging.",
     bio: "Floor kijkt altijd breed: naar de samenhang tussen werk, leven en je loopbaanvraag. Ze viel acht jaar geleden zelf uit op haar werk omdat het niet meer klopte, en maakte daar een ander pad van. Ze brengt structuur aan in je verhaal, maakt patronen zichtbaar en vertaalt ze naar concrete stappen. Achtergrond in Positieve Gezondheid, NLP en het sociaal domein.",
-    tags: ["Positieve Gezondheid", "NLP", "Werk & herstel"],
+    tags: [
+      { label: "NOBCO", reg: true },
+      { label: "Positieve Gezondheid" },
+      { label: "NLP" },
+      { label: "Onderwijs & sociaal domein" },
+    ],
     linkedin: "https://www.linkedin.com/in/floor-van-den-berg",
   },
   {
@@ -65,7 +83,12 @@ const coaches: Coach[] = [
     quote:
       "Krijg scherp waar je talenten liggen en wat je belangrijk vindt. Dan kun je gerichte keuzes maken.",
     bio: "Luc kent vanuit zijn achtergrond als recruitment consultant de werkgeverskant van binnenuit. Hij begeleidt vooral eind-twintigers, dertigers en jonge professionals die richting zoeken en scherper willen weten waar ze voor staan. Open, nuchter, zo luchtig als mogelijk en zo serieus als nodig.",
-    tags: ["Richting & keuzes", "Jonge professionals", "HR-achtergrond"],
+    tags: [
+      { label: "Noloc RL", reg: true },
+      { label: "Richting & keuzes" },
+      { label: "HR en recruitmentachtergrond" },
+      { label: "Traineeships" },
+    ],
     linkedin: "https://www.linkedin.com/in/lbuurman/",
   },
 ];
