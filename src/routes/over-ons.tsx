@@ -197,6 +197,11 @@ function Page() {
             dienstverlening. Binnen het netwerk borgen we kwaliteit met
             intervisie en evalueren we elk traject.
           </p>
+          <img
+            src={teamAsset.url}
+            alt="Team Vizier op Scherp"
+            className="mt-8 w-full rounded-2xl object-cover"
+          />
           <p>
             <Link
               to="/coaches"
