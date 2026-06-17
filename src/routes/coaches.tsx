@@ -8,6 +8,7 @@ const OG_TITLE = "Onze coaches, Vizier op Scherp";
 const OG_DESC =
   "Een klein, vast netwerk van gecertificeerde loopbaancoaches. Je maakt eerst kennis, en kiest daarna pas.";
 
+type Tag = { label: string; reg?: boolean };
 type Coach = {
   initial: string;
   name: string;
