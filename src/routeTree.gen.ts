@@ -9,8 +9,56 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VoorWerkgeversRouteImport } from './routes/voor-werkgevers'
+import { Route as UwvTrajectRouteImport } from './routes/uwv-traject'
+import { Route as OverOnsRouteImport } from './routes/over-ons'
+import { Route as LeiderschapRouteImport } from './routes/leiderschap'
+import { Route as KennismakenRouteImport } from './routes/kennismaken'
+import { Route as InzichtenRouteImport } from './routes/inzichten'
+import { Route as CoachingVoorMijRouteImport } from './routes/coaching-voor-mij'
+import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VoorWerkgeversRoute = VoorWerkgeversRouteImport.update({
+  id: '/voor-werkgevers',
+  path: '/voor-werkgevers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UwvTrajectRoute = UwvTrajectRouteImport.update({
+  id: '/uwv-traject',
+  path: '/uwv-traject',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OverOnsRoute = OverOnsRouteImport.update({
+  id: '/over-ons',
+  path: '/over-ons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeiderschapRoute = LeiderschapRouteImport.update({
+  id: '/leiderschap',
+  path: '/leiderschap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KennismakenRoute = KennismakenRouteImport.update({
+  id: '/kennismaken',
+  path: '/kennismaken',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InzichtenRoute = InzichtenRouteImport.update({
+  id: '/inzichten',
+  path: '/inzichten',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoachingVoorMijRoute = CoachingVoorMijRouteImport.update({
+  id: '/coaching-voor-mij',
+  path: '/coaching-voor-mij',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoachesRoute = CoachesRouteImport.update({
+  id: '/coaches',
+  path: '/coaches',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +67,144 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/coaches': typeof CoachesRoute
+  '/coaching-voor-mij': typeof CoachingVoorMijRoute
+  '/inzichten': typeof InzichtenRoute
+  '/kennismaken': typeof KennismakenRoute
+  '/leiderschap': typeof LeiderschapRoute
+  '/over-ons': typeof OverOnsRoute
+  '/uwv-traject': typeof UwvTrajectRoute
+  '/voor-werkgevers': typeof VoorWerkgeversRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/coaches': typeof CoachesRoute
+  '/coaching-voor-mij': typeof CoachingVoorMijRoute
+  '/inzichten': typeof InzichtenRoute
+  '/kennismaken': typeof KennismakenRoute
+  '/leiderschap': typeof LeiderschapRoute
+  '/over-ons': typeof OverOnsRoute
+  '/uwv-traject': typeof UwvTrajectRoute
+  '/voor-werkgevers': typeof VoorWerkgeversRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/coaches': typeof CoachesRoute
+  '/coaching-voor-mij': typeof CoachingVoorMijRoute
+  '/inzichten': typeof InzichtenRoute
+  '/kennismaken': typeof KennismakenRoute
+  '/leiderschap': typeof LeiderschapRoute
+  '/over-ons': typeof OverOnsRoute
+  '/uwv-traject': typeof UwvTrajectRoute
+  '/voor-werkgevers': typeof VoorWerkgeversRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/coaches'
+    | '/coaching-voor-mij'
+    | '/inzichten'
+    | '/kennismaken'
+    | '/leiderschap'
+    | '/over-ons'
+    | '/uwv-traject'
+    | '/voor-werkgevers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/coaches'
+    | '/coaching-voor-mij'
+    | '/inzichten'
+    | '/kennismaken'
+    | '/leiderschap'
+    | '/over-ons'
+    | '/uwv-traject'
+    | '/voor-werkgevers'
+  id:
+    | '__root__'
+    | '/'
+    | '/coaches'
+    | '/coaching-voor-mij'
+    | '/inzichten'
+    | '/kennismaken'
+    | '/leiderschap'
+    | '/over-ons'
+    | '/uwv-traject'
+    | '/voor-werkgevers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CoachesRoute: typeof CoachesRoute
+  CoachingVoorMijRoute: typeof CoachingVoorMijRoute
+  InzichtenRoute: typeof InzichtenRoute
+  KennismakenRoute: typeof KennismakenRoute
+  LeiderschapRoute: typeof LeiderschapRoute
+  OverOnsRoute: typeof OverOnsRoute
+  UwvTrajectRoute: typeof UwvTrajectRoute
+  VoorWerkgeversRoute: typeof VoorWerkgeversRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/voor-werkgevers': {
+      id: '/voor-werkgevers'
+      path: '/voor-werkgevers'
+      fullPath: '/voor-werkgevers'
+      preLoaderRoute: typeof VoorWerkgeversRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uwv-traject': {
+      id: '/uwv-traject'
+      path: '/uwv-traject'
+      fullPath: '/uwv-traject'
+      preLoaderRoute: typeof UwvTrajectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/over-ons': {
+      id: '/over-ons'
+      path: '/over-ons'
+      fullPath: '/over-ons'
+      preLoaderRoute: typeof OverOnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leiderschap': {
+      id: '/leiderschap'
+      path: '/leiderschap'
+      fullPath: '/leiderschap'
+      preLoaderRoute: typeof LeiderschapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kennismaken': {
+      id: '/kennismaken'
+      path: '/kennismaken'
+      fullPath: '/kennismaken'
+      preLoaderRoute: typeof KennismakenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/inzichten': {
+      id: '/inzichten'
+      path: '/inzichten'
+      fullPath: '/inzichten'
+      preLoaderRoute: typeof InzichtenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coaching-voor-mij': {
+      id: '/coaching-voor-mij'
+      path: '/coaching-voor-mij'
+      fullPath: '/coaching-voor-mij'
+      preLoaderRoute: typeof CoachingVoorMijRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coaches': {
+      id: '/coaches'
+      path: '/coaches'
+      fullPath: '/coaches'
+      preLoaderRoute: typeof CoachesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +217,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CoachesRoute: CoachesRoute,
+  CoachingVoorMijRoute: CoachingVoorMijRoute,
+  InzichtenRoute: InzichtenRoute,
+  KennismakenRoute: KennismakenRoute,
+  LeiderschapRoute: LeiderschapRoute,
+  OverOnsRoute: OverOnsRoute,
+  UwvTrajectRoute: UwvTrajectRoute,
+  VoorWerkgeversRoute: VoorWerkgeversRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
