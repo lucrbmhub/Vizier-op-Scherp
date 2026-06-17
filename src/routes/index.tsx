@@ -131,7 +131,7 @@ function Home() {
             <ul role="list" className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
               {[
                 ["1.000+", "trajecten begeleid door ons netwerk"],
-                ["Noloc & NOBCO", "gecertificeerde coaches"],
+                ["Erkende beroepsvereniging", "elke coach is aangesloten"],
                 ["5 werkdagen", "van intake tot match"],
               ].map(([k, v]) => (
                 <li key={k}>
@@ -280,8 +280,8 @@ function Home() {
           </h2>
           <p className={introCls}>
             Vizier op Scherp werkt met een klein, vast netwerk van zelfstandige coaches.
-            Allemaal Noloc- en/of NOBCO-gecertificeerd, met achtergronden in coaching,
-            psychologie, maatschappelijk werk en therapeutisch werk.
+            Allemaal aangesloten bij een erkende beroepsvereniging, met achtergronden in
+            coaching, psychologie, maatschappelijk werk en therapeutisch werk.
           </p>
 
           <ul className="mt-12 grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
