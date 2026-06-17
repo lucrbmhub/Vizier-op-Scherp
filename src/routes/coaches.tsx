@@ -155,10 +155,14 @@ function CoachCard({ c }: { c: Coach }) {
         <div className="flex flex-wrap gap-2 mb-4">
           {c.tags.map((t) => (
             <span
-              key={t}
-              className="text-xs text-petrol/70 border border-mint-dof rounded-full px-3 py-1"
+              key={t.label}
+              className={
+                t.reg
+                  ? "text-xs font-medium text-petrol bg-mint-dof border border-mint-dof rounded-full px-3 py-1"
+                  : "text-xs text-petrol/70 border border-mint-dof rounded-full px-3 py-1"
+              }
             >
-              {t}
+              {t.label}
             </span>
           ))}
         </div>
