@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "../assets/hero.jpg";
+import heroImg from "../assets/coaching-gesprek.jpg.asset.json";
 
 const jsonLdBusiness = {
   "@context": "https://schema.org",
@@ -146,7 +146,7 @@ function Home() {
 
           <aside className="rounded-2xl overflow-hidden bg-linnen border border-mint/25">
             <img
-              src={heroImg}
+              src={heroImg.url}
               alt="Loopbaancoach in gesprek met een medewerker in een rustige werkomgeving"
               width={1280}
               height={832}

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "../assets/hero.jpg";
+import heroImg from "../assets/coaching-werkgever.jpg.asset.json";
 import { Section, Eyebrow, Label, FAQ, CTAStrip } from "../components/ui-blocks";
 
 const TITLE = "Loopbaancoaching voor uw medewerkers | Vizier op Scherp";
@@ -187,7 +187,7 @@ function Page() {
             </div>
             <div className="bg-linnen rounded-2xl overflow-hidden border border-mint/25">
               <img
-                src={heroImg}
+                src={heroImg.url}
                 alt="Loopbaancoach in gesprek met een medewerker"
                 width={560}
                 height={300}
