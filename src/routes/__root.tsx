@@ -90,8 +90,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Vizier Site Foundation builds the core structure for a career coaching agency website." },
       { property: "og:description", content: "Vizier Site Foundation builds the core structure for a career coaching agency website." },
       { name: "twitter:description", content: "Vizier Site Foundation builds the core structure for a career coaching agency website." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ab7f664a-2872-4c84-9e2a-1672e0c741cf/id-preview-128013eb--3534c832-3967-4a9d-8684-855c0b04f3f5.lovable.app-1781683598012.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ab7f664a-2872-4c84-9e2a-1672e0c741cf/id-preview-128013eb--3534c832-3967-4a9d-8684-855c0b04f3f5.lovable.app-1781683598012.png" },
+      { property: "og:image", content: "https://vizier-focus-frame.lovable.app/__l5e/assets-v1/4cdfae24-4369-434c-a007-89b12e9c2018/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Vizier op Scherp — Persoonlijk voor de medewerker. Georganiseerd voor HR." },
+      { name: "twitter:image", content: "https://vizier-focus-frame.lovable.app/__l5e/assets-v1/4cdfae24-4369-434c-a007-89b12e9c2018/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
