@@ -62,7 +62,7 @@ export const Route = createFileRoute("/")({
         content:
           "Persoonlijk voor de medewerker, georganiseerd voor HR. Loopbaancoaching in Amsterdam, Haarlem en omgeving, van losse trajecten tot een coachingpool als jaarafspraak.",
       },
-      { name: "twitter:card", content: "summary_large_image" },
+      
       {
         name: "twitter:title",
         content: "Loopbaancoaching voor werkgevers, Vizier op Scherp",
