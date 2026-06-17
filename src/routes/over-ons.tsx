@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Eyebrow, Label, Card, CTAStrip } from "../components/ui-blocks";
+import teamAsset from "../assets/team-vizier-op-scherp.png.asset.json";
 
 const TITLE = "Over Vizier op Scherp | Regionaal netwerk voor loopbaancoaching";
 const DESC =
