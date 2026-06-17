@@ -1,23 +1,275 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Section, Eyebrow } from "../components/ui-blocks";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Section, Label, Eyebrow, CTAStrip } from "../components/ui-blocks";
+
+const TITLE = "Inzichten over werk en loopbaan | Vizier op Scherp";
+const DESC =
+  "Korte, praktische inzichten over werk, loopbaan en ontwikkeling, voor medewerkers en particulieren die nadenken over een volgende stap, en voor HR-afdelingen die hun mensen op tijd willen begeleiden.";
+const OG_TITLE = "Inzichten over werk en loopbaan, Vizier op Scherp";
+const OG_DESC =
+  "Korte, praktische stukken over werk, loopbaan en ontwikkeling. Voor wie nadenkt over een volgende stap, en voor HR.";
+const CANONICAL = "https://vizieropscherp.nl/inzichten";
+
+const collectionLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Inzichten",
+  description:
+    "Korte, praktische inzichten over werk, loopbaan en ontwikkeling.",
+  url: CANONICAL,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Vizier op Scherp",
+    url: "https://vizieropscherp.nl/",
+  },
+  publisher: {
+    "@type": "ProfessionalService",
+    name: "Vizier op Scherp",
+    url: "https://vizieropscherp.nl/",
+  },
+};
 
 export const Route = createFileRoute("/inzichten")({
   head: () => ({
     meta: [
-      { title: "Inzichten — Vizier op Scherp" },
-      { name: "description", content: "Inzichten en artikelen van Vizier op Scherp." },
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "nl_NL" },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:site_name", content: "Vizier op Scherp" },
+      { property: "og:title", content: OG_TITLE },
+      { property: "og:description", content: OG_DESC },
     ],
-    links: [{ rel: "canonical", href: "/inzichten" }],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      { type: "application/ld+json", children: JSON.stringify(collectionLd) },
+    ],
   }),
   component: Page,
 });
 
+/**
+ * Artikelopzet (voor later)
+ * --------------------------------
+ * Voorlopig is dit een lokale array zodat de pagina werkt zonder backend.
+ * Wanneer er echte artikelen komen, kunnen ze hier landen of vanuit een
+ * Lovable Cloud tabel `articles` worden gelezen met velden:
+ *   - slug (text, uniek)        → URL onder /inzichten/{slug}
+ *   - title (text)
+ *   - summary (text)
+ *   - audience (enum: "medewerker" | "werkgever")
+ *   - read_minutes (int)
+ *   - published_at (timestamptz, alleen tonen als gevuld en in verleden)
+ *   - featured (bool, max één)
+ * Elk artikel krijgt straks zijn eigen detailpagina onder
+ * src/routes/inzichten.$slug.tsx.
+ *
+ * Zolang er nog niets gepubliceerd is, toont de pagina de lege staat.
+ */
+type Audience = "medewerker" | "werkgever";
+type Article = {
+  slug: string;
+  title: string;
+  summary: string;
+  audience: Audience;
+  readMinutes: number;
+  featured?: boolean;
+};
+
+const ARTICLES: Article[] = [];
+
 function Page() {
+  const featured = ARTICLES.find((a) => a.featured);
+  const recent = ARTICLES.filter((a) => a !== featured).slice(0, 3);
+  const hasContent = ARTICLES.length > 0;
+
   return (
-    <Section>
-      <Eyebrow>Inzichten</Eyebrow>
-      <h1 className="mt-4 font-display text-4xl md:text-5xl text-petrol">Inzichten</h1>
-      <p className="mt-4 text-petrol/75">Placeholder — inhoud volgt.</p>
-    </Section>
+    <>
+      {/* HERO donker */}
+      <section className="bg-petrol text-linnen-licht">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+          <span className="inline-flex items-center rounded-full border border-mint-dof/40 px-3 py-1 text-xs font-medium uppercase tracking-wide text-mint">
+            Inzichten
+          </span>
+          <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-linnen-licht max-w-[18ch] leading-[1.1]">
+            Korte stukken over werk, loopbaan en ontwikkeling
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg text-mint leading-relaxed">
+            Praktische inzichten voor wie nadenkt over een volgende stap, en
+            voor HR-afdelingen die hun mensen op tijd willen begeleiden. Geen
+            lange theorie, wel concrete handvatten.
+          </p>
+        </div>
+      </section>
+
+      {hasContent ? (
+        <>
+          {/* Uitgelicht */}
+          {featured && (
+            <Section>
+              <Label>Uitgelicht</Label>
+              <h2 className="font-display text-3xl md:text-4xl text-petrol max-w-3xl">
+                Om mee te beginnen
+              </h2>
+              <FeaturedCard article={featured} />
+            </Section>
+          )}
+
+          {/* Recent */}
+          <section className="bg-linnen-licht">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+              <Label>Recent</Label>
+              <h2 className="font-display text-3xl md:text-4xl text-petrol max-w-3xl">
+                Meer inzichten
+              </h2>
+              <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {recent.map((a) => (
+                  <ArticleCard key={a.slug} article={a} />
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
+      ) : (
+        <Section>
+          <div className="rounded-2xl border border-dashed border-petrol/25 px-6 py-14 text-center">
+            <h2 className="font-display text-2xl text-petrol">
+              Binnenkort vind je hier onze inzichten
+            </h2>
+            <p className="mt-3 mx-auto max-w-[48ch] text-petrol/75 leading-relaxed">
+              We werken aan korte, praktische stukken over werk, loopbaan en
+              ontwikkeling. Houd deze pagina in de gaten.
+            </p>
+          </div>
+        </Section>
+      )}
+
+      {/* Thema's — donker */}
+      <section className="bg-petrol text-linnen-licht">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud mb-2">
+            Waar we over schrijven
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl text-linnen-licht max-w-3xl">
+            Thema's die terugkomen
+          </h2>
+          <p className="mt-6 max-w-3xl text-mint leading-relaxed">
+            Onze stukken gaan over de vragen die we dagelijks in de praktijk
+            tegenkomen, bij medewerkers, particulieren en in gesprekken met HR.
+          </p>
+          <ul className="mt-8 flex flex-wrap gap-3">
+            {[
+              "Richting vinden in je loopbaan",
+              "Energie en motivatie in werk",
+              "Duurzaam inzetbaar blijven",
+              "Solliciteren en arbeidsmarkt",
+              "Persoonlijke effectiviteit",
+              "Medewerkers begeleiden als HR",
+            ].map((t) => (
+              <li
+                key={t}
+                className="rounded-full border border-mint-dof/40 px-4 py-2 text-sm text-mint"
+              >
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-4 sm:px-6 lg:px-8 py-20 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <CTAStrip
+            title="Een vraag over een van deze thema's?"
+            action={
+              <Link
+                to="/kennismaken"
+                className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:bg-petrol/90 transition-colors"
+              >
+                Plan een kennismakingsgesprek
+              </Link>
+            }
+          >
+            We denken graag mee, vrijblijvend en zonder verkooppraat.
+          </CTAStrip>
+        </div>
+      </section>
+    </>
   );
 }
+
+function badgeClasses(audience: Audience) {
+  return audience === "werkgever"
+    ? "bg-goud text-[color:var(--color-on-goud-title)]"
+    : "bg-mint text-petrol";
+}
+
+function audienceLabel(audience: Audience) {
+  return audience === "werkgever" ? "Voor werkgevers" : "Voor medewerkers";
+}
+
+function ArticleCard({ article }: { article: Article }) {
+  return (
+    <Link
+      to="/inzichten"
+      aria-label={`Lees: ${article.title}`}
+      className="group relative flex flex-col gap-3 rounded-2xl border border-petrol/15 bg-linnen-licht p-7 transition-[transform,border-color] duration-150 hover:border-goud motion-safe:hover:-translate-y-1"
+    >
+      <span
+        className={`self-start rounded-full px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] ${badgeClasses(article.audience)}`}
+      >
+        {audienceLabel(article.audience)}
+      </span>
+      <h3 className="font-display text-xl text-petrol leading-tight">
+        {article.title}
+      </h3>
+      <p className="text-petrol/75 leading-relaxed text-[0.96rem]">
+        {article.summary}
+      </p>
+      <span className="text-xs text-petrol/60">
+        {article.readMinutes} min lezen
+      </span>
+      <span className="mt-auto pt-2 text-sm font-medium text-koraal">
+        Lees verder →
+      </span>
+    </Link>
+  );
+}
+
+function FeaturedCard({ article }: { article: Article }) {
+  return (
+    <Link
+      to="/inzichten"
+      aria-label={`Lees het uitgelichte artikel: ${article.title}`}
+      className="group mt-10 grid overflow-hidden rounded-2xl border border-petrol/15 md:grid-cols-[1.2fr_1fr] motion-safe:transition-transform motion-safe:hover:-translate-y-1"
+    >
+      <div className="bg-linnen-licht p-8 md:p-12">
+        <span className="text-xs text-petrol/60 uppercase tracking-[0.08em]">
+          {audienceLabel(article.audience)} · {article.readMinutes} min lezen
+        </span>
+        <h3 className="mt-4 font-display text-2xl md:text-3xl text-petrol leading-tight">
+          {article.title}
+        </h3>
+        <p className="mt-4 text-petrol/75 leading-relaxed max-w-[52ch]">
+          {article.summary}
+        </p>
+      </div>
+      <div className="bg-petrol p-8 md:p-12 text-linnen-licht flex flex-col gap-4 justify-center">
+        <span className="self-start rounded-full bg-goud px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-[color:var(--color-on-goud-title)]">
+          Uitgelicht
+        </span>
+        <h4 className="font-display text-xl md:text-2xl text-linnen-licht leading-snug">
+          {article.title}
+        </h4>
+        <p className="text-mint leading-relaxed text-[0.96rem]">
+          {article.summary}
+        </p>
+        <span className="text-sm font-medium text-goud">Lees verder →</span>
+      </div>
+    </Link>
+  );
+}
+
+// Voorkomt 'unused' waarschuwing voor de Eyebrow-helper als hij elders nog niet gebruikt wordt.
+void Eyebrow;
