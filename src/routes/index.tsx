@@ -209,7 +209,7 @@ function Home() {
             Drie vormen van loopbaancoaching
           </h2>
           <p className={introCls}>
-            Onze werkwijze is altijd dezelfde: intake, matching, begeleiding en evaluatie —
+            Onze werkwijze is altijd dezelfde: intake, matching, begeleiding en evaluatie,
             met vooraf heldere privacyafspraken.
           </p>
 
