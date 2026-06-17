@@ -229,10 +229,10 @@ function ArticlePage() {
             <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
               Bij Vizier op Scherp helpen we werkgevers in Amsterdam, Haarlem
               en omgeving daarbij. We zijn een klein team van gecertificeerde
-              coaches, aangesloten bij Noloc en NOBCO, die je medewerkers
-              persoonlijk begeleiden. Wil je verkennen wat bij jouw organisatie
-              past? Begin met een vrijblijvend gesprek of een eerste ronde
-              loopbaangesprekken. Dan merk je zelf wat het oplevert.
+              coaches, aangesloten bij een erkende beroepsvereniging, die je
+              medewerkers persoonlijk begeleiden. Wil je verkennen wat bij jouw
+              organisatie past? Begin met een vrijblijvend gesprek of een eerste
+              ronde loopbaangesprekken. Dan merk je zelf wat het oplevert.
             </p>
           </div>
 

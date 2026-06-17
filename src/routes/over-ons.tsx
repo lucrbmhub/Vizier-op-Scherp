@@ -189,7 +189,8 @@ function Page() {
             er bij uw medewerkers aan tafel zit.
           </p>
           <p>
-            Alle coaches zijn geregistreerd bij Noloc en/of NOBCO en hebben
+            Alle coaches zijn opgeleid en gecertificeerd, en aangesloten bij
+            een erkende beroepsvereniging met een eigen beroepscode. Ze hebben
             achtergronden in coaching, psychologie, maatschappelijk werk en
             therapeutisch werk. Samen begeleidden zij meer dan duizend
             trajecten rond loopbaan, coaching, werkfitheid en professionele

@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Label, CTASoft } from "../components/ui-blocks";
 
-const TITLE = "Onze coaches | Noloc & NOBCO-gecertificeerd | Vizier op Scherp";
+const TITLE = "Onze coaches | Aangesloten bij een erkende beroepsvereniging | Vizier op Scherp";
 const DESC =
-  "Maak kennis met de loopbaancoaches van Vizier op Scherp: een klein, vast netwerk van Noloc- en NOBCO-gecertificeerde professionals in Amsterdam, Haarlem en omgeving. Echte mensen, een eigen verhaal en een zorgvuldige match.";
+  "Maak kennis met de loopbaancoaches van Vizier op Scherp: een klein, vast netwerk van professionals aangesloten bij een erkende beroepsvereniging in Amsterdam, Haarlem en omgeving. Echte mensen, een eigen verhaal en een zorgvuldige match.";
 const OG_TITLE = "Onze coaches, Vizier op Scherp";
 const OG_DESC =
   "Een klein, vast netwerk van gecertificeerde loopbaancoaches. Je maakt eerst kennis, en kiest daarna pas.";
@@ -35,7 +35,7 @@ const coaches: Coach[] = [
     role: "Loopbaancoach, trainer & psycholoog",
     quote: "Kom in beweging en ontdek waar je blij van wordt.",
     bio: "Psycholoog en yogadocent. Lianne helpt je om van binnenuit te voelen wat je nodig hebt, zodat je keuzes maakt vanuit wat echt bij je past, en niet vanuit wat je omgeving verwacht. Ze werkt aan het evenwicht tussen denken, doen en voelen.",
-    tags: ["Persoonlijk leiderschap", "Psycholoog", "Energie in werk"],
+    tags: ["Drs. Psychologie", "Persoonlijk leiderschap", "Energie in werk"],
     linkedin: "https://www.linkedin.com/in/lianneboth/",
   },
   {
@@ -45,7 +45,7 @@ const coaches: Coach[] = [
     quote:
       "Neem je volgende stap vanuit gevoel en het kennen van je behoeften.",
     bio: "Psychosociaal therapeut met een achtergrond in sociaal ondernemerschap, de creatieve industrie en het hoger onderwijs. Zelah helpt je je zelfinzicht en zelfvertrouwen te vergroten, zodat je je ontwikkeling vormgeeft op een manier die bij je past. Open, positief en analytisch. Werkt vanuit een eigen praktijk in het centrum van Amsterdam.",
-    tags: ["Zingeving", "Therapeutische achtergrond", "Regio Amsterdam"],
+    tags: ["RBCZ-geregistreerd", "ACT & acceptance therapie", "Zingeving", "Amsterdam"],
     linkedin: "https://www.linkedin.com/in/zelah-dorrestijn/",
   },
   {
@@ -54,7 +54,7 @@ const coaches: Coach[] = [
     role: "Loopbaancoach & trainer",
     quote: "Inzicht is pas waardevol als het leidt tot beweging.",
     bio: "Floor kijkt altijd breed: naar de samenhang tussen werk, leven en je loopbaanvraag. Ze viel acht jaar geleden zelf uit op haar werk omdat het niet meer klopte, en maakte daar een ander pad van. Ze brengt structuur aan in je verhaal, maakt patronen zichtbaar en vertaalt ze naar concrete stappen. Achtergrond in Positieve Gezondheid, NLP en het sociaal domein.",
-    tags: ["Positieve Gezondheid", "NLP", "Werk & herstel"],
+    tags: ["NOBCO", "Positieve Gezondheid", "NLP", "Onderwijs & sociaal domein"],
     linkedin: "https://www.linkedin.com/in/floor-van-den-berg",
   },
   {
@@ -64,7 +64,7 @@ const coaches: Coach[] = [
     quote:
       "Krijg scherp waar je talenten liggen en wat je belangrijk vindt. Dan kun je gerichte keuzes maken.",
     bio: "Luc kent vanuit zijn achtergrond als recruitment consultant de werkgeverskant van binnenuit. Hij begeleidt vooral eind-twintigers, dertigers en jonge professionals die richting zoeken en scherper willen weten waar ze voor staan. Open, nuchter, zo luchtig als mogelijk en zo serieus als nodig.",
-    tags: ["Richting & keuzes", "Jonge professionals", "HR-achtergrond"],
+    tags: ["Noloc RL", "Richting & keuzes", "Young professionals", "Traineeships"],
     linkedin: "https://www.linkedin.com/in/lbuurman/",
   },
 ];
@@ -129,10 +129,14 @@ function CoachCard({ c }: { c: Coach }) {
         </blockquote>
         <p className="text-petrol/75 text-[0.96rem] mb-4">{c.bio}</p>
         <div className="flex flex-wrap gap-2 mb-4">
-          {c.tags.map((t) => (
+          {c.tags.map((t, i) => (
             <span
               key={t}
-              className="text-xs text-petrol/70 border border-mint-dof rounded-full px-3 py-1"
+              className={
+                i === 0
+                  ? "text-xs text-petrol font-medium bg-mint-dof/60 border border-mint-dof rounded-full px-3 py-1"
+                  : "text-xs text-petrol/70 border border-mint-dof rounded-full px-3 py-1"
+              }
             >
               {t}
             </span>
@@ -172,9 +176,9 @@ function Page() {
           <p className="mt-5 text-petrol/75 max-w-[60ch] text-lg">
             Vizier op Scherp werkt met een klein, vast netwerk van zelfstandige
             coaches. Bewust maximaal acht tot twaalf. Stuk voor stuk
-            gecertificeerd (Noloc en/of NOBCO), met een eigen achtergrond, een
-            eigen verhaal en een eigen manier van werken. Je maakt altijd
-            eerst kennis, voordat er iets vastligt.
+            gecertificeerd en aangesloten bij een erkende beroepsvereniging,
+            met een eigen achtergrond, een eigen verhaal en een eigen manier
+            van werken. Je maakt altijd eerst kennis, voordat er iets vastligt.
           </p>
         </div>
       </section>
@@ -225,7 +229,7 @@ function Page() {
             {[
               [
                 "Gecertificeerd",
-                "Elke coach is geregistreerd bij Noloc en/of NOBCO, de beroepsverenigingen voor loopbaanprofessionals en coaches.",
+                "Elke coach is opgeleid, gecertificeerd en aangesloten bij een erkende beroepsvereniging.",
               ],
               [
                 "Intervisie",

@@ -174,7 +174,7 @@ function Page() {
                 {[
                   { s: "5 werkdagen", l: "van intake tot voorstel coach" },
                   { s: "1.000+", l: "trajecten begeleid door ons netwerk" },
-                  { s: "Noloc & NOBCO", l: "gecertificeerde coaches" },
+                  { s: "Erkende beroepsvereniging", l: "elke coach is aangesloten" },
                 ].map((m) => (
                   <div key={m.s}>
                     <dt className="font-display text-xl text-linnen-licht leading-tight">
@@ -485,7 +485,7 @@ function Page() {
           </p>
           <div className="mt-12 grid gap-8 grid-cols-2 md:grid-cols-4">
             {[
-              ["Noloc & NOBCO", "elke coach is gecertificeerd en geregistreerd"],
+              ["Erkende beroepsvereniging", "elke coach is gecertificeerd en aangesloten"],
               ["Intervisie", "structurele kwaliteitsbewaking binnen het netwerk"],
               ["Evaluatie", "na elk traject meten we tevredenheid en resultaat"],
               ["8–12", "coaches, bewust klein, zorgvuldig geselecteerd"],
