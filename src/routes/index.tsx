@@ -62,7 +62,7 @@ export const Route = createFileRoute("/")({
         content:
           "Persoonlijk voor de medewerker, georganiseerd voor HR. Loopbaancoaching in Amsterdam, Haarlem en omgeving, van losse trajecten tot een coachingpool als jaarafspraak.",
       },
-      { name: "twitter:card", content: "summary" },
+      { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
         content: "Loopbaancoaching voor werkgevers, Vizier op Scherp",
@@ -131,7 +131,7 @@ function Home() {
             <ul role="list" className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
               {[
                 ["1.000+", "trajecten begeleid door ons netwerk"],
-                ["Noloc & NOBCO", "gecertificeerde coaches"],
+                ["Gecertificeerd", "en beroepsgeregistreerd"],
                 ["5 werkdagen", "van intake tot match"],
               ].map(([k, v]) => (
                 <li key={k}>
@@ -209,7 +209,7 @@ function Home() {
             Drie vormen van loopbaancoaching
           </h2>
           <p className={introCls}>
-            Onze werkwijze is altijd dezelfde: intake, matching, begeleiding en evaluatie —
+            Onze werkwijze is altijd dezelfde: intake, matching, begeleiding en evaluatie,
             met vooraf heldere privacyafspraken.
           </p>
 
@@ -287,11 +287,11 @@ function Home() {
 
           <ul className="mt-12 grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
             {[
-              ["M", "Maaike", "Loopbaancoaching · onderwijs en publieke sector"],
-              ["L", "Lianne", "Loopbaancoaching · duurzame inzetbaarheid"],
-              ["Z", "Zelah", "Coaching · persoonlijke effectiviteit"],
-              ["F", "Floor", "Loopbaancoaching · werkfit en herstel"],
-              ["L", "Luc", "Loopbaancoaching · HR-achtergrond"],
+              ["M", "Maaike", "Onderwijs, zorg en leidinggevenden"],
+              ["L", "Lianne", "Psycholoog · persoonlijk leiderschap"],
+              ["Z", "Zelah", "Therapeut · ACT en zingeving"],
+              ["F", "Floor", "Positieve Gezondheid en NLP"],
+              ["L", "Luc", "Richting, keuzes en HR-achtergrond"],
             ].map(([initial, name, role]) => (
               <li
                 key={name}
