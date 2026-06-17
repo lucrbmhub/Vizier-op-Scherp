@@ -76,7 +76,17 @@ type Article = {
   featured?: boolean;
 };
 
-const ARTICLES: Article[] = [];
+const ARTICLES: Article[] = [
+  {
+    slug: "van-werven-naar-behouden",
+    title: "Van werven naar behouden: de grote HR-verschuiving van 2026",
+    summary:
+      "De arbeidsmarkt kantelt: van werven naar behouden. Waarom medewerkers echt vertrekken — en het gaat niet om salaris — en hoe een goed gesprek op tijd het verschil maakt.",
+    audience: "werkgever",
+    readMinutes: 5,
+    featured: true,
+  },
+];
 
 function Page() {
   const featured = ARTICLES.find((a) => a.featured);
@@ -212,7 +222,7 @@ function audienceLabel(audience: Audience) {
 function ArticleCard({ article }: { article: Article }) {
   return (
     <Link
-      to="/inzichten"
+      to={`/inzichten/${article.slug}`}
       aria-label={`Lees: ${article.title}`}
       className="group relative flex flex-col gap-3 rounded-2xl border border-petrol/15 bg-linnen-licht p-7 transition-[transform,border-color] duration-150 hover:border-goud motion-safe:hover:-translate-y-1"
     >
@@ -240,7 +250,7 @@ function ArticleCard({ article }: { article: Article }) {
 function FeaturedCard({ article }: { article: Article }) {
   return (
     <Link
-      to="/inzichten"
+      to={`/inzichten/${article.slug}`}
       aria-label={`Lees het uitgelichte artikel: ${article.title}`}
       className="group mt-10 grid overflow-hidden rounded-2xl border border-petrol/15 md:grid-cols-[1.2fr_1fr] motion-safe:transition-transform motion-safe:hover:-translate-y-1"
     >

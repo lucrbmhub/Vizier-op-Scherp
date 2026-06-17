@@ -18,6 +18,7 @@ import { Route as InzichtenRouteImport } from './routes/inzichten'
 import { Route as CoachingVoorMijRouteImport } from './routes/coaching-voor-mij'
 import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as InzichtenSlugRouteImport } from './routes/inzichten.$slug'
 
 const VoorWerkgeversRoute = VoorWerkgeversRouteImport.update({
   id: '/voor-werkgevers',
@@ -64,40 +65,48 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InzichtenSlugRoute = InzichtenSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => InzichtenRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
-  '/inzichten': typeof InzichtenRoute
+  '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
+  '/inzichten/$slug': typeof InzichtenSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
-  '/inzichten': typeof InzichtenRoute
+  '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
+  '/inzichten/$slug': typeof InzichtenSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
-  '/inzichten': typeof InzichtenRoute
+  '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
+  '/inzichten/$slug': typeof InzichtenSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -111,6 +120,7 @@ export interface FileRouteTypes {
     | '/over-ons'
     | '/uwv-traject'
     | '/voor-werkgevers'
+    | '/inzichten/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -122,6 +132,7 @@ export interface FileRouteTypes {
     | '/over-ons'
     | '/uwv-traject'
     | '/voor-werkgevers'
+    | '/inzichten/$slug'
   id:
     | '__root__'
     | '/'
@@ -133,13 +144,14 @@ export interface FileRouteTypes {
     | '/over-ons'
     | '/uwv-traject'
     | '/voor-werkgevers'
+    | '/inzichten/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CoachesRoute: typeof CoachesRoute
   CoachingVoorMijRoute: typeof CoachingVoorMijRoute
-  InzichtenRoute: typeof InzichtenRoute
+  InzichtenRoute: typeof InzichtenRouteWithChildren
   KennismakenRoute: typeof KennismakenRoute
   LeiderschapRoute: typeof LeiderschapRoute
   OverOnsRoute: typeof OverOnsRoute
@@ -212,14 +224,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/inzichten/$slug': {
+      id: '/inzichten/$slug'
+      path: '/$slug'
+      fullPath: '/inzichten/$slug'
+      preLoaderRoute: typeof InzichtenSlugRouteImport
+      parentRoute: typeof InzichtenRoute
+    }
   }
 }
+
+interface InzichtenRouteChildren {
+  InzichtenSlugRoute: typeof InzichtenSlugRoute
+}
+
+const InzichtenRouteChildren: InzichtenRouteChildren = {
+  InzichtenSlugRoute: InzichtenSlugRoute,
+}
+
+const InzichtenRouteWithChildren = InzichtenRoute._addFileChildren(
+  InzichtenRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CoachesRoute: CoachesRoute,
   CoachingVoorMijRoute: CoachingVoorMijRoute,
-  InzichtenRoute: InzichtenRoute,
+  InzichtenRoute: InzichtenRouteWithChildren,
   KennismakenRoute: KennismakenRoute,
   LeiderschapRoute: LeiderschapRoute,
   OverOnsRoute: OverOnsRoute,
