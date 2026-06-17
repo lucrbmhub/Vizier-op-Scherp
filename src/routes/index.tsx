@@ -105,7 +105,7 @@ function Home() {
         <div className={`${wrap} py-16 md:py-20 grid gap-10 lg:gap-14 lg:grid-cols-[1.15fr_0.85fr] items-center`}>
           <div>
             <span className="inline-block text-xs font-medium tracking-[0.03em] text-goud border border-goud rounded-full px-4 py-1.5 mb-6">
-              Loopbaancoaching voor werkgevers · Amsterdam, Haarlem en omgeving
+              Loopbaancoaching · Amsterdam, Haarlem en omgeving
             </span>
             <h1
               id="hero-titel"
