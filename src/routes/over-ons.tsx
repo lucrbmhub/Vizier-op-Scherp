@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Eyebrow, Label, Card, CTAStrip } from "../components/ui-blocks";
+import teamAsset from "../assets/team-vizier-op-scherp.png.asset.json";
 
 const TITLE = "Over Vizier op Scherp | Regionaal netwerk voor loopbaancoaching";
 const DESC =
@@ -196,6 +197,11 @@ function Page() {
             dienstverlening. Binnen het netwerk borgen we kwaliteit met
             intervisie en evalueren we elk traject.
           </p>
+          <img
+            src={teamAsset.url}
+            alt="Team Vizier op Scherp"
+            className="mt-8 w-full rounded-2xl object-cover"
+          />
           <p>
             <Link
               to="/coaches"
