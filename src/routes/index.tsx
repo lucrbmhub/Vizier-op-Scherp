@@ -280,8 +280,9 @@ function Home() {
           </h2>
           <p className={introCls}>
             Vizier op Scherp werkt met een klein, vast netwerk van zelfstandige coaches.
-            Allemaal Noloc- en/of NOBCO-gecertificeerd, met achtergronden in coaching,
-            psychologie, maatschappelijk werk en therapeutisch werk.
+            Onze coaches zijn gecertificeerd en aangesloten bij een erkende beroepsvereniging
+            of kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar register.
+            Met achtergronden in coaching, psychologie, maatschappelijk werk en therapeutisch werk.
           </p>
 
           <ul className="mt-12 grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">

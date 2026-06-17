@@ -189,13 +189,14 @@ function Page() {
             er bij uw medewerkers aan tafel zit.
           </p>
           <p>
-            Alle coaches zijn geregistreerd bij Noloc en/of NOBCO en hebben
-            achtergronden in coaching, psychologie, maatschappelijk werk en
-            therapeutisch werk. Samen begeleidden zij meer dan duizend
-            trajecten rond loopbaan, coaching, werkfitheid en professionele
-            groei, in onder meer onderwijs, zorg, overheid en zakelijke
-            dienstverlening. Binnen het netwerk borgen we kwaliteit met
-            intervisie en evalueren we elk traject.
+            Onze coaches zijn gecertificeerd en aangesloten bij een erkende
+            beroepsvereniging of kwaliteitsregister, zoals Noloc, NOBCO of een
+            vergelijkbaar register. Ze hebben achtergronden in coaching,
+            psychologie, maatschappelijk werk en therapeutisch werk. Samen
+            begeleidden zij meer dan duizend trajecten rond loopbaan, coaching,
+            werkfitheid en professionele groei, in onder meer onderwijs, zorg,
+            overheid en zakelijke dienstverlening. Binnen het netwerk borgen we
+            kwaliteit met intervisie en evalueren we elk traject.
           </p>
           <img
             src={teamAsset.url}
