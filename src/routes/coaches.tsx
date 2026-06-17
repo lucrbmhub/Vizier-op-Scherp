@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Label, CTASoft } from "../components/ui-blocks";
 
-const TITLE = "Onze coaches | Noloc & NOBCO-gecertificeerd | Vizier op Scherp";
+const TITLE = "Onze coaches | Gecertificeerde loopbaancoaches | Vizier op Scherp";
 const DESC =
-  "Maak kennis met de loopbaancoaches van Vizier op Scherp: een klein, vast netwerk van Noloc- en NOBCO-gecertificeerde professionals in Amsterdam, Haarlem en omgeving. Echte mensen, een eigen verhaal en een zorgvuldige match.";
+  "Maak kennis met de loopbaancoaches van Vizier op Scherp. Onze coaches zijn gecertificeerd en aangesloten bij een erkende beroepsvereniging of kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar register. Een klein, vast netwerk in Amsterdam, Haarlem en omgeving.";
 const OG_TITLE = "Onze coaches, Vizier op Scherp";
 const OG_DESC =
   "Een klein, vast netwerk van gecertificeerde loopbaancoaches. Je maakt eerst kennis, en kiest daarna pas.";
