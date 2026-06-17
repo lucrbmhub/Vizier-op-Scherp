@@ -90,11 +90,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Vizier Site Foundation builds the core structure for a career coaching agency website." },
       { property: "og:description", content: "Vizier Site Foundation builds the core structure for a career coaching agency website." },
       { name: "twitter:description", content: "Vizier Site Foundation builds the core structure for a career coaching agency website." },
-      { property: "og:image", content: "https://vizier-focus-frame.lovable.app/__l5e/assets-v1/4cdfae24-4369-434c-a007-89b12e9c2018/og-image.png" },
+      { property: "og:image", content: "https://vizieropscherp.nl/og-image.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Vizier op Scherp — Persoonlijk voor de medewerker. Georganiseerd voor HR." },
-      { name: "twitter:image", content: "https://vizier-focus-frame.lovable.app/__l5e/assets-v1/4cdfae24-4369-434c-a007-89b12e9c2018/og-image.png" },
+      { name: "twitter:image", content: "https://vizieropscherp.nl/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
