@@ -287,11 +287,11 @@ function Home() {
 
           <ul className="mt-12 grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
             {[
-              ["M", "Maaike", "Loopbaancoaching · onderwijs en publieke sector"],
-              ["L", "Lianne", "Loopbaancoaching · duurzame inzetbaarheid"],
-              ["Z", "Zelah", "Coaching · persoonlijke effectiviteit"],
-              ["F", "Floor", "Loopbaancoaching · werkfit en herstel"],
-              ["L", "Luc", "Loopbaancoaching · HR-achtergrond"],
+              ["M", "Maaike", "Onderwijs, zorg en leidinggevenden"],
+              ["L", "Lianne", "Psycholoog · persoonlijk leiderschap"],
+              ["Z", "Zelah", "Therapeut · ACT en zingeving"],
+              ["F", "Floor", "Positieve Gezondheid en NLP"],
+              ["L", "Luc", "Richting, keuzes en HR-achtergrond"],
             ].map(([initial, name, role]) => (
               <li
                 key={name}
