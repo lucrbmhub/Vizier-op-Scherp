@@ -255,7 +255,7 @@ function Page() {
             {[
               [
                 "Gecertificeerd",
-                "Elke coach is geregistreerd bij Noloc en/of NOBCO, de beroepsverenigingen voor loopbaanprofessionals en coaches.",
+                "Onze coaches zijn gecertificeerd en aangesloten bij een erkende beroepsvereniging of kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar register.",
               ],
               [
                 "Intervisie",
