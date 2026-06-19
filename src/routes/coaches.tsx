@@ -199,12 +199,10 @@ function Page() {
           </h1>
           <p className="mt-5 text-petrol/75 max-w-[60ch] text-lg">
             Vizier op Scherp werkt met een klein, vast netwerk van zelfstandige
-            coaches. Bewust maximaal acht tot twaalf. Onze coaches zijn
-            gecertificeerd en aangesloten bij een erkende beroepsvereniging of
-            kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar
-            register. Elke coach heeft een eigen achtergrond, een eigen verhaal
-            en een eigen manier van werken. Je maakt altijd eerst kennis,
-            voordat er iets vastligt.
+            coaches. Bewust maximaal acht tot twaalf. Stuk voor stuk
+            gecertificeerd, met meerdere coachingopleidingen en nascholing, en
+            met een eigen achtergrond, een eigen verhaal en een eigen manier
+            van werken. Je maakt altijd eerst kennis, voordat er iets vastligt.
           </p>
         </div>
       </section>
