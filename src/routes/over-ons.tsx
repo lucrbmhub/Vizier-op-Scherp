@@ -7,14 +7,14 @@ const DESC =
   "Vizier op Scherp is een regionaal netwerk voor loopbaancoaching in Amsterdam, Haarlem en omgeving. Ontstaan als persoonlijke coachpraktijk, uitgegroeid tot ontwikkelpartner voor werkgevers, met behoud van de persoonlijke aanpak.";
 const OG_TITLE = "Over Vizier op Scherp";
 const OG_DESC =
-  "Een klein, regionaal netwerk van gecertificeerde coaches. Professioneel genoeg voor HR, menselijk genoeg voor de medewerker.";
+  "Een klein, regionaal netwerk van gecertificeerde coaches. Professioneel voor HR en menselijk voor de medewerker.";
 const CANONICAL = "https://vizieropscherp.nl/over-ons";
 
 const orgLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Vizier op Scherp",
-  description: OG_DESC,
+  description: "Een klein, regionaal netwerk van gecertificeerde coaches. Professioneel voor HR en menselijk voor de medewerker.",
   url: "https://vizieropscherp.nl/",
   areaServed: [
     "Amsterdam",
@@ -76,7 +76,7 @@ function Page() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <Eyebrow>Over ons</Eyebrow>
           <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-petrol max-w-4xl leading-[1.1]">
-            Professioneel genoeg voor HR, menselijk genoeg voor de medewerker.
+            Professioneel voor HR en menselijk voor de medewerker.
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-petrol/75 leading-relaxed">
             Die ene zin is onze lat, voor elke coach, elk traject en elke
@@ -192,7 +192,7 @@ function Page() {
             Onze coaches zijn gecertificeerd en aangesloten bij een erkende
             beroepsvereniging of kwaliteitsregister, zoals Noloc, NOBCO of een
             vergelijkbaar register. Ze hebben achtergronden in coaching,
-            psychologie, maatschappelijk werk en therapeutisch werk. Samen
+            psychologie, HR, recruitment en maatschappelijk werk. Samen
             begeleidden zij meer dan duizend trajecten rond loopbaan, coaching,
             werkfitheid en professionele groei, in onder meer onderwijs, zorg,
             overheid en zakelijke dienstverlening. Binnen het netwerk borgen we
