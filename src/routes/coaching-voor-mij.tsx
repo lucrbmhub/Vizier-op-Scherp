@@ -253,20 +253,15 @@ function Page() {
           herkenbaar. Hoeveel gesprekken je nodig hebt en in welk tempo, stem je
           af met je coach.
         </p>
-        <ol className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {fasen.map((f, i) => (
-            <li
-              key={f.h}
-              className="bg-linnen-licht border border-mint-dof rounded-2xl p-6"
-            >
-              <span className="inline-block font-display text-sm font-medium text-koraal border-b-2 border-goud pb-1 mb-3">
-                {String(i + 1).padStart(2, "0")}
-              </span>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {fasen.map((f) => (
+            <div key={f.h} className="border-t-[3px] border-goud pt-4">
               <h3 className="font-display text-base text-petrol mb-2">{f.h}</h3>
               <p className="text-[0.93rem] text-petrol/75">{f.p}</p>
-            </li>
+            </div>
           ))}
-        </ol>
+        </div>
+
       </Section>
 
       {/* PRAKTISCH + TESTIMONIALS */}
