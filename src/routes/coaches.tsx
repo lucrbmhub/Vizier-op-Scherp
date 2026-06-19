@@ -249,7 +249,7 @@ function Page() {
             {[
               [
                 "Gecertificeerd",
-                "Onze coaches zijn gecertificeerd en aangesloten bij een erkende beroepsvereniging of kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar register.",
+                "met een brede opleidingsachtergrond",
               ],
               [
                 "Intervisie",
