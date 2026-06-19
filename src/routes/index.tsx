@@ -403,18 +403,18 @@ function Home() {
           </h2>
           <p className={introCls}>
             Vizier op Scherp werkt met een klein, vast netwerk van zelfstandige coaches.
-            Onze coaches zijn gecertificeerd en aangesloten bij een erkende beroepsvereniging
-            of kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar register. Met
-            achtergronden in coaching, psychologie, maatschappelijk werk en therapeutisch werk.
+            Elke coach is gecertificeerd en heeft meerdere coachingopleidingen en
+            nascholing gedaan, met achtergronden in coaching, psychologie, maatschappelijk
+            werk en therapeutisch werk. De ingang is vaak de werkcontext. De begeleiding
+            is persoonlijk en gaat de diepte in.
           </p>
 
-          <ul className="mt-12 grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+          <ul className="mt-12 grid gap-5 grid-cols-2 sm:grid-cols-4">
             {[
-              ["M", "Maaike", "Onderwijs, zorg en leidinggevenden"],
-              ["L", "Lianne", "Psycholoog · persoonlijk leiderschap"],
-              ["Z", "Zelah", "Therapeut · ACT en zingeving"],
-              ["F", "Floor", "Positieve Gezondheid en NLP"],
-              ["L", "Luc", "Richting, keuzes en HR-achtergrond"],
+              ["M", "Maaike", "Coaching · onderwijs, zorg, leidinggevenden"],
+              ["L", "Lianne", "Coaching · persoonlijk leiderschap, loopbaan"],
+              ["F", "Floor", "Loopbaancoaching · Positieve Gezondheid"],
+              ["L", "Luc", "Loopbaancoaching · richting, young professionals"],
             ].map(([initial, name, role]) => (
               <li
                 key={name}
@@ -438,6 +438,7 @@ function Home() {
             </Link>
             <p className="text-[0.94rem] text-petrol/70 max-w-[52ch]">
               Elke coach heeft een eigen profiel met verhaal, aanpak en achtergrond.
+              Zodat medewerkers weten met wie ze kennismaken.
             </p>
           </div>
         </div>
