@@ -467,26 +467,6 @@ function Home() {
         </div>
       </section>
 
-      {/* UWV */}
-      <section aria-labelledby="uwv-titel" className="pb-8 bg-linnen">
-        <div className={wrap}>
-          <div className="rounded-2xl border border-mint-dof p-7 md:p-9 flex flex-wrap justify-between items-center gap-6">
-            <div className="max-w-[58ch]">
-              <h2 id="uwv-titel" className="font-display text-[1.25rem] text-petrol mb-2">
-                Kom je via UWV?
-              </h2>
-              <p className="text-petrol/70 text-[0.96rem]">
-                Wij begeleiden ook mensen bij Werkfit Maken en Naar Werk. Persoonlijk, in je
-                eigen tempo en zonder ingewikkelde taal. Op een aparte pagina lees je rustig
-                hoe dat werkt en wie je daarbij begeleidt.
-              </p>
-            </div>
-            <Link to="/uwv-traject" className={`${btnOutline} whitespace-nowrap`}>
-              Lees over UWV-trajecten
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* LEADMAGNET */}
       <section aria-labelledby="leadmagnet-titel" className="pt-10 pb-4 bg-linnen">

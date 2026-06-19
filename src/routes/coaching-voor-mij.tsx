@@ -340,6 +340,29 @@ function Page() {
         </div>
       </Section>
 
+      {/* UWV */}
+      <section className="bg-linnen">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="rounded-2xl border border-mint-dof p-7 md:p-9 flex flex-wrap justify-between items-center gap-6 bg-linnen-licht">
+            <div className="max-w-[58ch]">
+              <h2 className="font-display text-[1.25rem] text-petrol mb-2">
+                Kom je via UWV?
+              </h2>
+              <p className="text-petrol/70 text-[0.96rem]">
+                Wij begeleiden ook mensen bij UWV Werkfit en Naar Werk trajecten. Persoonlijk, in je
+                eigen tempo en zonder ingewikkelde taal. Hier lees je hoe dat werkt en wie je daarbij begeleidt.
+              </p>
+            </div>
+            <Link
+              to="/uwv-traject"
+              className="inline-flex items-center rounded-md border border-petrol px-6 py-3 text-[0.97rem] font-medium text-petrol hover:border-koraal hover:text-koraal transition whitespace-nowrap"
+            >
+              Lees over UWV-trajecten
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA — zacht */}
       <Section className="pt-0">
         <CTASoft
