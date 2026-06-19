@@ -130,7 +130,7 @@ function Home() {
             <ul role="list" className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-x-9 gap-y-6">
               {[
                 ["1.000+", "trajecten begeleid door ons netwerk"],
-                ["Gecertificeerd", "en beroepsgeregistreerd"],
+                ["Gecertificeerde coaches", "met een brede opleidingsachtergrond"],
                 ["5 werkdagen", "van intake tot match"],
               ].map(([k, v]) => (
                 <li key={k}>
