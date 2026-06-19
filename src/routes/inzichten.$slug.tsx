@@ -32,6 +32,15 @@ const ARTICLES: Article[] = [
     audience: "medewerker",
     readMinutes: 5,
   },
+  {
+    slug: "energie-en-motivatie-in-werk",
+    title:
+      "Energie en motivatie in werk: het verschil tussen moe zijn en leeglopen",
+    summary:
+      "Geen energie of motivatie meer voor je werk? Ontdek het verschil tussen moe zijn en leeglopen, en wat je eraan kunt doen voordat het groter wordt.",
+    audience: "medewerker",
+    readMinutes: 5,
+  },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -59,6 +68,66 @@ function headForSlug(slug: string) {
       "@type": "BlogPosting",
       headline:
         "Richting vinden in je loopbaan: weer weten welke kant je op wilt",
+      description,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-06-19",
+      dateModified: "2026-06-19",
+      image,
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(ld) },
+      ],
+    };
+  }
+
+  if (article.slug === "energie-en-motivatie-in-werk") {
+    const title =
+      "Energie en motivatie in je werk terugvinden | Vizier op Scherp";
+    const description =
+      "Geen energie of motivatie meer voor je werk? Ontdek het verschil tussen moe zijn en leeglopen, en wat je eraan kunt doen. Loopbaancoaching in Amsterdam en Haarlem.";
+    const ogTitle = "Energie en motivatie in je werk terugvinden";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching in Amsterdam, Haarlem en omgeving";
+
+    const ld = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline:
+        "Energie en motivatie in werk: het verschil tussen moe zijn en leeglopen",
       description,
       inLanguage: "nl-NL",
       mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
@@ -157,6 +226,9 @@ function ArticlePage() {
 
   if (article.slug === "richting-vinden-in-je-loopbaan") {
     return <RichtingVindenArticle article={article} />;
+  }
+  if (article.slug === "energie-en-motivatie-in-werk") {
+    return <EnergieMotivatieArticle article={article} />;
   }
   return <WervenNaarBehoudenArticle article={article} />;
 }
@@ -579,6 +651,274 @@ function RichtingVindenArticle({ article }: { article: Article }) {
             gecertificeerde coaches in Amsterdam, Haarlem en omgeving. Je leert
             je coach eerst kennen voordat je begint, zodat je weet dat het
             klikt.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link
+              to="/kennismaken"
+              className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
+            >
+              Maak vrijblijvend kennis
+            </Link>
+            <Link
+              to="/coaches"
+              className="inline-flex items-center rounded-full border-[1.5px] border-[color:var(--color-on-koraal-sub,#712B13)] px-6 py-3 font-medium text-[color:var(--color-on-koraal-title,#4A1B0C)] hover:border-[color:var(--color-on-koraal-title,#4A1B0C)] transition"
+            >
+              Bekijk onze coaches
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Medewerker-artikel — Energie en motivatie                          */
+/* ------------------------------------------------------------------ */
+
+function EnergieMotivatieArticle({ article }: { article: Article }) {
+  const para = "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
+  const h2 = "mt-12 font-display text-2xl md:text-[1.7rem] text-petrol";
+  const h3 = "mt-8 font-display text-xl text-petrol";
+
+  return (
+    <>
+      {/* Lichte hero */}
+      <section className="bg-linnen-licht">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-12 pb-14 md:pt-16 md:pb-20">
+          <Link
+            to="/inzichten"
+            className="inline-flex items-center text-sm text-petrol/70 hover:text-koraal transition"
+          >
+            ← Inzichten
+          </Link>
+          <div className="mt-6">
+            <span className="inline-flex items-center rounded-full bg-goud px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-[color:var(--color-on-goud-title)]">
+              Voor medewerkers
+            </span>
+          </div>
+          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-petrol leading-[1.2] max-w-[26ch]">
+            {article.title}
+          </h1>
+          <p className="mt-6 text-petrol/75 leading-relaxed text-[1.1rem] max-w-[58ch]">
+            Aan het eind van de werkdag ben je leeg, en in het weekend kom je
+            maar net bij. Je doet je werk nog wel, maar de fut is eruit. Veel
+            mensen denken dan dat ze gewoon moe zijn. Maar moe zijn en je
+            energie kwijt zijn, zijn twee verschillende dingen.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-petrol/65">
+            <span>Energie &amp; motivatie</span>
+            <span
+              aria-hidden="true"
+              className="inline-block h-1.5 w-1.5 rounded-full bg-koraal"
+            />
+            <span>{article.readMinutes} min leestijd</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Body */}
+      <article className="bg-linnen">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+          <p className="text-petrol/85 leading-relaxed text-[1.1rem]">
+            In dit artikel lees je hoe je het verschil herkent, hoe je ontdekt
+            waar je energie heen gaat, en wat je eraan kunt doen voordat het
+            groter wordt.
+          </p>
+
+          <h2 className={h2}>Moe zijn gaat over, energieverlies blijft</h2>
+          <p className={para}>
+            Moe zijn hoort erbij. Na een drukke week of een groot project ben
+            je op, en dat is normaal: na een weekend of een paar avonden rust
+            ben je weer de oude. Energie kwijt zijn voelt anders. Je rust uit,
+            maar je begint de week alweer met een lege tank. Het zit niet in
+            je uren, maar in je werk zelf.
+          </p>
+          <p className={para}>
+            Datzelfde geldt voor motivatie. Als je drive wegzakt, is dat
+            zelden luiheid. Het is vaker een signaal dat er iets niet meer
+            klopt tussen jou en je werk: je taken, je rol, of de manier waarop
+            je dag is ingericht. Dat serieus nemen helpt je meer dan jezelf
+            voorhouden dat je je er gewoon doorheen moet zetten.
+          </p>
+
+          {/* Goud kader */}
+          <section
+            aria-labelledby="signalen-kop"
+            className="mt-12 rounded-2xl border border-goud bg-goud/15 p-7 md:p-9"
+          >
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
+              Herken je dit?
+            </span>
+            <h2
+              id="signalen-kop"
+              className="mt-2 font-display text-2xl md:text-[1.6rem] text-petrol"
+            >
+              Signalen dat je energie structureel wegzakt
+            </h2>
+            <p className="mt-4 text-petrol/80 leading-relaxed">
+              Een drukke periode is iets anders dan een patroon dat weken
+              aanhoudt. Let op of je een paar van deze langere tijd herkent:
+            </p>
+            <ul className="mt-5 space-y-3">
+              {[
+                "Je begint de week al moe, ook na een vrij weekend.",
+                "Taken die je vroeger leuk vond, kosten je nu moeite.",
+                "Je doet het minimale en mist de drive om er meer van te maken.",
+                "Je stelt vaker dingen uit of bent sneller afgeleid dan voorheen.",
+                "Je werkt op de automatische piloot en voelt weinig voldoening.",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-petrol/80 leading-relaxed"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 inline-block h-2 w-2 shrink-0 rotate-45 bg-koraal"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-petrol/80 leading-relaxed">
+              Eén drukke maand is geen reden tot zorg. Een patroon dat blijft
+              hangen, is wel het moment om er bewust naar te kijken.
+            </p>
+          </section>
+
+          <h2 className={h2}>Ontdek waar je energie heen gaat</h2>
+          <p className={para}>
+            Niet alle vermoeidheid is hetzelfde. Sommige taken vullen je op,
+            ook al kosten ze inspanning. Andere trekken je leeg, hoe kort ze
+            ook duren. Als je dat onderscheid scherp krijgt, snap je vaak in
+            één keer waarom je dag zo voelt.
+          </p>
+
+          <h3 className={h3}>Je energiegevers</h3>
+          <p className={para}>
+            Dit zijn de taken waarbij je de tijd vergeet. Je krijgt er energie
+            van, ook al kosten ze moeite. Vaak sluiten ze aan bij waar je goed
+            in bent en wat je belangrijk vindt. Het zijn niet per se de
+            makkelijke taken, maar wel de taken waar je iets voor terugkrijgt.
+          </p>
+
+          <h3 className={h3}>Je energievreters</h3>
+          <p className={para}>
+            Dit zijn de taken die je uitputten, los van hoeveel tijd ze kosten.
+            Soms zijn het dingen die botsen met je natuurlijke manier van
+            werken: veel schakelen terwijl je juist diepgang zoekt, of lang
+            alleen werken terwijl je energie haalt uit contact. Een halfuur
+            van zo&apos;n taak kan zwaarder voelen dan een hele ochtend van iets
+            anders.
+          </p>
+
+          <h3 className={h3}>Het gaat om de balans</h3>
+          <p className={para}>
+            Het doel is niet om nul energievreters te hebben, want die horen
+            bij elk werk. Het gaat om de verhouding. Staan er genoeg gevers
+            tegenover de vreters, dan houd je het goed vol. Staat die balans
+            te lang te scheef, dan raakt je motivatie op, ook als je je werk
+            nog steeds goed kunt.
+          </p>
+          <p className={para}>
+            Een simpele manier om dit zichtbaar te maken: houd twee weken per
+            dagdeel bij of je energie omhoog of omlaag ging, en bij welke
+            taak. De patronen springen er meestal snel uit.
+          </p>
+
+          {/* Kernzin — petrol vlak */}
+          <aside className="mt-14 rounded-2xl bg-petrol px-7 py-9 md:px-10 md:py-11">
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud">
+              In het kort
+            </span>
+            <p className="mt-3 font-display text-xl md:text-2xl text-linnen-licht leading-snug">
+              Energieverlies in werk is zelden luiheid. Het is meestal een
+              signaal dat de balans tussen wat je werk je kost en wat het je
+              teruggeeft, te lang scheef staat.
+            </p>
+          </aside>
+
+          <h2 className={h2}>
+            Kleine bijsturingen die vaak al verschil maken
+          </h2>
+          <p className={para}>
+            Je hoeft je werk niet meteen om te gooien. Vaak helpt het al om
+            kleiner bij te sturen:
+          </p>
+          <ul className="mt-5 space-y-3">
+            {[
+              "Wissel energievreters af met gevers, in plaats van ze op te stapelen.",
+              "Bouw bewust korte herstelmomenten in op een werkdag, niet alleen in het weekend.",
+              "Bespreek met je leidinggevende of taken anders verdeeld kunnen worden. Er is vaak meer mogelijk dan je denkt.",
+              "Begin met één aanpassing die je deze week al kunt doen, en kijk wat het doet.",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 text-petrol/80 leading-relaxed"
+              >
+                <span
+                  aria-hidden="true"
+                  className="mt-2 inline-block h-2 w-2 shrink-0 rotate-45 bg-koraal"
+                />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className={para}>
+            Kleine veranderingen werken beter dan een grote die je toch niet
+            volhoudt. Het gaat erom dat de balans langzaam de goede kant op
+            beweegt.
+          </p>
+
+          <h2 className={h2}>Wanneer het meer is dan een dip</h2>
+          <p className={para}>
+            Soms is een dip tijdelijk en helpt bijsturen al. Maar houden de
+            klachten weken of maanden aan, en merk je dat het ook je slaap, je
+            stemming of je leven buiten werk raakt, neem dat dan serieus. Dat
+            is geen teken van zwakte, maar een goed moment om er met je
+            huisarts of een professional naar te kijken. Op tijd aan de bel
+            trekken voorkomt dat je verder leegloopt.
+          </p>
+
+          <h2 className={h2}>Je hoeft het niet alleen uit te zoeken</h2>
+          <p className={para}>
+            In je eentje blijf je vaak hangen in &quot;het hoort er nu eenmaal
+            bij&quot;. Een gesprek met iemand die de juiste vragen stelt,
+            helpt je scherp te krijgen waar je energie heen gaat en wat je
+            werk je weer kan geven. Een loopbaancoach kijkt daar samen met je
+            naar, in jouw tempo. Wat je bespreekt, blijft vertrouwelijk.
+          </p>
+        </div>
+      </article>
+
+      {/* CTA-strip koraal */}
+      <section aria-labelledby="cta-kop-em" className="bg-koraal">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+          <h2
+            id="cta-kop-em"
+            className="font-display text-2xl md:text-3xl text-[color:var(--color-on-koraal-title,#4A1B0C)]"
+          >
+            Samen je energie weer op peil krijgen
+          </h2>
+          <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
+            Steeds meer werkgevers bieden hun medewerkers proactieve
+            loopbaangesprekken of coaching aan, juist om op tijd bij te sturen
+            voordat iemand vastloopt. Werk je bij zo&apos;n organisatie? Vraag
+            bij je leidinggevende of HR naar de mogelijkheden. Ben je zelf HR
+            of leidinggevende en wil je dit voor je team aanbieden?{" "}
+            <Link
+              to="/voor-werkgevers"
+              className="font-medium underline text-[color:var(--color-on-koraal-title,#4A1B0C)]"
+            >
+              Lees meer over onze loopbaancoaching voor werkgevers
+            </Link>
+            .
+          </p>
+          <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
+            Bij Vizier op Scherp werk je met een klein team van ervaren,
+            gecertificeerde coaches in Amsterdam, Haarlem en omgeving. Je
+            leert je coach eerst kennen voordat je begint, zodat je weet dat
+            het klikt.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link

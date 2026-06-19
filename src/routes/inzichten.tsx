@@ -95,6 +95,15 @@ const ARTICLES: Article[] = [
     audience: "medewerker",
     readMinutes: 5,
   },
+  {
+    slug: "energie-en-motivatie-in-werk",
+    title:
+      "Energie en motivatie in werk: het verschil tussen moe zijn en leeglopen",
+    summary:
+      "Geen energie of motivatie meer voor je werk? Ontdek het verschil tussen moe zijn en leeglopen, en wat je eraan kunt doen voordat het groter wordt.",
+    audience: "medewerker",
+    readMinutes: 5,
+  },
 ];
 
 
