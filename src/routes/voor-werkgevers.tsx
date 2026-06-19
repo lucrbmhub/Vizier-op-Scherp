@@ -54,7 +54,7 @@ const faqItems = [
   },
   {
     q: "Waar vinden de gesprekken plaats?",
-    a: "Op onze locaties in Haarlem of Amsterdam-Zuid, op uw eigen kantoor, of online. Wat het beste past bij de medewerker en de situatie.",
+    a: "Op onze locaties in Haarlem, Amsterdam of online. Wat het beste past bij de medewerker en de situatie.",
   },
   {
     q: "Kunnen we klein beginnen voordat we een jaarafspraak maken?",
@@ -364,7 +364,7 @@ function Page() {
               {[
                 ["1 contact", "voor uw hele organisatie, het hele jaar door"],
                 ["0 offertes", "per geval. Alles valt binnen de jaarafspraak"],
-                ["±5", "trajecten per maand bij onze vaste opdrachtgever in het onderwijs"],
+                ["Vast coachteam", "die uw mensen en organisatie leren kennen en proactief meedenken"],
               ].map(([s, l]) => (
                 <div key={s}>
                   <strong className="block font-display text-2xl text-goud font-medium leading-tight">
