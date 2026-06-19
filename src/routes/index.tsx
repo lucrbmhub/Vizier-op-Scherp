@@ -1,582 +1,546 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "../assets/coaching-werkgever.jpg.asset.json";
-import { Section, Label, FAQ, CTAStrip } from "../components/ui-blocks";
+import heroImg from "../assets/coaching-gesprek.jpg.asset.json";
 
-const TITLE = "Loopbaancoaching voor uw medewerkers | Vizier op Scherp";
-const DESC =
-  "Loopbaancoaching voor werkgevers in Amsterdam, Haarlem en omgeving. Individuele trajecten, proactieve loopbaangesprekken of een coachingpool als jaarafspraak. Gecertificeerde coaches, één aanspreekpunt, heldere prijsafspraken.";
-const OG_TITLE = "Loopbaancoaching voor uw medewerkers, Vizier op Scherp";
-const OG_DESC =
-  "Van een eerste gespreksronde tot een coachingpool als jaarafspraak. Eén aanspreekpunt, gecertificeerde coaches, heldere afspraken over proces, prijs en privacy.";
-
-const serviceLd = {
+const jsonLdBusiness = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Loopbaancoaching voor werkgevers",
-  serviceType: "Loopbaancoaching",
-  provider: {
-    "@type": "ProfessionalService",
-    name: "Vizier op Scherp",
-    url: "https://vizieropscherp.nl/",
-  },
-  areaServed: [
-    "Amsterdam",
-    "Haarlem",
-    "Amstelveen",
-    "Hoofddorp",
-    "Zaanstad",
-    "Almere",
-    "Diemen",
-    "Hilversum",
+  "@type": "ProfessionalService",
+  name: "Vizier op Scherp",
+  description:
+    "Regionaal netwerk voor loopbaancoaching voor werkgevers en hun medewerkers in Amsterdam, Haarlem en omgeving. Individuele coachtrajecten, proactieve loopbaangesprekken en een coachingpool als jaarafspraak.",
+  url: "https://vizieropscherp.nl/",
+  email: "hallo@vizieropscherp.nl",
+  telephone: "+31611221424",
+  vatID: "NL003529887B45",
+  address: [
+    {
+      "@type": "PostalAddress",
+      streetAddress: "Klein Heiligland 84",
+      postalCode: "2011 EJ",
+      addressLocality: "Haarlem",
+      addressCountry: "NL",
+    },
+    {
+      "@type": "PostalAddress",
+      streetAddress: "IJsbaanpad 9",
+      postalCode: "1076 CV",
+      addressLocality: "Amsterdam",
+      addressCountry: "NL",
+    },
   ],
-  audience: {
-    "@type": "BusinessAudience",
-    name: "Werkgevers en HR-afdelingen",
-  },
-};
-
-const faqItems = [
-  {
-    q: "Wat kost loopbaancoaching voor onze organisatie?",
-    a: "Dat hangt af van de vorm: een gespreksronde, een individueel traject of een coachingpool als jaarafspraak. Na het kennismakingsgesprek ontvangt u een helder voorstel met vaste prijzen per vorm. Geen open einde, geen verrassingen achteraf.",
-  },
-  {
-    q: "Hoe snel kan een medewerker starten?",
-    a: "Na de intake stellen wij binnen vijf werkdagen een passende coach voor. De medewerker maakt eerst kennis; daarna kan het traject direct starten.",
-  },
-  {
-    q: "Wat krijgen wij teruggekoppeld over het traject?",
-    a: "Terugkoppeling gebeurt op procesniveau: aanwezigheid, voortgang in algemene zin en afronding. De inhoud van de gesprekken blijft vertrouwelijk tussen medewerker en coach. Die afspraak maken we vooraf expliciet met alle betrokkenen.",
-  },
-  {
-    q: "Wat als het niet klikt tussen medewerker en coach?",
-    a: "Dan stellen wij kosteloos een andere coach voor. De kennismaking vooraf is er juist om dit te ondervangen. Een goede klik is voorwaarde voor resultaat.",
-  },
-  {
-    q: "Waar vinden de gesprekken plaats?",
-    a: "Op onze locaties in Haarlem of Amsterdam-Zuid, op uw eigen kantoor, of online. Wat het beste past bij de medewerker en de situatie.",
-  },
-  {
-    q: "Kunnen we klein beginnen voordat we een jaarafspraak maken?",
-    a: "Ja, dat raden we zelfs aan. Veel opdrachtgevers starten met een ronde proactieve loopbaangesprekken of een enkel traject, en groeien daarna door naar een coachingpool als jaarafspraak, in hun eigen tempo.",
-  },
-];
-
-const faqLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqItems.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
+  areaServed: [
+    "Amsterdam","Haarlem","Amstelveen","Hoofddorp","Zaanstad","Almere",
+    "Diemen","Hilversum","Heemstede","Aalsmeer","Uithoorn","Purmerend",
+  ],
+  knowsAbout: [
+    "loopbaancoaching","loopbaanbegeleiding","coachingpool",
+    "duurzame inzetbaarheid","loopbaangesprekken",
+  ],
 };
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: TITLE },
-      { name: "description", content: DESC },
+      {
+        title:
+          "Loopbaancoaching voor werkgevers | Amsterdam & Haarlem | Vizier op Scherp",
+      },
+      {
+        name: "description",
+        content:
+          "Vizier op Scherp organiseert loopbaancoaching voor werkgevers in Amsterdam, Haarlem en omgeving. Van proactieve loopbaangesprekken tot een coachingpool als jaarafspraak. Gecertificeerde coaches, heldere afspraken.",
+      },
       { name: "robots", content: "index, follow" },
-      { property: "og:type", content: "website" },
       { property: "og:locale", content: "nl_NL" },
-      { property: "og:site_name", content: "Vizier op Scherp" },
-      { property: "og:url", content: "https://vizieropscherp.nl/" },
-      { property: "og:title", content: OG_TITLE },
-      { property: "og:description", content: OG_DESC },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      {
+        property: "og:title",
+        content: "Loopbaancoaching voor werkgevers, Vizier op Scherp",
+      },
+      {
+        property: "og:description",
+        content:
+          "Persoonlijk voor de medewerker, georganiseerd voor HR. Loopbaancoaching in Amsterdam, Haarlem en omgeving, van losse trajecten tot een coachingpool als jaarafspraak.",
+      },
+      {
+        name: "twitter:title",
+        content: "Loopbaancoaching voor werkgevers, Vizier op Scherp",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Persoonlijk voor de medewerker, georganiseerd voor HR. Loopbaancoaching in Amsterdam, Haarlem en omgeving.",
+      },
     ],
-    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/" }],
+    links: [{ rel: "canonical", href: "/" }],
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify(serviceLd) },
-      { type: "application/ld+json", children: JSON.stringify(faqLd) },
+      { type: "application/ld+json", children: JSON.stringify(jsonLdBusiness) },
     ],
   }),
-  component: Page,
+  component: Home,
 });
 
-const situaties = [
-  {
-    h: "Een loopbaanvraag die intern blijft liggen",
-    p: "Een medewerker wil doorgroeien, twijfelt over zijn richting of vraagt om begeleiding, en u heeft intern niet de tijd of de neutrale positie om dat goed op te pakken.",
-  },
-  {
-    h: "Motivatie die wegzakt bij een goede kracht",
-    p: "U ziet het gebeuren: minder energie, minder initiatief. Voordat het verzuim of vertrek wordt, kan een loopbaantraject helpen om weer grip en richting te vinden.",
-  },
-  {
-    h: "Een afdeling in verandering",
-    p: "Reorganisatie, nieuwe rollen, ander werk. Medewerkers die richting zoeken zijn gebaat bij een onafhankelijke gesprekspartner buiten de lijn.",
-  },
-  {
-    h: "Young professionals die u wilt behouden",
-    p: "Jong talent blijft waar het zich kan ontwikkelen. Loopbaancoaching laat zien dat u investeert, en voorkomt dat de volgende stap buiten de deur wordt gezocht.",
-  },
-  {
-    h: "Gesprekscyclus die vragen oplevert",
-    p: "Uit ontwikkel- of functioneringsgesprekken komen loopbaanvragen die om opvolging vragen. Wij pakken ze professioneel op, met terugkoppeling op procesniveau.",
-  },
-  {
-    h: "U wilt het vóór zijn",
-    p: "Niet wachten tot iemand vastloopt, maar medewerkers op tijd laten stilstaan bij energie, motivatie en ontwikkeling. Daarvoor is de proactieve gespreksronde.",
-  },
-];
+/* -------- atomic styles -------- */
 
-const stappen = [
-  "Kennismaking",
-  "Intake met de medewerker",
-  "Matching binnen vijf werkdagen",
-  "Begeleiding",
-  "Evaluatie",
-];
+const wrap = "mx-auto max-w-[1140px] px-6";
+const sectionCls = "py-20 md:py-[84px]";
+const labelCls =
+  "block text-[0.82rem] font-medium uppercase tracking-[0.1em] text-koraal mb-3";
+const h2Cls =
+  "font-display text-3xl md:text-[2rem] leading-[1.25] text-petrol max-w-[26ch]";
+const introCls = "mt-4 text-petrol/75 max-w-[64ch] text-base md:text-[1.05rem]";
+const btnPrimary =
+  "inline-flex items-center rounded-md bg-koraal px-7 py-3.5 text-base font-medium text-[color:var(--color-on-koraal-title)] hover:brightness-95 transition";
+const btnOutline =
+  "inline-flex items-center rounded-md border border-petrol px-6 py-3 text-[0.97rem] font-medium text-petrol hover:border-koraal hover:text-koraal transition";
+const btnSecondaryOnDark =
+  "inline-flex items-center rounded-md border border-mint-dof px-7 py-3.5 text-base font-medium text-linnen-licht hover:border-goud transition";
 
-function Page() {
+function Home() {
   return (
     <>
-      {/* HERO — petrol */}
+      {/* HERO */}
       <section aria-labelledby="hero-titel" className="bg-petrol text-linnen-licht">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-          <div className="grid gap-10 md:gap-14 md:grid-cols-[1.15fr_0.85fr] items-center">
-            <div>
-              <span className="inline-block text-xs font-medium border border-goud text-goud rounded-full px-4 py-1.5 tracking-wide mb-6">
-                Voor werkgevers &amp; HR · Amsterdam, Haarlem en omgeving
-              </span>
-              <h1
-                id="hero-titel"
-                className="font-display text-3xl md:text-5xl leading-tight text-linnen-licht max-w-[20ch]"
-              >
-                Loopbaancoaching die u ontzorgt, en uw mensen{" "}
-                <em className="not-italic text-goud">in beweging brengt.</em>
-              </h1>
-              <p className="mt-5 text-mint max-w-[52ch]">
-                U wilt medewerkers goed begeleiden bij loopbaanvragen, zonder er
-                zelf een dagtaak aan te hebben. Vizier op Scherp regelt het:
-                intake, matching met een gecertificeerde coach, begeleiding
-                gericht op concrete stappen, en terugkoppeling op procesniveau.
-                Eén aanspreekpunt, heldere prijsafspraken.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3.5">
-                <Link
-                  to="/kennismaken"
-                  className="inline-block bg-koraal text-white font-medium rounded-md px-7 py-3.5 hover:bg-[#D4623B] transition-colors"
-                >
-                  Plan een kennismakingsgesprek
-                </Link>
-                <a
-                  href="#coachingpool"
-                  className="inline-block border border-mint-dof text-linnen-licht font-medium rounded-md px-7 py-3.5 hover:border-goud transition-colors"
-                >
-                  Bekijk de coachingpool
-                </a>
-              </div>
-              <dl className="mt-10 flex flex-wrap gap-x-10 gap-y-5">
-                {[
-                  { s: "5 werkdagen", l: "van intake tot voorstel coach" },
-                  { s: "1.000+", l: "trajecten begeleid door ons netwerk" },
-                  { s: "Noloc & NOBCO", l: "gecertificeerde coaches" },
-                ].map((m) => (
-                  <div key={m.s}>
-                    <dt className="font-display text-xl text-linnen-licht leading-tight">
-                      {m.s}
-                    </dt>
-                    <dd className="text-sm text-mint-dof">{m.l}</dd>
-                  </div>
-                ))}
-              </dl>
+        <div className={`${wrap} py-16 md:py-20 grid gap-10 lg:gap-14 lg:grid-cols-[1.15fr_0.85fr] items-center`}>
+          <div>
+            <span className="inline-block text-[0.82rem] font-medium tracking-[0.03em] text-goud border border-goud rounded-full px-4 py-1.5 mb-6">
+              Loopbaancoaching · Amsterdam, Haarlem en omgeving
+            </span>
+            <h1
+              id="hero-titel"
+              className="font-display text-[2.05rem] md:text-[2.7rem] leading-[1.18] text-linnen-licht max-w-[18ch]"
+            >
+              Persoonlijk voor de medewerker.{" "}
+              <em className="not-italic text-goud">Georganiseerd voor HR.</em>
+            </h1>
+            <p className="mt-6 text-mint text-[1.08rem] max-w-[50ch] leading-relaxed">
+              Vizier op Scherp helpt organisaties om medewerkers op belangrijke momenten in
+              hun werk goed te begeleiden. Met een klein, vast netwerk van gecertificeerde
+              loopbaancoaches, één aanspreekpunt en heldere afspraken over proces, prijs en
+              privacy, van een eerste gespreksronde tot een coachingpool als jaarafspraak.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3.5">
+              <Link to="/voor-werkgevers" className={btnPrimary}>
+                Bekijk het aanbod voor werkgevers
+              </Link>
+              <Link to="/coaching-voor-mij" className={btnSecondaryOnDark}>
+                Ik ben doorverwezen of zoek zelf coaching
+              </Link>
             </div>
-            <div className="bg-linnen rounded-2xl overflow-hidden border border-mint/25">
-              <img
-                src={heroImg.url}
-                alt="Loopbaancoach in gesprek met een medewerker"
-                width={560}
-                height={300}
-                loading="eager"
-                className="w-full h-56 md:h-72 object-cover"
-              />
-              <div className="p-6 md:p-7">
-                <span className="inline-block bg-goud text-[color:var(--color-on-goud-title)] text-xs font-medium rounded-full px-3 py-1 mb-3 tracking-wide">
-                  Meest gekozen door HR
-                </span>
-                <h2 className="font-display text-lg text-petrol mb-2">
-                  De coachingpool als jaarafspraak
-                </h2>
-                <p className="text-sm text-petrol/75">
-                  Eén overeenkomst voor het hele jaar. Medewerkers stromen in
-                  wanneer dat nodig is. U hoeft nooit meer per geval een coach
-                  te zoeken of offertes te vergelijken.
-                </p>
-              </div>
-            </div>
+            <ul role="list" className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-x-9 gap-y-6">
+              {[
+                ["1.000+", "trajecten begeleid door ons netwerk"],
+                ["Gecertificeerde coaches", "met een brede opleidingsachtergrond"],
+                ["5 werkdagen", "van intake tot match"],
+              ].map(([k, v]) => (
+                <li key={k}>
+                  <strong className="block font-display font-medium text-[1.45rem] text-linnen-licht leading-tight">
+                    {k}
+                  </strong>
+                  <span className="text-[0.86rem] text-mint-dof">{v}</span>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          <aside className="rounded-2xl overflow-hidden bg-linnen border border-mint/25">
+            <img
+              src={heroImg.url}
+              alt="Loopbaancoach in gesprek met een medewerker in een rustige werkomgeving"
+              width={1280}
+              height={832}
+              className="w-full h-[230px] md:h-[320px] object-cover"
+            />
+            <div className="p-6 md:p-7">
+              <span className="inline-block bg-goud text-[color:var(--color-on-goud-title)] text-xs font-medium tracking-[0.02em] px-3 py-1 rounded-full mb-3">
+                Ons leadproduct
+              </span>
+              <h2 className="font-display text-[1.15rem] text-petrol mb-2">
+                De coachingpool als jaarafspraak
+              </h2>
+              <p className="text-[0.94rem] text-petrol/70 leading-relaxed">
+                Eén geformaliseerde jaarlijkse overeenkomst waarmee uw medewerkers het hele
+                jaar door kunnen instromen. Intake, matching, begeleiding en evaluatie:
+                georganiseerd, voorspelbaar en zonder losse offertes per geval.
+              </p>
+            </div>
+          </aside>
         </div>
       </section>
 
-      {/* SITUATIES */}
-      <Section>
-        <Label>Wanneer schakelt u ons in?</Label>
-        <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[28ch]">
-          Zes situaties waarin een loopbaancoach het verschil maakt
-        </h2>
-        <ul className="mt-10 border-t border-mint-dof">
-          {situaties.map((s) => (
-            <li
-              key={s.h}
-              className="grid gap-2 md:grid-cols-[220px_1fr] md:gap-8 py-6 border-b border-mint-dof"
-            >
-              <h3 className="font-display text-base text-petrol">{s.h}</h3>
-              <p className="text-petrol/75 text-[0.97rem] max-w-[62ch]">{s.p}</p>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-9 font-display text-xl md:text-2xl text-petrol max-w-[54ch] leading-snug">
-          In al deze situaties geldt:{" "}
-          <span className="text-koraal">
-            één goed gesprek op het juiste moment
-          </span>{" "}
-          is goedkoper dan verzuim, verloop of een vacature.
-        </p>
-      </Section>
-
-      {/* AANBOD */}
-      <section className="bg-linnen-licht">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Het aanbod</Label>
-          <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
-            Drie vormen: u stapt in waar het past, en groeit in uw eigen tempo
+      {/* HERKENBAAR */}
+      <section aria-labelledby="herkenbaar-titel" className={`${sectionCls} bg-linnen`}>
+        <div className={wrap}>
+          <span className={labelCls}>Herkenbaar?</span>
+          <h2 id="herkenbaar-titel" className={h2Cls}>
+            Loopbaanvragen blijven vaak liggen. Tot het te laat is
           </h2>
-          <p className="mt-4 text-petrol/75 max-w-[64ch]">
-            De werkwijze is altijd dezelfde: zorgvuldige intake, matching met
-            een passende coach, begeleiding gericht op concrete stappen, en
-            evaluatie op procesniveau. Het verschil zit in de vorm en de schaal.
+
+          <div className="mt-11 border-t border-mint-dof">
+            {[
+              ["De stille twijfelaar", "Een goede medewerker functioneert prima, maar twijfelt al maanden over de volgende stap. Niemand weet het. Tot de ontslagbrief op tafel ligt. Een loopbaangesprek op tijd had het verschil gemaakt."],
+              ["De vastgelopen professional", "Iemand zit niet meer op de juiste plek, maar weet zelf ook niet waar dan wél. De motivatie zakt, het team merkt het, en HR heeft de capaciteit niet om dit zelf op te pakken."],
+              ["De HR-afdeling zonder vaste partner", "U wilt medewerkers loopbaanbegeleiding kunnen aanbieden, maar elke keer opnieuw een coach zoeken, offertes vergelijken en kwaliteit beoordelen kost te veel tijd. En de kwaliteit wisselt."],
+            ].map(([t, p]) => (
+              <div
+                key={t}
+                className="grid gap-2 md:gap-8 md:grid-cols-[200px_1fr] py-7 border-b border-mint-dof"
+              >
+                <h3 className="font-display text-[1.05rem] text-petrol">{t}</h3>
+                <p className="text-petrol/70 max-w-[62ch] text-[0.98rem]">{p}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-10 font-display text-[1.25rem] md:text-[1.4rem] leading-[1.45] text-petrol max-w-[52ch]">
+            Eén goed gesprek op het juiste moment maakt het verschil. Vizier op Scherp
+            organiseert dat moment,{" "}
+            <span className="text-koraal">vóórdat iemand uitvalt of vertrekt.</span>
+          </p>
+        </div>
+      </section>
+
+      {/* AANBOD — trapleuning */}
+      <section aria-labelledby="aanbod-titel" className={`${sectionCls} bg-linnen-licht`}>
+        <div className={wrap}>
+          <span className={labelCls}>Ons aanbod voor werkgevers</span>
+          <h2 id="aanbod-titel" className={h2Cls}>
+            Drie vormen van loopbaancoaching, één werkwijze
+          </h2>
+          <p className={introCls}>
+            Waar u ook instapt, een gespreksronde, een los traject of een vaste jaarafspraak:
+            de werkwijze is altijd dezelfde. Intake, matching met een passende coach,
+            begeleiding en evaluatie op procesniveau, met vooraf heldere privacyafspraken.
           </p>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3 md:items-end">
-            <article className="rounded-2xl p-7 bg-goud flex flex-col gap-3.5 text-[color:var(--color-on-goud-sub)]">
-              <span className="text-xs font-medium uppercase tracking-wider text-[color:var(--color-on-goud-title)]">
-                Vorm 1 · De laagdrempelige start
+          <div className="mt-13 grid gap-6 md:grid-cols-3 md:items-end mt-12">
+            {/* Trede 1 */}
+            <article className="rounded-2xl p-7 md:p-8 bg-goud flex flex-col gap-3.5">
+              <span className="text-[0.76rem] font-medium uppercase tracking-[0.08em] text-[color:var(--color-on-goud-title)]">
+                Stap 1 · Laagdrempelig kennismaken
               </span>
-              <h3 className="font-display text-xl text-[color:var(--color-on-goud-title)] leading-snug">
+              <h3 className="font-display text-[1.3rem] leading-snug text-[color:var(--color-on-goud-title)]">
                 Proactieve loopbaangesprekken
               </h3>
-              <p className="text-[0.95rem]">
-                Een ronde gesprekken met een groep medewerkers, bijvoorbeeld
-                tien, over energie, motivatie en ontwikkelbehoefte. Vaste prijs
-                per ronde. U ontvangt een korte rapportage op procesniveau: wat
-                speelt er, welke thema's komen terug, waar is opvolging gewenst.
+              <p className="text-[0.95rem] text-[color:var(--color-on-goud-sub)]">
+                Een ronde gesprekken met een groep medewerkers over energie, motivatie en
+                ontwikkelbehoefte. U ziet wat er speelt vóór iemand vastloopt.
               </p>
-              <p className="text-[0.95rem]">
-                Medewerkers ervaren dat ontwikkeling bespreekbaar is. U ziet wat
-                er leeft, vóórdat iemand vastloopt.
-              </p>
-              <span className="text-sm font-medium mt-auto pt-2 text-[color:var(--color-on-goud-title)]">
-                Ideaal als eerste kennismaking met onze werkwijze
+              <span className="text-[0.86rem] font-medium mt-auto pt-2.5 text-[color:var(--color-on-goud-title)]">
+                Voor organisaties die willen beginnen
               </span>
             </article>
 
-            <article className="rounded-2xl p-7 md:pb-14 bg-petrol flex flex-col gap-3.5 text-mint">
-              <span className="text-xs font-medium uppercase tracking-wider text-goud">
-                Vorm 2 · Per medewerker
+            {/* Trede 2 */}
+            <article className="rounded-2xl p-7 md:p-8 pb-10 md:pb-14 bg-petrol flex flex-col gap-3.5">
+              <span className="text-[0.76rem] font-medium uppercase tracking-[0.08em] text-goud">
+                Stap 2 · Per medewerker
               </span>
-              <h3 className="font-display text-xl text-linnen-licht leading-snug">
+              <h3 className="font-display text-[1.3rem] leading-snug text-linnen-licht">
                 Individuele coachtrajecten
               </h3>
-              <p className="text-[0.95rem]">
-                Loopbaancoaching voor een medewerker die u doorverwijst, bij
-                twijfel over de volgende stap, motivatievragen of de wens om
-                duurzaam inzetbaar te blijven. Eén traject, één heldere
-                prijsafspraak vooraf.
+              <p className="text-[0.95rem] text-mint">
+                Loopbaancoaching voor een medewerker die u doorverwijst. Eén traject, één
+                heldere prijsafspraak, één vast aanspreekpunt.
               </p>
-              <p className="text-[0.95rem]">
-                De medewerker maakt eerst kennis met de coach en kiest mee. Dat
-                vergroot het draagvlak en daarmee het resultaat.
-              </p>
-              <span className="text-sm font-medium mt-auto pt-2 text-goud">
+              <span className="text-[0.86rem] font-medium mt-auto pt-2.5 text-goud">
                 Voor concrete, actuele loopbaanvragen
               </span>
             </article>
 
-            <article className="rounded-2xl p-7 md:pb-20 bg-koraal flex flex-col gap-3.5 text-[color:var(--color-on-koraal-sub)]">
-              <span className="self-start bg-white/40 text-[color:var(--color-on-koraal-title)] text-xs font-medium rounded-full px-3 py-1">
+            {/* Trede 3 */}
+            <article className="rounded-2xl p-7 md:p-8 pb-12 md:pb-[78px] bg-koraal flex flex-col gap-3.5">
+              <span className="self-start text-[0.78rem] font-medium px-3 py-1 rounded-full bg-linnen-licht/45 text-[color:var(--color-on-koraal-title)]">
                 Leadproduct
               </span>
-              <span className="text-xs font-medium uppercase tracking-wider text-[color:var(--color-on-koraal-title)]">
-                Vorm 3 · Structureel geregeld
+              <span className="text-[0.76rem] font-medium uppercase tracking-[0.08em] text-[color:var(--color-on-koraal-title)]">
+                Stap 3 · Structureel geregeld
               </span>
-              <h3 className="font-display text-xl text-[color:var(--color-on-koraal-title)] leading-snug">
+              <h3 className="font-display text-[1.3rem] leading-snug text-[color:var(--color-on-koraal-title)]">
                 Coachingpool als jaarafspraak
               </h3>
-              <p className="text-[0.95rem]">
-                Eén geformaliseerde jaarlijkse overeenkomst. Medewerkers stromen
-                het hele jaar door in; wij verzorgen intake, matching,
-                begeleiding en evaluatie. Voorspelbaar in kosten, georganiseerd
-                in proces.
+              <p className="text-[0.95rem] text-[color:var(--color-on-koraal-sub)]">
+                Eén jaarlijkse overeenkomst, medewerkers stromen het hele jaar door in.
+                Voorspelbaar in kosten, georganiseerd in proces.
               </p>
-              <p className="text-[0.95rem]">
-                U hoeft nooit meer per geval een coach te zoeken, offertes te
-                vergelijken of kwaliteit te beoordelen.
-              </p>
-              <span className="text-sm font-medium mt-auto pt-2 text-[color:var(--color-on-koraal-title)]">
+              <span className="text-[0.86rem] font-medium mt-auto pt-2.5 text-[color:var(--color-on-koraal-title)]">
                 Voor organisaties die het goed willen regelen
               </span>
             </article>
           </div>
 
-          {/* Coachingpool uitgelicht */}
-          <div
-            id="coachingpool"
-            className="mt-14 bg-petrol text-linnen-licht rounded-2xl p-8 md:p-12 grid gap-10 md:grid-cols-[1.25fr_0.75fr]"
-          >
+          <p className="mt-7 flex items-center gap-3 text-[0.92rem] text-petrol/70 max-w-[64ch]">
+            <span aria-hidden="true" className="inline-block w-12 h-0.5 bg-goud shrink-0" />
+            Veel van onze opdrachtgevers beginnen met een gespreksronde en groeien door naar
+            een jaarafspraak, in hun eigen tempo.
+          </p>
+
+          <div className="mt-9 text-center">
+            <p className={`${introCls} mx-auto mb-5`}>
+              De coachingpool is onze meest gekozen vorm voor organisaties die
+              loopbaanbegeleiding structureel willen organiseren.
+            </p>
+            <Link to="/voor-werkgevers" className={btnPrimary}>
+              Meer over de coachingpool
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* MEDEWERKERS */}
+      <section aria-labelledby="medewerkers-titel" className={`${sectionCls} bg-linnen`}>
+        <div className={wrap}>
+          <div className="rounded-2xl border border-goud bg-linnen-licht p-8 md:p-[52px] grid gap-10 lg:gap-12 lg:grid-cols-[1.2fr_0.8fr] items-center">
             <div>
-              <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud mb-3">
-                De coachingpool uitgelicht
-              </span>
-              <h3 className="font-display text-2xl md:text-3xl text-linnen-licht max-w-[26ch] mb-4">
-                Hoe een jaar met Vizier op Scherp eruitziet
-              </h3>
-              <p className="text-mint max-w-[54ch]">
-                De coachingpool vormt nu al de basis van onze samenwerking met
-                een vaste opdrachtgever in het onderwijs, met circa vijf
-                trajecten per maand. Zo werkt het:
+              <span className={labelCls}>Voor medewerkers</span>
+              <h2
+                id="medewerkers-titel"
+                className="font-display text-[1.6rem] md:text-[1.8rem] text-petrol max-w-[26ch]"
+              >
+                Doorverwezen door je werkgever? Dan kies jij alsnog zelf.
+              </h2>
+              <p className="mt-4 text-petrol/75 max-w-[54ch]">
+                Misschien heeft je werkgever je een lijstje met coachbureaus gegeven. Of
+                misschien oriënteer je je zelf en kwam je hier terecht. In beide gevallen
+                geldt: jij bepaalt met wie je in zee gaat, en dat hoort ook zo.
               </p>
-              <ul className="my-6 space-y-0">
+              <ul className="mt-5 mb-7">
                 {[
-                  ["Jaarafspraak", "we leggen samen het kader vast: verwachte omvang, prijsafspraken, privacykaders en wie bij u het aanspreekpunt is."],
-                  ["Instroom", "een medewerker aanmelden kost u één bericht. Wij plannen de intake en stellen binnen vijf werkdagen een passende coach voor."],
-                  ["Begeleiding", "de coach voert het traject uit; u ontvangt terugkoppeling op procesniveau. Bijzonderheden signaleren we tijdig."],
-                  ["Jaarevaluatie", "we kijken samen terug: aantallen, tevredenheid, thema's die terugkomen, en wat dit betekent voor het komende jaar."],
-                ].map(([k, v]) => (
+                  "Je maakt eerst kennis met je coach, voordat er iets vastligt",
+                  "Klikt het niet? Dan stellen we iemand anders voor",
+                  "Geen anonieme database. Echte mensen, met een eigen verhaal",
+                  "Begeleiding in jouw tempo, gericht op concrete stappen",
+                ].map((li) => (
                   <li
-                    key={k}
-                    className="py-2.5 border-b border-mint/20 text-mint text-[0.96rem] flex gap-3"
+                    key={li}
+                    className="py-2 text-[0.96rem] text-petrol flex gap-3 items-baseline"
                   >
-                    <span className="text-goud shrink-0">—</span>
-                    <span>
-                      <strong className="font-medium text-linnen-licht">{k}</strong>: {v}
-                    </span>
+                    <span aria-hidden="true" className="text-koraal font-medium">✓</span>
+                    <span>{li}</span>
                   </li>
                 ))}
               </ul>
-              <Link
-                to="/kennismaken"
-                className="inline-block bg-koraal text-white font-medium rounded-md px-7 py-3.5 hover:bg-[#D4623B] transition-colors"
-              >
-                Vraag een voorstel aan
+              <Link to="/coaching-voor-mij" className={btnOutline}>
+                Lees hoe coaching bij ons werkt
               </Link>
             </div>
-            <div className="md:border-l md:border-mint/25 md:pl-10 flex flex-col gap-6 md:justify-center border-t md:border-t-0 border-mint/25 pt-7 md:pt-0">
-              {[
-                ["1 contact", "voor uw hele organisatie, het hele jaar door"],
-                ["0 offertes", "per geval. Alles valt binnen de jaarafspraak"],
-                ["±5", "trajecten per maand bij onze vaste opdrachtgever in het onderwijs"],
-              ].map(([s, l]) => (
-                <div key={s}>
-                  <strong className="block font-display text-2xl text-goud font-medium leading-tight">
-                    {s}
-                  </strong>
-                  <span className="text-sm text-mint-dof">{l}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WERKWIJZE */}
-      <Section>
-        <Label>Werkwijze per traject</Label>
-        <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
-          Vijf stappen, van kennismaking tot evaluatie
-        </h2>
-        <p className="mt-4 text-petrol/75 max-w-[64ch]">
-          Of het nu om één medewerker gaat of om een coachingpool: elk traject
-          doorloopt dezelfde zorgvuldige stappen. Zo weet u wat u kunt
-          verwachten, en weet de medewerker dat ook.
-        </p>
-        <ol className="mt-8 flex flex-wrap gap-3.5">
-          {stappen.map((s, i) => (
-            <li
-              key={s}
-              className="flex-1 min-w-[160px] flex items-center gap-2.5 bg-linnen-licht border border-mint-dof rounded-xl px-4 py-3.5 font-display font-medium text-petrol"
-            >
-              <span className="text-sm text-koraal font-medium border-b-2 border-goud pb-0.5 shrink-0">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              {s}
-            </li>
-          ))}
-        </ol>
-      </Section>
-
-      {/* VERTROUWEN */}
-      <section className="bg-linnen-licht">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Heldere afspraken</Label>
-          <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
-            Duidelijk over privacy, en over wat we níet doen
-          </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <div className="bg-linnen border border-mint-dof rounded-2xl p-8">
-              <h3 className="font-display text-lg text-petrol mb-3.5">
-                Privacy: inhoud is vertrouwelijk, proces is deelbaar
+            <div className="rounded-xl bg-goud p-7">
+              <h3 className="font-display text-[1.1rem] text-[color:var(--color-on-goud-title)] mb-2.5">
+                Wat je bespreekt, blijft vertrouwelijk
               </h3>
-              <p className="text-petrol/75 mb-3">
-                Wat een medewerker met de coach bespreekt, blijft tussen hen.
-                Richting u koppelen wij terug op procesniveau: aanwezigheid,
-                voortgang in algemene zin en afronding. Die afspraak maken we
-                bij de start expliciet, met u én met de medewerker.
-              </p>
-              <p className="text-petrol/75">
-                Het resultaat: de medewerker spreekt vrijuit, en u weet toch
-                waar het traject staat. Precies die combinatie maakt coaching
-                effectief.
-              </p>
-            </div>
-            <div className="bg-linnen border border-mint-dof rounded-2xl p-8">
-              <h3 className="font-display text-lg text-petrol mb-3.5">
-                Wat wij bewust niet doen
-              </h3>
-              <p className="text-petrol/75 mb-3">
-                Vizier op Scherp is een bureau voor loopbaancoaching, geen
-                verzuim- of re-integratiepartij. Wij doen daarom geen:
-              </p>
-              <ul className="space-y-0">
-                {[
-                  "verzuimbegeleiding of casemanagement",
-                  "2e spoor re-integratie of Poortwachtertrajecten",
-                  "klassiek outplacement of arbodienstverlening",
-                ].map((l) => (
-                  <li
-                    key={l}
-                    className="py-1.5 text-petrol/75 text-[0.95rem] flex gap-2.5"
-                  >
-                    <span className="text-koraal shrink-0">—</span>
-                    {l}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-petrol/75 mt-3">
-                Komt uw vraag daar wél op neer? Dan verwijzen we u zorgvuldig
-                door. Een bureau dat zijn grenzen kent, kunt u vertrouwen binnen
-                die grenzen.
+              <p className="text-[0.94rem] text-[color:var(--color-on-goud-sub)]">
+                Ook als je werkgever het traject betaalt: de inhoud van jullie gesprekken
+                blijft tussen jou en je coach. Je werkgever hoort alleen óf het traject
+                loopt, nooit waarover het gaat. Die afspraak leggen we bij de start vast,
+                zodat jij vrijuit kunt spreken.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* KWALITEIT — donker */}
-      <section className="bg-petrol text-linnen-licht">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud mb-3">
-            Kwaliteit, georganiseerd
+      {/* BEWIJS — stats + testimonials */}
+      <section aria-labelledby="bewijs-titel" className={`${sectionCls} bg-petrol text-linnen-licht`}>
+        <div className={wrap}>
+          <span className="block text-[0.82rem] font-medium uppercase tracking-[0.1em] text-goud mb-3">
+            Waarom Vizier op Scherp
           </span>
-          <h2 className="font-display text-2xl md:text-3xl text-linnen-licht max-w-[32ch]">
-            Een klein netwerk waar u op kunt bouwen
+          <h2 id="bewijs-titel" className="font-display text-3xl md:text-[2rem] leading-[1.25] text-linnen-licht max-w-[26ch]">
+            Een klein netwerk met bewezen ervaring
           </h2>
-          <p className="mt-4 text-mint max-w-[64ch]">
-            Geen landelijke pool met wisselende gezichten, maar een bewust klein
-            gehouden netwerk van acht tot twaalf coaches. Wij kennen elke coach
-            persoonlijk, en u weet precies wie er bij uw medewerkers aan tafel
-            zit.
+          <p className="mt-4 text-mint max-w-[64ch] text-base md:text-[1.05rem]">
+            Geen grote organisatie met wisselende gezichten, maar een bewust klein gehouden
+            netwerk. Daardoor kennen wij elke coach persoonlijk, en weet u precies wie er bij
+            uw medewerkers aan tafel zit.
           </p>
-          <div className="mt-12 grid gap-8 grid-cols-2 md:grid-cols-4">
+
+          <div className="my-12 grid gap-8 grid-cols-2 lg:grid-cols-4">
             {[
-              ["Noloc & NOBCO", "elke coach is gecertificeerd en geregistreerd"],
-              ["Intervisie", "structurele kwaliteitsbewaking binnen het netwerk"],
-              ["Evaluatie", "na elk traject meten we tevredenheid en resultaat"],
-              ["8–12", "coaches, bewust klein, zorgvuldig geselecteerd"],
-            ].map(([s, l]) => (
-              <div key={s}>
-                <strong className="block font-display text-2xl text-goud font-medium leading-tight mb-1.5">
-                  {s}
+              ["1.000+", "trajecten begeleid door ons coachnetwerk, in onder meer onderwijs, zorg, overheid en zakelijke dienstverlening"],
+              ["8–12", "coaches. Bewust klein gehouden, zorgvuldig geselecteerd"],
+              ["100%", "gecertificeerde coaches, met achtergronden in coaching, psychologie, HR en recruitment"],
+              ["2 locaties", "Haarlem en Amsterdam, en coaching op uw eigen locatie of online"],
+            ].map(([k, v]) => (
+              <div key={v as string}>
+                <strong className="block font-display font-medium text-[2.1rem] text-goud leading-[1.15] mb-1.5">
+                  {k}
                 </strong>
-                <span className="text-sm text-mint">{l}</span>
+                <span className="text-[0.9rem] text-mint">{v}</span>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 grid gap-7 md:grid-cols-2">
-            <figure className="border border-mint/20 rounded-2xl p-8">
-              <blockquote className="font-display text-[1.06rem] text-linnen-licht leading-relaxed mb-4">
-                "Wij zetten Vizier op Scherp structureel in voor medewerkers met
-                loopbaanvragen. Korte lijnen, professionele coaches en altijd
-                een zorgvuldige match. Dat scheelt ons als HR enorm."
-              </blockquote>
-              <figcaption className="text-sm text-mint-dof not-italic">
-                <cite className="not-italic">
-                  Marleen B., HR-manager, zorginstelling
-                </cite>
-              </figcaption>
-            </figure>
-            <figure className="border border-mint/20 rounded-2xl p-8">
-              <blockquote className="font-display text-[1.06rem] text-linnen-licht leading-relaxed mb-4">
-                "Het traject heeft me geholpen om rustig te kijken naar wat ik
-                echt wilde. Geen druk, wel concrete stappen. Ik heb nu een rol
-                die beter past bij wat ik kan en wil."
-              </blockquote>
-              <figcaption className="text-sm text-mint-dof not-italic">
-                <cite className="not-italic">
-                  Anouk V., Beleidsadviseur, publieke sector (deelnemer)
-                </cite>
-              </figcaption>
-            </figure>
+          <div className="grid gap-7 md:grid-cols-2">
+            {[
+              [
+                "Wij zetten Vizier op Scherp structureel in voor medewerkers met loopbaanvragen. Korte lijnen, professionele coaches en altijd een zorgvuldige match. Dat scheelt ons als HR enorm.",
+                "Marleen B., HR-manager, zorginstelling",
+              ],
+              [
+                "Het traject heeft me geholpen om rustig te kijken naar wat ik echt wilde. Geen druk, wel concrete stappen. Ik heb nu een rol die beter past bij wat ik kan en wil.",
+                "Anouk V., Beleidsadviseur, publieke sector",
+              ],
+            ].map(([q, c]) => (
+              <figure key={c} className="rounded-2xl border border-mint/20 p-8">
+                <blockquote className="font-display text-[1.05rem] md:text-[1.08rem] text-linnen-licht leading-relaxed mb-4">
+                  “{q}”
+                </blockquote>
+                <figcaption>
+                  <cite className="not-italic text-[0.9rem] text-mint-dof">{c}</cite>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ROUTEWIJZER MEDEWERKER */}
-      <Section>
-        <div className="bg-linnen-licht border border-mint-dof rounded-2xl p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div>
-            <h2 className="font-display text-xl md:text-2xl text-petrol">
-              Ook uw medewerker moet overtuigd zijn
-            </h2>
-            <p className="mt-2 text-petrol/75 max-w-[60ch]">
-              Medewerkers kiezen vaak zelf uit meerdere bureaus. Daarom hebben
-              wij een eigen pagina voor hen: warm, persoonlijk en met een
-              duidelijke privacybelofte. Stuur die gerust door bij een
-              doorverwijzing.
+      {/* TEAM */}
+      <section aria-labelledby="team-titel" className={`${sectionCls} bg-linnen`}>
+        <div className={wrap}>
+          <span className={labelCls}>Het team</span>
+          <h2 id="team-titel" className={h2Cls}>
+            Ons coachnetwerk
+          </h2>
+          <p className={introCls}>
+            Vizier op Scherp werkt met een klein, vast netwerk van zelfstandige coaches.
+            Elke coach is gecertificeerd en heeft meerdere coachingopleidingen en
+            nascholing gedaan, met achtergronden in coaching, psychologie, maatschappelijk
+            werk en therapeutisch werk. De ingang is vaak de werkcontext. De begeleiding
+            is persoonlijk en gaat de diepte in.
+          </p>
+
+          <ul className="mt-12 grid gap-5 grid-cols-2 sm:grid-cols-4">
+            {[
+              ["M", "Maaike", "Coaching · onderwijs, zorg, leidinggevenden"],
+              ["L", "Lianne", "Coaching · persoonlijk leiderschap, loopbaan"],
+              ["F", "Floor", "Loopbaancoaching · Positieve Gezondheid"],
+              ["L", "Luc", "Loopbaancoaching · richting, young professionals"],
+            ].map(([initial, name, role]) => (
+              <li
+                key={name}
+                className="bg-linnen-licht border border-mint-dof rounded-2xl p-6 text-center"
+              >
+                <div
+                  aria-hidden="true"
+                  className="mx-auto mb-3.5 w-[62px] h-[62px] rounded-full bg-petrol text-goud flex items-center justify-center font-display text-[1.15rem]"
+                >
+                  {initial}
+                </div>
+                <h3 className="font-display text-[1rem] text-petrol mb-1">{name}</h3>
+                <span className="text-[0.84rem] text-petrol/70">{role}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-9 flex flex-wrap gap-6 items-center">
+            <Link to="/coaches" className={btnOutline}>
+              Bekijk alle coachprofielen
+            </Link>
+            <p className="text-[0.94rem] text-petrol/70 max-w-[52ch]">
+              Elke coach heeft een eigen profiel met verhaal, aanpak en achtergrond.
+              Zodat medewerkers weten met wie ze kennismaken.
             </p>
           </div>
-          <Link
-            to="/coaching-voor-mij"
-            className="inline-block border border-petrol text-petrol rounded-md px-6 py-3 font-medium hover:border-koraal hover:text-koraal transition-colors shrink-0"
-          >
-            Bekijk de pagina voor medewerkers
-          </Link>
         </div>
-      </Section>
+      </section>
 
-      {/* FAQ */}
-      <section className="bg-linnen-licht">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Veelgestelde vragen</Label>
-          <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch] mb-8">
-            Wat HR ons het vaakst vraagt
+      {/* REGIO */}
+      <section aria-labelledby="regio-titel" className={`${sectionCls} bg-linnen-licht`}>
+        <div className={wrap}>
+          <span className={labelCls}>Werkgebied</span>
+          <h2 id="regio-titel" className={h2Cls}>
+            Loopbaancoaching in Amsterdam, Haarlem en omgeving
           </h2>
-          <div className="max-w-3xl">
-            <FAQ items={faqItems.map((f) => ({ q: f.q, a: f.a }))} />
+          <p className={introCls}>
+            Wij werken voor organisaties en medewerkers in de hele regio, vanuit onze
+            locaties in Haarlem en Amsterdam-Zuid. Coaching vindt plaats op een van onze
+            locaties of online. Wat het beste past bij de medewerker.
+          </p>
+          <p className="mt-6 text-petrol/70 max-w-[68ch]">
+            Ons werkgebied omvat onder meer{" "}
+            <strong className="text-petrol font-medium">
+              Amsterdam, Haarlem, Amstelveen, Hoofddorp, Zaanstad, Almere, Diemen, Hilversum,
+              Heemstede, Aalsmeer, Uithoorn en Purmerend
+            </strong>
+            : en de omliggende gemeenten.
+          </p>
+        </div>
+      </section>
+
+      {/* UWV */}
+      <section aria-labelledby="uwv-titel" className="pb-8 bg-linnen">
+        <div className={wrap}>
+          <div className="rounded-2xl border border-mint-dof p-7 md:p-9 flex flex-wrap justify-between items-center gap-6">
+            <div className="max-w-[58ch]">
+              <h2 id="uwv-titel" className="font-display text-[1.25rem] text-petrol mb-2">
+                Kom je via UWV?
+              </h2>
+              <p className="text-petrol/70 text-[0.96rem]">
+                Wij begeleiden ook mensen bij Werkfit Maken en Naar Werk. Persoonlijk, in je
+                eigen tempo en zonder ingewikkelde taal. Op een aparte pagina lees je rustig
+                hoe dat werkt en wie je daarbij begeleidt.
+              </p>
+            </div>
+            <Link to="/uwv-traject" className={`${btnOutline} whitespace-nowrap`}>
+              Lees over UWV-trajecten
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <Section>
-        <CTAStrip
-          title="Benieuwd wat dit voor uw organisatie kan betekenen?"
-          action={
+      {/* LEADMAGNET */}
+      <section aria-labelledby="leadmagnet-titel" className="pt-10 pb-4 bg-linnen">
+        <div className={wrap}>
+          <div className="rounded-2xl border border-goud bg-linnen-licht px-6 py-7 md:px-8 md:py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div className="max-w-[640px]">
+              <span className={labelCls}>Gratis voor HR</span>
+              <h2
+                id="leadmagnet-titel"
+                className="font-display text-[1.35rem] text-petrol leading-snug mt-1.5 mb-2"
+              >
+                Nog niet toe aan een gesprek?
+              </h2>
+              <p className="text-[0.97rem] text-petrol/70 leading-relaxed">
+                Download de loopbaangesprek-leidraad: een praktische gids om zelf het goede
+                gesprek te voeren met uw medewerkers, met voorbeeldvragen en do's en don'ts.
+              </p>
+            </div>
+            <a
+              href="/loopbaangesprek-leidraad.pdf"
+              download
+              className="inline-flex items-center rounded-md bg-petrol px-7 py-3.5 text-base font-medium text-linnen-licht hover:bg-[#16302E] transition shrink-0"
+            >
+              Download de leidraad
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA STRIP */}
+      <section aria-labelledby="cta-titel" className="pt-10 pb-24 bg-linnen">
+        <div className={wrap}>
+          <div className="rounded-3xl bg-koraal p-8 md:p-14 flex flex-wrap justify-between items-center gap-8">
+            <div>
+              <h2
+                id="cta-titel"
+                className="font-display text-[1.5rem] md:text-[1.75rem] text-[color:var(--color-on-koraal-title)] leading-[1.25] max-w-[22ch]"
+              >
+                Benieuwd wat dit voor uw organisatie kan betekenen?
+              </h2>
+              <p className="mt-2.5 text-[color:var(--color-on-koraal-sub)] max-w-[46ch]">
+                Plan een vrijblijvend kennismakingsgesprek. We luisteren eerst, denken dan
+                mee, en komen met een concreet voorstel dat past bij uw situatie en budget.
+              </p>
+            </div>
             <Link
               to="/kennismaken"
-              className="inline-block bg-petrol text-linnen-licht font-medium rounded-md px-7 py-3.5 hover:bg-[#16302E] transition-colors"
+              className="inline-flex items-center rounded-md bg-petrol px-6 py-3 text-base font-medium text-linnen-licht hover:bg-[#16302E] transition shrink-0"
             >
               Plan een kennismakingsgesprek
             </Link>
-          }
-        >
-          Plan een vrijblijvend kennismakingsgesprek. We luisteren eerst, denken
-          dan mee, en komen met een concreet voorstel dat past bij uw situatie
-          en budget.
-        </CTAStrip>
-      </Section>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
