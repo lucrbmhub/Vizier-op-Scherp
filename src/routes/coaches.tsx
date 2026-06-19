@@ -325,7 +325,7 @@ function Page() {
           }
         >
           Vertel ons kort wat er speelt. Wij stellen een coach voor en plannen
-          een vrijblijvende kennismaking. Pas daarna beslis je.
+          een vrijblijvende kennismaking.
         </CTASoft>
       </Section>
     </>
