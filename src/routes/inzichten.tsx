@@ -86,7 +86,17 @@ const ARTICLES: Article[] = [
     readMinutes: 5,
     featured: true,
   },
+  {
+    slug: "richting-vinden-in-je-loopbaan",
+    title:
+      "Richting vinden in je loopbaan: weer weten welke kant je op wilt",
+    summary:
+      "Je doet je werk prima, maar het voelt niet meer als de goede plek. Lees hoe je je richting kunt kwijtraken, welke signalen je werk afgeeft en hoe je stap voor stap weer weet wat je wilt.",
+    audience: "medewerker",
+    readMinutes: 5,
+  },
 ];
+
 
 function Page() {
   const featured = ARTICLES.find((a) => a.featured);
