@@ -358,7 +358,7 @@ function Home() {
             {[
               ["1.000+", "trajecten begeleid door ons coachnetwerk, in onder meer onderwijs, zorg, overheid en zakelijke dienstverlening"],
               ["8–12", "coaches. Bewust klein gehouden, zorgvuldig geselecteerd"],
-              ["Gecertificeerd", "en beroepsgeregistreerd, met achtergronden in coaching, psychologie en maatschappelijk werk"],
+              ["100%", "gecertificeerde coaches, met achtergronden in coaching, psychologie, HR en recruitment"],
               ["2 locaties", "Haarlem en Amsterdam, en coaching op uw eigen locatie of online"],
             ].map(([k, v]) => (
               <div key={v as string}>
