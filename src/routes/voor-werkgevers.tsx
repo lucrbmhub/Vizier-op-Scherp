@@ -174,7 +174,7 @@ function Page() {
                 {[
                   { s: "5 werkdagen", l: "van intake tot voorstel coach" },
                   { s: "1.000+", l: "trajecten begeleid door ons netwerk" },
-                  { s: "Noloc & NOBCO", l: "gecertificeerde coaches" },
+                  { s: "Gecertificeerde coaches", l: "met een brede opleidingsachtergrond" },
                 ].map((m) => (
                   <div key={m.s}>
                     <dt className="font-display text-xl text-linnen-licht leading-tight">
@@ -389,23 +389,34 @@ function Page() {
       <Section>
         <Label>Werkwijze per traject</Label>
         <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
-          Vijf stappen, van kennismaking tot evaluatie
+          Vijf stappen, en wat wij bij elke stap regelen
         </h2>
         <p className="mt-4 text-petrol/75 max-w-[64ch]">
-          Of het nu om één medewerker gaat of om een coachingpool: elk traject
-          doorloopt dezelfde zorgvuldige stappen. Zo weet u wat u kunt
-          verwachten, en weet de medewerker dat ook.
+          Of het nu om één medewerker gaat of om een coachingpool: u heeft er
+          nauwelijks omkijken naar. Wij verzorgen elke stap, van de match tot
+          de facturatie, en houden u op procesniveau op de hoogte.
         </p>
-        <ol className="mt-8 flex flex-wrap gap-3.5">
-          {stappen.map((s, i) => (
+        <ol className="mt-8 flex flex-col gap-3.5">
+          {[
+            ["Kennismaking en vraag", "Wij verhelderen uw vraag, de context en het doel. U geeft de aanleiding, wij pakken de rest op."],
+            ["Matching binnen vijf werkdagen", "Wij selecteren een passende coach op vraag, vakgebied en persoon. Geen wachtlijst, geen anonieme database."],
+            ["Persoonlijke kennismaking", "De medewerker ontmoet de coach en kiest mee, met heldere privacyafspraken vooraf. Klikt het niet, dan regelen wij een ander."],
+            ["Begeleiding", "De coach werkt met de medewerker aan concrete stappen. U krijgt terugkoppeling op procesniveau, de inhoud blijft vertrouwelijk."],
+            ["Evaluatie en afronding", "Wij sluiten af met een korte evaluatie en regelen de administratie. Eén aanspreekpunt, één factuur."],
+          ].map(([title, desc], i) => (
             <li
-              key={s}
-              className="flex-1 min-w-[160px] flex items-center gap-2.5 bg-linnen-licht border border-mint-dof rounded-xl px-4 py-3.5 font-display font-medium text-petrol"
+              key={title}
+              className="flex items-start gap-4 bg-linnen-licht border border-mint-dof rounded-xl px-5 py-4"
             >
-              <span className="text-sm text-koraal font-medium border-b-2 border-goud pb-0.5 shrink-0">
+              <span className="text-base font-display font-medium text-koraal border-b-2 border-goud pb-0.5 shrink-0 mt-0.5 leading-none">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              {s}
+              <div>
+                <strong className="block font-display font-medium text-petrol text-[1.05rem] mb-1">
+                  {title}
+                </strong>
+                <p className="text-petrol/75 text-[0.95rem] leading-relaxed">{desc}</p>
+              </div>
             </li>
           ))}
         </ol>
@@ -485,7 +496,7 @@ function Page() {
           </p>
           <div className="mt-12 grid gap-8 grid-cols-2 md:grid-cols-4">
             {[
-              ["Noloc & NOBCO", "elke coach is gecertificeerd en geregistreerd"],
+              ["Gecertificeerd", "met een brede opleidingsachtergrond"],
               ["Intervisie", "structurele kwaliteitsbewaking binnen het netwerk"],
               ["Evaluatie", "na elk traject meten we tevredenheid en resultaat"],
               ["8–12", "coaches, bewust klein, zorgvuldig geselecteerd"],
@@ -563,6 +574,30 @@ function Page() {
           </div>
         </div>
       </section>
+
+      {/* LEADMAGNET */}
+      <Section>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-7 bg-linnen-licht border border-goud rounded-2xl px-8 py-7 md:px-10">
+          <div className="max-w-2xl">
+            <Label>Gratis voor HR</Label>
+            <h2 className="font-display text-xl md:text-2xl text-petrol mb-2 leading-snug">
+              Nog niet toe aan een gesprek?
+            </h2>
+            <p className="text-petrol/75 text-[0.97rem] leading-relaxed">
+              Download de loopbaangesprek-leidraad: een praktische gids om zelf
+              het goede gesprek te voeren met uw medewerkers, met voorbeeldvragen
+              en do's en don'ts.
+            </p>
+          </div>
+          <a
+            href="/loopbaangesprek-leidraad.pdf"
+            download
+            className="inline-block bg-petrol text-linnen-licht font-medium rounded-md px-7 py-3.5 hover:bg-[#16302E] transition-colors shrink-0"
+          >
+            Download de leidraad
+          </a>
+        </div>
+      </Section>
 
       {/* CTA */}
       <Section>
