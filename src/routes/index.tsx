@@ -104,7 +104,7 @@ function Home() {
         <div className={`${wrap} py-16 md:py-20 grid gap-10 lg:gap-14 lg:grid-cols-[1.15fr_0.85fr] items-center`}>
           <div>
             <span className="inline-block text-[0.82rem] font-medium tracking-[0.03em] text-goud border border-goud rounded-full px-4 py-1.5 mb-6">
-              Loopbaancoaching voor werkgevers · Amsterdam, Haarlem en omgeving
+              Loopbaancoaching · Amsterdam, Haarlem en omgeving
             </span>
             <h1
               id="hero-titel"
@@ -130,7 +130,7 @@ function Home() {
             <ul role="list" className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-x-9 gap-y-6">
               {[
                 ["1.000+", "trajecten begeleid door ons netwerk"],
-                ["Gecertificeerd", "en beroepsgeregistreerd"],
+                ["Gecertificeerde coaches", "met een brede opleidingsachtergrond"],
                 ["5 werkdagen", "van intake tot match"],
               ].map(([k, v]) => (
                 <li key={k}>
@@ -358,7 +358,7 @@ function Home() {
             {[
               ["1.000+", "trajecten begeleid door ons coachnetwerk, in onder meer onderwijs, zorg, overheid en zakelijke dienstverlening"],
               ["8–12", "coaches. Bewust klein gehouden, zorgvuldig geselecteerd"],
-              ["Gecertificeerd", "en beroepsgeregistreerd, met achtergronden in coaching, psychologie en maatschappelijk werk"],
+              ["100%", "gecertificeerde coaches, met achtergronden in coaching, psychologie, HR en recruitment"],
               ["2 locaties", "Haarlem en Amsterdam, en coaching op uw eigen locatie of online"],
             ].map(([k, v]) => (
               <div key={v as string}>
@@ -403,18 +403,18 @@ function Home() {
           </h2>
           <p className={introCls}>
             Vizier op Scherp werkt met een klein, vast netwerk van zelfstandige coaches.
-            Onze coaches zijn gecertificeerd en aangesloten bij een erkende beroepsvereniging
-            of kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar register. Met
-            achtergronden in coaching, psychologie, maatschappelijk werk en therapeutisch werk.
+            Elke coach is gecertificeerd en heeft meerdere coachingopleidingen en
+            nascholing gedaan, met achtergronden in coaching, psychologie, maatschappelijk
+            werk en therapeutisch werk. De ingang is vaak de werkcontext. De begeleiding
+            is persoonlijk en gaat de diepte in.
           </p>
 
-          <ul className="mt-12 grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+          <ul className="mt-12 grid gap-5 grid-cols-2 sm:grid-cols-4">
             {[
-              ["M", "Maaike", "Onderwijs, zorg en leidinggevenden"],
-              ["L", "Lianne", "Psycholoog · persoonlijk leiderschap"],
-              ["Z", "Zelah", "Therapeut · ACT en zingeving"],
-              ["F", "Floor", "Positieve Gezondheid en NLP"],
-              ["L", "Luc", "Richting, keuzes en HR-achtergrond"],
+              ["M", "Maaike", "Coaching · onderwijs, zorg, leidinggevenden"],
+              ["L", "Lianne", "Coaching · persoonlijk leiderschap, loopbaan"],
+              ["F", "Floor", "Loopbaancoaching · Positieve Gezondheid"],
+              ["L", "Luc", "Loopbaancoaching · richting, young professionals"],
             ].map(([initial, name, role]) => (
               <li
                 key={name}
@@ -438,6 +438,7 @@ function Home() {
             </Link>
             <p className="text-[0.94rem] text-petrol/70 max-w-[52ch]">
               Elke coach heeft een eigen profiel met verhaal, aanpak en achtergrond.
+              Zodat medewerkers weten met wie ze kennismaken.
             </p>
           </div>
         </div>
@@ -453,7 +454,7 @@ function Home() {
           <p className={introCls}>
             Wij werken voor organisaties en medewerkers in de hele regio, vanuit onze
             locaties in Haarlem en Amsterdam-Zuid. Coaching vindt plaats op een van onze
-            locaties, op uw eigen kantoor, of online. Wat het beste past bij de medewerker.
+            locaties of online. Wat het beste past bij de medewerker.
           </p>
           <p className="mt-6 text-petrol/70 max-w-[68ch]">
             Ons werkgebied omvat onder meer{" "}
@@ -483,6 +484,34 @@ function Home() {
             <Link to="/uwv-traject" className={`${btnOutline} whitespace-nowrap`}>
               Lees over UWV-trajecten
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* LEADMAGNET */}
+      <section aria-labelledby="leadmagnet-titel" className="pt-10 pb-4 bg-linnen">
+        <div className={wrap}>
+          <div className="rounded-2xl border border-goud bg-linnen-licht px-6 py-7 md:px-8 md:py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div className="max-w-[640px]">
+              <span className={labelCls}>Gratis voor HR</span>
+              <h2
+                id="leadmagnet-titel"
+                className="font-display text-[1.35rem] text-petrol leading-snug mt-1.5 mb-2"
+              >
+                Nog niet toe aan een gesprek?
+              </h2>
+              <p className="text-[0.97rem] text-petrol/70 leading-relaxed">
+                Download de loopbaangesprek-leidraad: een praktische gids om zelf het goede
+                gesprek te voeren met uw medewerkers, met voorbeeldvragen en do's en don'ts.
+              </p>
+            </div>
+            <a
+              href="/loopbaangesprek-leidraad.pdf"
+              download
+              className="inline-flex items-center rounded-md bg-petrol px-7 py-3.5 text-base font-medium text-linnen-licht hover:bg-[#16302E] transition shrink-0"
+            >
+              Download de leidraad
+            </a>
           </div>
         </div>
       </section>
