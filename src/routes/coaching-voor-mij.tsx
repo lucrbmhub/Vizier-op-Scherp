@@ -349,7 +349,7 @@ function Page() {
               to="/kennismaken"
               className="inline-block bg-koraal text-white font-medium rounded-md px-7 py-3.5 hover:bg-[#D4623B] transition-colors"
             >
-              Plan een kennismakingsgesprek
+              Plan een kennismaking
             </Link>
           }
         >
