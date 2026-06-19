@@ -260,6 +260,7 @@ function ContactForm() {
             name="name"
             type="text"
             required
+            maxLength={200}
             autoComplete="name"
             className={inputCls}
           />
@@ -275,6 +276,7 @@ function ContactForm() {
             name="email"
             type="email"
             required
+            maxLength={320}
             autoComplete="email"
             className={inputCls}
           />
@@ -288,6 +290,7 @@ function ContactForm() {
             id="phone"
             name="phone"
             type="tel"
+            maxLength={30}
             autoComplete="tel"
             className={inputCls}
           />
@@ -304,6 +307,7 @@ function ContactForm() {
             id="organization"
             name="organization"
             type="text"
+            maxLength={200}
             autoComplete="organization"
             className={inputCls}
           />
@@ -333,6 +337,7 @@ function ContactForm() {
             id="message"
             name="message"
             rows={6}
+            maxLength={5000}
             placeholder="Een paar zinnen is genoeg. We vragen door in het gesprek."
             className={`${inputCls} resize-y min-h-32`}
           />
