@@ -454,7 +454,7 @@ function Home() {
           <p className={introCls}>
             Wij werken voor organisaties en medewerkers in de hele regio, vanuit onze
             locaties in Haarlem en Amsterdam-Zuid. Coaching vindt plaats op een van onze
-            locaties, op uw eigen kantoor, of online. Wat het beste past bij de medewerker.
+            locaties of online. Wat het beste past bij de medewerker.
           </p>
           <p className="mt-6 text-petrol/70 max-w-[68ch]">
             Ons werkgebied omvat onder meer{" "}
