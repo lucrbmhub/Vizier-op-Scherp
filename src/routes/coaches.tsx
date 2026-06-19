@@ -3,7 +3,7 @@ import { Section, Label, CTASoft } from "../components/ui-blocks";
 
 const TITLE = "Onze coaches | Gecertificeerde loopbaancoaches | Vizier op Scherp";
 const DESC =
-  "Maak kennis met de loopbaancoaches van Vizier op Scherp. Onze coaches zijn gecertificeerd en aangesloten bij een erkende beroepsvereniging of kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar register. Een klein, vast netwerk in Amsterdam, Haarlem en omgeving.";
+  "Maak kennis met de loopbaancoaches van Vizier op Scherp: een klein, vast netwerk van gecertificeerde professionals met meerdere coachingopleidingen en nascholing, in Amsterdam, Haarlem en omgeving. Echte mensen, een eigen verhaal en een zorgvuldige match.";
 const OG_TITLE = "Onze coaches, Vizier op Scherp";
 const OG_DESC =
   "Een klein, vast netwerk van gecertificeerde loopbaancoaches. Je maakt eerst kennis, en kiest daarna pas.";
@@ -199,12 +199,10 @@ function Page() {
           </h1>
           <p className="mt-5 text-petrol/75 max-w-[60ch] text-lg">
             Vizier op Scherp werkt met een klein, vast netwerk van zelfstandige
-            coaches. Bewust maximaal acht tot twaalf. Onze coaches zijn
-            gecertificeerd en aangesloten bij een erkende beroepsvereniging of
-            kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar
-            register. Elke coach heeft een eigen achtergrond, een eigen verhaal
-            en een eigen manier van werken. Je maakt altijd eerst kennis,
-            voordat er iets vastligt.
+            coaches. Bewust maximaal acht tot twaalf. Stuk voor stuk
+            gecertificeerd, met meerdere coachingopleidingen en nascholing, en
+            met een eigen achtergrond, een eigen verhaal en een eigen manier
+            van werken. Je maakt altijd eerst kennis, voordat er iets vastligt.
           </p>
         </div>
       </section>
@@ -219,10 +217,6 @@ function Page() {
           Elke coach heeft eigen accenten en een eigen verhaal. Bij de matching
           kijken we naar jouw vraag, jouw situatie, en naar wie daar als mens
           bij past.
-        </p>
-        <p className="mt-3 text-xs uppercase tracking-wider text-petrol/50">
-          Specialisaties hieronder zijn voorlopig — worden per coach nog
-          afgestemd.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {coaches.map((c) => (
@@ -255,7 +249,7 @@ function Page() {
             {[
               [
                 "Gecertificeerd",
-                "Onze coaches zijn gecertificeerd en aangesloten bij een erkende beroepsvereniging of kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar register.",
+                "met een brede opleidingsachtergrond",
               ],
               [
                 "Intervisie",
@@ -326,12 +320,12 @@ function Page() {
               to="/kennismaken"
               className="inline-block bg-koraal text-white font-medium rounded-md px-7 py-3.5 hover:bg-[#D4623B] transition-colors"
             >
-              Plan een kennismakingsgesprek
+              Plan een kennismaking
             </Link>
           }
         >
           Vertel ons kort wat er speelt. Wij stellen een coach voor en plannen
-          een vrijblijvende kennismaking. Pas daarna beslis je.
+          een vrijblijvende kennismaking.
         </CTASoft>
       </Section>
     </>
