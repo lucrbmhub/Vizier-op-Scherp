@@ -14,10 +14,10 @@ import { Route as UwvTrajectRouteImport } from './routes/uwv-traject'
 import { Route as OverOnsRouteImport } from './routes/over-ons'
 import { Route as LeiderschapRouteImport } from './routes/leiderschap'
 import { Route as KennismakenRouteImport } from './routes/kennismaken'
+import { Route as InzichtenRouteImport } from './routes/inzichten'
 import { Route as CoachingVoorMijRouteImport } from './routes/coaching-voor-mij'
 import { Route as CoachesRouteImport } from './routes/coaches'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as InzichtenIndexRouteImport } from './routes/inzichten.index'
 import { Route as InzichtenSlugRouteImport } from './routes/inzichten.$slug'
 
 const VoorWerkgeversRoute = VoorWerkgeversRouteImport.update({
@@ -45,6 +45,11 @@ const KennismakenRoute = KennismakenRouteImport.update({
   path: '/kennismaken',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InzichtenRoute = InzichtenRouteImport.update({
+  id: '/inzichten',
+  path: '/inzichten',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CoachingVoorMijRoute = CoachingVoorMijRouteImport.update({
   id: '/coaching-voor-mij',
   path: '/coaching-voor-mij',
@@ -60,53 +65,48 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const InzichtenIndexRoute = InzichtenIndexRouteImport.update({
-  id: '/inzichten/',
-  path: '/inzichten/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const InzichtenSlugRoute = InzichtenSlugRouteImport.update({
-  id: '/inzichten/$slug',
-  path: '/inzichten/$slug',
-  getParentRoute: () => rootRouteImport,
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => InzichtenRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
+  '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
   '/inzichten/$slug': typeof InzichtenSlugRoute
-  '/inzichten/': typeof InzichtenIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
+  '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
   '/inzichten/$slug': typeof InzichtenSlugRoute
-  '/inzichten': typeof InzichtenIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/coaches': typeof CoachesRoute
   '/coaching-voor-mij': typeof CoachingVoorMijRoute
+  '/inzichten': typeof InzichtenRouteWithChildren
   '/kennismaken': typeof KennismakenRoute
   '/leiderschap': typeof LeiderschapRoute
   '/over-ons': typeof OverOnsRoute
   '/uwv-traject': typeof UwvTrajectRoute
   '/voor-werkgevers': typeof VoorWerkgeversRoute
   '/inzichten/$slug': typeof InzichtenSlugRoute
-  '/inzichten/': typeof InzichtenIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -114,50 +114,49 @@ export interface FileRouteTypes {
     | '/'
     | '/coaches'
     | '/coaching-voor-mij'
+    | '/inzichten'
     | '/kennismaken'
     | '/leiderschap'
     | '/over-ons'
     | '/uwv-traject'
     | '/voor-werkgevers'
     | '/inzichten/$slug'
-    | '/inzichten/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/coaches'
     | '/coaching-voor-mij'
+    | '/inzichten'
     | '/kennismaken'
     | '/leiderschap'
     | '/over-ons'
     | '/uwv-traject'
     | '/voor-werkgevers'
     | '/inzichten/$slug'
-    | '/inzichten'
   id:
     | '__root__'
     | '/'
     | '/coaches'
     | '/coaching-voor-mij'
+    | '/inzichten'
     | '/kennismaken'
     | '/leiderschap'
     | '/over-ons'
     | '/uwv-traject'
     | '/voor-werkgevers'
     | '/inzichten/$slug'
-    | '/inzichten/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CoachesRoute: typeof CoachesRoute
   CoachingVoorMijRoute: typeof CoachingVoorMijRoute
+  InzichtenRoute: typeof InzichtenRouteWithChildren
   KennismakenRoute: typeof KennismakenRoute
   LeiderschapRoute: typeof LeiderschapRoute
   OverOnsRoute: typeof OverOnsRoute
   UwvTrajectRoute: typeof UwvTrajectRoute
   VoorWerkgeversRoute: typeof VoorWerkgeversRoute
-  InzichtenSlugRoute: typeof InzichtenSlugRoute
-  InzichtenIndexRoute: typeof InzichtenIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -197,6 +196,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KennismakenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/inzichten': {
+      id: '/inzichten'
+      path: '/inzichten'
+      fullPath: '/inzichten'
+      preLoaderRoute: typeof InzichtenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/coaching-voor-mij': {
       id: '/coaching-voor-mij'
       path: '/coaching-voor-mij'
@@ -218,34 +224,38 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/inzichten/': {
-      id: '/inzichten/'
-      path: '/inzichten'
-      fullPath: '/inzichten/'
-      preLoaderRoute: typeof InzichtenIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/inzichten/$slug': {
       id: '/inzichten/$slug'
-      path: '/inzichten/$slug'
+      path: '/$slug'
       fullPath: '/inzichten/$slug'
       preLoaderRoute: typeof InzichtenSlugRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof InzichtenRoute
     }
   }
 }
+
+interface InzichtenRouteChildren {
+  InzichtenSlugRoute: typeof InzichtenSlugRoute
+}
+
+const InzichtenRouteChildren: InzichtenRouteChildren = {
+  InzichtenSlugRoute: InzichtenSlugRoute,
+}
+
+const InzichtenRouteWithChildren = InzichtenRoute._addFileChildren(
+  InzichtenRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CoachesRoute: CoachesRoute,
   CoachingVoorMijRoute: CoachingVoorMijRoute,
+  InzichtenRoute: InzichtenRouteWithChildren,
   KennismakenRoute: KennismakenRoute,
   LeiderschapRoute: LeiderschapRoute,
   OverOnsRoute: OverOnsRoute,
   UwvTrajectRoute: UwvTrajectRoute,
   VoorWerkgeversRoute: VoorWerkgeversRoute,
-  InzichtenSlugRoute: InzichtenSlugRoute,
-  InzichtenIndexRoute: InzichtenIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

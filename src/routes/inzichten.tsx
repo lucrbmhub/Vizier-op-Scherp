@@ -28,7 +28,7 @@ const collectionLd = {
   },
 };
 
-export const Route = createFileRoute("/inzichten/")({
+export const Route = createFileRoute("/inzichten")({
   head: () => ({
     meta: [
       { title: TITLE },

@@ -1,27 +1,82 @@
-## Probleem
+## Doel
 
-`src/routes/inzichten.tsx` + `src/routes/inzichten.$slug.tsx` maken samen een parent/child-paar in TanStack Router. De parent (`inzichten.tsx`) hoort dan alleen `<Outlet />` te renderen, maar rendert nu de volledige overzichtspagina. Daardoor blijft de overzichtspagina zichtbaar op `/inzichten/{slug}` en lijkt "Lees verder" niet te werken — de URL klopt, de detailpagina rendert wel maar wordt nooit getoond.
+Een nieuw blog-artikel toevoegen voor medewerkers: "Richting vinden in je loopbaan: weer weten welke kant je op wilt", inclusief overzichtskaart op `/inzichten` en eigen detailpagina onder `/inzichten/richting-vinden-in-je-loopbaan`. Hergebruik bestaande Header/Footer en design tokens (petrol, koraal, goud, linnen, linnen-licht, mint, mint-dof). Geen nieuwe kleuren/fonts, geen nieuwe routes elders, geen wijzigingen aan hoofdnavigatie.
 
-## Oplossing
+## Wijzigingen per bestand
 
-Het overzicht verplaatsen naar een eigen index-route, zodat `/inzichten` een echte leaf is en `/inzichten/$slug` los staat.
+### 1. `src/routes/inzichten.tsx`
+- Voeg een tweede item toe aan `ARTICLES`:
+  - `slug: "richting-vinden-in-je-loopbaan"`
+  - `title: "Richting vinden in je loopbaan: weer weten welke kant je op wilt"`
+  - `summary: "Je doet je werk prima, maar het voelt niet meer als de goede plek. Lees hoe je je richting kunt kwijtraken, welke signalen je werk afgeeft en hoe je stap voor stap weer weet wat je wilt."`
+  - `audience: "medewerker"`
+  - `readMinutes: 5`
+  - **niet** `featured` (uitgelichte blijft "Van werven naar behouden")
+- Geen verdere wijzigingen — bestaande grid toont het tweede artikel automatisch met **gouden "Voor medewerkers"-badge** (logica zit er al in `badgeClasses` / `audienceLabel`).
+- Publicatiedatum wordt al niet getoond.
 
-### Wijzigingen
+### 2. `src/routes/inzichten.$slug.tsx`
+- Zelfde `ARTICLES`-registry uitbreiden met hetzelfde tweede item (slug + metadata) zodat `head()` en `notFoundComponent` werken.
+- Pagina-component opsplitsen zodat de juiste body per slug rendert:
+  - `van-werven-naar-behouden` → huidige werkgever-bodylayout (donkere petrol-hero, prose op linnen, bestaande CTA). Onveranderd.
+  - `richting-vinden-in-je-loopbaan` → nieuwe medewerker-layout volgens prompt en HTML-referentie.
+- `head()`: voeg per slug extra meta toe (og:image 1200x630 + alt, twitter:card summary_large_image + image + title/description, og:site_name, meta robots index/follow) en een BlogPosting JSON-LD `<script>` (productie-URLs, datums 2026-06-19).
+- `notFoundComponent` blijft.
 
-1. **Hernoemen**: `src/routes/inzichten.tsx` → `src/routes/inzichten.index.tsx`.
-   - De inhoud (component + `head()` + JSON-LD + `ARTICLES`) blijft 1-op-1 hetzelfde.
-   - `createFileRoute("/inzichten")` blijft hetzelfde — de generator mapt `inzichten.index.tsx` ook naar `/inzichten`.
-2. **`src/routes/inzichten.$slug.tsx`**: ongewijzigd. Blijft `/inzichten/$slug`.
-3. **`src/routeTree.gen.ts`**: wordt automatisch opnieuw gegenereerd door de Vite-plugin — niet handmatig aanpassen.
+### 3. Nieuwe medewerker-pagina-layout (binnen `inzichten.$slug.tsx`)
 
-### Waarom deze aanpak en niet "voeg `<Outlet />` toe aan `inzichten.tsx`"
+Sectievolgorde, exact zoals in de HTML-referentie:
 
-Een `<Outlet />` toevoegen zou de overzichtspagina én de detailpagina tegelijk renderen op `/inzichten/{slug}`. Dat willen we niet — de detailpagina moet de volledige pagina zijn. Door de overzichtspagina naar `inzichten.index.tsx` te verplaatsen wordt het een sibling-leaf van de slug-route in plaats van een parent, en rendert elke URL exact één pagina.
+```text
+1. Lichte hero op linnen-licht (géén donker petrol-vlak)
+   - "← Inzichten" terugknop (petrol/70)
+   - Gouden pill-badge "Voor medewerkers" (tekst in donkere goud-variant)
+   - H1 in petrol, font-display
+   - Lead in petrol/75
+   - Meta-regel: "Loopbaan & richting · 5 min leestijd" met koraal puntje
+2. Intro-paragraaf (linnen, leeskolom max-w-3xl)
+3. Sectie "Waarom je je richting kwijt kunt raken" (2 alinea's)
+4. Goud kader (rounded-2xl, border-goud, bg-goud/10):
+   - koraal label "Herken je dit?"
+   - H2 "Signalen dat je toe bent aan een nieuwe richting"
+   - intro-zin
+   - 5 bullets met koraal ruit-marker (kleine gedraaide vierkant via ::before of inline span)
+   - slot-zin
+5. Sectie "Richting vinden begint bij jou, niet bij vacatures" met 3 H3-blokken: Energie / Waarden / Talenten
+6. Sectie "Van inzicht naar concrete stappen" (2 alinea's)
+7. Kernzin — donker petrol-vlak (volle breedte binnen kolom, of full-bleed):
+   - gouden label "In het kort"
+   - grote Lora-zin in linnen-licht
+8. Sectie "Je hoeft het niet alleen uit te zoeken" (1 alinea)
+9. Koraal CTA-strip (full-bleed sectie, bg-koraal):
+   - H2 "Samen je richting scherp krijgen" in donkere koraal-titelkleur
+   - Body in koraal-sub kleur, met inline link naar /voor-werkgevers
+   - Tweede alinea over coachteam
+   - Twee knoppen: primair (petrol) "Maak vrijblijvend kennis" → /kennismaken, secundair (omrand) "Bekijk onze coaches" → /coaches
+```
 
-### Acceptatiecheck
+Alle teksten letterlijk uit de prompt/HTML overnemen.
 
-- `/inzichten` toont nog steeds de 3 kaarten (featured + 2 recent).
-- Klik op "Lees verder" bij "Richting vinden in je loopbaan" → toont de medewerker-artikel-layout (lichte hero, signalen-kader, koraal CTA).
-- Klik op "Lees verder" bij "Energie en motivatie in werk" → toont dat artikel.
-- Klik op de uitgelichte kaart → toont "Van werven naar behouden".
-- Niet-bestaande slug → bestaande `notFoundComponent` blijft werken.
+### 4. Meta / SEO details voor het nieuwe artikel
+- title: `Richting vinden in je loopbaan: weer weten wat je wilt | Vizier op Scherp` (volgens prompt — niet de generieke `${title} | Inzichten | ...` template)
+- description: zoals in prompt
+- canonical: `https://vizieropscherp.nl/inzichten/richting-vinden-in-je-loopbaan`
+- og:image: `https://vizieropscherp.nl/og-image.png` + width 1200, height 630, alt "Vizier op Scherp, loopbaancoaching in Amsterdam, Haarlem en omgeving"
+- twitter:card summary_large_image + title/description/image
+- meta robots: index, follow
+- JSON-LD BlogPosting zoals in prompt (inLanguage nl-NL, organization author/publisher, datePublished/dateModified 2026-06-19)
+- Voor het bestaande werkgever-artikel laat ik de huidige head() ongemoeid (buiten scope van deze taak).
+
+### 5. Wat NIET wijzigt
+- Header / hoofdnavigatie: "Inzichten" blijft alleen in footer.
+- Footer: ongewijzigd ("Inzichten" staat er al).
+- Geen nieuwe routes, geen nieuwe componenten/bestanden, geen nieuwe dependencies, geen design-tokens toegevoegd.
+- Geen wijziging aan het bestaande artikel `van-werven-naar-behouden`.
+- Geen koppeling naar `/uwv-traject` op deze pagina.
+
+## Acceptatiecheck
+
+- `/inzichten` toont nu 2 kaarten: featured "Van werven naar behouden" (mint badge "Voor werkgevers") + nieuwe kaart met **gouden badge "Voor medewerkers"**, geen datum.
+- `/inzichten/richting-vinden-in-je-loopbaan` rendert de medewerker-pagina met lichte hero, alle 7 inhoudssecties in juiste volgorde en register, werkende interne links naar `/voor-werkgevers`, `/kennismaken`, `/coaches`.
+- Page title, canonical, OG/Twitter en JSON-LD komen overeen met de prompt.
+- Geen verboden woorden, geen Noloc/NOBCO-claim op deze pagina, geen gedachtestreepjes in lopende tekst.
