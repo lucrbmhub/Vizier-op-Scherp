@@ -113,6 +113,66 @@ function headForSlug(slug: string) {
     };
   }
 
+  if (article.slug === "energie-en-motivatie-in-werk") {
+    const title =
+      "Energie en motivatie in je werk terugvinden | Vizier op Scherp";
+    const description =
+      "Geen energie of motivatie meer voor je werk? Ontdek het verschil tussen moe zijn en leeglopen, en wat je eraan kunt doen. Loopbaancoaching in Amsterdam en Haarlem.";
+    const ogTitle = "Energie en motivatie in je werk terugvinden";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching in Amsterdam, Haarlem en omgeving";
+
+    const ld = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline:
+        "Energie en motivatie in werk: het verschil tussen moe zijn en leeglopen",
+      description,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-06-19",
+      dateModified: "2026-06-19",
+      image,
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(ld) },
+      ],
+    };
+  }
+
   // Default (werkgever-artikel)
   return {
     meta: [
@@ -166,6 +226,9 @@ function ArticlePage() {
 
   if (article.slug === "richting-vinden-in-je-loopbaan") {
     return <RichtingVindenArticle article={article} />;
+  }
+  if (article.slug === "energie-en-motivatie-in-werk") {
+    return <EnergieMotivatieArticle article={article} />;
   }
   return <WervenNaarBehoudenArticle article={article} />;
 }
