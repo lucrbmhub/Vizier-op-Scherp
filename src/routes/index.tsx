@@ -488,6 +488,34 @@ function Home() {
         </div>
       </section>
 
+      {/* LEADMAGNET */}
+      <section aria-labelledby="leadmagnet-titel" className="pt-10 pb-4 bg-linnen">
+        <div className={wrap}>
+          <div className="rounded-2xl border border-goud bg-linnen-licht px-6 py-7 md:px-8 md:py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div className="max-w-[640px]">
+              <span className={labelCls}>Gratis voor HR</span>
+              <h2
+                id="leadmagnet-titel"
+                className="font-display text-[1.35rem] text-petrol leading-snug mt-1.5 mb-2"
+              >
+                Nog niet toe aan een gesprek?
+              </h2>
+              <p className="text-[0.97rem] text-petrol/70 leading-relaxed">
+                Download de loopbaangesprek-leidraad: een praktische gids om zelf het goede
+                gesprek te voeren met uw medewerkers, met voorbeeldvragen en do's en don'ts.
+              </p>
+            </div>
+            <a
+              href="/loopbaangesprek-leidraad.pdf"
+              download
+              className="inline-flex items-center rounded-md bg-petrol px-7 py-3.5 text-base font-medium text-linnen-licht hover:bg-[#16302E] transition shrink-0"
+            >
+              Download de leidraad
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA STRIP */}
       <section aria-labelledby="cta-titel" className="pt-10 pb-24 bg-linnen">
         <div className={wrap}>
