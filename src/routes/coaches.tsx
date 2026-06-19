@@ -218,10 +218,6 @@ function Page() {
           kijken we naar jouw vraag, jouw situatie, en naar wie daar als mens
           bij past.
         </p>
-        <p className="mt-3 text-xs uppercase tracking-wider text-petrol/50">
-          Specialisaties hieronder zijn voorlopig — worden per coach nog
-          afgestemd.
-        </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {coaches.map((c) => (
             <CoachCard key={c.name} c={c} />
