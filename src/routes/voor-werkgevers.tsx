@@ -123,13 +123,6 @@ const situaties = [
   },
 ];
 
-const stappen = [
-  "Kennismaking",
-  "Intake met de medewerker",
-  "Matching binnen vijf werkdagen",
-  "Begeleiding",
-  "Evaluatie",
-];
 
 function Page() {
   return (
