@@ -1523,8 +1523,6 @@ function DuurzameInzetbaarheidWerkgeverArticle({
         </div>
       </section>
 
-      {/* Silence unused CTAStrip import-warning if any */}
-      {false && <CTAStrip title="" action={null}>{null}</CTAStrip>}
     </>
   );
 }
