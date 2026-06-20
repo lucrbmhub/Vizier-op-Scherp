@@ -459,7 +459,7 @@ function Page() {
                     key={l}
                     className="py-1.5 text-petrol/75 text-[0.95rem] flex gap-2.5"
                   >
-                    <span className="text-koraal shrink-0">—</span>
+                    <span aria-hidden="true" className="shrink-0 mt-2 w-1.5 h-1.5 rounded-full bg-koraal" />
                     {l}
                   </li>
                 ))}
