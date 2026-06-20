@@ -299,6 +299,9 @@ function ArticlePage() {
   if (article.slug === "energie-en-motivatie-in-werk") {
     return <EnergieMotivatieArticle article={article} />;
   }
+  if (article.slug === "solliciteren-en-arbeidsmarkt") {
+    return <SolliciterenArticle article={article} />;
+  }
   return <WervenNaarBehoudenArticle article={article} />;
 }
 
