@@ -134,7 +134,7 @@ const ARTICLES: Article[] = [
 
 function Page() {
   const featured = ARTICLES.find((a) => a.featured);
-  const recent = ARTICLES.filter((a) => a !== featured).slice(0, 3);
+  const recent = ARTICLES.filter((a) => a !== featured).slice(0, 6);
   const hasContent = ARTICLES.length > 0;
 
   return (
