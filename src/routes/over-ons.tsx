@@ -50,6 +50,7 @@ export const Route = createFileRoute("/over-ons")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
+      { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "nl_NL" },
       { property: "og:url", content: CANONICAL },
