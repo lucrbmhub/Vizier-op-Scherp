@@ -1598,3 +1598,248 @@ function DuurzameInzetbaarheidWerkgeverArticle({
     </>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/*  Medewerker-artikel — Persoonlijke effectiviteit                    */
+/* ------------------------------------------------------------------ */
+
+function PersoonlijkeEffectiviteitArticle({ article }: { article: Article }) {
+  const para = "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
+  const h2 = "mt-12 font-display text-2xl md:text-[1.7rem] text-petrol";
+  const h3 = "mt-8 font-display text-xl text-petrol";
+
+  return (
+    <>
+      {/* Lichte hero */}
+      <section className="bg-linnen-licht">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-12 pb-14 md:pt-16 md:pb-20">
+          <Link
+            to="/inzichten"
+            className="inline-flex items-center text-sm text-petrol/70 hover:text-koraal transition"
+          >
+            ← Inzichten
+          </Link>
+          <div className="mt-6">
+            <span className="inline-flex items-center rounded-full bg-goud px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-[color:var(--color-on-goud-title)]">
+              Voor medewerkers
+            </span>
+          </div>
+          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-petrol leading-[1.2] max-w-[26ch]">
+            Persoonlijke effectiviteit: meer grip op je werk zonder harder te werken
+          </h1>
+          <p className="mt-6 text-petrol/75 leading-relaxed text-[1.1rem] max-w-[58ch]">
+            Je hebt het druk, je werkt hard, en toch heb je aan het eind van de
+            dag het gevoel dat de belangrijkste dingen zijn blijven liggen.
+            Persoonlijke effectiviteit gaat niet over nóg harder werken of
+            strakkere systemen. Het gaat over gerichter werken, zodat je tijd
+            en aandacht naar wat echt telt gaan.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-petrol/65">
+            <span>Persoonlijke effectiviteit</span>
+            <span
+              aria-hidden="true"
+              className="inline-block h-1.5 w-1.5 rounded-full bg-koraal"
+            />
+            <span>{article.readMinutes} min leestijd</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Body */}
+      <article className="bg-linnen">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+          <p className="text-petrol/85 leading-relaxed text-[1.1rem]">
+            In dit artikel lees je hoe je meer grip krijgt op je werk: door
+            beter te kiezen wat je doet, je aandacht te beschermen en grenzen
+            aan te geven. Geen trucs, wel een paar principes die het verschil
+            maken.
+          </p>
+
+          <h2 className={h2}>Druk zijn is niet hetzelfde als effectief zijn</h2>
+          <p className={para}>
+            Het is makkelijk om je dag te vullen en toch het gevoel te houden
+            dat je achterloopt. Dat komt vaak doordat we reageren op wat zich
+            aandient: mail, vragen van collega's, kleine taken die snel
+            afgevinkt zijn. Druk, maar niet per se belangrijk.
+          </p>
+          <p className={para}>
+            Effectief werken begint met een ander uitgangspunt: niet "wat kan
+            ik vandaag allemaal doen", maar "wat moet er vandaag echt
+            gebeuren". Dat klinkt simpel, maar het is een wezenlijk verschil.
+            Wie elke dag een paar belangrijke dingen afmaakt, komt verder dan
+            wie tien kleine dingen doet en de grote vooruitschuift.
+          </p>
+
+          <h2 className={h2}>Kies bewust wat voorrang krijgt</h2>
+          <p className={para}>
+            Grip op je werk begint bij prioriteren, en prioriteren betekent
+            ook dingen bewust niet doen. Niet alles wat op je afkomt is even
+            belangrijk, en niet alles hoeft door jou.
+          </p>
+          <p className={para}>
+            Een eenvoudige gewoonte die helpt: bepaal aan het begin van je dag
+            of week welke twee of drie dingen er echt toe doen, en bescherm
+            daar tijd voor. De rest vul je daaromheen in. Het gaat er niet om
+            dat je alles afkrijgt, maar dat de juiste dingen afkomen. Vraag
+            jezelf bij een nieuwe taak af: moet dit nu, moet dit door mij, en
+            wat gebeurt er als ik het niet doe?
+          </p>
+
+          {/* Goud kader */}
+          <section
+            aria-labelledby="aandacht-kop"
+            className="mt-12 rounded-2xl border border-goud bg-goud/15 p-7 md:p-9"
+          >
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
+              Wat je aandacht weglekt
+            </span>
+            <h2
+              id="aandacht-kop"
+              className="mt-2 font-display text-2xl md:text-[1.6rem] text-petrol"
+            >
+              Bescherm je aandacht
+            </h2>
+            <p className="mt-4 text-petrol/80 leading-relaxed">
+              Veel effectiviteit gaat verloren aan onderbrekingen en
+              versnippering. Herken je deze?
+            </p>
+            <ul className="mt-5 space-y-3">
+              {[
+                "Je springt de hele dag tussen taken en maakt weinig echt af.",
+                "Je checkt mail en berichten zodra ze binnenkomen, ook midden in iets anders.",
+                "Je begint aan iets groots zonder een blok tijd waarin je er ongestoord aan kunt werken.",
+                "Je zegt snel ja, waardoor je agenda volloopt met dingen van anderen.",
+                "Je werkt door zonder pauze, waardoor je focus in de middag wegzakt.",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-petrol/80 leading-relaxed"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 inline-block h-2 w-2 shrink-0 rotate-45 bg-koraal"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-petrol/80 leading-relaxed">
+              Eén of twee hiervan aanpakken levert vaak meer op dan een nieuwe
+              planningsmethode. Aandacht is je schaarste, niet je tijd.
+            </p>
+          </section>
+
+          {/* Kernzin — petrol vlak */}
+          <aside className="mt-14 rounded-2xl bg-petrol px-7 py-9 md:px-10 md:py-11">
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud">
+              In het kort
+            </span>
+            <p className="mt-3 font-display text-xl md:text-2xl text-linnen-licht leading-snug">
+              Effectiever worden gaat niet over meer doen in minder tijd, maar
+              over je aandacht richten op wat echt telt en de rest bewust
+              loslaten.
+            </p>
+          </aside>
+
+          <h2 className={h2}>Grenzen aangeven hoort erbij</h2>
+          <p className={para}>
+            Meer grip krijgen lukt niet als je agenda volstroomt met het werk
+            van anderen. Grenzen aangeven heeft een vervelende lading, alsof
+            je niet behulpzaam bent, maar het is juist wat je in staat stelt
+            je werk goed te doen.
+          </p>
+          <p className={para}>
+            Dat hoeft niet groot of bot. Het kan zo simpel zijn als "ik pak
+            het op, maar pas na vanmiddag", of "ik kan dit doen, maar dan
+            schuift dat andere". Je geeft niet alleen een grens aan, je maakt
+            ook duidelijk wat wél kan. Wie dat rustig en duidelijk doet, komt
+            betrouwbaarder over, niet minder behulpzaam.
+          </p>
+
+          <h2 className={h2}>Klein beginnen werkt het best</h2>
+          <p className={para}>
+            Je hoeft je manier van werken niet in één keer om te gooien. Kies
+            één ding dat je in de weg zit, en pak dat aan:
+          </p>
+          <ul className="mt-5 space-y-3">
+            {[
+              "Blok één vast moment per dag voor geconcentreerd werk, zonder mail of berichten.",
+              "Bepaal elke ochtend je belangrijkste taak en doe die eerst.",
+              "Zet meldingen uit tijdens werk dat je aandacht vraagt.",
+              "Bouw korte pauzes in, zodat je focus de hele dag mee blijft doen.",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 text-petrol/80 leading-relaxed"
+              >
+                <span
+                  aria-hidden="true"
+                  className="mt-2 inline-block h-2 w-2 shrink-0 rotate-45 bg-koraal"
+                />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className={para}>
+            Een kleine verandering die je volhoudt, doet meer dan een heel
+            nieuw systeem dat je na een week loslaat.
+          </p>
+
+          <h3 className={h3}>Je hoeft het niet alleen uit te zoeken</h3>
+          <p className={para}>
+            Patronen in je eigen manier van werken zijn lastig te zien, juist
+            omdat ze zo vertrouwd zijn. Een coach helpt je te ontdekken waar
+            je grip verliest en wat voor jou werkt, in jouw situatie. Wat je
+            bespreekt, blijft vertrouwelijk.
+          </p>
+        </div>
+      </article>
+
+      {/* CTA-strip koraal */}
+      <section aria-labelledby="cta-kop-pe" className="bg-koraal">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+          <h2
+            id="cta-kop-pe"
+            className="font-display text-2xl md:text-3xl text-[color:var(--color-on-koraal-title,#4A1B0C)]"
+          >
+            Meer grip op je werk, met iemand die meedenkt
+          </h2>
+          <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
+            Wil je gerichter werken en meer overzicht houden? Onze coaches
+            helpen je ontdekken waar je tijd en aandacht heen gaan, en hoe je
+            daar meer regie op krijgt. Werk je via een werkgever die hierin
+            investeert, of regel je het zelf? Allebei kan. Ben je HR of
+            leidinggevende en wil je dit voor je team aanbieden?{" "}
+            <Link
+              to="/voor-werkgevers"
+              className="font-medium underline text-[color:var(--color-on-koraal-title,#4A1B0C)]"
+            >
+              Lees meer over onze loopbaancoaching voor werkgevers
+            </Link>
+            .
+          </p>
+          <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
+            Bij Vizier op Scherp werk je met een klein team van ervaren,
+            gecertificeerde coaches in Amsterdam, Haarlem en omgeving. Je
+            leert je coach eerst kennen voordat je begint, zodat je weet dat
+            het klikt.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link
+              to="/kennismaken"
+              className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
+            >
+              Maak vrijblijvend kennis
+            </Link>
+            <Link
+              to="/coaches"
+              className="inline-flex items-center rounded-full border-[1.5px] border-[color:var(--color-on-koraal-sub,#712B13)] px-6 py-3 font-medium text-[color:var(--color-on-koraal-title,#4A1B0C)] hover:border-[color:var(--color-on-koraal-title,#4A1B0C)] transition"
+            >
+              Bekijk onze coaches
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
