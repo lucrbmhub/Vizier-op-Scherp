@@ -5,6 +5,9 @@ const TITLE = "Leiderschap & talentontwikkeling | Vizier op Scherp";
 const DESC =
   "Vizier op Scherp voert lopende programma's uit op het gebied van leiderschap en talentontwikkeling, waaronder coaching voor startende managers en trainees.";
 const CANONICAL = "https://vizieropscherp.nl/leiderschap";
+const OG_TITLE = "Leiderschap & talentontwikkeling, Vizier op Scherp";
+const OG_DESC =
+  "Lopende programma's op het gebied van leiderschap en talentontwikkeling: coaching voor startende managers en begeleiding van trainees.";
 
 export const Route = createFileRoute("/leiderschap")({
   head: () => ({
@@ -12,10 +15,12 @@ export const Route = createFileRoute("/leiderschap")({
       { title: TITLE },
       { name: "description", content: DESC },
       { name: "robots", content: "noindex, follow" },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESC },
-      { name: "twitter:title", content: TITLE },
-      { name: "twitter:description", content: DESC },
+      { property: "og:locale", content: "nl_NL" },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:title", content: OG_TITLE },
+      { property: "og:description", content: OG_DESC },
+      { name: "twitter:title", content: OG_TITLE },
+      { name: "twitter:description", content: OG_DESC },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
   }),
