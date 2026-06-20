@@ -77,6 +77,8 @@ type Article = {
   audience: Audience;
   readMinutes: number;
   featured?: boolean;
+  badgeTone?: "mint";
+  badgeLabel?: string;
 };
 
 const ARTICLES: Article[] = [
@@ -115,6 +117,17 @@ const ARTICLES: Article[] = [
       "Beter solliciteren begint vóór de vacature. Lees hoe je je oriënteert op de arbeidsmarkt, je verhaal scherp krijgt en het gesprek ingaat met rust.",
     audience: "medewerker",
     readMinutes: 5,
+  },
+  {
+    slug: "duurzame-inzetbaarheid-werkgever",
+    title:
+      "Duurzame inzetbaarheid: hoe u er als werkgever in investeert",
+    summary:
+      "Hoe bevordert u duurzame inzetbaarheid, verder dan vitaliteit alleen? Praktische handvatten voor HR, met aandacht voor ontwikkeling en loopbaan.",
+    audience: "werkgever",
+    readMinutes: 5,
+    badgeTone: "mint",
+    badgeLabel: "Voor werkgevers",
   },
 ];
 
