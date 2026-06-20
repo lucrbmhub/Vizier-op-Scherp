@@ -33,6 +33,7 @@ export const Route = createFileRoute("/inzichten/")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
+      { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "nl_NL" },
       { property: "og:url", content: CANONICAL },
@@ -83,7 +84,7 @@ const ARTICLES: Article[] = [
     slug: "van-werven-naar-behouden",
     title: "Van werven naar behouden: de grote HR-verschuiving van 2026",
     summary:
-      "De arbeidsmarkt kantelt: van werven naar behouden. Waarom medewerkers echt vertrekken — en het gaat niet om salaris — en hoe een goed gesprek op tijd het verschil maakt.",
+      "De arbeidsmarkt kantelt: van werven naar behouden. Waarom medewerkers echt vertrekken, en het gaat niet om salaris, en hoe een goed gesprek op tijd het verschil maakt.",
     audience: "werkgever",
     readMinutes: 5,
     featured: true,
