@@ -125,6 +125,8 @@ export const Route = createFileRoute("/coaches")({
       { property: "og:url", content: "https://vizieropscherp.nl/coaches" },
       { property: "og:title", content: OG_TITLE },
       { property: "og:description", content: OG_DESC },
+      { name: "twitter:title", content: OG_TITLE },
+      { name: "twitter:description", content: OG_DESC },
     ],
     links: [{ rel: "canonical", href: "https://vizieropscherp.nl/coaches" }],
     scripts: [
