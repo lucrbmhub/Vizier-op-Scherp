@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "../assets/coaching-gesprek.jpg.asset.json";
+import nobcoLogo from "../assets/keurmerk-nobco.png.asset.json";
+import nolocLogo from "../assets/keurmerk-noloc.png.asset.json";
 
 const jsonLdBusiness = {
   "@context": "https://schema.org",
@@ -518,6 +520,27 @@ function Home() {
             >
               Plan een kennismakingsgesprek
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* KEURMERKEN */}
+      <section aria-label="Beroepsregisters" className="bg-linnen pb-16 md:pb-20">
+        <div className={wrap}>
+          <p className="text-center text-[0.95rem] text-petrol/70 max-w-[60ch] mx-auto">
+            Coaches in ons netwerk zijn aangesloten bij erkende beroepsregisters, waaronder:
+          </p>
+          <div className="mt-6 md:mt-8 flex items-center justify-center gap-10 md:gap-16">
+            <img
+              src={nobcoLogo.url}
+              alt="NOBCO, Nederlandse orde van beroepscoaches"
+              className="h-[52px] md:h-[62px] w-auto"
+            />
+            <img
+              src={nolocLogo.url}
+              alt="NOLOC, Register Loopbaan Professional, Noloc gecertificeerd"
+              className="h-[52px] md:h-[62px] w-auto"
+            />
           </div>
         </div>
       </section>
