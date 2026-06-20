@@ -5,6 +5,7 @@ import { LogoMark } from "./LogoMark";
 const navItems = [
   { to: "/voor-werkgevers", label: "Voor werkgevers & HR" },
   { to: "/coaching-voor-mij", label: "Coaching voor mij" },
+  { to: "/uwv-traject", label: "UWV-traject" },
   { to: "/coaches", label: "Onze coaches" },
   { to: "/over-ons", label: "Over ons" },
 ] as const;
