@@ -251,6 +251,66 @@ function headForSlug(slug: string) {
     };
   }
 
+  if (article.slug === "duurzame-inzetbaarheid-werkgever") {
+    const title =
+      "Duurzame inzetbaarheid bevorderen als werkgever | Vizier op Scherp";
+    const description =
+      "Hoe bevordert u duurzame inzetbaarheid in uw organisatie, verder dan vitaliteit alleen? Praktische handvatten voor HR, met aandacht voor ontwikkeling en loopbaan. Amsterdam en Haarlem.";
+    const ogTitle = "Duurzame inzetbaarheid bevorderen als werkgever";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching in Amsterdam, Haarlem en omgeving";
+
+    const ld = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline:
+        "Duurzame inzetbaarheid: hoe u er als werkgever in investeert",
+      description,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-06-19",
+      dateModified: "2026-06-19",
+      image,
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(ld) },
+      ],
+    };
+  }
+
   // Default (werkgever-artikel)
   return {
     meta: [
