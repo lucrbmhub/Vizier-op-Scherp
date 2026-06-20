@@ -41,6 +41,15 @@ const ARTICLES: Article[] = [
     audience: "medewerker",
     readMinutes: 5,
   },
+  {
+    slug: "solliciteren-en-arbeidsmarkt",
+    title:
+      "Solliciteren: je goed voorbereiden, van oriëntatie tot het gesprek",
+    summary:
+      "Beter solliciteren begint vóór de vacature. Lees hoe je je oriënteert op de arbeidsmarkt, je verhaal scherp krijgt en het gesprek ingaat met rust.",
+    audience: "medewerker",
+    readMinutes: 5,
+  },
 ];
 
 /* ------------------------------------------------------------------ */
