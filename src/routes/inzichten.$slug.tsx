@@ -1320,3 +1320,211 @@ function SolliciterenArticle({ article }: { article: Article }) {
     </>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/*  Werkgever-artikel — Duurzame inzetbaarheid                          */
+/* ------------------------------------------------------------------ */
+
+function DuurzameInzetbaarheidWerkgeverArticle({
+  article,
+}: {
+  article: Article;
+}) {
+  return (
+    <>
+      {/* HERO donker (werkgever-register) */}
+      <section className="bg-petrol text-linnen-licht">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <Link
+            to="/inzichten"
+            className="inline-flex items-center text-sm text-mint-dof hover:text-goud transition"
+          >
+            ← Inzichten
+          </Link>
+          <span className="mt-6 inline-block rounded-full bg-mint border border-mint-dof px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-petrol">
+            Voor werkgevers
+          </span>
+          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-linnen-licht max-w-[28ch] leading-[1.15]">
+            {article.title}
+          </h1>
+          <p className="mt-6 text-mint text-[1.1rem] leading-relaxed max-w-[60ch]">
+            Duurzame inzetbaarheid staat op elke HR-agenda, maar blijft vaak
+            hangen bij fruit op kantoor en een vitaliteitsweek. Echte
+            inzetbaarheid gaat dieper: het gaat erom dat uw medewerkers ook
+            over vijf of tien jaar met plezier en op niveau hun werk doen.
+            Dat vraagt aandacht voor meer dan gezondheid alleen.
+          </p>
+          <div className="mt-6 flex items-center gap-2.5 text-sm text-mint-dof">
+            <span>Voor HR &amp; leidinggevenden</span>
+            <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-koraal" />
+            <span>{article.readMinutes} min leestijd</span>
+          </div>
+        </div>
+      </section>
+
+      {/* BODY linnen */}
+      <article className="bg-linnen">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+          <p className="text-petrol/70 text-[1.05rem] leading-relaxed">
+            In dit artikel leest u wat duurzame inzetbaarheid in de praktijk
+            vraagt, waarom loopbaan en ontwikkeling daarin vaak de blinde vlek
+            zijn, en hoe u er gericht in investeert.
+          </p>
+
+          <h2 className="mt-12 font-display text-2xl md:text-[1.7rem] text-petrol">
+            Waarom inzetbaarheid meer is dan vitaliteit
+          </h2>
+          <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
+            Veel inzetbaarheidsbeleid richt zich op gezondheid: bewegen,
+            werkdruk, verzuim. Belangrijk, maar het is maar één kant. Een
+            medewerker kan fysiek fit zijn en toch vastlopen, omdat het werk
+            niet meer past, de motivatie weg is, of de ontwikkeling stilstaat.
+            Inzetbaarheid gaat net zo goed over of iemand nog op de goede
+            plek zit en blijft groeien.
+          </p>
+          <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
+            Juist daar zit voor veel organisaties de blinde vlek. Vitaliteit
+            is zichtbaar en meetbaar; loopbaan en motivatie zijn dat minder,
+            en worden daarom vaak overgeslagen. Terwijl het juist die dingen
+            zijn die bepalen of iemand op de lange duur betrokken en
+            productief blijft.
+          </p>
+
+          <h2 className="mt-12 font-display text-2xl md:text-[1.7rem] text-petrol">
+            Wat duurzame inzetbaarheid in de praktijk vraagt
+          </h2>
+          <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
+            Inzetbaarheid bevorderen betekent niet één groot programma, maar
+            aandacht op een paar fronten tegelijk. Naast gezondheid en
+            werkdruk gaat het om ontwikkeling (blijven medewerkers leren en
+            bijblijven?), motivatie (zitten ze nog op hun plek?) en loopbaan
+            (zien ze perspectief, ook als hun functie verandert?).
+          </p>
+          <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
+            Het mooie is dat deze dingen elkaar versterken. Een medewerker
+            die zich ontwikkelt en perspectief ziet, is gemotiveerder en vaak
+            ook vitaler. Wie hier op tijd in investeert, voorkomt verloop en
+            uitval verderop, wat doorgaans veel duurder is dan de
+            investering zelf.
+          </p>
+
+          {/* Goud kader */}
+          <section
+            aria-labelledby="signalen-kop"
+            className="mt-12 rounded-2xl border border-goud bg-goud/15 p-7 md:p-9"
+          >
+            <span className="block text-koraal text-[0.74rem] font-semibold tracking-[0.12em] uppercase mb-1.5">
+              Waar u op kunt letten
+            </span>
+            <h2
+              id="signalen-kop"
+              className="font-display text-2xl text-petrol"
+            >
+              Signalen dat inzetbaarheid aandacht nodig heeft
+            </h2>
+            <p className="mt-3 text-petrol/80 leading-relaxed">
+              Inzetbaarheid wordt vaak pas zichtbaar als het misgaat. Een
+              paar eerdere signalen in een team of organisatie:
+            </p>
+            <ul className="mt-4 divide-y divide-[color:rgba(31,61,59,0.12)]">
+              {[
+                "Medewerkers blijven lang op dezelfde plek zonder zichtbare ontwikkeling.",
+                "Het verloop loopt op, of juist niemand beweegt nog.",
+                "Verzuim of vermoeidheidsklachten nemen toe.",
+                "In gesprekken gaat het alleen over targets, nooit over ambitie of energie.",
+                "Loopbaanvragen komen pas op tafel bij een exitgesprek.",
+              ].map((s) => (
+                <li
+                  key={s}
+                  className="relative py-2.5 pl-8 text-petrol/85 leading-relaxed"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-1 top-[1.05rem] inline-block h-2 w-2 rotate-45 rounded-[2px] bg-koraal"
+                  />
+                  {s}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-petrol/80 leading-relaxed">
+              Herkent u meerdere van deze, dan is dat een teken om
+              inzetbaarheid breder op te pakken dan vitaliteit alleen.
+            </p>
+          </section>
+
+          {/* Kernzin petrol */}
+          <aside className="mt-12 rounded-2xl bg-petrol p-8 md:p-10 text-linnen-licht">
+            <span className="block text-goud text-[0.74rem] font-semibold tracking-[0.12em] uppercase mb-3">
+              In het kort
+            </span>
+            <p className="font-display text-[1.3rem] md:text-[1.4rem] leading-[1.45] text-linnen-licht">
+              Duurzame inzetbaarheid is geen vitaliteitsweek, maar
+              doorlopende aandacht voor gezondheid, ontwikkeling, motivatie
+              en loopbaan, zodat medewerkers op de lange duur betrokken en
+              productief blijven.
+            </p>
+          </aside>
+
+          <h2 className="mt-12 font-display text-2xl md:text-[1.7rem] text-petrol">
+            De rol van loopbaanbegeleiding
+          </h2>
+          <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
+            Loopbaanbegeleiding is een van de meest directe manieren om de
+            loopbaan- en motivatiekant van inzetbaarheid te versterken. Een
+            coach helpt medewerkers scherp te krijgen wat ze willen, waar ze
+            in willen groeien en hoe ze betrokken blijven, ook als hun rol
+            verandert.
+          </p>
+          <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
+            Voor u als werkgever heeft dit twee voordelen. Uw medewerkers
+            krijgen professionele begeleiding op een vertrouwelijke plek, en
+            u houdt zicht op het proces zonder dat de inhoud bij u
+            terechtkomt. U kunt dit per medewerker inzetten, of structureel
+            organiseren via een vaste afspraak, zodat begeleiding niet
+            afhangt van het moment waarop iemand al vastloopt.
+          </p>
+        </div>
+      </article>
+
+      {/* CTA-strip koraal */}
+      <section
+        aria-labelledby="cta-di-kop"
+        className="bg-koraal"
+      >
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <h2
+            id="cta-di-kop"
+            className="font-display text-2xl md:text-[2rem] text-[color:var(--color-on-koraal-title,#4A1B0C)]"
+          >
+            Inzetbaarheid structureel een plek geven
+          </h2>
+          <p className="mt-4 text-[1.05rem] leading-relaxed text-[color:var(--color-on-koraal-sub,#712B13)] max-w-[62ch]">
+            Wilt u de loopbaan- en ontwikkelkant van inzetbaarheid serieus
+            oppakken, zonder uw HR-team te overvragen? Vizier op Scherp
+            verzorgt loopbaanbegeleiding en coaching voor medewerkers, met
+            een vast team van gecertificeerde coaches in Amsterdam, Haarlem
+            en omgeving. U houdt zicht op het proces, de inhoud blijft
+            vertrouwelijk.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3.5">
+            <Link
+              to="/kennismaken"
+              className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
+            >
+              Maak vrijblijvend kennis
+            </Link>
+            <Link
+              to="/voor-werkgevers"
+              className="inline-flex items-center rounded-full border-[1.5px] border-[color:var(--color-on-koraal-sub,#712B13)] px-6 py-3 font-medium text-[color:var(--color-on-koraal-title,#4A1B0C)] hover:border-[color:var(--color-on-koraal-title,#4A1B0C)] transition"
+            >
+              Lees meer voor werkgevers
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Silence unused CTAStrip import-warning if any */}
+      {false && <CTAStrip title="" action={null}>{null}</CTAStrip>}
+    </>
+  );
+}
