@@ -320,6 +320,66 @@ function headForSlug(slug: string) {
     };
   }
 
+  if (article.slug === "persoonlijke-effectiviteit") {
+    const title =
+      "Persoonlijke effectiviteit: meer grip op je werk | Vizier op Scherp";
+    const description =
+      "Meer grip op je werk zonder harder te werken? Ontdek hoe je prioriteert, je aandacht beschermt en grenzen aangeeft, zonder productiviteitshype. Coaching in Amsterdam en Haarlem.";
+    const ogTitle = "Persoonlijke effectiviteit: meer grip op je werk";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching in Amsterdam, Haarlem en omgeving";
+
+    const ld = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline:
+        "Persoonlijke effectiviteit: meer grip op je werk zonder harder te werken",
+      description,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-06-19",
+      dateModified: "2026-06-19",
+      image,
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(ld) },
+      ],
+    };
+  }
+
   // Default (werkgever-artikel)
   return {
     meta: [
