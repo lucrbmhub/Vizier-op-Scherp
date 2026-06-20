@@ -253,14 +253,21 @@ function Page() {
   );
 }
 
-function badgeClasses(audience: Audience) {
-  return audience === "werkgever"
+function badgeClassesFor(article: Article) {
+  if (article.badgeTone === "mint") {
+    return "bg-mint text-petrol border border-mint-dof";
+  }
+  return article.audience === "werkgever"
     ? "bg-goud text-[color:var(--color-on-goud-title)]"
     : "bg-mint text-petrol";
 }
 
 function audienceLabel(audience: Audience) {
   return audience === "werkgever" ? "Voor werkgevers" : "Voor medewerkers";
+}
+
+function badgeLabelFor(article: Article) {
+  return article.badgeLabel ?? audienceLabel(article.audience);
 }
 
 function ArticleCard({ article }: { article: Article }) {
@@ -271,9 +278,9 @@ function ArticleCard({ article }: { article: Article }) {
       className="group relative flex flex-col gap-3 rounded-2xl border border-petrol/15 bg-linnen-licht p-7 transition-[transform,border-color] duration-150 hover:border-goud motion-safe:hover:-translate-y-1"
     >
       <span
-        className={`self-start rounded-full px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] ${badgeClasses(article.audience)}`}
+        className={`self-start rounded-full px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] ${badgeClassesFor(article)}`}
       >
-        {audienceLabel(article.audience)}
+        {badgeLabelFor(article)}
       </span>
       <h3 className="font-display text-xl text-petrol leading-tight">
         {article.title}
