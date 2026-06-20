@@ -371,6 +371,9 @@ function ArticlePage() {
   if (article.slug === "solliciteren-en-arbeidsmarkt") {
     return <SolliciterenArticle article={article} />;
   }
+  if (article.slug === "duurzame-inzetbaarheid-werkgever") {
+    return <DuurzameInzetbaarheidWerkgeverArticle article={article} />;
+  }
   return <WervenNaarBehoudenArticle article={article} />;
 }
 
