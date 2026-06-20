@@ -129,6 +129,15 @@ const ARTICLES: Article[] = [
     badgeTone: "mint",
     badgeLabel: "Voor werkgevers",
   },
+  {
+    slug: "persoonlijke-effectiviteit",
+    title:
+      "Persoonlijke effectiviteit: meer grip op je werk zonder harder te werken",
+    summary:
+      "Meer grip op je werk zonder harder te werken? Ontdek hoe je prioriteert, je aandacht beschermt en grenzen aangeeft, zonder productiviteitshype.",
+    audience: "medewerker",
+    readMinutes: 5,
+  },
 ];
 
 

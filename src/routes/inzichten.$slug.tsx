@@ -59,6 +59,15 @@ const ARTICLES: Article[] = [
     audience: "werkgever",
     readMinutes: 5,
   },
+  {
+    slug: "persoonlijke-effectiviteit",
+    title:
+      "Persoonlijke effectiviteit: meer grip op je werk zonder harder te werken",
+    summary:
+      "Meer grip op je werk zonder harder te werken? Ontdek hoe je prioriteert, je aandacht beschermt en grenzen aangeeft, zonder productiviteitshype.",
+    audience: "medewerker",
+    readMinutes: 5,
+  },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -373,6 +382,9 @@ function ArticlePage() {
   }
   if (article.slug === "duurzame-inzetbaarheid-werkgever") {
     return <DuurzameInzetbaarheidWerkgeverArticle article={article} />;
+  }
+  if (article.slug === "persoonlijke-effectiviteit") {
+    return <PersoonlijkeEffectiviteitArticle article={article} />;
   }
   return <WervenNaarBehoudenArticle article={article} />;
 }
