@@ -77,6 +77,8 @@ type Article = {
   audience: Audience;
   readMinutes: number;
   featured?: boolean;
+  badgeTone?: "mint";
+  badgeLabel?: string;
 };
 
 const ARTICLES: Article[] = [
@@ -116,12 +118,23 @@ const ARTICLES: Article[] = [
     audience: "medewerker",
     readMinutes: 5,
   },
+  {
+    slug: "duurzame-inzetbaarheid-werkgever",
+    title:
+      "Duurzame inzetbaarheid: hoe u er als werkgever in investeert",
+    summary:
+      "Hoe bevordert u duurzame inzetbaarheid, verder dan vitaliteit alleen? Praktische handvatten voor HR, met aandacht voor ontwikkeling en loopbaan.",
+    audience: "werkgever",
+    readMinutes: 5,
+    badgeTone: "mint",
+    badgeLabel: "Voor werkgevers",
+  },
 ];
 
 
 function Page() {
   const featured = ARTICLES.find((a) => a.featured);
-  const recent = ARTICLES.filter((a) => a !== featured).slice(0, 3);
+  const recent = ARTICLES.filter((a) => a !== featured).slice(0, 6);
   const hasContent = ARTICLES.length > 0;
 
   return (
@@ -240,14 +253,21 @@ function Page() {
   );
 }
 
-function badgeClasses(audience: Audience) {
-  return audience === "werkgever"
+function badgeClassesFor(article: Article) {
+  if (article.badgeTone === "mint") {
+    return "bg-mint text-petrol border border-mint-dof";
+  }
+  return article.audience === "werkgever"
     ? "bg-goud text-[color:var(--color-on-goud-title)]"
     : "bg-mint text-petrol";
 }
 
 function audienceLabel(audience: Audience) {
   return audience === "werkgever" ? "Voor werkgevers" : "Voor medewerkers";
+}
+
+function badgeLabelFor(article: Article) {
+  return article.badgeLabel ?? audienceLabel(article.audience);
 }
 
 function ArticleCard({ article }: { article: Article }) {
@@ -258,9 +278,9 @@ function ArticleCard({ article }: { article: Article }) {
       className="group relative flex flex-col gap-3 rounded-2xl border border-petrol/15 bg-linnen-licht p-7 transition-[transform,border-color] duration-150 hover:border-goud motion-safe:hover:-translate-y-1"
     >
       <span
-        className={`self-start rounded-full px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] ${badgeClasses(article.audience)}`}
+        className={`self-start rounded-full px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] ${badgeClassesFor(article)}`}
       >
-        {audienceLabel(article.audience)}
+        {badgeLabelFor(article)}
       </span>
       <h3 className="font-display text-xl text-petrol leading-tight">
         {article.title}
