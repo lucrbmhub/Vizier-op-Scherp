@@ -348,7 +348,7 @@ function Page() {
                     key={k}
                     className="py-2.5 border-b border-mint/20 text-mint text-[0.96rem] flex gap-3"
                   >
-                    <span className="text-goud shrink-0">—</span>
+                    <span aria-hidden="true" className="text-goud shrink-0 mt-2 w-1.5 h-1.5 rounded-full bg-goud" />
                     <span>
                       <strong className="font-medium text-linnen-licht">{k}</strong>: {v}
                     </span>
