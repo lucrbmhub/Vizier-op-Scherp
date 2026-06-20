@@ -74,7 +74,7 @@ export const Route = createFileRoute("/")({
           "Persoonlijk voor de medewerker, georganiseerd voor HR. Loopbaancoaching in Amsterdam, Haarlem en omgeving.",
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(jsonLdBusiness) },
     ],
