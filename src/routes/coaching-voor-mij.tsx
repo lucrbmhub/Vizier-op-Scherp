@@ -75,6 +75,8 @@ export const Route = createFileRoute("/coaching-voor-mij")({
       { property: "og:url", content: "https://vizieropscherp.nl/coaching-voor-mij" },
       { property: "og:title", content: OG_TITLE },
       { property: "og:description", content: OG_DESC },
+      { name: "twitter:title", content: OG_TITLE },
+      { name: "twitter:description", content: OG_DESC },
     ],
     links: [
       { rel: "canonical", href: "https://vizieropscherp.nl/coaching-voor-mij" },

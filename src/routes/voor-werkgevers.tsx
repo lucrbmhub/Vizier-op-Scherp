@@ -84,6 +84,8 @@ export const Route = createFileRoute("/voor-werkgevers")({
       { property: "og:url", content: "https://vizieropscherp.nl/voor-werkgevers" },
       { property: "og:title", content: OG_TITLE },
       { property: "og:description", content: OG_DESC },
+      { name: "twitter:title", content: OG_TITLE },
+      { name: "twitter:description", content: OG_DESC },
     ],
     links: [
       { rel: "canonical", href: "https://vizieropscherp.nl/voor-werkgevers" },
@@ -346,7 +348,7 @@ function Page() {
                     key={k}
                     className="py-2.5 border-b border-mint/20 text-mint text-[0.96rem] flex gap-3"
                   >
-                    <span className="text-goud shrink-0">—</span>
+                    <span aria-hidden="true" className="text-goud shrink-0 mt-2 w-1.5 h-1.5 rounded-full bg-goud" />
                     <span>
                       <strong className="font-medium text-linnen-licht">{k}</strong>: {v}
                     </span>
@@ -457,7 +459,7 @@ function Page() {
                     key={l}
                     className="py-1.5 text-petrol/75 text-[0.95rem] flex gap-2.5"
                   >
-                    <span className="text-koraal shrink-0">—</span>
+                    <span aria-hidden="true" className="shrink-0 mt-2 w-1.5 h-1.5 rounded-full bg-koraal" />
                     {l}
                   </li>
                 ))}

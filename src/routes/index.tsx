@@ -54,7 +54,7 @@ export const Route = createFileRoute("/")({
       { name: "robots", content: "index, follow" },
       { property: "og:locale", content: "nl_NL" },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://vizieropscherp.nl/" },
       {
         property: "og:title",
         content: "Loopbaancoaching voor werkgevers, Vizier op Scherp",
@@ -74,7 +74,7 @@ export const Route = createFileRoute("/")({
           "Persoonlijk voor de medewerker, georganiseerd voor HR. Loopbaancoaching in Amsterdam, Haarlem en omgeving.",
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://vizieropscherp.nl/" }],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(jsonLdBusiness) },
     ],
