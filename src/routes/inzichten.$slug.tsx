@@ -50,6 +50,15 @@ const ARTICLES: Article[] = [
     audience: "medewerker",
     readMinutes: 5,
   },
+  {
+    slug: "duurzame-inzetbaarheid-werkgever",
+    title:
+      "Duurzame inzetbaarheid: hoe u er als werkgever in investeert",
+    summary:
+      "Hoe bevordert u duurzame inzetbaarheid, verder dan vitaliteit alleen? Praktische handvatten voor HR, met aandacht voor ontwikkeling en loopbaan.",
+    audience: "werkgever",
+    readMinutes: 5,
+  },
 ];
 
 /* ------------------------------------------------------------------ */
