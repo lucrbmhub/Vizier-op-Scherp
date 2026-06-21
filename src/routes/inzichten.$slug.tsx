@@ -2651,3 +2651,252 @@ function LoopbaangesprekArticle({ article }: { article: Article }) {
     </>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/*  Medewerker-artikel — Een goede loopbaancoach kiezen                */
+/* ------------------------------------------------------------------ */
+
+function GoedeCoachKiezenArticle({ article }: { article: Article }) {
+  const para = "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
+  const h2 = "mt-12 font-display text-2xl md:text-[1.7rem] text-petrol";
+
+  const faq = [
+    {
+      q: "Waar let je op bij het kiezen van een loopbaancoach?",
+      a: "Let allereerst op de klik. Onderzoek laat zien dat de kwaliteit van de relatie tussen jou en je coach veruit het meest bepalend is voor het resultaat, meer dan de methode of het diploma. Een goede basis is wel dat de coach gecertificeerd en aangesloten is bij een erkende beroepsvereniging of kwaliteitsregister. Maar als het in het kennismakingsgesprek niet klikt, is dat een belangrijker signaal dan welke opleiding ook.",
+    },
+    {
+      q: "Maakt de methode of techniek van een coach uit?",
+      a: "Minder dan je zou denken. Uit onderzoek naar de werkzame factoren van coaching blijkt dat de specifieke methode een klein deel van het resultaat bepaalt. Wat het meeste uitmaakt, is of je je veilig en gehoord voelt en vertrouwen hebt in het proces. Een coach met een methode die bij jou past is fijn, maar het is niet het eerste waar je op zou moeten selecteren.",
+    },
+    {
+      q: "Moet ik meerdere coaches spreken voordat ik kies?",
+      a: "Dat hoeft niet per se. Je hebt maar één coach nodig die goed genoeg is. Het beste is om er een te ontmoeten in een kennismakingsgesprek en te voelen of er klik is. Is die er, dan kun je gewoon beginnen. Is die er niet, dan spreek je een ander. Vergelijken kan, maar belangrijker dan een keuze tussen drie opties is dat je zelf het gevoel houdt dat je kiest.",
+    },
+    {
+      q: "Waaraan herken je een goed kennismakingsgesprek?",
+      a: "Een goede coach stelt vooral vragen en luistert, in plaats van meteen met oplossingen of een vast programma te komen. Je voelt je op je gemak, niet beoordeeld. Je merkt dat de coach oprecht nieuwsgierig is naar jouw verhaal. En je loopt weg met het gevoel dat hier iets te halen valt, ook al is je vraag nog niet opgelost. Dat gevoel is het belangrijkste meetpunt.",
+    },
+  ];
+
+  return (
+    <>
+      {/* Lichte hero */}
+      <section className="bg-linnen-licht">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-12 pb-14 md:pt-16 md:pb-20">
+          <Link
+            to="/inzichten"
+            className="inline-flex items-center text-sm text-petrol/70 hover:text-koraal transition"
+          >
+            ← Inzichten
+          </Link>
+          <div className="mt-6">
+            <span className="inline-flex items-center rounded-full bg-goud px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-[color:var(--color-on-goud-title)]">
+              Voor medewerkers
+            </span>
+          </div>
+          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-petrol leading-[1.2] max-w-[28ch]">
+            {article.title}
+          </h1>
+          <p className="mt-6 text-petrol/75 leading-relaxed text-[1.1rem] max-w-[62ch]">
+            Je gaat op zoek naar een loopbaancoach en vergelijkt opleidingen,
+            methodes en jarenlange ervaring. Begrijpelijk, maar je kijkt naar
+            de verkeerde dingen. Het belangrijkste waar het op aankomt, staat
+            op geen enkele website: of het tussen jullie klikt.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-petrol/65">
+            <span>Voor medewerkers</span>
+            <span aria-hidden="true" className="inline-block h-1.5 w-1.5 rounded-full bg-koraal" />
+            <span>{article.readMinutes} min lezen</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Body */}
+      <article className="bg-linnen">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+          <p className="text-petrol/85 leading-relaxed text-[1.1rem]">
+            In dit stuk lees je wat onderzoek zegt over wat een coach echt
+            effectief maakt, en hoe je dat in één gesprek bij jezelf kunt
+            toetsen.
+          </p>
+
+          <h2 className={h2}>Wat onderzoek zegt over wat werkt</h2>
+          <p className={para}>
+            Onderzoek naar de werkzame factoren van coaching is opvallend
+            consistent: niet de methode bepaalt het succes, maar de relatie.
+            In een bekende analyse verklaarde de specifieke aanpak minder dan
+            tien procent van het effect. Doorslaggevend is of je je gehoord
+            voelt en vertrouwen hebt in het proces.
+          </p>
+          <p className={para}>
+            Dat zet de gangbare manier van kiezen op zijn kop. We zoeken het
+            in meetbare zaken: opleiding, jaren ervaring, een mooi rijtje
+            specialisaties. Logisch, want dat is wat je kunt vergelijken.
+            Maar de klik laat zich niet in een cv vangen.
+          </p>
+
+          <h2 className={h2}>Wat een certificaat wél en niet zegt</h2>
+          <p className={para}>
+            Kwaliteit telt. Een coach die gecertificeerd en aangesloten is
+            bij een erkende beroepsvereniging of kwaliteitsregister, zoals
+            Noloc of NOBCO, heeft een vakopleiding gedaan, werkt volgens
+            gedragsregels en blijft zich bijscholen. Dat is een goede
+            ondergrens.
+          </p>
+          <p className={para}>
+            Maar een keurmerk is een drempel, geen garantie voor een match.
+            Certificering zegt dat iemand het vak beheerst. Of die persoon
+            bij jóu past, voel je zelf, en niet in een lijst registraties.
+          </p>
+
+          {/* Uitgelicht blok — kennismakingsgesprek */}
+          <section
+            aria-labelledby="kennismaking-kern"
+            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+          >
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
+              Het kennismakingsgesprek
+            </span>
+            <h2
+              id="kennismaking-kern"
+              className="mt-2 font-display text-2xl md:text-[1.6rem] text-petrol"
+            >
+              Waar je in het eerste gesprek op let
+            </h2>
+            <p className="mt-4 text-petrol/80 leading-relaxed">
+              Bijna elke coach biedt een vrijblijvend kennismakingsgesprek
+              aan. Dat is je belangrijkste meetmoment. Let onder andere op
+              deze vier dingen:
+            </p>
+            <ul className="mt-4 space-y-3 text-petrol/80 leading-relaxed">
+              <li className="flex gap-3">
+                <span aria-hidden="true" className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-koraal" />
+                <span>
+                  Stelt de coach vooral vragen en luistert die echt, of komt
+                  hij snel met oplossingen en een vast programma?
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span aria-hidden="true" className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-koraal" />
+                <span>
+                  Voel je je op je gemak en serieus genomen, of een beetje
+                  beoordeeld?
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span aria-hidden="true" className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-koraal" />
+                <span>
+                  Merk je oprechte nieuwsgierigheid naar jouw verhaal, of
+                  het afdraaien van een standaardpraatje?
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span aria-hidden="true" className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-koraal" />
+                <span>
+                  Loop je weg met het gevoel dat hier iets te halen valt,
+                  ook al is je vraag nog niet opgelost?
+                </span>
+              </li>
+            </ul>
+            <p className="mt-4 text-petrol/80 leading-relaxed">
+              Dat laatste gevoel is je beste kompas.
+            </p>
+          </section>
+
+          <h2 className={h2}>Je hoeft niet eerst drie coaches te spreken</h2>
+          <p className={para}>
+            Je hebt maar één coach nodig die goed genoeg is. Ontmoet er een,
+            voel of het klikt, begin als dat zo is, spreek anders een ander.
+            Vergelijken kan, en is meestal beter dan een toegewezen coach
+            zonder inspraak, maar maak er geen project van. Belangrijker dan
+            een keuze tussen drie opties is dat jíj het gevoel houdt te
+            kiezen.
+          </p>
+
+          <h2 className={h2}>Waarom de klik geen luxe is</h2>
+          <p className={para}>
+            De klik klinkt vaag, maar is het niet. Loopbaanvragen raken aan
+            twijfel en onzekerheid. Of je durft te zeggen wat er echt speelt,
+            hangt af van hoe veilig je je voelt. Een coach bij wie je je niet
+            op je gemak voelt, krijgt het halve verhaal, en kan je dus maar
+            half helpen. De klik ís de inhoud.
+          </p>
+
+          {/* Kernzin — petrol vlak */}
+          <aside className="mt-14 rounded-2xl bg-petrol px-7 py-9 md:px-10 md:py-11">
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud">
+              In het kort
+            </span>
+            <p className="mt-3 font-display text-xl md:text-2xl text-linnen-licht leading-snug">
+              Een diploma vertelt je dat iemand het vak beheerst. Of die
+              persoon je verder helpt, hangt af van iets wat je alleen zelf
+              kunt voelen: of het klikt.
+            </p>
+          </aside>
+
+          {/* Bronnenregel */}
+          <p className="mt-10 border-t border-petrol/15 pt-4 text-xs text-petrol/60 leading-relaxed">
+            Met inzichten uit onderzoek naar de werkzame factoren van
+            coaching (onder andere De Haan en het model van Lambert),
+            beschreven in vakblad Loopbaanvisie.
+          </p>
+
+          {/* FAQ */}
+          <section aria-labelledby="faq-kop-coach" className="mt-14">
+            <h2
+              id="faq-kop-coach"
+              className="font-display text-2xl md:text-[1.7rem] text-petrol"
+            >
+              Veelgestelde vragen
+            </h2>
+            <div className="mt-6 space-y-7">
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-display text-lg text-petrol">
+                    {item.q}
+                  </h3>
+                  <p className="mt-2 text-petrol/80 leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </article>
+
+      {/* CTA-strip koraal */}
+      <section aria-labelledby="cta-kop-coach" className="bg-koraal">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+          <h2
+            id="cta-kop-coach"
+            className="font-display text-2xl md:text-3xl text-[color:var(--color-on-koraal-title,#4A1B0C)]"
+          >
+            Benieuwd of het klikt?
+          </h2>
+          <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
+            Bij Vizier op Scherp begint elk traject met een vrijblijvend
+            kennismakingsgesprek. Geen verkooppraat, gewoon kijken of het
+            tussen jou en de coach klikt. Voelt het goed, dan ga je verder.
+            Zo niet, dan denken we mee over een betere match.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link
+              to="/kennismaken"
+              className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
+            >
+              Plan een kennismaking
+            </Link>
+            <Link
+              to="/coaches"
+              className="inline-flex items-center rounded-full border-[1.5px] border-[color:var(--color-on-koraal-sub,#712B13)] px-6 py-3 font-medium text-[color:var(--color-on-koraal-title,#4A1B0C)] hover:border-[color:var(--color-on-koraal-title,#4A1B0C)] transition"
+            >
+              Bekijk onze coaches
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
