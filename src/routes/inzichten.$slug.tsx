@@ -2145,3 +2145,232 @@ function PersoonlijkeEffectiviteitArticle({ article }: { article: Article }) {
     </>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/*  Werkgever-artikel — Het loopbaangesprek met uw medewerker          */
+/* ------------------------------------------------------------------ */
+
+function LoopbaangesprekArticle({ article }: { article: Article }) {
+  const para = "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
+  const h2 = "mt-12 font-display text-2xl md:text-[1.7rem] text-petrol";
+
+  const faq = [
+    {
+      q: "Wat is een loopbaangesprek?",
+      a: "Een loopbaangesprek is een gesprek waarin een medewerker stilstaat bij waar hij staat, wat energie geeft en kost, en welke kant hij op wil. Anders dan een beoordelings- of functioneringsgesprek gaat het niet over presteren, maar over richting, ontwikkeling en inzetbaarheid op langere termijn.",
+    },
+    {
+      q: "Waarom zou ik dit door een externe partij laten doen?",
+      a: "Bij de eigen leidinggevende spelen beoordeling en afhankelijkheid mee, waardoor medewerkers niet altijd vrijuit praten. Een onafhankelijke, vertrouwelijke gesprekspartner krijgt vaak eerlijker antwoorden. U ontvangt een terugkoppeling op hoofdlijnen, zonder dat vertrouwelijke details worden gedeeld.",
+    },
+    {
+      q: "Wat levert een loopbaangesprek mijn organisatie op?",
+      a: "U hoort vroeg wat er bij medewerkers speelt, nog voordat het tot verzuim of vertrek leidt. Mensen voelen zich gezien en blijven wendbaarder. En u maakt intern talent zichtbaar, wat interne doorgroei mogelijk maakt en wervingskosten bespaart.",
+    },
+    {
+      q: "Hoe vaak zou zo'n gesprek moeten plaatsvinden?",
+      a: "Dat hangt af van uw organisatie, maar het werkt het best als terugkerend moment in plaats van eenmalige actie. Veel organisaties beginnen met een ronde gesprekken voor een afgebakende groep, en bouwen van daaruit toe naar een vast ritme.",
+    },
+  ];
+
+  return (
+    <>
+      {/* HERO donker */}
+      <section className="bg-petrol text-linnen-licht">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <Link
+            to="/inzichten"
+            className="inline-flex items-center text-sm text-mint-dof hover:text-goud transition"
+          >
+            ← Inzichten
+          </Link>
+          <span className="mt-6 inline-block rounded-full bg-mint border border-mint-dof px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-petrol">
+            Voor werkgevers &amp; HR
+          </span>
+          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-linnen-licht max-w-[30ch] leading-[1.15]">
+            {article.title}
+          </h1>
+          <p className="mt-6 text-mint text-[1.1rem] leading-relaxed max-w-[62ch]">
+            In veel organisaties komt het gesprek over iemands loopbaan pas
+            op gang bij het exitgesprek, als de medewerker al een
+            handtekening onder een ander contract heeft. Of bij dreigend
+            verzuim, als het al wringt. Dat is jammer, en duur. Het beste
+            loopbaangesprek voert u juist als er nog niets aan de hand is.
+          </p>
+          <div className="mt-6 flex items-center gap-2.5 text-sm text-mint-dof">
+            <span>Voor werkgevers &amp; HR</span>
+            <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-koraal" />
+            <span>{article.readMinutes} min lezen</span>
+          </div>
+        </div>
+      </section>
+
+      {/* BODY linnen */}
+      <article className="bg-linnen">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+          <p className="text-petrol/70 text-[1.05rem] leading-relaxed">
+            In dit stuk leest u waarom het loopbaangesprek het beste vóór een
+            probleem plaatsvindt, waarom een onafhankelijke gesprekspartner
+            vaak eerlijker antwoorden krijgt, en hoe u ermee begint.
+          </p>
+
+          <h2 className={h2}>Het beste moment is niet het exitgesprek</h2>
+          <p className={para}>
+            In de praktijk vinden veel loopbaangesprekken pas plaats als het
+            eigenlijk al te laat is. Pas bij een opzegging hoort u wat er al
+            maanden speelde, en pas bij dreigend verzuim wordt zichtbaar dat
+            iemand allang niet meer op zijn plek zat. Dat kost meer dan één
+            medewerker.
+          </p>
+          <p className={para}>
+            In een arbeidsmarkt die volgens UWV al jaren krap tot zeer krap
+            is, en in Groot-Amsterdam zeer krap, is iemand vervangen duur en
+            traag. Kennis, ervaring en relaties vertrekken mee. Een gesprek
+            op tijd voorkomt vaak dat het zover komt.
+          </p>
+
+          <h2 className={h2}>Wat een goed loopbaangesprek oplevert</h2>
+          <p className={para}>
+            Een loopbaangesprek staat los van het beoordelingsgesprek en gaat
+            niet over presteren, maar over richting en ontwikkeling. Het
+            vakblad Loopbaanvisie beschrijft het ontwikkelgesprek als een
+            terugkerend moment waarop medewerker en organisatie samen
+            stilstaan bij waar iemand staat en waar hij naartoe wil.
+          </p>
+          <p className={para}>
+            Wat dat oplevert is concreet: u hoort vroege signalen voor het
+            tot vertrek of verzuim leidt, de medewerker krijgt zicht op zijn
+            talenten en drijfveren en wordt daarmee wendbaarder, en intern
+            talent wordt zichtbaar. Dat laatste is geen detail. Onzichtbaar
+            talent leidt vaak tot extern werven terwijl de geschikte persoon
+            al binnen zit, met wervingskosten, inwerktijd en soms onnodig
+            vertrek tot gevolg. Het loopbaangesprek maakt interne mobiliteit
+            een bewuste keuze in plaats van een noodgreep.
+          </p>
+
+          {/* Uitgelicht blok — De kern */}
+          <section
+            aria-labelledby="loopbaan-kern"
+            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+          >
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
+              De kern
+            </span>
+            <p
+              id="loopbaan-kern"
+              className="mt-3 font-display text-xl md:text-[1.45rem] text-petrol leading-snug"
+            >
+              Een organisatie die pas in beweging komt als het misgaat, loopt
+              achter de feiten aan. Een organisatie die het loopbaangesprek
+              tot routine maakt, ziet verandering aankomen en houdt mensen in
+              beweging.
+            </p>
+          </section>
+
+          <h2 className={h2}>Waarom niet gewoon met de leidinggevende?</h2>
+          <p className={para}>
+            Een logische vraag: dit kan toch ook in een gesprek met de eigen
+            manager? In de praktijk klinkt daar bijna altijd beoordeling en
+            afhankelijkheid in mee. Mensen zeggen niet snel tegen hun
+            leidinggevende dat ze twijfelen, dat ze aan iets anders denken,
+            of dat ze hun werk niet meer leuk vinden. Dat is geen
+            onwelwillendheid, dat is hoe arbeidsverhoudingen werken.
+          </p>
+          <p className={para}>
+            Een onafhankelijke, vertrouwelijke gesprekspartner krijgt vaak
+            eerlijker antwoorden, en levert juist daardoor bruikbaardere
+            signalen. De terugkoppeling aan u gaat over hoofdlijnen en
+            patronen die u helpen sturen, niet over wat één persoon
+            vertrouwelijk heeft gedeeld.
+          </p>
+
+          <h2 className={h2}>Hoe u ermee begint</h2>
+          <p className={para}>
+            U hoeft hier geen groot programma voor op te tuigen. Een
+            laagdrempelige eerste stap is een ronde loopbaangesprekken met
+            een afgebakende groep medewerkers, uitgevoerd door
+            onafhankelijke coaches, met een korte terugkoppeling op
+            hoofdlijnen. Zo ziet u wat het oplevert voordat u breder gaat.
+          </p>
+          <p className={para}>
+            Van daaruit bouwt u toe naar een vaste plek voor het
+            loopbaangesprek in uw organisatie. Geen verplicht nummer, maar
+            een vanzelfsprekend moment waarop vooruitkijken normaal is, ook
+            als het goed gaat.
+          </p>
+
+          {/* Kernzin — petrol vlak */}
+          <aside className="mt-14 rounded-2xl bg-petrol px-7 py-9 md:px-10 md:py-11">
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud">
+              In het kort
+            </span>
+            <p className="mt-3 font-display text-xl md:text-2xl text-linnen-licht leading-snug">
+              Het loopbaangesprek is geen brandblusser voor als het misgaat.
+              Het is onderhoud, en onderhoud doet u vóór de storing.
+            </p>
+          </aside>
+
+          {/* Bronnenregel */}
+          <p className="mt-10 border-t border-petrol/15 pt-4 text-xs text-petrol/60 leading-relaxed">
+            Bronnen: vakblad Loopbaanvisie, waaronder publicaties vanuit
+            Noloc over het ontwikkelgesprek; arbeidsmarktcijfers van UWV
+            (Regio in Beeld Groot-Amsterdam).
+          </p>
+
+          {/* FAQ */}
+          <section aria-labelledby="faq-kop-loop" className="mt-14">
+            <h2
+              id="faq-kop-loop"
+              className="font-display text-2xl md:text-[1.7rem] text-petrol"
+            >
+              Veelgestelde vragen
+            </h2>
+            <div className="mt-6 space-y-7">
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-display text-lg text-petrol">
+                    {item.q}
+                  </h3>
+                  <p className="mt-2 text-petrol/80 leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </article>
+
+      {/* CTA-strip koraal */}
+      <section aria-labelledby="cta-kop-loop" className="bg-koraal">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+          <h2
+            id="cta-kop-loop"
+            className="font-display text-2xl md:text-3xl text-[color:var(--color-on-koraal-title,#4A1B0C)]"
+          >
+            Benieuwd wat het loopbaangesprek uw organisatie oplevert?
+          </h2>
+          <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
+            We denken graag met u mee over hoe u het loopbaangesprek een
+            vaste plek geeft in uw organisatie. Zonder groot programma, met
+            een concrete eerste stap die past bij uw mensen.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link
+              to="/kennismaken"
+              className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
+            >
+              Plan een kennismaking
+            </Link>
+            <Link
+              to="/voor-werkgevers"
+              className="inline-flex items-center rounded-full border-[1.5px] border-[color:var(--color-on-koraal-sub,#712B13)] px-6 py-3 font-medium text-[color:var(--color-on-koraal-title,#4A1B0C)] hover:border-[color:var(--color-on-koraal-title,#4A1B0C)] transition"
+            >
+              Lees meer voor werkgevers
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
