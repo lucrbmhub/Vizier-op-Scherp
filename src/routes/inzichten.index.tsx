@@ -84,12 +84,15 @@ type Article = {
 const ARTICLES: Article[] = [
   {
     slug: "van-werven-naar-behouden",
-    title: "Van werven naar behouden: de grote HR-verschuiving van 2026",
+    title:
+      "Van werven naar behouden: waarom medewerkers vertrekken om stilstand, niet om salaris",
     summary:
-      "De arbeidsmarkt kantelt: van werven naar behouden. Waarom medewerkers echt vertrekken, en het gaat niet om salaris, en hoe een goed gesprek op tijd het verschil maakt.",
+      "Medewerkers verlaten hun werkgever zelden om meer salaris. Gebrek aan ontwikkeling en doorgroei is de voornaamste reden. Wat werkgevers in de regio Amsterdam en Haarlem kunnen doen, onderbouwd met actuele UWV- en CBS-cijfers.",
     audience: "werkgever",
-    readMinutes: 5,
+    readMinutes: 6,
     featured: true,
+    badgeTone: "mint",
+    badgeLabel: "Voor werkgevers & HR",
   },
   {
     slug: "richting-vinden-in-je-loopbaan",
