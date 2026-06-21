@@ -856,6 +856,9 @@ function ArticlePage() {
   if (article.slug === "loopbaangesprek-met-medewerker") {
     return <LoopbaangesprekArticle article={article} />;
   }
+  if (article.slug === "goede-loopbaancoach-kiezen") {
+    return <GoedeCoachKiezenArticle article={article} />;
+  }
   return <WervenNaarBehoudenArticle article={article} />;
 }
 
