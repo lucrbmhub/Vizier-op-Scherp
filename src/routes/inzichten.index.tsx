@@ -132,9 +132,9 @@ const ARTICLES: Article[] = [
   {
     slug: "persoonlijke-effectiviteit",
     title:
-      "Persoonlijke effectiviteit: meer grip op je werk zonder harder te werken",
+      "Persoonlijke effectiviteit: waarom je grootste zwakte vaak je sterkste kant is",
     summary:
-      "Meer grip op je werk zonder harder te werken? Ontdek hoe je prioriteert, je aandacht beschermt en grenzen aangeeft, zonder productiviteitshype.",
+      "Effectiever worden begint niet bij meer discipline, maar bij weten wat je wilt en waar je goed in bent. Over perfectionisme, keuzes maken en je sterke kanten op het juiste moment inzetten.",
     audience: "medewerker",
     readMinutes: 5,
   },
