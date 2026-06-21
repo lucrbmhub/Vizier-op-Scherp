@@ -732,6 +732,9 @@ function ArticlePage() {
   if (article.slug === "persoonlijke-effectiviteit") {
     return <PersoonlijkeEffectiviteitArticle article={article} />;
   }
+  if (article.slug === "loopbaangesprek-met-medewerker") {
+    return <LoopbaangesprekArticle article={article} />;
+  }
   return <WervenNaarBehoudenArticle article={article} />;
 }
 
