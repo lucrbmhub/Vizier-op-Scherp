@@ -82,20 +82,21 @@ function headForSlug(slug: string) {
 
   if (article.slug === "richting-vinden-in-je-loopbaan") {
     const title =
-      "Richting vinden in je loopbaan: weer weten wat je wilt | Vizier op Scherp";
+      "Richting vinden in je loopbaan: waarom je niet bij de vacaturesite moet beginnen | Vizier op Scherp";
     const description =
-      "Geen idee welke kant je op wilt met je werk? Ontdek hoe je richting vindt in je loopbaan: signalen, concrete stappen en wanneer een coach helpt. Regio Amsterdam en Haarlem.";
+      "Weet je dat je iets anders wilt, maar niet wat? Richting vind je zelden op een vacaturesite, maar door te ontdekken wat je energie geeft en wat je drijft. Praktische handvatten van Vizier op Scherp, loopbaancoaching in de regio Amsterdam en Haarlem.";
     const ogTitle =
-      "Richting vinden in je loopbaan: weer weten wat je wilt";
+      "Richting vinden in je loopbaan: waarom je niet bij de vacaturesite moet beginnen";
+    const twitterDescription =
+      "Richting vind je zelden op een vacaturesite, maar door te ontdekken wat je energie geeft en wat je drijft. Praktische handvatten voor je loopbaan.";
     const image = "https://vizieropscherp.nl/og-image.png";
     const imageAlt =
       "Vizier op Scherp, loopbaancoaching in Amsterdam, Haarlem en omgeving";
 
-    const ld = {
+    const blogLd = {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      headline:
-        "Richting vinden in je loopbaan: weer weten welke kant je op wilt",
+      headline: ogTitle,
       description,
       inLanguage: "nl-NL",
       mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
@@ -110,8 +111,47 @@ function headForSlug(slug: string) {
         logo: { "@type": "ImageObject", url: image },
       },
       datePublished: "2026-06-19",
-      dateModified: "2026-06-19",
+      dateModified: "2026-06-21",
       image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Hoe weet ik welke kant ik op wil met mijn loopbaan?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Begin niet bij vacatures, maar bij jezelf. Kijk naar wat je energie geeft, wat je drijft en waar je goed in bent. Vaak zit daar een rode draad in die naar een richting wijst, ook als je nog geen functietitel kunt bedenken. Pas daarna ga je verkennen welk werk daarbij past.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Moet ik mijn hele carrière omgooien om gelukkiger te worden in mijn werk?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Meestal niet. De richting die je zoekt zit vaak in een ander accent, een andere omgeving of een rol die dichter bij je drijfveren ligt. Een grote overstap is soms het antwoord, maar lang niet altijd. Kleine verschuivingen maken vaak al veel verschil.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Ik weet wel wat ik niet meer wil, maar niet wat ik wel wil. Wat nu?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Dat is een heel normaal startpunt. Weten wat niet meer past, is al waardevolle informatie. De volgende stap is terugkijken naar momenten waarop je de tijd vergat of energie kreeg, en daarin een patroon zoeken. Dat patroon wijst vaak een richting aan die je nog niet onder woorden had.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Kan een loopbaancoach helpen bij het vinden van richting?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Ja. Je zit vaak te dicht op je eigen verhaal om je rode draad te zien. Een coach stelt de vragen die je jezelf niet stelt en helpt je een vaag verlangen te vertalen naar concrete stappen, in jouw tempo.",
+          },
+        },
+      ],
     };
 
     return {
@@ -131,15 +171,17 @@ function headForSlug(slug: string) {
         { property: "og:image:alt", content: imageAlt },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: ogTitle },
-        { name: "twitter:description", content: description },
+        { name: "twitter:description", content: twitterDescription },
         { name: "twitter:image", content: image },
       ],
       links: [{ rel: "canonical", href: canonical }],
       scripts: [
-        { type: "application/ld+json", children: JSON.stringify(ld) },
+        { type: "application/ld+json", children: JSON.stringify(blogLd) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
       ],
     };
   }
+
 
   if (article.slug === "energie-en-motivatie-in-werk") {
     const title =
