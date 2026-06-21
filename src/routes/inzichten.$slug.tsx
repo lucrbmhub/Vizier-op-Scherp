@@ -79,6 +79,15 @@ const ARTICLES: Article[] = [
     audience: "werkgever",
     readMinutes: 6,
   },
+  {
+    slug: "goede-loopbaancoach-kiezen",
+    title:
+      "Een goede loopbaancoach kiezen: waarom de klik belangrijker is dan het cv",
+    summary:
+      "Niet de methode of het diploma maakt het verschil, maar de klik. Lees waar je echt op let als je een coach kiest.",
+    audience: "medewerker",
+    readMinutes: 5,
+  },
 ];
 
 /* ------------------------------------------------------------------ */
