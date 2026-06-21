@@ -262,19 +262,21 @@ function headForSlug(slug: string) {
 
   if (article.slug === "duurzame-inzetbaarheid-werkgever") {
     const title =
-      "Duurzame inzetbaarheid bevorderen als werkgever | Vizier op Scherp";
+      "Duurzame inzetbaarheid: waarom het vitaliteitsprogramma vaak niet werkt, en wat wel | Vizier op Scherp";
     const description =
-      "Hoe bevordert u duurzame inzetbaarheid in uw organisatie, verder dan vitaliteit alleen? Praktische handvatten voor HR, met aandacht voor ontwikkeling en loopbaan. Amsterdam en Haarlem.";
-    const ogTitle = "Duurzame inzetbaarheid bevorderen als werkgever";
+      "Een vitaliteitsprogramma voor iedereen raakt vaak niet de kern van duurzame inzetbaarheid. Met cijfers van TNO en UWV: waarom dat zo is, en wat voor werkgevers in de regio Amsterdam en Haarlem wél werkt.";
+    const ogTitle =
+      "Duurzame inzetbaarheid: waarom het vitaliteitsprogramma vaak niet werkt, en wat wel";
+    const twitterDescription =
+      "Een vitaliteitsprogramma voor iedereen raakt vaak niet de kern. Met cijfers van TNO en UWV: wat werkgevers in de regio Amsterdam en Haarlem wél kunnen doen aan duurzame inzetbaarheid.";
     const image = "https://vizieropscherp.nl/og-image.png";
     const imageAlt =
-      "Vizier op Scherp, loopbaancoaching in Amsterdam, Haarlem en omgeving";
+      "Vizier op Scherp, loopbaancoaching voor werkgevers in Amsterdam, Haarlem en omgeving";
 
     const ld = {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      headline:
-        "Duurzame inzetbaarheid: hoe u er als werkgever in investeert",
+      headline: ogTitle,
       description,
       inLanguage: "nl-NL",
       mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
@@ -289,8 +291,47 @@ function headForSlug(slug: string) {
         logo: { "@type": "ImageObject", url: image },
       },
       datePublished: "2026-06-19",
-      dateModified: "2026-06-19",
+      dateModified: "2026-06-21",
       image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Wat is duurzame inzetbaarheid precies?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Duurzame inzetbaarheid betekent dat medewerkers gezond, gemotiveerd en productief hun werk kunnen blijven doen, nu en in de toekomst. Het gaat zowel om het voorkomen van uitval als om het versterken van mensen die goed functioneren, zodat zij zich kunnen blijven ontwikkelen.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Werkt een vitaliteitsprogramma dan niet?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Een vitaliteitsprogramma kan waarde hebben, maar als het voor iedereen hetzelfde is, raakt het vaak niet de kern. Onderzoek van TNO laat zien dat de grootste knelpunten mentale vermoeidheid en gebrek aan eigen regie zijn. Die vragen om maatwerk en om gesprekken per medewerker, niet om een algemene aanpak.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Wat levert een loopbaangesprek een werkgever op?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "U hoort vroeg wat er bij een medewerker speelt, nog voordat het tot verzuim of vertrek leidt. De medewerker voelt zich gezien en krijgt grip op de eigen koers. In een krappe arbeidsmarkt is dat een effectieve en relatief goedkope manier om mensen te behouden.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Hoe begint u hier als organisatie mee?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Een laagdrempelige eerste stap is een ronde loopbaangesprekken met een afgebakende groep medewerkers, uitgevoerd door onafhankelijke coaches, met een korte terugkoppeling op hoofdlijnen. Zo ziet u wat het oplevert voordat u een breder traject inricht.",
+          },
+        },
+      ],
     };
 
     return {
@@ -310,12 +351,13 @@ function headForSlug(slug: string) {
         { property: "og:image:alt", content: imageAlt },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: ogTitle },
-        { name: "twitter:description", content: description },
+        { name: "twitter:description", content: twitterDescription },
         { name: "twitter:image", content: image },
       ],
       links: [{ rel: "canonical", href: canonical }],
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(ld) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
       ],
     };
   }
