@@ -250,6 +250,7 @@ function Page() {
               "Duurzaam inzetbaar blijven",
               "Solliciteren en arbeidsmarkt",
               "Persoonlijke effectiviteit",
+              "Een coach kiezen",
               "Medewerkers begeleiden als HR",
             ].map((t) => (
               <li
