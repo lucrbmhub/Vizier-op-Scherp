@@ -245,19 +245,21 @@ function headForSlug(slug: string) {
 
   if (article.slug === "solliciteren-en-arbeidsmarkt") {
     const title =
-      "Solliciteren: tips om je goed voor te bereiden | Vizier op Scherp";
+      "Solliciteren: waarom meer sollicitaties zelden het antwoord is | Vizier op Scherp";
     const description =
-      "Beter solliciteren begint vóór de vacature. Lees hoe je je oriënteert op de arbeidsmarkt, je verhaal scherp krijgt en het gesprek ingaat met rust. Coaching in Amsterdam en Haarlem.";
-    const ogTitle = "Solliciteren: tips om je goed voor te bereiden";
+      "Hoor je niets terug op je sollicitaties? Vaak ligt het niet aan jou, maar aan het kanaal. Waarom netwerken en zichtbaarheid meer opleveren dan stapels brieven, met arbeidsmarktcijfers van UWV. Loopbaancoaching in de regio Amsterdam en Haarlem.";
+    const ogTitle =
+      "Solliciteren: waarom meer sollicitaties zelden het antwoord is";
+    const twitterDescription =
+      "Hoor je niets terug op je sollicitaties? Vaak ligt het aan het kanaal, niet aan jou. Waarom netwerken en zichtbaarheid meer opleveren dan stapels brieven.";
     const image = "https://vizieropscherp.nl/og-image.png";
     const imageAlt =
       "Vizier op Scherp, loopbaancoaching in Amsterdam, Haarlem en omgeving";
 
-    const ld = {
+    const blogLd = {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      headline:
-        "Solliciteren: je goed voorbereiden, van oriëntatie tot het gesprek",
+      headline: ogTitle,
       description,
       inLanguage: "nl-NL",
       mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
@@ -272,8 +274,47 @@ function headForSlug(slug: string) {
         logo: { "@type": "ImageObject", url: image },
       },
       datePublished: "2026-06-19",
-      dateModified: "2026-06-19",
+      dateModified: "2026-06-21",
       image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Is solliciteren via vacatures zinloos?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Nee, maar het is meestal niet het meest effectieve kanaal. Op een online vacature reageren tientallen tot honderden mensen, en je wordt op papier beoordeeld. Reageren op vacatures mag een deel van je aanpak zijn, maar het werkt het best in combinatie met netwerken, waar veel kansen ontstaan die nooit online komen.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Hoe begin ik met netwerken als ik dat niet gewend ben?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Begin klein en zonder iets te vragen. Benader een paar mensen die werken in de richting die jou interesseert, en vraag of je ze kort mag spreken over hun vak. Je hoeft niet om een baan te vragen. Je leert wat er speelt, je wordt zichtbaar, en gesprekken leiden vaker tot kansen dan een brief.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Waarom hoor ik niets terug op mijn sollicitaties?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Vaak ligt het niet aan jou, maar aan het kanaal. Bij online vacatures is de concurrentie groot en beslist men op papier. Het helpt om je verhaal scherper te maken, je sterke punten concreter te benoemen, en meer in te zetten op contact en netwerken dan op het aantal sollicitaties.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Kan een loopbaancoach helpen bij solliciteren?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Ja. Een coach helpt je scherp krijgen wat je te bieden hebt, je verhaal helder te vertellen en een aanpak te kiezen die past bij jou en de arbeidsmarkt. Juist omdat je je eigen kwaliteiten makkelijk onderschat, is een buitenstaander die de juiste vragen stelt waardevol.",
+          },
+        },
+      ],
     };
 
     return {
@@ -293,15 +334,17 @@ function headForSlug(slug: string) {
         { property: "og:image:alt", content: imageAlt },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: ogTitle },
-        { name: "twitter:description", content: description },
+        { name: "twitter:description", content: twitterDescription },
         { name: "twitter:image", content: image },
       ],
       links: [{ rel: "canonical", href: canonical }],
       scripts: [
-        { type: "application/ld+json", children: JSON.stringify(ld) },
+        { type: "application/ld+json", children: JSON.stringify(blogLd) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
       ],
     };
   }
+
 
   if (article.slug === "duurzame-inzetbaarheid-werkgever") {
     const title =
