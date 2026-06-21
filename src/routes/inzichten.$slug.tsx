@@ -26,9 +26,10 @@ const ARTICLES: Article[] = [
   },
   {
     slug: "richting-vinden-in-je-loopbaan",
-    title: "Richting vinden in je loopbaan: weer weten welke kant je op wilt",
+    title:
+      "Richting vinden in je loopbaan: waarom je niet bij de vacaturesite moet beginnen",
     summary:
-      "Je doet je werk prima, maar het voelt niet meer als de goede plek. Lees hoe je je richting kunt kwijtraken, welke signalen je werk afgeeft en hoe je stap voor stap weer weet wat je wilt.",
+      "Je weet dat je iets anders wilt, maar niet wat. Richting vind je zelden op een vacaturesite, maar door te ontdekken wat je energie geeft en wat je drijft. Praktische handvatten en een oefening om je rode draad terug te vinden.",
     audience: "medewerker",
     readMinutes: 5,
   },
