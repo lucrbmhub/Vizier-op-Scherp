@@ -787,6 +787,108 @@ function headForSlug(slug: string) {
     };
   }
 
+  if (article.slug === "goede-loopbaancoach-kiezen") {
+    const title =
+      "Een goede loopbaancoach kiezen: waarom de klik belangrijker is dan het cv | Vizier op Scherp";
+    const description =
+      "Hoe kies je een goede loopbaancoach? Onderzoek laat zien dat niet de methode of het diploma het verschil maakt, maar de klik. Waar je echt op moet letten, met praktische tips. Loopbaancoaching in de regio Amsterdam en Haarlem.";
+    const ogTitle =
+      "Een goede loopbaancoach kiezen: waarom de klik belangrijker is dan het cv";
+    const twitterDescription =
+      "Hoe kies je een goede loopbaancoach? Onderzoek laat zien dat niet de methode of het diploma het verschil maakt, maar de klik. Waar je echt op moet letten.";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching in Amsterdam, Haarlem en omgeving";
+
+    const blogLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: ogTitle,
+      description,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-06-19",
+      dateModified: "2026-06-21",
+      image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Waar let je op bij het kiezen van een loopbaancoach?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Let allereerst op de klik. Onderzoek laat zien dat de kwaliteit van de relatie tussen jou en je coach veruit het meest bepalend is voor het resultaat, meer dan de methode of het diploma. Een goede basis is wel dat de coach gecertificeerd en aangesloten is bij een erkende beroepsvereniging of kwaliteitsregister. Maar als het in het kennismakingsgesprek niet klikt, is dat een belangrijker signaal dan welke opleiding ook.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Maakt de methode of techniek van een coach uit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Minder dan je zou denken. Uit onderzoek naar de werkzame factoren van coaching blijkt dat de specifieke methode een klein deel van het resultaat bepaalt. Wat het meeste uitmaakt, is of je je veilig en gehoord voelt en vertrouwen hebt in het proces. Een coach met een methode die bij jou past is fijn, maar het is niet het eerste waar je op zou moeten selecteren.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Moet ik meerdere coaches spreken voordat ik kies?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Dat hoeft niet per se. Je hebt maar één coach nodig die goed genoeg is. Het beste is om er een te ontmoeten in een kennismakingsgesprek en te voelen of er klik is. Is die er, dan kun je gewoon beginnen. Is die er niet, dan spreek je een ander. Vergelijken kan, maar belangrijker dan een keuze tussen drie opties is dat je zelf het gevoel houdt dat je kiest.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Waaraan herken je een goed kennismakingsgesprek?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Een goede coach stelt vooral vragen en luistert, in plaats van meteen met oplossingen of een vast programma te komen. Je voelt je op je gemak, niet beoordeeld. Je merkt dat de coach oprecht nieuwsgierig is naar jouw verhaal. En je loopt weg met het gevoel dat hier iets te halen valt, ook al is je vraag nog niet opgelost. Dat gevoel is het belangrijkste meetpunt.",
+          },
+        },
+      ],
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: twitterDescription },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(blogLd) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
+      ],
+    };
+  }
+
   // Default (werkgever-artikel)
   return {
     meta: [
