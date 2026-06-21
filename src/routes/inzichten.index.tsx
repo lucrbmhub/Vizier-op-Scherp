@@ -166,7 +166,7 @@ const ARTICLES: Article[] = [
 
 function Page() {
   const featured = ARTICLES.find((a) => a.featured);
-  const recent = ARTICLES.filter((a) => a !== featured).slice(0, 6);
+  const recent = ARTICLES.filter((a) => a !== featured);
   const hasContent = ARTICLES.length > 0;
 
   return (
@@ -353,14 +353,12 @@ function FeaturedCard({ article }: { article: Article }) {
         <span className="self-start rounded-full bg-goud px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-[color:var(--color-on-goud-title)]">
           Uitgelicht
         </span>
-        <h4 className="font-display text-xl md:text-2xl text-linnen-licht leading-snug">
-          {article.title}
-        </h4>
         <p className="text-mint leading-relaxed text-[0.96rem]">
-          {article.summary}
+          Het artikel om mee te beginnen als je nadenkt over behoud van talent in jouw organisatie.
         </p>
         <span className="text-sm font-medium text-goud">Lees verder →</span>
       </div>
+
     </Link>
   );
 }
