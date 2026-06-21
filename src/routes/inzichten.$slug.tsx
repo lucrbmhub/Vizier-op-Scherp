@@ -1323,7 +1323,25 @@ function EnergieMotivatieArticle({ article }: { article: Article }) {
 function SolliciterenArticle({ article }: { article: Article }) {
   const para = "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
   const h2 = "mt-12 font-display text-2xl md:text-[1.7rem] text-petrol";
-  const h3 = "mt-8 font-display text-xl text-petrol";
+
+  const faq = [
+    {
+      q: "Is solliciteren via vacatures zinloos?",
+      a: "Nee, maar het is meestal niet het meest effectieve kanaal. Op een online vacature reageren tientallen tot honderden mensen, en je wordt op papier beoordeeld. Reageren op vacatures mag een deel van je aanpak zijn, maar het werkt het best in combinatie met netwerken, waar veel kansen ontstaan die nooit online komen.",
+    },
+    {
+      q: "Hoe begin ik met netwerken als ik dat niet gewend ben?",
+      a: "Begin klein en zonder iets te vragen. Benader een paar mensen die werken in de richting die jou interesseert, en vraag of je ze kort mag spreken over hun vak. Je hoeft niet om een baan te vragen. Je leert wat er speelt, je wordt zichtbaar, en gesprekken leiden vaker tot kansen dan een brief.",
+    },
+    {
+      q: "Waarom hoor ik niets terug op mijn sollicitaties?",
+      a: "Vaak ligt het niet aan jou, maar aan het kanaal. Bij online vacatures is de concurrentie groot en beslist men op papier. Het helpt om je verhaal scherper te maken, je sterke punten concreter te benoemen, en meer in te zetten op contact en netwerken dan op het aantal sollicitaties.",
+    },
+    {
+      q: "Kan een loopbaancoach helpen bij solliciteren?",
+      a: "Ja. Een coach helpt je scherp krijgen wat je te bieden hebt, je verhaal helder te vertellen en een aanpak te kiezen die past bij jou en de arbeidsmarkt. Juist omdat je je eigen kwaliteiten makkelijk onderschat, is een buitenstaander die de juiste vragen stelt waardevol.",
+    },
+  ];
 
   return (
     <>
@@ -1341,22 +1359,23 @@ function SolliciterenArticle({ article }: { article: Article }) {
               Voor medewerkers
             </span>
           </div>
-          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-petrol leading-[1.2] max-w-[26ch]">
-            Solliciteren: je goed voorbereiden, van oriëntatie tot het gesprek
+          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-petrol leading-[1.2] max-w-[28ch]">
+            {article.title}
           </h1>
-          <p className="mt-6 text-petrol/75 leading-relaxed text-[1.1rem] max-w-[58ch]">
-            Solliciteren voelt vaak als presteren: de juiste woorden vinden,
-            jezelf verkopen, hopen dat je opvalt. Maar de mensen die het rustig
-            en overtuigend doen, hebben meestal één ding gemeen. Ze zijn goed
-            voorbereid, nog voordat ze de eerste vacature openen.
+          <p className="mt-6 text-petrol/75 leading-relaxed text-[1.1rem] max-w-[62ch]">
+            Je hebt je dertigste sollicitatie verstuurd en weer niets gehoord.
+            Het ligt waarschijnlijk niet aan jou, en ook niet aan te weinig
+            doorzettingsvermogen. Het ligt vaak aan de methode. De meeste
+            mensen steken hun energie in precies het kanaal dat het minst
+            oplevert: reageren op online vacatures.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-petrol/65">
-            <span>Solliciteren &amp; arbeidsmarkt</span>
+            <span>Voor medewerkers</span>
             <span
               aria-hidden="true"
               className="inline-block h-1.5 w-1.5 rounded-full bg-koraal"
             />
-            <span>{article.readMinutes} min leestijd</span>
+            <span>{article.readMinutes} min lezen</span>
           </div>
         </div>
       </section>
@@ -1365,88 +1384,92 @@ function SolliciterenArticle({ article }: { article: Article }) {
       <article className="bg-linnen">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
           <p className="text-petrol/85 leading-relaxed text-[1.1rem]">
-            In dit artikel lees je hoe je solliciteren aanpakt vanuit
-            voorbereiding in plaats van toeval: oriënteren op de markt, je
-            eigen verhaal scherp krijgen, en het gesprek ingaan met meer rust.
+            In dit stuk lees je waarom stapels sollicitaties vaak tegenvallen,
+            en wat op deze arbeidsmarkt wél werkt.
           </p>
 
-          <h2 className={h2}>Begin bij de markt, niet bij de vacature</h2>
+          <h2 className={h2}>Het ligt niet aan jou, het ligt aan je aanpak</h2>
           <p className={para}>
-            De meeste mensen beginnen met scrollen door vacatures en reageren
-            op wat er voorbijkomt. Begrijpelijk, maar het maakt je afhankelijk
-            van toeval. Wie eerst de arbeidsmarkt verkent, solliciteert
-            gerichter en met meer overtuiging.
+            Als sollicitaties niets opleveren, is de reflex om er nog een
+            schepje bovenop te doen: nog meer brieven, nog meer reacties op
+            vacatures. Begrijpelijk, maar het werkt vaak niet. Het probleem
+            zit zelden in hoe hard je werkt, maar in waar je je tijd aan
+            besteedt.
           </p>
           <p className={para}>
-            Oriënteren betekent: kijken welke functies en organisaties passen
-            bij wat je kunt en wilt, nog voordat er een concrete vacature is.
-            Praat met mensen die het werk doen dat je aanspreekt, kijk welke
-            functietitels terugkomen, en let op wat werkgevers in jouw
-            richting vragen. Zo krijg je een beeld van waar je kansen liggen,
-            in plaats van te wachten tot de juiste vacature toevallig
-            langskomt.
+            Online vacatures trekken tientallen tot honderden reacties per
+            stuk. Je wordt op papier beoordeeld, in een korte selectie, naast
+            veel andere kandidaten. En juist daar gaat bij de meeste mensen
+            de meeste energie naartoe.
           </p>
 
-          <h2 className={h2}>Maak je verhaal scherp, niet je trucjes</h2>
+          <h2 className={h2}>
+            Waarom netwerken werkt en stapels sollicitaties niet
+          </h2>
           <p className={para}>
-            Een sterk sollicitatieverhaal draait niet om mooie woorden, maar
-            om helderheid. Een werkgever wil drie dingen begrijpen: wat je
-            kunt, waarom je deze stap wilt, en wat je bij hen komt brengen.
-            Als jij dat zelf scherp hebt, hoef je jezelf niet te verkopen.
-            Dan vertel je gewoon een geloofwaardig verhaal.
+            Onderzoek naar loopbaanontwikkeling laat zien dat netwerken sterk
+            samenhangt met loopbaansucces. Een belangrijke reden: veel werk
+            wordt via contact en aanbevelingen ingevuld, voordat een vacature
+            ooit online komt. Als je alleen reageert op wat je ziet, mis je
+            een groot deel van wat er feitelijk speelt.
           </p>
           <p className={para}>
-            Een handige manier om dat scherp te krijgen: schrijf voor jezelf
-            op wat je goed kunt en waar je dat hebt laten zien, waarom je nu
-            iets nieuws zoekt, en wat je aantrekt in deze functie of
-            organisatie. Wie dat helder heeft, schrijft makkelijker een
-            sollicitatiebrief, vult een profiel sterker in, en raakt in een
-            gesprek minder snel van slag.
+            De cijfers helpen je positie te begrijpen. Volgens UWV is de
+            arbeidsmarkt op dit moment krap tot zeer krap. Landelijk staan er
+            ongeveer drieënhalf keer zoveel vacatures open als er
+            kortdurend werkzoekenden zijn, en in Groot-Amsterdam is de markt
+            zeer krap. Jouw positie is sterker dan het vaak voelt. Het gaat
+            er vooral om dat de juiste mensen weten dat je er bent en wat je
+            kunt.
           </p>
 
-          {/* Goud kader */}
+          {/* Uitgelicht blok — 25/75 vuistregel */}
           <section
-            aria-labelledby="checklist-kop"
-            className="mt-12 rounded-2xl border border-goud bg-goud/15 p-7 md:p-9"
+            aria-labelledby="vuistregel"
+            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
           >
             <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
-              Checklist voor je solliciteert
+              Een vuistregel
             </span>
             <h2
-              id="checklist-kop"
+              id="vuistregel"
               className="mt-2 font-display text-2xl md:text-[1.6rem] text-petrol"
             >
-              Voorbereiding die echt het verschil maakt
+              Draai de verhouding om: 25% solliciteren, 75% netwerken
             </h2>
             <p className="mt-4 text-petrol/80 leading-relaxed">
-              Voordat je reageert of het gesprek ingaat, helpt het om deze op
-              orde te hebben:
-            </p>
-            <ul className="mt-5 space-y-3">
-              {[
-                "Je weet welke twee of drie dingen je echt goed kunt, met een voorbeeld erbij.",
-                "Je kunt in één of twee zinnen uitleggen waarom je deze stap wilt.",
-                "Je hebt de organisatie en de functie kort verkend, niet alleen de vacaturetekst.",
-                "Je hebt bedacht welke vragen jíj wilt stellen, niet alleen welke je kunt verwachten.",
-                "Je weet wat je zoekt in arbeidsvoorwaarden, zodat je daar niet door overvallen wordt.",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-petrol/80 leading-relaxed"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 inline-block h-2 w-2 shrink-0 rotate-45 bg-koraal"
-                  />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-5 text-petrol/80 leading-relaxed">
-              Met deze vijf op orde ga je een stuk rustiger een gesprek in, en
-              kom je overtuigender over zonder dat je iets hoeft te forceren.
+              Besteed ongeveer een kwart van je tijd aan gericht reageren op
+              vacatures en driekwart aan netwerken en relaties opbouwen.
+              Netwerken is geen banen bedelen, het is gesprekken voeren.
+              Vraag een paar mensen die werken waar jij naartoe wilt om tien
+              minuten over hun vak. Je leert wat er speelt, je wordt
+              zichtbaar, en je hoort over kansen die nooit online komen.
             </p>
           </section>
+
+          <h2 className={h2}>Zorg dat ze weten welke oplossing jij bent</h2>
+          <p className={para}>
+            Of je nu netwerkt of solliciteert: je moet in een paar zinnen
+            kunnen vertellen wie je bent, wat je goed kunt en wat je zoekt.
+            Veel mensen onderschatten hun eigen kwaliteiten. Wat voor jou
+            vanzelfsprekend is, is voor een ander vaak juist de gezochte
+            waarde.
+          </p>
+          <p className={para}>
+            Breng je verhaal terug tot drie zinnen en scherp ze aan voor je
+            naar buiten gaat. Een helder, kort verhaal maakt dat anderen je
+            kunnen helpen, jou kunnen aanbevelen of aan je kunnen denken
+            wanneer er iets voorbijkomt.
+          </p>
+
+          <h2 className={h2}>Lang niet gesolliciteerd? Oefen je verhaal opnieuw</h2>
+          <p className={para}>
+            Wie jaren niet heeft gesolliciteerd, ervaart het al snel als een
+            vak dat je opnieuw moet leren. Dat is logisch. Krijg vooral je
+            voorbeelden scherp: concrete situaties met wat jij deed en wat
+            het opleverde. Een paar sterke verhalen zijn waardevoller dan een
+            volledig cv kunnen opdreunen.
+          </p>
 
           {/* Kernzin — petrol vlak */}
           <aside className="mt-14 rounded-2xl bg-petrol px-7 py-9 md:px-10 md:py-11">
@@ -1454,52 +1477,38 @@ function SolliciterenArticle({ article }: { article: Article }) {
               In het kort
             </span>
             <p className="mt-3 font-display text-xl md:text-2xl text-linnen-licht leading-snug">
-              Goed solliciteren is geen kwestie van jezelf mooier voordoen,
-              maar van helder hebben wat je kunt, wat je wilt en waar dat
-              samenkomt met wat een werkgever zoekt.
+              Een baan vinden gaat zelden over harder solliciteren. Het gaat
+              erover dat de juiste mensen weten wie je bent en wat je kunt.
             </p>
           </aside>
 
-          <h2 className={h2}>Het gesprek: een gesprek, geen verhoor</h2>
-          <p className={para}>
-            Een sollicitatiegesprek voelt al snel als een test die je moet
-            doorstaan. Toch werkt het beter als je het ziet als een gesprek
-            waarin jullie allebei kijken of het past. Jij beoordeelt hen net
-            zo goed als zij jou.
-          </p>
-          <p className={para}>Een paar dingen die helpen:</p>
-          <ul className="mt-5 space-y-3">
-            {[
-              "Bereid een paar concrete voorbeelden voor van situaties waarin je iets hebt opgelost of bereikt. Dat overtuigt meer dan algemene kwaliteiten noemen.",
-              "Het is prima om even na te denken voordat je antwoordt. Rust komt sterker over dan een snel maar vaag antwoord.",
-              "Stel zelf vragen over het werk, het team en wat ze van je verwachten. Dat toont interesse en geeft jou informatie om een goede keuze te maken.",
-              "Ben je ergens onzeker over, wees dan eerlijk in plaats van iets te verzinnen. Dat wekt meer vertrouwen.",
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-3 text-petrol/80 leading-relaxed"
-              >
-                <span
-                  aria-hidden="true"
-                  className="mt-2 inline-block h-2 w-2 shrink-0 rotate-45 bg-koraal"
-                />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className={para}>
-            Na afloop weet je vaak zelf al aardig hoe het ging. Of je nu wordt
-            aangenomen of niet, elk gesprek maakt je voorbereiding voor de
-            volgende scherper.
+          {/* Bronnenregel */}
+          <p className="mt-10 border-t border-petrol/15 pt-4 text-xs text-petrol/60 leading-relaxed">
+            Met inzichten uit onderzoek naar loopbaancompetenties (Kuijpers)
+            en uit arbeidsmarktcijfers van UWV.
           </p>
 
-          <h3 className={h3}>Je hoeft het niet alleen te doen</h3>
-          <p className={para}>
-            Solliciteren is lastig om alleen goed te doen, juist omdat je
-            jezelf moeilijk objectief beoordeelt. Een coach helpt je je
-            verhaal scherp te krijgen, je voor te bereiden op het gesprek en
-            rustiger te solliciteren. Wat je bespreekt, blijft vertrouwelijk.
-          </p>
+          {/* FAQ */}
+          <section aria-labelledby="faq-kop-soll" className="mt-14">
+            <h2
+              id="faq-kop-soll"
+              className="font-display text-2xl md:text-[1.7rem] text-petrol"
+            >
+              Veelgestelde vragen
+            </h2>
+            <div className="mt-6 space-y-7">
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-display text-lg text-petrol">
+                    {item.q}
+                  </h3>
+                  <p className="mt-2 text-petrol/80 leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </article>
 
@@ -1510,35 +1519,20 @@ function SolliciterenArticle({ article }: { article: Article }) {
             id="cta-kop-soll"
             className="font-display text-2xl md:text-3xl text-[color:var(--color-on-koraal-title,#4A1B0C)]"
           >
-            Sterker solliciteren, met iemand die meekijkt
+            Klaar voor een effectievere aanpak?
           </h2>
           <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
-            Wil je je sollicitatie of je voorbereiding op een gesprek
-            aanscherpen? Onze coaches helpen je je verhaal helder te krijgen
-            en met meer rust het gesprek in te gaan. Werk je via een werkgever
-            die hierin wil ondersteunen, of regel je het zelf? Allebei kan.
-            Ben je HR of leidinggevende en wil je dit voor je mensen mogelijk
-            maken?{" "}
-            <Link
-              to="/voor-werkgevers"
-              className="font-medium underline text-[color:var(--color-on-koraal-title,#4A1B0C)]"
-            >
-              Lees meer over onze loopbaancoaching voor werkgevers
-            </Link>
-            .
-          </p>
-          <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
-            Bij Vizier op Scherp werk je met een klein team van ervaren,
-            gecertificeerde coaches in Amsterdam, Haarlem en omgeving. Je
-            leert je coach eerst kennen voordat je begint, zodat je weet dat
-            het klikt.
+            Bij Vizier op Scherp helpt een coach je scherp te krijgen wat je
+            te bieden hebt, hoe je dat vertelt en welke aanpak op deze
+            arbeidsmarkt werkt. In jouw tempo, en wat je bespreekt blijft
+            tussen jou en je coach.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
               to="/kennismaken"
               className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
             >
-              Maak vrijblijvend kennis
+              Maak kennis met een coach
             </Link>
             <Link
               to="/coaches"
