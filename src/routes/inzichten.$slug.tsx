@@ -855,194 +855,245 @@ function ArticlePage() {
 /* ------------------------------------------------------------------ */
 
 function WervenNaarBehoudenArticle({ article }: { article: Article }) {
-  const audienceLabel =
-    article.audience === "werkgever" ? "Voor werkgevers" : "Voor medewerkers";
+  const para = "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
+  const h2 = "mt-12 font-display text-2xl md:text-[1.7rem] text-petrol";
+
+  const faq = [
+    {
+      q: "Waarom verlaten medewerkers hun baan?",
+      a: "Salaris is zelden de hoofdreden. Onderzoek van UWV laat zien dat gebrek aan doorgroei- en ontwikkelingsmogelijkheden een van de belangrijkste vertrekoorzaken is. Mensen vertrekken als ze het gevoel hebben dat ze stilstaan, niet gezien worden of geen perspectief hebben binnen de organisatie.",
+    },
+    {
+      q: "Wanneer is het risico op vertrek het grootst?",
+      a: "In de eerste maanden na indiensttreding. Volgens CBS-cijfers werkte bijna zestig procent van de baanwisselaars korter dan twee jaar bij de vorige werkgever. De eerste honderd dagen zijn cruciaal: wie in die periode geen perspectief ziet of zich niet welkom voelt, vertrekt snel.",
+    },
+    {
+      q: "Maakt de afkoelende arbeidsmarkt behoud minder belangrijk?",
+      a: "Nee. De krapte is over het hoogtepunt heen, maar werkgevers blijven moeite houden om personeel te vinden. In Groot-Amsterdam groeit het aantal banen tot 2028 en is ongeveer acht procent van de werknemers tussen de 60 en 67 jaar. Door pensioen en baanwissel blijft de vervangingsvraag groot, waardoor behoud belangrijk blijft.",
+    },
+    {
+      q: "Wat werkt beter dan salarisverhoging om mensen te behouden?",
+      a: "Aandacht voor ontwikkeling en loopbaanperspectief. Medewerkers die het gevoel hebben dat hun talenten worden gezien en dat er ruimte is om te groeien, blijven langer. Een gesprek over iemands ambities en de mogelijkheden binnen uw organisatie is daarvoor een effectief en relatief goedkoop instrument.",
+    },
+    {
+      q: "Hoe begin ik hiermee als organisatie?",
+      a: "Begin met een ronde loopbaangesprekken voor een afgebakende groep medewerkers, gevoerd door een onafhankelijke coach. Zo hoort u vroeg wat er speelt, maakt u intern talent zichtbaar en laat u medewerkers merken dat hun ontwikkeling telt. Dat is een concrete eerste stap zonder groot programma.",
+    },
+  ];
 
   return (
     <>
+      {/* HERO donker */}
       <section className="bg-petrol text-linnen-licht">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <Link
             to="/inzichten"
             className="inline-flex items-center text-sm text-mint-dof hover:text-goud transition"
           >
             ← Inzichten
           </Link>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <span className="rounded-full bg-goud px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-[color:var(--color-on-goud-title)]">
-              {audienceLabel}
-            </span>
-            <span className="text-xs text-mint-dof">
-              {article.readMinutes} min lezen
-            </span>
-          </div>
-          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-linnen-licht max-w-[28ch] leading-[1.2]">
+          <span className="mt-6 inline-block rounded-full bg-mint border border-mint-dof px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-petrol">
+            Voor werkgevers &amp; HR
+          </span>
+          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-linnen-licht max-w-[30ch] leading-[1.15]">
             {article.title}
           </h1>
+          <p className="mt-6 text-mint text-[1.1rem] leading-relaxed max-w-[62ch]">
+            De meeste werkgevers denken dat vertrekkende medewerkers elders
+            meer gaan verdienen. Dat klopt zelden. De werkelijke reden is
+            stiller en duurder: gebrek aan perspectief, ontwikkeling en het
+            gevoel dat niemand ziet waar iemand naartoe wil.
+          </p>
+          <div className="mt-6 flex items-center gap-2.5 text-sm text-mint-dof">
+            <span>Voor werkgevers &amp; HR</span>
+            <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-koraal" />
+            <span>{article.readMinutes} min lezen</span>
+          </div>
         </div>
       </section>
 
+      {/* BODY linnen */}
       <article className="bg-linnen">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
-          <div className="prose-petrol">
-            <p className="text-petrol/80 leading-relaxed text-[1.05rem]">
-              Jarenlang ging bijna alle energie van HR naar werven. Vacatures
-              vullen, krapte bestrijden, vechten om schaars talent. Maar het
-              beeld kantelt. De vacaturecijfers dalen, en de vraag die nu echt
-              knelt is een andere geworden. Niet hoe je nieuwe mensen
-              binnenhaalt, maar hoe je de mensen die je al hebt aan boord houdt.
-            </p>
+          <p className="text-petrol/70 text-[1.05rem] leading-relaxed">
+            In dit stuk leest u wat de cijfers zeggen over de echte redenen
+            van vertrek, waarom de afkoelende arbeidsmarkt behoud juist niet
+            minder belangrijk maakt, en wat u kunt doen om mensen te behouden
+            voordat ze al met een been buiten staan.
+          </p>
 
-            <h2 className="mt-12 font-display text-2xl text-petrol">
-              De arbeidsmarkt koelt af, maar niet overal
-            </h2>
-            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
-              Eind 2025 waren er voor het eerst in vier jaar meer werklozen dan
-              openstaande vacatures, meldt het CBS. Na jaren van extreme krapte
-              voelt dat als lucht. Toch vertelt dat cijfer maar de helft van het
-              verhaal. In de zorg, het onderwijs, bij gemeenten en in de
-              techniek blijven de tekorten gewoon bestaan. Een afkoelende
-              landelijke markt verandert daar weinig aan. En door de vergrijzing
-              gaan er de komende jaren veel ervaren mensen met pensioen,
-              terwijl er minder jonge instroom is om dat op te vangen.
-            </p>
-            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
-              Voor veel organisaties komt het hierop neer: een kleinere vijver
-              om uit te vissen, en tegelijk een groep ervaren medewerkers die je
-              je niet kunt veroorloven te verliezen. Precies daarom verschuift
-              de aandacht van binnenhalen naar binnenhouden. In recent
-              onderzoek onder HR-professionals staat duurzame inzetbaarheid
-              voor het eerst bovenaan de lijst met prioriteiten voor 2026. Nog
-              vóór werving.
-            </p>
+          <h2 className={h2}>De markt koelt af, maar de behoudvraag blijft</h2>
+          <p className={para}>
+            De UWV-arbeidsmarktprognose 2026 tot 2028 laat zien dat het aantal
+            banen in Groot-Amsterdam tussen 2025 en 2028 met ongeveer 2,8
+            procent groeit, circa 36.000 banen erbij. Dat maakt de regio een
+            van de sterkst groeiende van het land, ook in een scenario met
+            hoge energieprijzen. Tegelijk ontstaat een groot deel van de
+            vacatures niet door groei, maar door pensioen en baanwissel.
+            Ongeveer acht procent van de werknemers in de regio is tussen de
+            60 en 67 jaar.
+          </p>
+          <p className={para}>
+            De krapte is daarmee over het hoogtepunt heen, maar personeel
+            vinden blijft moeilijk. De vervangingsvraag is structureel.
+            Behoud is geen tijdelijk thema voor een krappe markt, het is een
+            blijvende zorg.
+          </p>
 
-            <h2 className="mt-12 font-display text-2xl text-petrol">
-              Waarom mensen weggaan, en waarom dat hoopvol is
-            </h2>
-            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
-              Wie wil behouden, moet weten waarom mensen vertrekken. En daar
-              zit goed nieuws in. De belangrijkste reden dat medewerkers hun
-              werk verlaten is niet het salaris, maar het gebrek aan
-              perspectief. Geen zicht op ontwikkeling, geen volgende stap, het
-              gevoel vast te zitten. Ongeveer een derde noemt dit als
-              hoofdreden.
-            </p>
-            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
-              Dat is hoopvoller dan het klinkt. Een hoger salaris bij de
-              buurman is moeilijk te beïnvloeden. Maar of iemand richting en
-              perspectief ervaart in zijn werk, daar heb je als werkgever wél
-              invloed op. En vaak zit dat verschil niet in een groot programma,
-              maar in aandacht op het juiste moment.
-            </p>
+          <h2 className={h2}>Wat de cijfers zeggen over baanwisselen</h2>
+          <p className={para}>
+            CBS-cijfers over 2022 laten zien dat er gemiddeld ruim 360.000
+            baanwisselaars per kwartaal waren, bijna vijf procent van alle
+            werknemers. Bijna zestig procent van hen werkte korter dan twee
+            jaar bij de vorige werkgever. Vertrek gebeurt vroeg, terwijl de
+            inwerkinvestering net is gedaan. Dat is een kostbare combinatie.
+          </p>
 
-            <h2 className="mt-12 font-display text-2xl text-petrol">
-              Wat we in de praktijk zien
-            </h2>
-            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
-              Neem het onderwijs, een wereld die we van binnenuit kennen. Daar
-              gebeurt het regelmatig dat een docent denkt: ik wil iets anders.
-              De energie is eruit, het werk voelt als een sleur, en de gedachte
-              aan vertrek sluipt binnen. Logisch dat een schoolbestuur daarvan
-              schrikt, want goede docenten zijn niet zomaar vervangen.
-            </p>
-            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
-              Wat we dan vaak zien als zo iemand met een coach in gesprek gaat,
-              is dat de vraag verschuift. Het blijkt lang niet altijd het vak
-              te zijn waar de onvrede zit. Soms is het de manier van werken, de
-              verhouding tot collega&apos;s, of een vastgeroest beeld van
-              zichzelf. Door daar rustig naar te kijken, ontdekt iemand vaak
-              dat er binnen het werk meer ruimte en richting te vinden is dan
-              gedacht. Niet zelden blijft een docent die op het punt stond te
-              vertrekken, en gaat hij of zij met meer plezier en eigenaarschap
-              verder. Dat is precies waar het ons om gaat. Niet vasthouden om
-              het vasthouden, maar mensen helpen opnieuw te zien wat hun werk
-              hun kan brengen.
-            </p>
+          <h2 className={h2}>De werkelijke reden: stilstand, niet salaris</h2>
+          <p className={para}>
+            UWV-onderzoek naar vertrekredenen wijst gebrek aan doorgroei- en
+            ontwikkelingsmogelijkheden aan als een van de hoofdredenen om op
+            te zeggen. Mensen vertrekken niet zozeer om wat er elders te
+            halen valt, maar om wat hier ontbreekt: zicht op een volgende
+            stap, het gevoel dat hun talent gezien wordt, ruimte om te
+            groeien. Bij het exitgesprek hoort u het pas, terwijl iemand vaak
+            al maanden eerder met één been buiten stond.
+          </p>
 
-            <h2 className="mt-12 font-display text-2xl text-petrol">
-              Behoud begint met een gesprek, niet met een exit
-            </h2>
-            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
-              Hier wringt het in veel organisaties. Er wordt pas écht over
-              iemands loopbaan gepraat als het te laat is. Tijdens het
-              exitgesprek, als de keuze al gemaakt is. Onderzoek van Gallup
-              laat zien dat ruim veertig procent van het vrijwillige vertrek in
-              principe te voorkomen was. Vaak simpelweg omdat er in de maanden
-              ervoor geen gesprek werd gevoerd over hoe het echt ging en waar
-              iemand naartoe wilde.
-            </p>
-            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
-              Het alternatief is eenvoudig, maar het vraagt om timing. Het
-              gesprek vóór het probleem. Niet wachten tot iemand uitvalt,
-              twijfelt of al met één been buiten staat, maar op tijd ruimte
-              maken om stil te staan bij energie, motivatie en richting. Dat
-              is geen luxe. Het is een van de meest directe manieren om mensen
-              duurzaam inzetbaar én betrokken te houden.
-            </p>
-
-            <h2 className="mt-12 font-display text-2xl text-petrol">
-              Begin klein
-            </h2>
-            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
-              De sprong van &quot;we willen meer aan behoud doen&quot; naar een
-              uitgewerkt loopbaanbeleid voelt vaak groot. Dat hoeft het niet te
-              zijn. Een mooie manier om te beginnen is een ronde
-              laagdrempelige loopbaangesprekken. Een van onze coaches gaat in
-              gesprek met een aantal van je medewerkers over wat hen drijft,
-              waar ze tegenaan lopen en welke stap bij hen past. Jij krijgt op
-              hoofdlijnen terug wat er speelt, binnen duidelijke
-              privacyafspraken, want wat in die gesprekken wordt besproken
-              blijft vertrouwelijk.
-            </p>
-            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
-              Vaak is zo&apos;n eerste ronde het begin van iets bestendigers.
-              Blijkt de behoefte groter, dan kunnen losse trajecten volgen voor
-              wie daar baat bij heeft. En wordt loopbaanbegeleiding een vast
-              onderdeel van je beleid, dan kun je dat onderbrengen in een
-              jaarafspraak. Een vaste coachingpool waarbinnen je medewerkers
-              terechtkunnen, met heldere afspraken over intake, matching,
-              begeleiding en evaluatie. Zo groeit de samenwerking mee met wat
-              je nodig hebt, zonder dat je je vooraf vastlegt.
-            </p>
-
-            <h2 className="mt-12 font-display text-2xl text-petrol">
-              Tot slot
-            </h2>
-            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
-              De arbeidsmarkt van 2026 vraagt iets anders dan die van de
-              afgelopen jaren. Niet harder werven, maar zorgvuldiger behouden.
-              De organisaties die hun mensen op tijd ondersteunen, bij
-              twijfel, groei of een nieuwe richting, staan het sterkst.
-            </p>
-            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.05rem]">
-              Bij Vizier op Scherp helpen we werkgevers in Amsterdam, Haarlem
-              en omgeving daarbij. Onze coaches zijn gecertificeerd en
-              aangesloten bij een erkende beroepsvereniging of
-              kwaliteitsregister, zoals Noloc, NOBCO of een vergelijkbaar
-              register, en begeleiden je medewerkers persoonlijk. Wil je
-              verkennen wat bij jouw organisatie past? Begin met een
-              vrijblijvend gesprek of een eerste ronde loopbaangesprekken. Dan
-              merk je zelf wat het oplevert.
-            </p>
-          </div>
-
-          <div className="mt-16 pt-10 border-t border-mint-dof">
-            <CTAStrip
-              title="Een vraag over behoud of loopbaangesprekken?"
-              action={
-                <Link
-                  to="/kennismaken"
-                  className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:bg-petrol/90 transition-colors"
-                >
-                  Plan een kennismakingsgesprek
-                </Link>
-              }
+          {/* Uitgelicht blok — Het kritieke moment */}
+          <section
+            aria-labelledby="werven-kern"
+            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+          >
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
+              Het kritieke moment
+            </span>
+            <p
+              id="werven-kern"
+              className="mt-3 font-display text-xl md:text-[1.45rem] text-petrol leading-snug"
             >
-              We denken graag mee, vrijblijvend en zonder verkooppraat.
-            </CTAStrip>
-          </div>
+              De eerste honderd dagen zijn bepalend. Wie in die periode geen
+              perspectief ziet of zich niet gezien voelt, vertrekt snel. En u
+              weet het pas als het te laat is.
+            </p>
+          </section>
+
+          <h2 className={h2}>Waarom de eerste honderd dagen zo zwaar wegen</h2>
+          <p className={para}>
+            Het verloop concentreert zich in de beginfase. Een nieuwe
+            medewerker bepaalt razendsnel of dit de goede plek is, en de
+            menselijke onboarding weegt daarin zwaarder dan de
+            administratieve. Welkom zijn, gezien worden, ergens naartoe
+            kunnen werken: dat is wat iemand laat blijven. Aandacht voor
+            loopbaanperspectief in die fase verbetert behoud aantoonbaar,
+            ook omdat het signaleert dat ontwikkeling hier serieus wordt
+            genomen.
+          </p>
+
+          <h2 className={h2}>De aard van werk verandert, en dat raakt behoud</h2>
+          <p className={para}>
+            UWV signaleert dat door AI en automatisering vaardigheden als
+            digitale geletterdheid, kritisch denken, aanpassingsvermogen en
+            sociale vaardigheden belangrijker worden. Wie niet blijft leren,
+            voelt zich op termijn minder zeker over zijn positie. Daarmee
+            vallen behoud en ontwikkeling samen: ontwikkeling is nodig om
+            mensen inzetbaar te houden, en juist die ontwikkelruimte is wat
+            mensen aan een organisatie bindt.
+          </p>
+
+          <h2 className={h2}>
+            Wat werkt: perspectief bieden vóór iemand ernaar vraagt
+          </h2>
+          <p className={para}>
+            Ongeveer driekwart van de werkgevers zet volgens UWV in op
+            behoud, maar de invulling verschilt sterk. Arbeidsvoorwaarden
+            pakken meestal het symptoom aan, niet de oorzaak. Zichtbaarheid
+            van talent en uitzicht op een volgende stap raken wel de kern.
+            Kent u de ambities van uw mensen, ook van de stille werkers die
+            zelden om iets vragen?
+          </p>
+          <p className={para}>
+            Een praktisch instrument is een ronde loopbaangesprekken door een
+            onafhankelijke coach, als onderhoudsmoment in plaats van
+            brandblusser. U krijgt een terugkoppeling op hoofdlijnen, denk
+            aan patronen die u ziet terugkomen, onbenut talent en
+            niet-uitgesproken ambities. Wat één persoon vertrouwelijk deelt,
+            blijft tussen die persoon en de coach.
+          </p>
+
+          {/* Kernzin — petrol vlak */}
+          <aside className="mt-14 rounded-2xl bg-petrol px-7 py-9 md:px-10 md:py-11">
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud">
+              In het kort
+            </span>
+            <p className="mt-3 font-display text-xl md:text-2xl text-linnen-licht leading-snug">
+              Mensen vertrekken niet om een beter salaris. Ze vertrekken
+              omdat niemand zag dat ze meer konden, of meer wilden.
+            </p>
+          </aside>
+
+          {/* Bronnenregel */}
+          <p className="mt-10 border-t border-petrol/15 pt-4 text-xs text-petrol/60 leading-relaxed">
+            Bronnen: UWV Arbeidsmarktprognose 2026 tot 2028, regio
+            Groot-Amsterdam; CBS, baanwisselaars 2022; UWV, arbeidsmarkt&shy;onderzoek
+            krapte en behoudmaatregelen; Loopbaanvisie, Govers &amp; Rietdijk
+            over ontwikkelgerichte onboarding (augustus 2024).
+          </p>
+
+          {/* FAQ */}
+          <section aria-labelledby="faq-kop-werven" className="mt-14">
+            <h2
+              id="faq-kop-werven"
+              className="font-display text-2xl md:text-[1.7rem] text-petrol"
+            >
+              Veelgestelde vragen
+            </h2>
+            <div className="mt-6 space-y-7">
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-display text-lg text-petrol">
+                    {item.q}
+                  </h3>
+                  <p className="mt-2 text-petrol/80 leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </article>
+
+      {/* CTA-strip koraal */}
+      <section aria-labelledby="cta-kop-werven" className="bg-koraal">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+          <h2
+            id="cta-kop-werven"
+            className="font-display text-2xl md:text-3xl text-[color:var(--color-on-koraal-title,#4A1B0C)]"
+          >
+            Weten welk talent u al in huis heeft?
+          </h2>
+          <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
+            Vizier op Scherp helpt werkgevers in de regio Amsterdam en
+            Haarlem om medewerkers in beeld te brengen, perspectief te
+            bieden en talent te behouden, vóórdat het gesprek te laat is.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link
+              to="/kennismaken"
+              className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
+            >
+              Plan een kennismaking
+            </Link>
+            <Link
+              to="/voor-werkgevers"
+              className="inline-flex items-center rounded-full border-[1.5px] border-[color:var(--color-on-koraal-sub,#712B13)] px-6 py-3 font-medium text-[color:var(--color-on-koraal-title,#4A1B0C)] hover:border-[color:var(--color-on-koraal-title,#4A1B0C)] transition"
+            >
+              Lees meer voor werkgevers
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
