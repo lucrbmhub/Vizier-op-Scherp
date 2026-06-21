@@ -121,13 +121,13 @@ const ARTICLES: Article[] = [
   {
     slug: "duurzame-inzetbaarheid-werkgever",
     title:
-      "Duurzame inzetbaarheid: hoe u er als werkgever in investeert",
+      "Duurzame inzetbaarheid: waarom het vitaliteitsprogramma vaak niet werkt, en wat wel",
     summary:
-      "Hoe bevordert u duurzame inzetbaarheid, verder dan vitaliteit alleen? Praktische handvatten voor HR, met aandacht voor ontwikkeling en loopbaan.",
+      "Een vitaliteitsprogramma voor iedereen raakt vaak niet de kern. Met cijfers van TNO en UWV: waarom dat zo is, en wat voor werkgevers in Amsterdam en Haarlem wél werkt.",
     audience: "werkgever",
-    readMinutes: 5,
+    readMinutes: 6,
     badgeTone: "mint",
-    badgeLabel: "Voor werkgevers",
+    badgeLabel: "Voor werkgevers & HR",
   },
   {
     slug: "persoonlijke-effectiviteit",
