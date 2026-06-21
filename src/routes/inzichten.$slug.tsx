@@ -782,10 +782,27 @@ function WervenNaarBehoudenArticle({ article }: { article: Article }) {
 /* ------------------------------------------------------------------ */
 
 function RichtingVindenArticle({ article }: { article: Article }) {
-  const para =
-    "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
+  const para = "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
   const h2 = "mt-12 font-display text-2xl md:text-[1.7rem] text-petrol";
-  const h3 = "mt-8 font-display text-xl text-petrol";
+
+  const faq = [
+    {
+      q: "Hoe weet ik welke kant ik op wil met mijn loopbaan?",
+      a: "Begin niet bij vacatures, maar bij jezelf. Kijk naar wat je energie geeft, wat je drijft en waar je goed in bent. Vaak zit daar een rode draad in die naar een richting wijst, ook als je nog geen functietitel kunt bedenken. Pas daarna ga je verkennen welk werk daarbij past.",
+    },
+    {
+      q: "Moet ik mijn hele carrière omgooien om gelukkiger te worden in mijn werk?",
+      a: "Meestal niet. De richting die je zoekt zit vaak in een ander accent, een andere omgeving of een rol die dichter bij je drijfveren ligt. Een grote overstap is soms het antwoord, maar lang niet altijd. Kleine verschuivingen maken vaak al veel verschil.",
+    },
+    {
+      q: "Ik weet wel wat ik niet meer wil, maar niet wat ik wel wil. Wat nu?",
+      a: "Dat is een heel normaal startpunt. Weten wat niet meer past, is al waardevolle informatie. De volgende stap is terugkijken naar momenten waarop je de tijd vergat of energie kreeg, en daarin een patroon zoeken. Dat patroon wijst vaak een richting aan die je nog niet onder woorden had.",
+    },
+    {
+      q: "Kan een loopbaancoach helpen bij het vinden van richting?",
+      a: "Ja. Je zit vaak te dicht op je eigen verhaal om je rode draad te zien. Een coach stelt de vragen die je jezelf niet stelt en helpt je een vaag verlangen te vertalen naar concrete stappen, in jouw tempo.",
+    },
+  ];
 
   return (
     <>
@@ -803,22 +820,23 @@ function RichtingVindenArticle({ article }: { article: Article }) {
               Voor medewerkers
             </span>
           </div>
-          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-petrol leading-[1.2] max-w-[26ch]">
+          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-petrol leading-[1.2] max-w-[28ch]">
             {article.title}
           </h1>
-          <p className="mt-6 text-petrol/75 leading-relaxed text-[1.1rem] max-w-[58ch]">
-            Je doet je werk prima, maar het voelt niet meer als de goede plek.
-            Of je zit al een tijd te twijfelen zonder dat je precies weet
-            waarover. Dat is een vervelend gevoel, juist omdat er vaak niets
-            concreets mis is.
+          <p className="mt-6 text-petrol/75 leading-relaxed text-[1.1rem] max-w-[62ch]">
+            Je weet dat je iets anders wilt, maar niet wat. Dus open je een
+            vacaturesite, scrolt door honderden functies, en klapt hem
+            gefrustreerd weer dicht, want niets voelt goed. Dat is logisch.
+            Richting vind je namelijk zelden door naar vacatures te kijken. Je
+            vindt hem door eerst naar binnen te kijken.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-petrol/65">
-            <span>Loopbaan &amp; richting</span>
+            <span>Voor medewerkers</span>
             <span
               aria-hidden="true"
               className="inline-block h-1.5 w-1.5 rounded-full bg-koraal"
             />
-            <span>{article.readMinutes} min leestijd</span>
+            <span>{article.readMinutes} min lezen</span>
           </div>
         </div>
       </section>
@@ -827,120 +845,91 @@ function RichtingVindenArticle({ article }: { article: Article }) {
       <article className="bg-linnen">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
           <p className="text-petrol/85 leading-relaxed text-[1.1rem]">
-            Je bent niet ongelukkig, maar ook niet op je plek. In dit artikel
-            lees je waarom je je richting kunt kwijtraken en hoe je die stap
-            voor stap weer terugvindt.
+            In dit stuk lees je waarom de zoektocht naar richting beter binnen
+            begint dan bij de vacatures, en hoe je je eigen rode draad
+            terugvindt.
           </p>
 
-          <h2 className={h2}>Waarom je je richting kwijt kunt raken</h2>
+          <h2 className={h2}>Beginnen bij vacatures is beginnen bij het einde</h2>
           <p className={para}>
-            Richting kwijtraken in je werk is normaler dan je denkt. Werk
-            verandert, jij verandert, en wat een paar jaar geleden goed paste,
-            sluit nu misschien niet meer aan. Soms is je functie langzaam
-            veranderd zonder dat je het doorhad. Soms ben jij gegroeid en is
-            je werk gelijk gebleven. En soms is er geen duidelijke reden, maar
-            merk je gewoon dat de energie weg is.
+            Een vacaturesite laat zien wat er bestaat, niet wat bij jou past.
+            Je scrolt langs functies die anderen hebben bedacht en probeert
+            jezelf in een van die hokjes te passen. Vaak werkt dat averechts:
+            je voelt dat het niet helemaal klopt, maar je weet ook niet wat
+            dan wel.
           </p>
           <p className={para}>
-            Belangrijk om te weten: twijfelen betekent niet dat je een
-            verkeerde keuze hebt gemaakt. Het betekent meestal dat je toe bent
-            aan een nieuwe afweging. Hoe eerder je daar rustig naar kijkt, hoe
-            meer keuze je houdt.
+            Een vacature is het eindpunt, niet het startpunt. Eerst bepaal je
+            de richting, daarna pas de route. Andersom blijf je hangen in een
+            keuze tussen opties die er toevallig zijn, in plaats van te kijken
+            wat bij jou past.
           </p>
 
-          {/* Goud kader */}
+          <h2 className={h2}>
+            Richting begint bij wat energie geeft, niet bij wat er te krijgen is
+          </h2>
+          <p className={para}>
+            De vraag is niet wat er te krijgen is op de arbeidsmarkt, maar wat
+            wil ik en waar ben ik goed in. Onderzoek naar loopbaanontwikkeling
+            laat steeds zien dat reflectie op je drijfveren en kwaliteiten
+            vooraf gaat aan het verkennen van werk: eerst naar binnen, dan
+            naar buiten.
+          </p>
+          <p className={para}>
+            Drijfveren ontstaan vroeg en gaan een leven lang mee. Twee mensen
+            met dezelfde baan kunnen die om hele verschillende redenen fijn
+            vinden. Wie zicht heeft op wat hem of haar drijft, herkent
+            sneller welk werk past en welk werk vooral energie kost.
+          </p>
+
+          {/* Uitgelicht blok — zoek je rode draad */}
           <section
-            aria-labelledby="signalen-kop"
-            className="mt-12 rounded-2xl border border-goud bg-goud/15 p-7 md:p-9"
+            aria-labelledby="rode-draad"
+            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
           >
             <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
-              Herken je dit?
+              Een praktische oefening
             </span>
             <h2
-              id="signalen-kop"
+              id="rode-draad"
               className="mt-2 font-display text-2xl md:text-[1.6rem] text-petrol"
             >
-              Signalen dat je toe bent aan een nieuwe richting
+              Zoek je rode draad
             </h2>
             <p className="mt-4 text-petrol/80 leading-relaxed">
-              Je hoeft niet te wachten tot je echt vastloopt. Vaak geeft je
-              werk eerder al signalen af. Herken je een paar van deze?
-            </p>
-            <ul className="mt-5 space-y-3">
-              {[
-                "Je kijkt op tegen de werkweek zonder dat je kunt benoemen waarom.",
-                "Je doet je werk op de automatische piloot en mist de voldoening van vroeger.",
-                "Je denkt vaak \u201Cis dit het nou\u201D, maar je weet niet wat je dan wél wilt.",
-                "Je ziet collega's of vrienden stappen zetten en voelt onrust, geen blijdschap.",
-                "Je schuift nadenken over je loopbaan steeds voor je uit, omdat het te groot voelt.",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-petrol/80 leading-relaxed"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 inline-block h-2 w-2 shrink-0 rotate-45 bg-koraal"
-                  />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-5 text-petrol/80 leading-relaxed">
-              Een paar van deze herkennen is geen reden tot paniek. Het is een
-              goed moment om er bewust bij stil te staan, voordat de onrust
-              groter wordt.
+              Denk terug aan momenten waarop je de tijd vergat, op je werk en
+              daarbuiten. Schrijf er vijf of zes op. Zoek vervolgens wat ze
+              gemeen hebben: ging het om iets maken, mensen helpen, iets
+              uitzoeken, leiding nemen? Dat patroon zegt meer over een
+              passende richting dan welke functietitel dan ook.
             </p>
           </section>
 
-          <h2 className={h2}>
-            Richting vinden begint bij jou, niet bij vacatures
-          </h2>
+          <h2 className={h2}>Het hoeft geen complete ommezwaai te zijn</h2>
           <p className={para}>
-            De meeste mensen beginnen verkeerd: ze gaan vacatures lezen in de
-            hoop dat er iets uitspringt. Maar als je nog niet weet wat je
-            zoekt, word je daar vooral onrustiger van. Richting vinden begint
-            niet buiten, maar bij jezelf. Drie ingangen helpen daarbij.
+            Richting is niet alles of niets. Vaak zit de stap die je zoekt
+            niet in een hele nieuwe carrière, maar in een ander accent, een
+            andere omgeving of een rol die dichter bij je drijfveren ligt. De
+            vraag is dan: welk deel van wat ik nu doe geeft mij energie, en
+            hoe krijg ik daar meer van.
+          </p>
+          <p className={para}>
+            Soms betekent dat een grotere stap, maar lang niet altijd. Vaak
+            verandert er meer dan je denkt door één rol, één project of één
+            werkplek anders in te richten.
           </p>
 
-          <h3 className={h3}>Kijk eerst naar je energie</h3>
+          <h2 className={h2}>Waarom dit lastig alleen te doen is</h2>
           <p className={para}>
-            Let een week of twee bewust op je werkdagen. Welke taken geven je
-            energie, en welke kosten je energie? Dat is vaak veelzeggender dan
-            nadenken over functietitels. Je merkt al snel patronen: misschien
-            krijg je energie van contact met mensen en kost het je moeite om
-            lang alleen te werken, of juist andersom.
-          </p>
-
-          <h3 className={h3}>Onderzoek wat je echt belangrijk vindt</h3>
-          <p className={para}>
-            Richting heeft te maken met wat je waardevol vindt in werk. Voor
-            de een is dat zekerheid en rust, voor de ander vrijheid, betekenis
-            of erkenning. Als je werk botst met wat je belangrijk vindt, voelt
-            het nooit helemaal goed, ook niet als je het goed kunt. Helder
-            krijgen wat voor jou telt, maakt een keuze meteen overzichtelijker.
-          </p>
-
-          <h3 className={h3}>Breng je talenten in kaart</h3>
-          <p className={para}>
-            Waar ben je goed in zonder dat het je veel moeite kost? Dat zijn
-            vaak dingen die je zelf gewoon vindt, maar die anderen in je
-            waarderen. Je talenten zijn een belangrijke aanwijzing voor werk
-            dat bij je past en je energie geeft in plaats van leegtrekt.
-          </p>
-
-          <h2 className={h2}>Van inzicht naar concrete stappen</h2>
-          <p className={para}>
-            Inzicht alleen brengt je nog niet verder. De kunst is om het te
-            vertalen naar kleine, concrete stappen. Dat hoeft geen grote sprong
-            te zijn. Vaak werkt het beter om eerst te onderzoeken dan om
-            meteen te beslissen.
+            Je zit te dicht op je eigen verhaal. Wat voor jou vanzelfsprekend
+            is, zie je niet meer als talent, terwijl het juist een aanwijzing
+            kan zijn. Een goede gesprekspartner stelt de vragen die je jezelf
+            niet stelt en helpt je een vaag verlangen te vertalen naar
+            haalbare stappen.
           </p>
           <p className={para}>
-            Denk aan een paar haalbare stappen: praat met iemand die het werk
-            doet dat je aanspreekt, probeer een nieuwe taak of project in je
-            huidige baan, of test een richting klein uit voordat je iets
-            groots verandert. Zo bouw je zekerheid op zonder onnodig risico.
+            Dat is wat loopbaancoaching doet: niet vertellen wat je moet
+            worden, maar ontdekken wat er al in je zit en wat daar bij past.
           </p>
 
           {/* Kernzin — petrol vlak */}
@@ -949,62 +938,59 @@ function RichtingVindenArticle({ article }: { article: Article }) {
               In het kort
             </span>
             <p className="mt-3 font-display text-xl md:text-2xl text-linnen-licht leading-snug">
-              Richting vinden is meestal geen plotselinge keuze, maar een
-              opbouw: eerst rust en overzicht, dan zicht op je talenten en
-              waarden, dan een richting, en pas daarna concrete stappen in
-              werk.
+              Richting vind je niet door te kijken wat er te krijgen is, maar
+              door te ontdekken wat je energie geeft. De rest volgt daaruit.
             </p>
           </aside>
 
-          <h2 className={h2}>Je hoeft het niet alleen uit te zoeken</h2>
-          <p className={para}>
-            In je eentje blijf je makkelijk in dezelfde cirkels denken. Een
-            goed gesprek met iemand die de juiste vragen stelt, brengt je vaak
-            sneller verder dan weken alleen piekeren. Een loopbaancoach helpt
-            je je energie, waarden en talenten scherp te krijgen en die te
-            vertalen naar een stap die bij je past, in jouw tempo. Wat je in
-            zo&apos;n traject bespreekt, blijft vertrouwelijk.
+          {/* Bronnenregel */}
+          <p className="mt-10 border-t border-petrol/15 pt-4 text-xs text-petrol/60 leading-relaxed">
+            Met inzichten uit onderzoek naar loopbaancompetenties (Kuijpers)
+            en uit de loopbaanpsychologie rond drijfveren en levensverhaal.
           </p>
+
+          {/* FAQ */}
+          <section aria-labelledby="faq-kop" className="mt-14">
+            <h2 id="faq-kop" className="font-display text-2xl md:text-[1.7rem] text-petrol">
+              Veelgestelde vragen
+            </h2>
+            <div className="mt-6 space-y-7">
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-display text-lg text-petrol">
+                    {item.q}
+                  </h3>
+                  <p className="mt-2 text-petrol/80 leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </article>
 
       {/* CTA-strip koraal */}
-      <section
-        aria-labelledby="cta-kop"
-        className="bg-koraal"
-      >
+      <section aria-labelledby="cta-kop" className="bg-koraal">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
           <h2
             id="cta-kop"
             className="font-display text-2xl md:text-3xl text-[color:var(--color-on-koraal-title,#4A1B0C)]"
           >
-            Samen je richting scherp krijgen
+            Benieuwd welke richting bij jou past?
           </h2>
           <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
-            Steeds meer werkgevers bieden hun medewerkers loopbaancoaching aan.
-            Werk je bij zo&apos;n organisatie? Vraag bij je leidinggevende of
-            HR of het voor jou mogelijk is. Ben je zelf HR of leidinggevende
-            en wil je dit voor je team aanbieden?{" "}
-            <Link
-              to="/voor-werkgevers"
-              className="font-medium underline text-[color:var(--color-on-koraal-title,#4A1B0C)]"
-            >
-              Lees meer over onze loopbaancoaching voor werkgevers
-            </Link>
-            .
-          </p>
-          <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
-            Bij Vizier op Scherp werk je met een klein team van ervaren,
-            gecertificeerde coaches in Amsterdam, Haarlem en omgeving. Je leert
-            je coach eerst kennen voordat je begint, zodat je weet dat het
-            klikt.
+            Bij Vizier op Scherp ontdek je samen met een coach wat je energie
+            geeft, wat je drijft en welke stap daarbij past. Geen kant-en-klaar
+            antwoord, maar de juiste vragen, in jouw tempo. Wat je bespreekt
+            blijft tussen jou en je coach.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
               to="/kennismaken"
               className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
             >
-              Maak vrijblijvend kennis
+              Maak kennis met een coach
             </Link>
             <Link
               to="/coaches"
