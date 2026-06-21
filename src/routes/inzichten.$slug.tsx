@@ -90,6 +90,117 @@ function headForSlug(slug: string) {
   if (!article) return {};
   const canonical = `https://vizieropscherp.nl/inzichten/${article.slug}`;
 
+  if (article.slug === "van-werven-naar-behouden") {
+    const title =
+      "Van werven naar behouden: waarom medewerkers vertrekken om stilstand, niet om salaris | Vizier op Scherp";
+    const description =
+      "Medewerkers verlaten hun werkgever zelden om meer salaris. Gebrek aan ontwikkeling en doorgroei is de voornaamste reden. Wat werkgevers in de regio Amsterdam en Haarlem kunnen doen, onderbouwd met actuele UWV- en CBS-cijfers.";
+    const ogTitle =
+      "Van werven naar behouden: waarom medewerkers vertrekken om stilstand, niet om salaris";
+    const twitterDescription =
+      "Medewerkers verlaten hun werkgever zelden om meer salaris. Gebrek aan ontwikkeling is de voornaamste reden. Wat u als werkgever kunt doen.";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching voor werkgevers in Amsterdam, Haarlem en omgeving";
+
+    const blogLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: ogTitle,
+      description,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-06-19",
+      dateModified: "2026-06-21",
+      image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Waarom verlaten medewerkers hun baan?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Salaris is zelden de hoofdreden. Onderzoek van UWV laat zien dat gebrek aan doorgroei- en ontwikkelingsmogelijkheden een van de belangrijkste vertrekoorzaken is. Mensen vertrekken als ze het gevoel hebben dat ze stilstaan, niet gezien worden of geen perspectief hebben binnen de organisatie.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Wanneer is het risico op vertrek het grootst?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "In de eerste maanden na indiensttreding. Volgens CBS-cijfers werkte bijna zestig procent van de baanwisselaars korter dan twee jaar bij de vorige werkgever. De eerste honderd dagen zijn cruciaal: wie in die periode geen perspectief ziet of zich niet welkom voelt, vertrekt snel.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Maakt de afkoelende arbeidsmarkt behoud minder belangrijk?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Nee. De krapte is over het hoogtepunt heen, maar werkgevers blijven moeite houden om personeel te vinden. In Groot-Amsterdam groeit het aantal banen tot 2028 en is ongeveer acht procent van de werknemers tussen de 60 en 67 jaar. Door pensioen en baanwissel blijft de vervangingsvraag groot, waardoor behoud belangrijk blijft.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Wat werkt beter dan salarisverhoging om mensen te behouden?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Aandacht voor ontwikkeling en loopbaanperspectief. Medewerkers die het gevoel hebben dat hun talenten worden gezien en dat er ruimte is om te groeien, blijven langer. Een gesprek over iemands ambities en de mogelijkheden binnen uw organisatie is daarvoor een effectief en relatief goedkoop instrument.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Hoe begin ik hiermee als organisatie?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Begin met een ronde loopbaangesprekken voor een afgebakende groep medewerkers, gevoerd door een onafhankelijke coach. Zo hoort u vroeg wat er speelt, maakt u intern talent zichtbaar en laat u medewerkers merken dat hun ontwikkeling telt. Dat is een concrete eerste stap zonder groot programma.",
+          },
+        },
+      ],
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: twitterDescription },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(blogLd) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
+      ],
+    };
+  }
+
+
   if (article.slug === "loopbaangesprek-met-medewerker") {
     const title =
       "Het loopbaangesprek met uw medewerker: waarom het exitgesprek te laat is | Vizier op Scherp";
