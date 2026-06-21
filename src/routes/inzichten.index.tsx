@@ -112,9 +112,9 @@ const ARTICLES: Article[] = [
   {
     slug: "solliciteren-en-arbeidsmarkt",
     title:
-      "Solliciteren: je goed voorbereiden, van oriëntatie tot het gesprek",
+      "Solliciteren: waarom meer sollicitaties zelden het antwoord is",
     summary:
-      "Beter solliciteren begint vóór de vacature. Lees hoe je je oriënteert op de arbeidsmarkt, je verhaal scherp krijgt en het gesprek ingaat met rust.",
+      "Hoor je niets terug op je sollicitaties? Vaak ligt het niet aan jou, maar aan het kanaal. Waarom netwerken en zichtbaarheid meer opleveren dan stapels brieven, met arbeidsmarktcijfers van UWV.",
     audience: "medewerker",
     readMinutes: 5,
   },
