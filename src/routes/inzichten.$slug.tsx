@@ -62,9 +62,9 @@ const ARTICLES: Article[] = [
   {
     slug: "persoonlijke-effectiviteit",
     title:
-      "Persoonlijke effectiviteit: meer grip op je werk zonder harder te werken",
+      "Persoonlijke effectiviteit: waarom je grootste zwakte vaak je sterkste kant is",
     summary:
-      "Meer grip op je werk zonder harder te werken? Ontdek hoe je prioriteert, je aandacht beschermt en grenzen aangeeft, zonder productiviteitshype.",
+      "Effectiever worden begint niet bij meer discipline, maar bij weten wat je wilt en waar je goed in bent. Over perfectionisme, keuzes maken en je sterke kanten op het juiste moment inzetten.",
     audience: "medewerker",
     readMinutes: 5,
   },
@@ -364,10 +364,15 @@ function headForSlug(slug: string) {
 
   if (article.slug === "persoonlijke-effectiviteit") {
     const title =
-      "Persoonlijke effectiviteit: meer grip op je werk | Vizier op Scherp";
+      "Persoonlijke effectiviteit: waarom je grootste zwakte vaak je sterkste kant is | Vizier op Scherp";
     const description =
-      "Meer grip op je werk zonder harder te werken? Ontdek hoe je prioriteert, je aandacht beschermt en grenzen aangeeft, zonder productiviteitshype. Coaching in Amsterdam en Haarlem.";
-    const ogTitle = "Persoonlijke effectiviteit: meer grip op je werk";
+      "Effectiever worden begint niet bij meer discipline, maar bij weten wat je wilt en waar je goed in bent. Over perfectionisme, keuzes maken en je sterke kanten op het juiste moment inzetten. Loopbaancoaching in de regio Amsterdam en Haarlem.";
+    const ogTitle =
+      "Persoonlijke effectiviteit: waarom je grootste zwakte vaak je sterkste kant is";
+    const ogDescription =
+      "Effectiever worden begint niet bij meer discipline, maar bij weten wat je wilt en waar je goed in bent. Over perfectionisme, keuzes maken en je sterke kanten op het juiste moment inzetten.";
+    const twitterDescription =
+      "Effectiever worden begint niet bij meer discipline, maar bij weten wat je wilt en waar je goed in bent. Over perfectionisme, keuzes maken en je sterke kanten gericht inzetten.";
     const image = "https://vizieropscherp.nl/og-image.png";
     const imageAlt =
       "Vizier op Scherp, loopbaancoaching in Amsterdam, Haarlem en omgeving";
@@ -376,8 +381,8 @@ function headForSlug(slug: string) {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       headline:
-        "Persoonlijke effectiviteit: meer grip op je werk zonder harder te werken",
-      description,
+        "Persoonlijke effectiviteit: waarom je grootste zwakte vaak je sterkste kant is",
+      description: ogDescription,
       inLanguage: "nl-NL",
       mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
       author: {
@@ -391,8 +396,48 @@ function headForSlug(slug: string) {
         logo: { "@type": "ImageObject", url: image },
       },
       datePublished: "2026-06-19",
-      dateModified: "2026-06-19",
+      dateModified: "2026-06-21",
       image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      inLanguage: "nl-NL",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Wat is persoonlijke effectiviteit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Persoonlijke effectiviteit gaat erover dat je je tijd, energie en kwaliteiten zo inzet dat je bereikt wat je belangrijk vindt, zonder jezelf uit te putten. Het draait minder om harder werken en meer om bewustere keuzes: weten wat je wilt, waar je goed in bent, en wanneer iets goed genoeg is.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is perfectionisme een probleem?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Niet per se. Perfectionisme is in de kern een sterk gevoel voor kwaliteit. Het wordt pas een probleem als het altijd aanstaat, ook bij taken waar dat niet nodig is, en je daardoor blijft hangen of leegloopt. De kunst is niet om het af te leren, maar om te kiezen wanneer je het inzet.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Hoe word ik besluitvaardiger?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Vaak helpt het om eerst helder te krijgen wat je echt wilt en waar je goed in bent. Twijfel komt regelmatig voort uit onduidelijkheid over je eigen drijfveren, niet uit een gebrek aan opties. Wie zijn waarden en kwaliteiten scherp heeft, kiest makkelijker. Een gesprek met een coach kan daarbij helpen.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Kan een coach helpen bij persoonlijke effectiviteit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Ja. Je eigen patronen zijn voor jezelf het lastigst te zien, omdat ze normaal voelen. Een coach helpt je herkennen welke sterke kant onder een zwakte zit, en hoe je die gerichter inzet, zodat je met minder moeite meer bereikt.",
+          },
+        },
+      ],
     };
 
     return {
@@ -404,7 +449,7 @@ function headForSlug(slug: string) {
         { property: "og:locale", content: "nl_NL" },
         { property: "og:site_name", content: "Vizier op Scherp" },
         { property: "og:title", content: ogTitle },
-        { property: "og:description", content: description },
+        { property: "og:description", content: ogDescription },
         { property: "og:url", content: canonical },
         { property: "og:image", content: image },
         { property: "og:image:width", content: "1200" },
@@ -412,12 +457,13 @@ function headForSlug(slug: string) {
         { property: "og:image:alt", content: imageAlt },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: ogTitle },
-        { name: "twitter:description", content: description },
+        { name: "twitter:description", content: twitterDescription },
         { name: "twitter:image", content: image },
       ],
       links: [{ rel: "canonical", href: canonical }],
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(ld) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
       ],
     };
   }
@@ -1672,7 +1718,25 @@ function DuurzameInzetbaarheidWerkgeverArticle({
 function PersoonlijkeEffectiviteitArticle({ article }: { article: Article }) {
   const para = "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
   const h2 = "mt-12 font-display text-2xl md:text-[1.7rem] text-petrol";
-  const h3 = "mt-8 font-display text-xl text-petrol";
+
+  const faq = [
+    {
+      q: "Wat is persoonlijke effectiviteit?",
+      a: "Persoonlijke effectiviteit gaat erover dat je je tijd, energie en kwaliteiten zo inzet dat je bereikt wat je belangrijk vindt, zonder jezelf uit te putten. Het draait minder om harder werken en meer om bewustere keuzes: weten wat je wilt, waar je goed in bent, en wanneer iets goed genoeg is.",
+    },
+    {
+      q: "Is perfectionisme een probleem?",
+      a: "Niet per se. Perfectionisme is in de kern een sterk gevoel voor kwaliteit. Het wordt pas een probleem als het altijd aanstaat, ook bij taken waar dat niet nodig is, en je daardoor blijft hangen of leegloopt. De kunst is niet om het af te leren, maar om te kiezen wanneer je het inzet.",
+    },
+    {
+      q: "Hoe word ik besluitvaardiger?",
+      a: "Vaak helpt het om eerst helder te krijgen wat je echt wilt en waar je goed in bent. Twijfel komt regelmatig voort uit onduidelijkheid over je eigen drijfveren, niet uit een gebrek aan opties. Wie zijn waarden en kwaliteiten scherp heeft, kiest makkelijker. Een gesprek met een coach kan daarbij helpen.",
+    },
+    {
+      q: "Kan een coach helpen bij persoonlijke effectiviteit?",
+      a: "Ja. Je eigen patronen zijn voor jezelf het lastigst te zien, omdat ze normaal voelen. Een coach helpt je herkennen welke sterke kant onder een zwakte zit, en hoe je die gerichter inzet, zodat je met minder moeite meer bereikt.",
+    },
+  ];
 
   return (
     <>
@@ -1691,22 +1755,21 @@ function PersoonlijkeEffectiviteitArticle({ article }: { article: Article }) {
             </span>
           </div>
           <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-petrol leading-[1.2] max-w-[26ch]">
-            Persoonlijke effectiviteit: meer grip op je werk zonder harder te werken
+            Persoonlijke effectiviteit: waarom je grootste zwakte vaak je sterkste kant is
           </h1>
           <p className="mt-6 text-petrol/75 leading-relaxed text-[1.1rem] max-w-[58ch]">
-            Je hebt het druk, je werkt hard, en toch heb je aan het eind van de
-            dag het gevoel dat de belangrijkste dingen zijn blijven liggen.
-            Persoonlijke effectiviteit gaat niet over nóg harder werken of
-            strakkere systemen. Het gaat over gerichter werken, zodat je tijd
-            en aandacht naar wat echt telt gaan.
+            Je werkt hard, levert goed werk en bent kritisch op jezelf. En toch
+            heb je het gevoel dat je niet vooruitkomt, of dat het nooit goed
+            genoeg is. Vaak ligt dat niet aan een gebrek aan discipline, maar
+            aan een sterke kant die op het verkeerde moment tegen je werkt.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-petrol/65">
-            <span>Persoonlijke effectiviteit</span>
+            <span>Voor medewerkers</span>
             <span
               aria-hidden="true"
               className="inline-block h-1.5 w-1.5 rounded-full bg-koraal"
             />
-            <span>{article.readMinutes} min leestijd</span>
+            <span>{article.readMinutes} min lezen</span>
           </div>
         </div>
       </section>
@@ -1715,85 +1778,112 @@ function PersoonlijkeEffectiviteitArticle({ article }: { article: Article }) {
       <article className="bg-linnen">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
           <p className="text-petrol/85 leading-relaxed text-[1.1rem]">
-            In dit artikel lees je hoe je meer grip krijgt op je werk: door
-            beter te kiezen wat je doet, je aandacht te beschermen en grenzen
-            aan te geven. Geen trucs, wel een paar principes die het verschil
-            maken.
+            In dit stuk lees je waarom effectiever worden zelden gaat over
+            jezelf veranderen, en meestal over je eigen kwaliteiten op het
+            juiste moment inzetten.
           </p>
 
-          <h2 className={h2}>Druk zijn is niet hetzelfde als effectief zijn</h2>
+          <h2 className={h2}>Je doet alles goed, en toch komt het niet</h2>
           <p className={para}>
-            Het is makkelijk om je dag te vullen en toch het gevoel te houden
-            dat je achterloopt. Dat komt vaak doordat we reageren op wat zich
-            aandient: mail, vragen van collega's, kleine taken die snel
-            afgevinkt zijn. Druk, maar niet per se belangrijk.
+            Een patroon dat we vaak tegenkomen: iemand die nauwkeurig werkt,
+            hoge eisen aan zichzelf stelt en zelden iets half doet. Op papier
+            precies wat je wilt zijn. Maar in de praktijk kost het diegene
+            veel. Beslissingen duren lang, want elke optie moet eerst helemaal
+            kloppen. Iets afronden voelt ongemakkelijk, want het kan altijd
+            beter. En complimenten glijden eraf, want de lat ligt zo hoog dat
+            goed nooit echt goed voelt.
           </p>
           <p className={para}>
-            Effectief werken begint met een ander uitgangspunt: niet "wat kan
-            ik vandaag allemaal doen", maar "wat moet er vandaag echt
-            gebeuren". Dat klinkt simpel, maar het is een wezenlijk verschil.
-            Wie elke dag een paar belangrijke dingen afmaakt, komt verder dan
-            wie tien kleine dingen doet en de grote vooruitschuift.
-          </p>
-
-          <h2 className={h2}>Kies bewust wat voorrang krijgt</h2>
-          <p className={para}>
-            Grip op je werk begint bij prioriteren, en prioriteren betekent
-            ook dingen bewust niet doen. Niet alles wat op je afkomt is even
-            belangrijk, en niet alles hoeft door jou.
-          </p>
-          <p className={para}>
-            Een eenvoudige gewoonte die helpt: bepaal aan het begin van je dag
-            of week welke twee of drie dingen er echt toe doen, en bescherm
-            daar tijd voor. De rest vul je daaromheen in. Het gaat er niet om
-            dat je alles afkrijgt, maar dat de juiste dingen afkomen. Vraag
-            jezelf bij een nieuwe taak af: moet dit nu, moet dit door mij, en
-            wat gebeurt er als ik het niet doe?
+            Dit is geen kwestie van te weinig kunnen. Vaak juist het
+            tegenovergestelde. Het is een kwestie van een eigenschap die zo
+            sterk is dat hij begint te remmen in plaats van te helpen.
           </p>
 
-          {/* Goud kader */}
+          <h2 className={h2}>
+            Je zwakte is vaak je kracht op het verkeerde moment
+          </h2>
+          <p className={para}>
+            Veel van wat je als zwakte ziet, is een sterke kant die is
+            doorgeschoten of op het verkeerde moment opduikt. Perfectionisme is
+            een groot gevoel voor kwaliteit dat geen rem kent. Besluiteloosheid
+            is grondigheid die te lang doorgaat. "Ik ben te gestructureerd" is
+            in werkelijkheid een talent voor plannen en overzicht. "Ik ben te
+            kritisch" is een scherp oog dat dingen ziet die anderen missen.
+          </p>
+          <p className={para}>
+            Dat klinkt als een woordspelletje, maar dat is het niet. Het
+            verandert namelijk wat je ermee doet. Zolang je iets als een gebrek
+            ziet, wil je het wegpoetsen, en dat lukt zelden. Zie je het als een
+            kwaliteit met een knop ervoor, dan gaat het niet meer om afleren,
+            maar om doseren: wanneer zet je die scherpte aan, en wanneer mag
+            het wat losser?
+          </p>
+
+          {/* Uitgelicht handvat — zacht goud met dikke koraal linkerrand */}
           <section
-            aria-labelledby="aandacht-kop"
-            className="mt-12 rounded-2xl border border-goud bg-goud/15 p-7 md:p-9"
+            aria-labelledby="zeven-kop"
+            className="mt-12 rounded-2xl bg-goud/15 border-l-4 border-koraal p-7 md:p-9"
           >
             <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
-              Wat je aandacht weglekt
+              Een praktische oefening
             </span>
             <h2
-              id="aandacht-kop"
+              id="zeven-kop"
               className="mt-2 font-display text-2xl md:text-[1.6rem] text-petrol"
             >
-              Bescherm je aandacht
+              Durf een 7 in te leveren
             </h2>
             <p className="mt-4 text-petrol/80 leading-relaxed">
-              Veel effectiviteit gaat verloren aan onderbrekingen en
-              versnippering. Herken je deze?
+              Een eenvoudige oefening voor wie de lat altijd op een 10 legt:
+              kies bewust een taak waar een 7 volstaat, en lever die op een 7.
+              Een interne mail, een eerste opzet, een voorbereiding die niet
+              perfect hoeft. Merk wat er gebeurt. Meestal: niets ergs. De
+              wereld draait door, en jij houdt energie over voor de dingen
+              waar een 9 er wél toe doet.
             </p>
-            <ul className="mt-5 space-y-3">
-              {[
-                "Je springt de hele dag tussen taken en maakt weinig echt af.",
-                "Je checkt mail en berichten zodra ze binnenkomen, ook midden in iets anders.",
-                "Je begint aan iets groots zonder een blok tijd waarin je er ongestoord aan kunt werken.",
-                "Je zegt snel ja, waardoor je agenda volloopt met dingen van anderen.",
-                "Je werkt door zonder pauze, waardoor je focus in de middag wegzakt.",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-3 text-petrol/80 leading-relaxed"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 inline-block h-2 w-2 shrink-0 rotate-45 bg-koraal"
-                  />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-5 text-petrol/80 leading-relaxed">
-              Eén of twee hiervan aanpakken levert vaak meer op dan een nieuwe
-              planningsmethode. Aandacht is je schaarste, niet je tijd.
+            <p className="mt-4 text-petrol/80 leading-relaxed">
+              Het doel is niet om slordig te worden. Het doel is leren kiezen
+              wanneer perfectie loont, en wanneer ze vooral tijd en rust kost.
             </p>
           </section>
+
+          <h2 className={h2}>
+            Effectiever worden begint bij weten wat je wilt, niet bij meer
+            discipline
+          </h2>
+          <p className={para}>
+            De gangbare reflex bij "ik wil effectiever zijn" is meer systeem:
+            strakkere lijstjes, meer discipline, een nieuwe app. Soms helpt
+            dat. Maar vaak zit het probleem een laag dieper. Als je niet scherp
+            hebt wat je echt wilt en waar je goed in bent, blijf je twijfelen,
+            hoe goed je planning ook is.
+          </p>
+          <p className={para}>
+            Onderzoek naar loopbaanontwikkeling laat zien dat reflectie
+            voorafgaat aan regie. Pas als je nadenkt over je drijfveren, dus
+            wat wil ik, en je kwaliteiten, dus waar ben ik goed in, kun je
+            gericht keuzes maken en stappen zetten. De volgorde doet ertoe:
+            eerst weten, dan sturen. Daar komt bij dat mensen die actief grip
+            nemen op hun loopbaan, volgens onderzoek van onder meer TNO en de
+            Universiteit van Amsterdam, minder stress ervaren en meer controle
+            voelen over hun werk. Regie is dus niet alleen prettig, het geeft
+            ook rust.
+          </p>
+
+          <h2 className={h2}>Je kunt jezelf niet kietelen</h2>
+          <p className={para}>
+            Er is een reden waarom dit lastig alleen te doen is. Je eigen
+            patronen zie je het slechtst. Precies de dingen die je doen
+            vastlopen, voelen voor jou volkomen normaal, want je doet ze al
+            jaren. Een buitenstaander die de juiste vragen stelt, ziet vaak in
+            een paar gesprekken wat jij over het hoofd ziet, en helpt je een
+            sterke kant anders in te zetten in plaats van die te bestrijden.
+          </p>
+          <p className={para}>
+            Dat is waar een coach voor is. Niet om je te vertellen wat je fout
+            doet, maar om samen te ontdekken welke kwaliteit eronder zit, en
+            hoe je die slimmer gebruikt.
+          </p>
 
           {/* Kernzin — petrol vlak */}
           <aside className="mt-14 rounded-2xl bg-petrol px-7 py-9 md:px-10 md:py-11">
@@ -1801,63 +1891,42 @@ function PersoonlijkeEffectiviteitArticle({ article }: { article: Article }) {
               In het kort
             </span>
             <p className="mt-3 font-display text-xl md:text-2xl text-linnen-licht leading-snug">
-              Effectiever worden gaat niet over meer doen in minder tijd, maar
-              over je aandacht richten op wat echt telt en de rest bewust
-              loslaten.
+              Effectiever worden gaat zelden over jezelf veranderen. Meestal
+              gaat het over je eigen sterke kanten op het juiste moment
+              inzetten.
             </p>
           </aside>
 
-          <h2 className={h2}>Grenzen aangeven hoort erbij</h2>
-          <p className={para}>
-            Meer grip krijgen lukt niet als je agenda volstroomt met het werk
-            van anderen. Grenzen aangeven heeft een vervelende lading, alsof
-            je niet behulpzaam bent, maar het is juist wat je in staat stelt
-            je werk goed te doen.
-          </p>
-          <p className={para}>
-            Dat hoeft niet groot of bot. Het kan zo simpel zijn als "ik pak
-            het op, maar pas na vanmiddag", of "ik kan dit doen, maar dan
-            schuift dat andere". Je geeft niet alleen een grens aan, je maakt
-            ook duidelijk wat wél kan. Wie dat rustig en duidelijk doet, komt
-            betrouwbaarder over, niet minder behulpzaam.
-          </p>
+          {/* Bronnen */}
+          <div className="mt-10 border-t border-petrol/15 pt-4">
+            <p className="text-sm text-petrol/60 leading-relaxed">
+              Met inzichten uit onderzoek naar loopbaancompetenties (Kuijpers)
+              en naar proactief loopbaangedrag (TNO en de Universiteit van
+              Amsterdam).
+            </p>
+          </div>
 
-          <h2 className={h2}>Klein beginnen werkt het best</h2>
-          <p className={para}>
-            Je hoeft je manier van werken niet in één keer om te gooien. Kies
-            één ding dat je in de weg zit, en pak dat aan:
-          </p>
-          <ul className="mt-5 space-y-3">
-            {[
-              "Blok één vast moment per dag voor geconcentreerd werk, zonder mail of berichten.",
-              "Bepaal elke ochtend je belangrijkste taak en doe die eerst.",
-              "Zet meldingen uit tijdens werk dat je aandacht vraagt.",
-              "Bouw korte pauzes in, zodat je focus de hele dag mee blijft doen.",
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-3 text-petrol/80 leading-relaxed"
-              >
-                <span
-                  aria-hidden="true"
-                  className="mt-2 inline-block h-2 w-2 shrink-0 rotate-45 bg-koraal"
-                />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className={para}>
-            Een kleine verandering die je volhoudt, doet meer dan een heel
-            nieuw systeem dat je na een week loslaat.
-          </p>
-
-          <h3 className={h3}>Je hoeft het niet alleen uit te zoeken</h3>
-          <p className={para}>
-            Patronen in je eigen manier van werken zijn lastig te zien, juist
-            omdat ze zo vertrouwd zijn. Een coach helpt je te ontdekken waar
-            je grip verliest en wat voor jou werkt, in jouw situatie. Wat je
-            bespreekt, blijft vertrouwelijk.
-          </p>
+          {/* FAQ */}
+          <section aria-labelledby="faq-kop-pe" className="mt-14">
+            <h2
+              id="faq-kop-pe"
+              className="font-display text-2xl md:text-[1.7rem] text-petrol"
+            >
+              Veelgestelde vragen
+            </h2>
+            <div className="mt-6 divide-y divide-petrol/15 border-y border-petrol/15">
+              {faq.map((item) => (
+                <div key={item.q} className="py-5">
+                  <h3 className="font-display text-lg text-petrol">
+                    {item.q}
+                  </h3>
+                  <p className="mt-2 text-petrol/80 leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </article>
 
@@ -1868,34 +1937,20 @@ function PersoonlijkeEffectiviteitArticle({ article }: { article: Article }) {
             id="cta-kop-pe"
             className="font-display text-2xl md:text-3xl text-[color:var(--color-on-koraal-title,#4A1B0C)]"
           >
-            Meer grip op je werk, met iemand die meedenkt
+            Benieuwd welke kracht er onder jouw 'zwakte' zit?
           </h2>
           <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
-            Wil je gerichter werken en meer overzicht houden? Onze coaches
-            helpen je ontdekken waar je tijd en aandacht heen gaan, en hoe je
-            daar meer regie op krijgt. Werk je via een werkgever die hierin
-            investeert, of regel je het zelf? Allebei kan. Ben je HR of
-            leidinggevende en wil je dit voor je team aanbieden?{" "}
-            <Link
-              to="/voor-werkgevers"
-              className="font-medium underline text-[color:var(--color-on-koraal-title,#4A1B0C)]"
-            >
-              Lees meer over onze loopbaancoaching voor werkgevers
-            </Link>
-            .
-          </p>
-          <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
-            Bij Vizier op Scherp werk je met een klein team van ervaren,
-            gecertificeerde coaches in Amsterdam, Haarlem en omgeving. Je
-            leert je coach eerst kennen voordat je begint, zodat je weet dat
-            het klikt.
+            Bij Vizier op Scherp kijk je samen met een coach naar wat je goed
+            kunt, wat je tegenhoudt, en hoe je je sterke kanten op het juiste
+            moment inzet. In jouw tempo, en wat je bespreekt blijft tussen jou
+            en je coach.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
               to="/kennismaken"
               className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
             >
-              Maak vrijblijvend kennis
+              Maak kennis met een coach
             </Link>
             <Link
               to="/coaches"
