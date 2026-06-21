@@ -138,6 +138,17 @@ const ARTICLES: Article[] = [
     audience: "medewerker",
     readMinutes: 5,
   },
+  {
+    slug: "loopbaangesprek-met-medewerker",
+    title:
+      "Het loopbaangesprek met uw medewerker: waarom het exitgesprek te laat is",
+    summary:
+      "Het beste loopbaangesprek voert u niet bij het exitgesprek, maar als er nog niets aan de hand is. Waarom een onafhankelijk loopbaangesprek talent behoudt en zichtbaar maakt.",
+    audience: "werkgever",
+    readMinutes: 6,
+    badgeTone: "mint",
+    badgeLabel: "Voor werkgevers & HR",
+  },
 ];
 
 
