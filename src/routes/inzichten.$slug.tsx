@@ -89,6 +89,109 @@ function headForSlug(slug: string) {
   if (!article) return {};
   const canonical = `https://vizieropscherp.nl/inzichten/${article.slug}`;
 
+  if (article.slug === "loopbaangesprek-met-medewerker") {
+    const title =
+      "Het loopbaangesprek met uw medewerker: waarom het exitgesprek te laat is | Vizier op Scherp";
+    const description =
+      "Het beste loopbaangesprek voert u niet bij het exitgesprek, maar als er nog niets aan de hand is. Waarom een onafhankelijk loopbaangesprek talent behoudt en zichtbaar maakt, voor werkgevers in de regio Amsterdam en Haarlem.";
+    const ogTitle =
+      "Het loopbaangesprek met uw medewerker: waarom het exitgesprek te laat is";
+    const twitterDescription =
+      "Het beste loopbaangesprek voert u als er nog niets aan de hand is. Waarom een onafhankelijk loopbaangesprek talent behoudt en zichtbaar maakt.";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching voor werkgevers in Amsterdam, Haarlem en omgeving";
+
+    const blogLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: ogTitle,
+      description,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-06-19",
+      dateModified: "2026-06-21",
+      image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Wat is een loopbaangesprek?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Een loopbaangesprek is een gesprek waarin een medewerker stilstaat bij waar hij staat, wat energie geeft en kost, en welke kant hij op wil. Anders dan een beoordelings- of functioneringsgesprek gaat het niet over presteren, maar over richting, ontwikkeling en inzetbaarheid op langere termijn.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Waarom zou ik dit door een externe partij laten doen?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Bij de eigen leidinggevende spelen beoordeling en afhankelijkheid mee, waardoor medewerkers niet altijd vrijuit praten. Een onafhankelijke, vertrouwelijke gesprekspartner krijgt vaak eerlijker antwoorden. U ontvangt een terugkoppeling op hoofdlijnen, zonder dat vertrouwelijke details worden gedeeld.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Wat levert een loopbaangesprek mijn organisatie op?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "U hoort vroeg wat er bij medewerkers speelt, nog voordat het tot verzuim of vertrek leidt. Mensen voelen zich gezien en blijven wendbaarder. En u maakt intern talent zichtbaar, wat interne doorgroei mogelijk maakt en wervingskosten bespaart.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Hoe vaak zou zo'n gesprek moeten plaatsvinden?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Dat hangt af van uw organisatie, maar het werkt het best als terugkerend moment in plaats van eenmalige actie. Veel organisaties beginnen met een ronde gesprekken voor een afgebakende groep, en bouwen van daaruit toe naar een vast ritme.",
+          },
+        },
+      ],
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: twitterDescription },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(blogLd) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
+      ],
+    };
+  }
+
+
   if (article.slug === "richting-vinden-in-je-loopbaan") {
     const title =
       "Richting vinden in je loopbaan: waarom je niet bij de vacaturesite moet beginnen | Vizier op Scherp";
