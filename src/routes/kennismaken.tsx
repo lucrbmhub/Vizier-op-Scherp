@@ -10,6 +10,7 @@ const OG_TITLE = "Kennismaken met Vizier op Scherp";
 const OG_DESC =
   "Een eerste gesprek is altijd vrijblijvend. Bel, mail of laat een bericht achter. We nemen snel contact op.";
 const CANONICAL = "https://vizieropscherp.nl/kennismaken";
+const WA_URL = "https://wa.me/31611221424";
 
 const contactLd = {
   "@context": "https://schema.org",
@@ -30,8 +31,14 @@ export const Route = createFileRoute("/kennismaken")({
       { property: "og:site_name", content: "Vizier op Scherp" },
       { property: "og:title", content: OG_TITLE },
       { property: "og:description", content: OG_DESC },
+      { property: "og:image", content: "https://vizieropscherp.nl/og-image.png" },
+      { property: "og:image:alt", content: "Vizier op Scherp. Persoonlijk voor de medewerker, georganiseerd voor HR." },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: OG_TITLE },
       { name: "twitter:description", content: OG_DESC },
+      { name: "twitter:image", content: "https://vizieropscherp.nl/og-image.png" },
     ],
     links: [{ rel: "canonical", href: CANONICAL }],
     scripts: [
@@ -42,8 +49,9 @@ export const Route = createFileRoute("/kennismaken")({
 });
 
 const ROLE_OPTIONS = [
-  "Werkgever / HR",
-  "Medewerker of particulier",
+  "Voor jezelf",
+  "Namens een medewerker",
+  "Voor je organisatie",
   "Via UWV",
   "Anders",
 ] as const;
@@ -52,32 +60,65 @@ function Page() {
   return (
     <>
       {/* HERO licht */}
-      <section className="bg-linnen-licht">
+      <section className="bg-linnen-licht" aria-labelledby="hero-titel">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <Eyebrow>Kennismaken</Eyebrow>
-          <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-petrol max-w-4xl leading-[1.1]">
-            Een eerste gesprek is altijd vrijblijvend.
+          <h1
+            id="hero-titel"
+            className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-petrol max-w-4xl leading-[1.1]"
+          >
+            Laten we kennismaken.
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-petrol/75 leading-relaxed">
-            We luisteren eerst, denken dan mee, en u of jij beslist daarna pas.
-            Bel, mail of laat hieronder een bericht achter; we nemen snel
-            contact op.
+            Vertel wat er speelt, voor jezelf of in de organisatie. Dan kijken we
+            samen wat helpt. Een eerste gesprek is zo gebeurd, en vaak verrassend
+            verhelderend.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-3.5">
+            <a
+              href="#bericht-form"
+              className="inline-flex items-center rounded-full bg-koraal px-6 py-3 font-medium text-[color:var(--color-on-koraal-title)] hover:opacity-90 transition-opacity"
+            >
+              Laat iets achter
+            </a>
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-full border border-petrol/30 px-6 py-3 font-medium text-petrol hover:border-koraal hover:text-koraal transition-colors"
+            >
+              Of WhatsApp ons
+            </a>
+          </div>
+          <p className="mt-4 text-petrol/70">
+            Liever mailen?{" "}
+            <a
+              href="mailto:hallo@vizieropscherp.nl"
+              className="text-koraal font-medium border-b border-koraal"
+            >
+              hallo@vizieropscherp.nl
+            </a>
           </p>
         </div>
       </section>
 
-      {/* Direct contact */}
+      {/* Even contact */}
       <Section>
-        <Label>Direct contact</Label>
+        <Label>Even contact</Label>
         <h2 className="font-display text-3xl md:text-4xl text-petrol max-w-3xl">
-          Bel, mail of kom langs
+          Hoe wil je iets laten weten?
         </h2>
+        <p className="mt-2 text-petrol/70 text-lg max-w-2xl">
+          Bellen, appen of mailen, het mag allemaal. Je hoort snel van ons,
+          meestal dezelfde of de volgende werkdag.
+        </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           <Card tone="linnen">
-            <h3 className="font-display text-xl text-petrol mb-3">Telefoon</h3>
+            <h3 className="font-display text-xl text-petrol mb-3">Bellen</h3>
             <p className="text-petrol/75 leading-relaxed">
-              Bereikbaar op werkdagen. Geen gehoor? We bellen terug.
+              Op werkdagen bereikbaar. Krijg je ons niet te pakken, dan bellen we
+              terug.
             </p>
             <a
               href="tel:+31202146466"
@@ -87,9 +128,24 @@ function Page() {
             </a>
           </Card>
           <Card tone="linnen">
-            <h3 className="font-display text-xl text-petrol mb-3">E-mail</h3>
+            <h3 className="font-display text-xl text-petrol mb-3">WhatsApp</h3>
             <p className="text-petrol/75 leading-relaxed">
-              Vertel kort wat er speelt. Een paar zinnen is genoeg.
+              Een kort berichtje is vaak het makkelijkst. We reageren op
+              werkdagen.
+            </p>
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-block font-display text-lg text-petrol hover:text-koraal transition-colors"
+            >
+              Stuur een bericht
+            </a>
+          </Card>
+          <Card tone="linnen">
+            <h3 className="font-display text-xl text-petrol mb-3">Mailen</h3>
+            <p className="text-petrol/75 leading-relaxed">
+              Een paar zinnen over wat er speelt is genoeg.
             </p>
             <a
               href="mailto:hallo@vizieropscherp.nl"
@@ -98,24 +154,31 @@ function Page() {
               hallo@vizieropscherp.nl
             </a>
           </Card>
-          <Card tone="linnen">
-            <h3 className="font-display text-xl text-petrol mb-3">Locaties</h3>
-            <p className="text-petrol/80">Klein Heiligland 84, Haarlem</p>
-            <p className="text-petrol/80">IJsbaanpad 9, Amsterdam-Zuid</p>
-            <p className="mt-2 text-petrol/75">
-              Gesprekken kunnen ook online of bij u op kantoor.
-            </p>
-          </Card>
+        </div>
+
+        <div className="mt-7 rounded-xl border border-mint-dof bg-linnen-licht px-6 py-5">
+          <h3 className="font-display text-petrol text-lg">Of kom langs</h3>
+          <p className="mt-1 text-petrol/75 leading-relaxed">
+            Klein Heiligland 84, Haarlem &nbsp;·&nbsp; IJsbaanpad 9,
+            Amsterdam-Zuid. Een gesprek kan ook online of bij jullie op kantoor.
+          </p>
         </div>
       </Section>
 
-      {/* Drie soorten gesprekken */}
-      <section className="bg-linnen-licht">
+      {/* De gesprekken */}
+      <section className="bg-linnen-licht" aria-labelledby="route-titel">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Wat kunt u verwachten?</Label>
-          <h2 className="font-display text-3xl md:text-4xl text-petrol max-w-3xl">
-            Drie soorten gesprekken
+          <Label>De gesprekken</Label>
+          <h2
+            id="route-titel"
+            className="font-display text-3xl md:text-4xl text-petrol max-w-3xl"
+          >
+            Waar wil je het over hebben?
           </h2>
+          <p className="mt-2 text-petrol/70 text-lg max-w-2xl">
+            Drie manieren waarop een eerste gesprek eruit kan zien. Kies wat
+            past, of laat het ons weten en we wijzen je de weg.
+          </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             <Card tone="petrol">
@@ -123,27 +186,25 @@ function Page() {
                 Voor werkgevers &amp; HR
               </span>
               <h3 className="font-display text-xl text-linnen-licht mb-3">
-                Verkenningsgesprek
+                Verkennen wat past
               </h3>
               <p className="text-mint leading-relaxed">
-                U vertelt wat er speelt in uw organisatie; wij laten zien hoe
-                wij dat zouden aanpakken, van een gespreksronde tot een
-                coachingpool. Daarna ontvangt u een concreet voorstel met
-                heldere prijzen. Geen verplichtingen.
+                Je vertelt wat er speelt in de organisatie, wij denken mee over
+                de aanpak: van een gespreksronde tot een coachingpool. Daarna
+                krijg je een concreet voorstel met heldere prijzen.
               </p>
             </Card>
             <Card tone="goud">
               <span className="block text-xs font-medium uppercase tracking-[0.14em] mb-3 text-[color:var(--color-on-goud-sub)]">
-                Voor medewerkers &amp; particulieren
+                Voor jezelf
               </span>
               <h3 className="font-display text-xl mb-3 text-[color:var(--color-on-goud-title)]">
-                Kennismaking met een coach
+                Kennismaken met een coach
               </h3>
               <p className="text-[color:var(--color-on-goud-sub)] leading-relaxed">
-                Je vertelt wat er speelt; wij stellen een coach voor die bij je
-                past. Jullie maken vrijblijvend kennis. Klikt het, dan plannen
-                jullie samen het traject. Klikt het niet, dan stellen we iemand
-                anders voor.
+                Je vertelt wat er speelt, wij stellen een coach voor die bij je
+                past. Klikt het, dan ga je verder. Klikt het niet, dan zoeken we
+                iemand anders.
               </p>
             </Card>
             <Card tone="koraal">
@@ -151,12 +212,12 @@ function Page() {
                 Via UWV
               </span>
               <h3 className="font-display text-xl mb-3 text-[color:var(--color-on-koraal-title)]">
-                Rustig oriëntatiegesprek
+                Rustig je opties verkennen
               </h3>
               <p className="text-[color:var(--color-on-koraal-sub)] leading-relaxed">
-                We leggen uit hoe een Werkfit- of Naar Werk-traject bij ons
-                werkt, in normale taal. Daarna beslis je zelf, en helpen we je
-                desgewenst met de aanmelding via je contactpersoon bij UWV.
+                We leggen in gewone taal uit hoe een Werkfit- of Naar Werk-traject
+                werkt. Daarna kijk je rustig wat je wilt, en helpen we met de
+                aanmelding als je dat prettig vindt.
               </p>
             </Card>
           </div>
@@ -164,13 +225,22 @@ function Page() {
       </section>
 
       {/* Formulier */}
-      <Section>
-        <Label>Of laat een bericht achter</Label>
-        <h2 className="font-display text-3xl md:text-4xl text-petrol max-w-3xl">
-          We nemen snel contact op
-        </h2>
-        <ContactForm />
-      </Section>
+      <section id="bericht-form" aria-labelledby="form-titel">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <Label>Of laat iets achter</Label>
+          <h2
+            id="form-titel"
+            className="font-display text-3xl md:text-4xl text-petrol max-w-3xl"
+          >
+            Laat iets achter
+          </h2>
+          <p className="mt-2 text-petrol/70 text-lg max-w-2xl">
+            Je naam, je mailadres en waar je het over wilt hebben. De rest
+            bespreken we wel.
+          </p>
+          <ContactForm />
+        </div>
+      </section>
     </>
   );
 }
@@ -193,9 +263,7 @@ function ContactForm() {
       name: String(fd.get("name") ?? "").trim(),
       email: String(fd.get("email") ?? "").trim(),
       phone: (String(fd.get("phone") ?? "").trim() || null) as string | null,
-      organization: (String(fd.get("organization") ?? "").trim() || null) as
-        | string
-        | null,
+      organization: null as string | null,
       role: String(fd.get("role") ?? "").trim(),
       message: (String(fd.get("message") ?? "").trim() || null) as string | null,
     };
@@ -229,8 +297,8 @@ function ContactForm() {
       >
         <h3 className="font-display text-2xl text-petrol">Bedankt voor je bericht.</h3>
         <p className="mt-3 text-petrol/80 leading-relaxed">
-          We hebben het ontvangen en nemen snel contact op, doorgaans binnen
-          één werkdag. Liever direct iets vragen? Bel{" "}
+          We hebben het ontvangen en nemen snel contact op. Liever direct iets
+          vragen? Bel{" "}
           <a className="text-koraal border-b border-koraal" href="tel:+31202146466">
             020 214 64 66
           </a>{" "}
@@ -248,15 +316,14 @@ function ContactForm() {
   }
 
   const inputCls =
-    "w-full rounded-md border border-petrol/20 bg-linnen-licht px-3.5 py-3 text-petrol placeholder:text-petrol/40 focus:outline-none focus:border-koraal focus:ring-2 focus:ring-koraal/30";
+    "w-full rounded-md border border-mint-dof bg-linnen-licht px-3.5 py-3 text-petrol placeholder:text-petrol/40 focus:outline-none focus:border-koraal focus:ring-2 focus:ring-koraal/30";
 
   return (
     <form onSubmit={onSubmit} noValidate className="mt-10 max-w-2xl">
       <div className="grid gap-5">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-petrol mb-1.5">
-            Naam <span aria-hidden="true">*</span>
-            <span className="sr-only">(verplicht)</span>
+            Je naam
           </label>
           <input
             id="name"
@@ -271,8 +338,7 @@ function ContactForm() {
 
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-petrol mb-1.5">
-            E-mailadres <span aria-hidden="true">*</span>
-            <span className="sr-only">(verplicht)</span>
+            Je e-mailadres
           </label>
           <input
             id="email"
@@ -287,7 +353,7 @@ function ContactForm() {
 
         <div>
           <label htmlFor="phone" className="block text-sm font-medium text-petrol mb-1.5">
-            Telefoonnummer
+            Telefoon (als je liever gebeld wordt)
           </label>
           <input
             id="phone"
@@ -300,25 +366,8 @@ function ContactForm() {
         </div>
 
         <div>
-          <label
-            htmlFor="organization"
-            className="block text-sm font-medium text-petrol mb-1.5"
-          >
-            Organisatie (optioneel)
-          </label>
-          <input
-            id="organization"
-            name="organization"
-            type="text"
-            maxLength={200}
-            autoComplete="organization"
-            className={inputCls}
-          />
-        </div>
-
-        <div>
           <label htmlFor="role" className="block text-sm font-medium text-petrol mb-1.5">
-            Ik neem contact op als
+            Je komt
           </label>
           <select id="role" name="role" defaultValue={ROLE_OPTIONS[0]} className={inputCls}>
             {ROLE_OPTIONS.map((opt) => (
@@ -327,6 +376,9 @@ function ContactForm() {
               </option>
             ))}
           </select>
+          <p className="mt-1.5 text-sm text-petrol/65">
+            Zo zorgen we dat de juiste persoon contact met je opneemt.
+          </p>
         </div>
 
         <div>
@@ -334,14 +386,14 @@ function ContactForm() {
             htmlFor="message"
             className="block text-sm font-medium text-petrol mb-1.5"
           >
-            Waar kunnen we bij helpen?
+            Waar wil je het over hebben?
           </label>
           <textarea
             id="message"
             name="message"
             rows={6}
             maxLength={5000}
-            placeholder="Een paar zinnen is genoeg. We vragen door in het gesprek."
+            placeholder="Een paar zinnen is genoeg."
             className={`${inputCls} resize-y min-h-32`}
           />
         </div>
@@ -358,20 +410,12 @@ function ContactForm() {
         disabled={status === "submitting"}
         className="mt-7 inline-flex items-center rounded-full bg-koraal px-7 py-3 font-medium text-[color:var(--color-on-koraal-title)] hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {status === "submitting" ? "Versturen…" : "Verstuur bericht"}
+        {status === "submitting" ? "Versturen…" : "Versturen"}
       </button>
 
-      <p className="mt-5 text-sm text-petrol/70 leading-relaxed">
-        Liever direct? Mail naar{" "}
-        <a className="text-koraal border-b border-koraal" href="mailto:hallo@vizieropscherp.nl">
-          hallo@vizieropscherp.nl
-        </a>{" "}
-        of bel{" "}
-        <a className="text-koraal border-b border-koraal" href="tel:+31202146466">
-          020 214 64 66
-        </a>
-        . We gaan zorgvuldig om met uw gegevens en gebruiken ze alleen om
-        contact op te nemen.
+      <p className="mt-3.5 text-sm text-petrol/65">
+        We gaan netjes om met je gegevens en gebruiken ze alleen om contact op te
+        nemen.
       </p>
     </form>
   );
