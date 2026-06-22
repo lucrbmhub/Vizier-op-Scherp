@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Eyebrow, Label, Section, Card } from "../components/ui-blocks";
 import { supabase } from "@/integrations/supabase/client";
+import { WhatsAppFab } from "../components/layout/WhatsAppFab";
 
 const TITLE = "Kennismaken | Plan een vrijblijvend gesprek | Vizier op Scherp";
 const DESC =
@@ -59,6 +60,7 @@ const ROLE_OPTIONS = [
 function Page() {
   return (
     <>
+      <WhatsAppFab />
       {/* HERO licht */}
       <section className="bg-linnen-licht" aria-labelledby="hero-titel">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
