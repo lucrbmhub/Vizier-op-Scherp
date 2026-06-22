@@ -11,7 +11,7 @@ const jsonLdBusiness = {
     "Regionaal netwerk voor loopbaancoaching voor werkgevers en hun medewerkers in Amsterdam, Haarlem en omgeving. Individuele coachtrajecten, proactieve loopbaangesprekken en een coachingpool als jaarafspraak.",
   url: "https://vizieropscherp.nl/",
   email: "hallo@vizieropscherp.nl",
-  telephone: "+31611221424",
+  telephone: "+31202146466",
   vatID: "NL003529887B45",
   address: [
     {
