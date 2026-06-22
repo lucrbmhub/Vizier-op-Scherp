@@ -80,10 +80,10 @@ function Page() {
               Bereikbaar op werkdagen. Geen gehoor? We bellen terug.
             </p>
             <a
-              href="tel:+31611221424"
+              href="tel:+31202146466"
               className="mt-3 inline-block font-display text-lg text-petrol hover:text-koraal transition-colors"
             >
-              06 11 22 14 24
+              020 214 64 66
             </a>
           </Card>
           <Card tone="linnen">
@@ -231,8 +231,8 @@ function ContactForm() {
         <p className="mt-3 text-petrol/80 leading-relaxed">
           We hebben het ontvangen en nemen snel contact op, doorgaans binnen
           één werkdag. Liever direct iets vragen? Bel{" "}
-          <a className="text-koraal border-b border-koraal" href="tel:+31611221424">
-            06 11 22 14 24
+          <a className="text-koraal border-b border-koraal" href="tel:+31202146466">
+            020 214 64 66
           </a>{" "}
           of mail{" "}
           <a
@@ -367,8 +367,8 @@ function ContactForm() {
           hallo@vizieropscherp.nl
         </a>{" "}
         of bel{" "}
-        <a className="text-koraal border-b border-koraal" href="tel:+31611221424">
-          06 11 22 14 24
+        <a className="text-koraal border-b border-koraal" href="tel:+31202146466">
+          020 214 64 66
         </a>
         . We gaan zorgvuldig om met uw gegevens en gebruiken ze alleen om
         contact op te nemen.

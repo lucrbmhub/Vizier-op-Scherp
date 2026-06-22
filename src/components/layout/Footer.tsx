@@ -51,7 +51,7 @@ export function Footer() {
             <a href="mailto:hallo@vizieropscherp.nl" className={linkCls}>
               hallo@vizieropscherp.nl
             </a>
-            <a href="tel:+31611221424" className={linkCls}>06 11 22 14 24</a>
+            <a href="tel:+31202146466" className={linkCls}>020 214 64 66</a>
           </div>
         </div>
 
