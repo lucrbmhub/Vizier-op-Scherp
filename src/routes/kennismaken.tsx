@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Eyebrow, Label, Section, Card } from "../components/ui-blocks";
 import { supabase } from "@/integrations/supabase/client";
+import { WhatsAppFab } from "../components/layout/WhatsAppFab";
 
 const TITLE = "Kennismaken | Plan een vrijblijvend gesprek | Vizier op Scherp";
 const DESC =

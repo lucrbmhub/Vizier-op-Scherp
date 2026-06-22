@@ -1,3 +1,5 @@
+import whatsappLogo from "@/assets/whatsapp-logo.png.asset.json";
+
 export function WhatsAppFab() {
   return (
     <a
@@ -5,19 +7,14 @@ export function WhatsAppFab() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Stuur ons een WhatsApp-bericht"
-      className="fixed bottom-[16px] right-[16px] md:bottom-5 md:right-5 z-50 flex h-[52px] w-[52px] md:h-14 md:w-14 items-center justify-center rounded-full shadow-lg transition-transform hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100"
-      style={{ backgroundColor: "#25D366" }}
+      className="fixed bottom-[16px] right-[16px] md:bottom-5 md:right-5 z-50 inline-flex h-[56px] w-[56px] md:h-16 md:w-16 items-center justify-center transition-transform hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 32 32"
-        width="28"
-        height="28"
-        fill="#ffffff"
+      <img
+        src={whatsappLogo.url}
+        alt=""
         aria-hidden="true"
-      >
-        <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.612 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.413-.387 2.766-1.176.215-.487.215-.9.143-1.39-.057-.04-2.18-1.36-2.895-1.36zM16.32 26.7c-1.62 0-3.21-.43-4.6-1.231l-3.31 1.061 1.085-3.232a9.084 9.084 0 0 1-1.39-4.83C8.103 13.41 11.7 9.812 16.32 9.812c2.235 0 4.34.872 5.92 2.453a8.293 8.293 0 0 1 2.45 5.92c-.01 4.62-3.76 8.516-8.37 8.516zm0-19.087c-5.78 0-10.55 4.7-10.55 10.55 0 1.83.487 3.62 1.42 5.21l-1.504 4.49 4.62-1.45a10.51 10.51 0 0 0 5.04 1.29h.01c5.79 0 10.6-4.7 10.6-10.55 0-2.81-1.18-5.45-3.16-7.43-1.98-1.98-4.62-3.11-7.43-3.11z" />
-      </svg>
+        className="h-full w-full object-contain"
+      />
     </a>
   );
 }
