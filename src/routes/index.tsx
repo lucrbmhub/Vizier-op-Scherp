@@ -120,10 +120,11 @@ function Home() {
               <em className="not-italic text-goud">Georganiseerd voor HR.</em>
             </h1>
             <p className="mt-6 text-mint text-[1.08rem] max-w-[50ch] leading-relaxed">
-              Vizier op Scherp helpt organisaties om medewerkers op belangrijke momenten in
-              hun werk goed te begeleiden. Met een klein, vast netwerk van gecertificeerde
-              loopbaancoaches, één aanspreekpunt en heldere afspraken over proces, prijs en
-              privacy, van een eerste gespreksronde tot een coachingpool als jaarafspraak.
+              Vizier op Scherp helpt organisaties hun mensen sterker te maken in het werk
+              dat ze al doen: met meer energie, effectiever, en met plezier. En zoekt
+              iemand een volgende stap, dan begeleiden we die net zo goed. Eén klein
+              netwerk van gecertificeerde coaches, één aanspreekpunt en heldere afspraken
+              over proces, prijs en privacy.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link to="/voor-werkgevers" className={btnPrimary}>
