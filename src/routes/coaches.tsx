@@ -68,7 +68,7 @@ const coaches: Coach[] = [
     linkedin: "https://www.linkedin.com/in/zelah-dorrestijn/",
   },
   {
-    initial: "F",
+    photo: floorPhoto.url,
     name: "Floor van den Berg",
     role: "Loopbaancoach & trainer",
     quote: "Inzicht is pas waardevol als het leidt tot beweging.",
