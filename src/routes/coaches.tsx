@@ -53,7 +53,7 @@ const coaches: Coach[] = [
     linkedin: "https://www.linkedin.com/in/lianneboth/",
   },
   {
-    initial: "Z",
+    photo: zelahPhoto.url,
     name: "Zelah Dorrestijn",
     role: "Loopbaancoach, therapeut & trainer",
     quote:
