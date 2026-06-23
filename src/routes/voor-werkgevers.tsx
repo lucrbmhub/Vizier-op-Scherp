@@ -169,7 +169,7 @@ function Page() {
                 {[
                   { s: "5 werkdagen", l: "van intake tot voorstel coach" },
                   { s: "1.000+", l: "trajecten begeleid door ons netwerk" },
-                  { s: "Gecertificeerde coaches", l: "met een brede opleidingsachtergrond" },
+                  { s: "Gecertificeerde coaches", l: "met een brede opleidingsachtergrond en unieke specialisatie" },
                 ].map((m) => (
                   <div key={m.s}>
                     <dt className="font-display text-xl text-linnen-licht leading-tight">
@@ -333,9 +333,7 @@ function Page() {
                 Hoe een jaar met Vizier op Scherp eruitziet
               </h3>
               <p className="text-mint max-w-[54ch]">
-                De coachingpool vormt nu al de basis van onze samenwerking met
-                een vaste opdrachtgever in het onderwijs, met circa vijf
-                trajecten per maand. Zo werkt het:
+                {"\n"}
               </p>
               <ul className="my-6 space-y-0">
                 {[
@@ -491,7 +489,7 @@ function Page() {
           </p>
           <div className="mt-12 grid gap-8 grid-cols-2 md:grid-cols-4">
             {[
-              ["Gecertificeerd", "met een brede opleidingsachtergrond"],
+              ["Gecertificeerde coaches", "met een brede opleidingsachtergrond en unieke specialisatie"],
               ["Intervisie", "structurele kwaliteitsbewaking binnen het netwerk"],
               ["Evaluatie", "na elk traject meten we tevredenheid en resultaat"],
               ["8–12", "coaches, bewust klein, zorgvuldig geselecteerd"],
