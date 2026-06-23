@@ -1,5 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "../assets/coaching-gesprek.jpg.asset.json";
+import maaikePhoto from "../assets/maaike.jpg.asset.json";
+import liannePhoto from "../assets/lianne.jpg.asset.json";
+import floorPhoto from "../assets/floor.jpg.asset.json";
+import lucPhoto from "../assets/luc.jpg.asset.json";
 import nobcoLogo from "../assets/keurmerk-nobco.png.asset.json";
 import nolocLogo from "../assets/keurmerk-noloc.png.asset.json";
 
@@ -413,26 +417,27 @@ function Home() {
 
           <ul className="mt-12 grid gap-5 grid-cols-2 sm:grid-cols-4">
             {[
-              ["M", "Maaike", "Coaching · onderwijs, zorg, leidinggevenden"],
-              ["L", "Lianne", "Coaching · persoonlijk leiderschap, loopbaan"],
-              ["F", "Floor", "Loopbaancoaching · Positieve Gezondheid"],
-              ["L", "Luc", "Loopbaancoaching · richting, young professionals"],
-            ].map(([initial, name, role]) => (
+              [maaikePhoto.url, "Maaike", "Coaching · onderwijs, zorg, leidinggevenden"],
+              [liannePhoto.url, "Lianne", "Coaching · persoonlijk leiderschap, loopbaan"],
+              [floorPhoto.url, "Floor", "Loopbaancoaching · Positieve Gezondheid"],
+              [lucPhoto.url, "Luc", "Loopbaancoaching · richting, young professionals"],
+            ].map(([photo, name, role]) => (
               <li
                 key={name}
                 className="bg-linnen-licht border border-mint-dof rounded-2xl p-6 text-center"
               >
-                <div
-                  aria-hidden="true"
-                  className="mx-auto mb-3.5 w-[62px] h-[62px] rounded-full bg-petrol text-goud flex items-center justify-center font-display text-[1.15rem]"
-                >
-                  {initial}
-                </div>
+                <img
+                  src={photo}
+                  alt={name}
+                  loading="lazy"
+                  className="mx-auto mb-3.5 w-[62px] h-[62px] rounded-full object-cover"
+                />
                 <h3 className="font-display text-[1rem] text-petrol mb-1">{name}</h3>
                 <span className="text-[0.84rem] text-petrol/70">{role}</span>
               </li>
             ))}
           </ul>
+
 
           <div className="mt-9 flex flex-wrap gap-6 items-center">
             <Link to="/coaches" className={btnOutline}>

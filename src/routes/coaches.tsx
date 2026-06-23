@@ -1,5 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Label, CTASoft } from "../components/ui-blocks";
+import maaikePhoto from "../assets/maaike.jpg.asset.json";
+import liannePhoto from "../assets/lianne.jpg.asset.json";
+import zelahPhoto from "../assets/zelah.jpg.asset.json";
+import floorPhoto from "../assets/floor.jpg.asset.json";
+import lucPhoto from "../assets/luc.jpg.asset.json";
 
 const TITLE = "Onze coaches | Gecertificeerde loopbaancoaches | Vizier op Scherp";
 const DESC =
@@ -10,7 +15,7 @@ const OG_DESC =
 
 type Tag = { label: string; reg?: boolean };
 type Coach = {
-  initial: string;
+  photo: string;
   name: string;
   role: string;
   quote: string;
@@ -21,7 +26,7 @@ type Coach = {
 
 const coaches: Coach[] = [
   {
-    initial: "M",
+    photo: maaikePhoto.url,
     name: "Maaike Pannekoek-Hänschen",
     role: "Loopbaancoach, trainer & organisatieadviseur",
     quote: "Ik geloof dat er voor ieder mens een juiste plek is.",
@@ -35,7 +40,7 @@ const coaches: Coach[] = [
       "https://www.linkedin.com/in/maaike-pannekoek-h%C3%A4nschen-6093b094/",
   },
   {
-    initial: "L",
+    photo: liannePhoto.url,
     name: "Lianne Both",
     role: "Loopbaancoach, trainer & psycholoog",
     quote: "Kom in beweging en ontdek waar je blij van wordt.",
@@ -48,7 +53,7 @@ const coaches: Coach[] = [
     linkedin: "https://www.linkedin.com/in/lianneboth/",
   },
   {
-    initial: "Z",
+    photo: zelahPhoto.url,
     name: "Zelah Dorrestijn",
     role: "Loopbaancoach, therapeut & trainer",
     quote:
@@ -63,7 +68,7 @@ const coaches: Coach[] = [
     linkedin: "https://www.linkedin.com/in/zelah-dorrestijn/",
   },
   {
-    initial: "F",
+    photo: floorPhoto.url,
     name: "Floor van den Berg",
     role: "Loopbaancoach & trainer",
     quote: "Inzicht is pas waardevol als het leidt tot beweging.",
@@ -77,7 +82,7 @@ const coaches: Coach[] = [
     linkedin: "https://www.linkedin.com/in/floor-van-den-berg",
   },
   {
-    initial: "L",
+    photo: lucPhoto.url,
     name: "Luc Buurman",
     role: "Loopbaancoach, trainer & intervisiebegeleider",
     quote:
@@ -139,12 +144,13 @@ export const Route = createFileRoute("/coaches")({
 function CoachCard({ c }: { c: Coach }) {
   return (
     <article className="bg-linnen-licht border border-mint-dof rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row gap-6">
-      <div
-        aria-hidden="true"
-        className="shrink-0 w-20 h-20 rounded-full bg-petrol text-goud font-display font-medium text-2xl flex items-center justify-center"
-      >
-        {c.initial}
-      </div>
+      <img
+        src={c.photo}
+        alt={c.name}
+        loading="lazy"
+        className="shrink-0 w-20 h-20 rounded-full object-cover"
+      />
+
       <div className="flex-1">
         <h3 className="font-display text-xl text-petrol">{c.name}</h3>
         <span className="block text-sm text-koraal font-medium mt-1 mb-3">
