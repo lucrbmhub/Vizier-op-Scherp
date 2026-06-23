@@ -15,7 +15,7 @@ const OG_DESC =
 
 type Tag = { label: string; reg?: boolean };
 type Coach = {
-  initial: string;
+  photo: string;
   name: string;
   role: string;
   quote: string;
@@ -26,7 +26,7 @@ type Coach = {
 
 const coaches: Coach[] = [
   {
-    initial: "M",
+    photo: maaikePhoto.url,
     name: "Maaike Pannekoek-Hänschen",
     role: "Loopbaancoach, trainer & organisatieadviseur",
     quote: "Ik geloof dat er voor ieder mens een juiste plek is.",
