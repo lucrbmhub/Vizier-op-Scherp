@@ -144,12 +144,13 @@ export const Route = createFileRoute("/coaches")({
 function CoachCard({ c }: { c: Coach }) {
   return (
     <article className="bg-linnen-licht border border-mint-dof rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row gap-6">
-      <div
-        aria-hidden="true"
-        className="shrink-0 w-20 h-20 rounded-full bg-petrol text-goud font-display font-medium text-2xl flex items-center justify-center"
-      >
-        {c.initial}
-      </div>
+      <img
+        src={c.photo}
+        alt={c.name}
+        loading="lazy"
+        className="shrink-0 w-20 h-20 rounded-full object-cover"
+      />
+
       <div className="flex-1">
         <h3 className="font-display text-xl text-petrol">{c.name}</h3>
         <span className="block text-sm text-koraal font-medium mt-1 mb-3">
