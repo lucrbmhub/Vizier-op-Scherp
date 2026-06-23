@@ -256,8 +256,8 @@ function Page() {
           <div className="mt-10 grid gap-8 md:grid-cols-3">
             {[
               [
-                "Gecertificeerd",
-                "met een brede opleidingsachtergrond",
+                "Gecertificeerde coaches",
+                "met een brede opleidingsachtergrond en unieke specialisatie",
               ],
               [
                 "Intervisie",
