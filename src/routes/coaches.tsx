@@ -1,5 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Label, CTASoft } from "../components/ui-blocks";
+import maaikePhoto from "../assets/maaike.jpg.asset.json";
+import liannePhoto from "../assets/lianne.jpg.asset.json";
+import zelahPhoto from "../assets/zelah.jpg.asset.json";
+import floorPhoto from "../assets/floor.jpg.asset.json";
+import lucPhoto from "../assets/luc.jpg.asset.json";
 
 const TITLE = "Onze coaches | Gecertificeerde loopbaancoaches | Vizier op Scherp";
 const DESC =
