@@ -120,10 +120,11 @@ function Home() {
               <em className="not-italic text-goud">Georganiseerd voor HR.</em>
             </h1>
             <p className="mt-6 text-mint text-[1.08rem] max-w-[50ch] leading-relaxed">
-              Vizier op Scherp helpt organisaties om medewerkers op belangrijke momenten in
-              hun werk goed te begeleiden. Met een klein, vast netwerk van gecertificeerde
-              loopbaancoaches, één aanspreekpunt en heldere afspraken over proces, prijs en
-              privacy, van een eerste gespreksronde tot een coachingpool als jaarafspraak.
+              Vizier op Scherp helpt organisaties hun mensen sterker te maken in het werk
+              dat ze al doen: met meer energie, effectiever, en met plezier. En zoekt
+              iemand een volgende stap, dan begeleiden we die net zo goed. Eén klein
+              netwerk van gecertificeerde coaches, één aanspreekpunt en heldere afspraken
+              over proces, prijs en privacy.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link to="/voor-werkgevers" className={btnPrimary}>
@@ -171,6 +172,41 @@ function Home() {
               </p>
             </div>
           </aside>
+        </div>
+      </section>
+
+      {/* TWEE RICHTINGEN */}
+      <section aria-labelledby="twee-richtingen-titel" className={`${sectionCls} bg-linnen`}>
+        <div className={wrap}>
+          <span className={labelCls}>Twee richtingen</span>
+          <h2 id="twee-richtingen-titel" className={h2Cls}>
+            Sterker in je huidige rol, en verder als je wilt
+          </h2>
+          <p className="mt-5 text-petrol/75 max-w-[64ch] leading-relaxed">
+            Loopbaancoaching wordt vaak gelezen als de deur uit. Maar het werkt twee
+            kanten op, allebei even waardevol: sterker worden in het werk dat je al doet,
+            of een volgende stap zetten als die er is.
+          </p>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 items-stretch">
+            {[
+              {
+                title: "Sterker in je huidige rol",
+                text: "Weer energie en plezier, scherper je prioriteiten, effectiever samenwerken. Voor wie op zijn plek zit en daar beter of energieker wil functioneren.",
+              },
+              {
+                title: "Een nieuwe richting",
+                text: "Twijfel ordenen, ontdekken wat past, een volgende stap zetten. Intern waar het kan, extern waar dat beter past, op het tempo van de medewerker.",
+              },
+            ].map((c) => (
+              <article
+                key={c.title}
+                className="h-full bg-linnen-licht border border-mint-dof border-t-2 border-t-koraal rounded-2xl p-7 md:p-8"
+              >
+                <h3 className="font-display text-xl text-petrol mb-3">{c.title}</h3>
+                <p className="text-petrol/75 leading-relaxed">{c.text}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
