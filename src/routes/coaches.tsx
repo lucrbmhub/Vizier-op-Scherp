@@ -40,7 +40,7 @@ const coaches: Coach[] = [
       "https://www.linkedin.com/in/maaike-pannekoek-h%C3%A4nschen-6093b094/",
   },
   {
-    initial: "L",
+    photo: liannePhoto.url,
     name: "Lianne Both",
     role: "Loopbaancoach, trainer & psycholoog",
     quote: "Kom in beweging en ontdek waar je blij van wordt.",
