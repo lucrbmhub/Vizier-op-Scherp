@@ -82,7 +82,7 @@ const coaches: Coach[] = [
     linkedin: "https://www.linkedin.com/in/floor-van-den-berg",
   },
   {
-    initial: "L",
+    photo: lucPhoto.url,
     name: "Luc Buurman",
     role: "Loopbaancoach, trainer & intervisiebegeleider",
     quote:
