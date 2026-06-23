@@ -1,5 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "../assets/coaching-gesprek.jpg.asset.json";
+import maaikePhoto from "../assets/maaike.jpg.asset.json";
+import liannePhoto from "../assets/lianne.jpg.asset.json";
+import floorPhoto from "../assets/floor.jpg.asset.json";
+import lucPhoto from "../assets/luc.jpg.asset.json";
 import nobcoLogo from "../assets/keurmerk-nobco.png.asset.json";
 import nolocLogo from "../assets/keurmerk-noloc.png.asset.json";
 
