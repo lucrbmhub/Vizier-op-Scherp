@@ -192,7 +192,7 @@ function Home() {
             {[
               {
                 title: "Sterker in je huidige rol",
-                text: "Weer energie en plezier, scherper je prioriteiten, effectiever samenwerken. Voor wie op zijn plek zit en daar beter of energieker wil functioneren.",
+                text: "Weer energie en plezier, heldere prioriteiten, effectiever samenwerken. Voor wie op zijn plek zit en daar beter wil functioneren en zichzelf wil blijven ontwikkelen.",
               },
               {
                 title: "Een nieuwe richting",
