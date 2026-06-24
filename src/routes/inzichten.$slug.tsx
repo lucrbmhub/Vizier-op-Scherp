@@ -88,7 +88,15 @@ const ARTICLES: Article[] = [
     audience: "medewerker",
     readMinutes: 5,
   },
-];
+  {
+    slug: "impostersyndroom-twijfel-als-kracht",
+    title: "Je voelt je een bedrieger? Dat zegt iets goeds over je",
+    summary:
+      "Het impostersyndroom treft juist mensen die hun werk serieus nemen. Lees waarom twijfel een kracht kan zijn.",
+    audience: "medewerker",
+    readMinutes: 5,
+  },
+
 
 /* ------------------------------------------------------------------ */
 /*  Per-slug head metadata                                             */
