@@ -3019,3 +3019,192 @@ function GoedeCoachKiezenArticle({ article }: { article: Article }) {
     </>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/*  Impostersyndroom — medewerker-artikel (lichte hero)                */
+/* ------------------------------------------------------------------ */
+
+function ImpostersyndroomArticle({ article }: { article: Article }) {
+  const para = "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
+  const h2 = "mt-12 font-display text-2xl md:text-[1.7rem] text-petrol";
+
+  const faq = [
+    {
+      q: "Wat is het impostersyndroom?",
+      a: "Het impostersyndroom, ook wel het bedriegersfenomeen, is het hardnekkige gevoel dat je je succes niet verdient en dat anderen er elk moment achter kunnen komen dat je het eigenlijk niet kunt. Dat gevoel houdt stand ook als je resultaten en je vaardigheden het tegendeel laten zien. Het is geen officiële diagnose, maar een veelvoorkomende ervaring, juist bij mensen die hun werk serieus nemen.",
+    },
+    {
+      q: "Waarom heb ik last van het impostersyndroom terwijl het goed gaat op mijn werk?",
+      a: "Dat is precies het patroon. Het bedriegersgevoel treft vaak mensen die hoge eisen aan zichzelf stellen en hun werk belangrijk vinden. De twijfel zit niet in een gebrek aan kunnen, maar in de betekenis die je aan die twijfel geeft. Je leest je onzekerheid als bewijs dat je het niet kunt, terwijl het vaak juist een teken is dat je betrokken en zorgvuldig bent.",
+    },
+    {
+      q: "Hoe kom ik van het impostergevoel af?",
+      a: "Helemaal verdwijnen doet het meestal niet, en dat hoeft ook niet. Wat helpt, is het normaliseren: ontdekken dat veel mensen die je bewondert hetzelfde voelen. Daarnaast helpt het om je twijfel anders te leren lezen, niet als falen maar als betrokkenheid, en om je aandacht te verleggen van wat je denkt te missen naar wat je feitelijk doet en kunt.",
+    },
+    {
+      q: "Wanneer is twijfel meer dan het impostersyndroom?",
+      a: "Twijfel hoort bij werken en groeien. Maar als het gevoel je dagelijks functioneren in de weg zit, je slecht laat slapen of gepaard gaat met aanhoudende somberheid, is het verstandig om er met je huisarts of een professional over te praten. Een loopbaancoach kan helpen bij het anders leren kijken naar je twijfel, maar is geen vervanging voor psychologische hulp wanneer die nodig is.",
+    },
+  ];
+
+  return (
+    <>
+      {/* Lichte hero */}
+      <section className="bg-linnen-licht">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-12 pb-14 md:pt-16 md:pb-20">
+          <Link
+            to="/inzichten"
+            className="inline-flex items-center text-sm text-petrol/70 hover:text-koraal transition"
+          >
+            ← Inzichten
+          </Link>
+          <div className="mt-6">
+            <span className="inline-flex items-center rounded-full bg-goud px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-[color:var(--color-on-goud-title)]">
+              Voor medewerkers
+            </span>
+          </div>
+          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-petrol leading-[1.2] max-w-[28ch]">
+            {article.title}
+          </h1>
+          <p className="mt-6 text-petrol/75 leading-relaxed text-[1.1rem] max-w-[62ch]">
+            Je krijgt een compliment voor iets wat je goed hebt gedaan, en denkt: als ze eens wisten dat ik geluk heb gehad. Dat het toeval was. Dat ik het eigenlijk niet kan. Dat gevoel heeft een naam, en het treft bijna nooit de mensen die het zouden moeten hebben.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-petrol/65">
+            <span>Voor medewerkers</span>
+            <span aria-hidden="true" className="inline-block h-1.5 w-1.5 rounded-full bg-koraal" />
+            <span>{article.readMinutes} min lezen</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Body */}
+      <article className="bg-linnen">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+          <p className="text-petrol/85 leading-relaxed text-[1.1rem]">
+            In dit stuk lees je waarom het gevoel een bedrieger te zijn juist iets goeds over je zegt, en hoe je je twijfel leert lezen als kracht in plaats van als tekort.
+          </p>
+
+          <h2 className={h2}>Het gevoel een bedrieger te zijn</h2>
+          <p className={para}>
+            Het heet het impostersyndroom, of het bedriegersfenomeen. Het is het hardnekkige gevoel dat je je succes niet echt verdient, en dat iemand er vroeg of laat achter komt dat je het eigenlijk niet kunt. Het bijzondere is dat dit gevoel standhoudt ook als alle feiten het tegenspreken: goede resultaten, tevreden collega's, complimenten. Je wuift ze weg. Geluk, toeval, goede timing, iedereen kan het, maar ik heb het deze keer net niet door de mand zien vallen.
+          </p>
+          <p className={para}>
+            Het kan een vervelend gevoel zijn dat je flink in de weg zit. Maar er zit ook iets onder dat de moeite waard is om te zien.
+          </p>
+
+          <h2 className={h2}>Het treft juist de verkeerde mensen</h2>
+          <p className={para}>
+            Hier is het opvallende: het bedriegersgevoel treft zelden de mensen die er reden toe zouden hebben. Het treft juist de mensen die hun werk serieus nemen, die de lat hoog leggen, die het belangrijk vinden om het goed te doen. Mensen die nergens aan twijfelen en overal van overtuigd zijn, hebben er doorgaans geen last van. En dat zijn lang niet altijd de beste.
+          </p>
+          <p className={para}>
+            Onderzoek naar dit fenomeen laat zien dat de kern niet in je kunnen zit, maar in de betekenis die je aan je twijfel geeft. Je voelt onzekerheid, en je leest die onzekerheid als bewijs dat je tekortschiet. Maar diezelfde onzekerheid kun je ook anders lezen: als een teken dat je betrokken bent, dat het je iets kan schelen, dat je jezelf serieus neemt. Dat is geen zwakte. Dat is precies wat goede vakmensen gemeen hebben.
+          </p>
+
+          {/* Uitgelicht blok */}
+          <section
+            aria-labelledby="hv-kop"
+            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+          >
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
+              Een andere blik
+            </span>
+            <h2
+              id="hv-kop"
+              className="mt-2 font-display text-2xl md:text-[1.6rem] text-petrol"
+            >
+              Draai het perspectief om
+            </h2>
+            <p className="mt-4 text-petrol/80 leading-relaxed">
+              Een voorbeeld uit de praktijk. Iemand zit in vergaderingen vaak stil en denkt: ik draag niets bij, ik hoor hier niet. Haar leidinggevende zegt dat ze zich vaker moet uitspreken, wat de spanning alleen maar groter maakt. Tot iemand haar vroeg de vergadering eens te bekijken als buitenstaander. Wat ze toen zag: gesprekken die afdwaalden, standpunten die zich herhaalden, besluiten die uitbleven.
+            </p>
+            <p className="mt-4 text-petrol/80 leading-relaxed">
+              Wat eerst voelde als een tekort, niet snel genoeg meepraten, bleek juist haar kracht: ze observeerde scherp. Door op het juiste moment iets te zeggen als "zitten we nog op de hoofdvraag?" werd haar stilte ineens waardevol. De vraag is dus niet alleen "wat doe ik verkeerd", maar ook "wat zie of kan ik, juist omdat ik anders in elkaar zit".
+            </p>
+          </section>
+
+          <h2 className={h2}>Waarom dit gevoel nu zo veel voorkomt</h2>
+          <p className={para}>
+            Het impostersyndroom is van alle tijden, maar lijkt nu sterker te spelen, zeker bij mensen die net beginnen. Een deel daarvan is de tijdgeest. Op sociale media zie je alleen de hoogtepunten van anderen, nooit hun twijfels of mislukte pogingen. Je vergelijkt je eigen binnenkant met de buitenkant van iedereen die je volgt, en trekt aan het kortste eind.
+          </p>
+          <p className={para}>
+            Daar komt een prestatiecultuur bij waarin cijfers, resultaten en zichtbaarheid centraal staan, en waarin een fout al snel voelt als falen in plaats van als leren. Geen wonder dat veel mensen het gevoel hebben dat ze moeten bewijzen dat ze er mogen zijn. Het helpt om te weten dat dat gevoel breed gedeeld wordt, ook door mensen die je bewondert.
+          </p>
+
+          <h2 className={h2}>Wat helpt: niet wegpoetsen, maar anders kijken</h2>
+          <p className={para}>
+            Je hoeft de twijfel niet de wereld uit te helpen, en dat lukt waarschijnlijk ook niet. Wat wel helpt, is drie dingen. Het eerste is normaliseren: ontdekken dat je niet de enige bent. Alleen al horen dat anderen hetzelfde voelen, neemt veel spanning weg. Het tweede is je twijfel anders leren lezen, niet als falen maar als betrokkenheid. Het derde is je aandacht verleggen van wat je denkt te missen naar wat je feitelijk doet en kunt.
+          </p>
+          <p className={para}>
+            Zelfvertrouwen groeit trouwens niet door succes alleen. Het groeit door dingen te doen, fouten te maken en te merken dat je het aankunt, ook als het tegenzit. Het is niet het gevoel dat je altijd wint, maar het vertrouwen dat je het redt als het anders loopt. En dat bouw je op met de jaren, niet met één goede prestatie.
+          </p>
+
+          {/* Kernzin — petrol vlak */}
+          <aside className="mt-14 rounded-2xl bg-petrol px-7 py-9 md:px-10 md:py-11">
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud">
+              In het kort
+            </span>
+            <p className="mt-3 font-display text-xl md:text-2xl text-linnen-licht leading-snug">
+              Twijfelen of je het wel kunt, is zelden een teken dat je het niet kunt. Veel vaker is het een teken dat je het serieus neemt.
+            </p>
+          </aside>
+
+          {/* Bronnenregel */}
+          <p className="mt-10 border-t border-petrol/15 pt-4 text-xs text-petrol/60 leading-relaxed">
+            Met inzichten uit publicaties over het impostersyndroom en het ombuigen van onzekerheid naar kracht (o.a. de Baak), beschreven in vakblad Loopbaanvisie.
+          </p>
+
+          {/* FAQ */}
+          <section aria-labelledby="faq-kop-imposter" className="mt-14">
+            <h2
+              id="faq-kop-imposter"
+              className="font-display text-2xl md:text-[1.7rem] text-petrol"
+            >
+              Veelgestelde vragen
+            </h2>
+            <div className="mt-6 space-y-7">
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-display text-lg text-petrol">
+                    {item.q}
+                  </h3>
+                  <p className="mt-2 text-petrol/80 leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </article>
+
+      {/* CTA-strip koraal */}
+      <section aria-labelledby="cta-kop-imposter" className="bg-koraal">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+          <h2
+            id="cta-kop-imposter"
+            className="font-display text-2xl md:text-3xl text-[color:var(--color-on-koraal-title,#4A1B0C)]"
+          >
+            Je twijfel leren zien als kracht?
+          </h2>
+          <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
+            Bij Vizier op Scherp helpt een coach je om anders naar je twijfel te kijken, je sterke kanten scherper te zien en met meer vertrouwen je volgende stap te zetten. In jouw tempo, en wat je bespreekt blijft tussen jou en je coach.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link
+              to="/kennismaken"
+              className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
+            >
+              Maak kennis met een coach
+            </Link>
+            <Link
+              to="/coaches"
+              className="inline-flex items-center rounded-full border-[1.5px] border-[color:var(--color-on-koraal-sub,#712B13)] px-6 py-3 font-medium text-[color:var(--color-on-koraal-title,#4A1B0C)] hover:border-[color:var(--color-on-koraal-title,#4A1B0C)] transition"
+            >
+              Bekijk onze coaches
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
