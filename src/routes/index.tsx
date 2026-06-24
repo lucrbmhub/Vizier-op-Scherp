@@ -197,7 +197,7 @@ function Home() {
               },
               {
                 title: "Een nieuwe richting",
-                text: "Twijfel ordenen, ontdekken wat past, een volgende stap zetten. Intern waar het kan, extern waar dat beter past, op het tempo van de medewerker.",
+                text: "Twijfel ordenen, ontdekken wat past, een volgende stap zetten. Intern waar het kan, extern waar dat beter is, op het tempo van de medewerker.",
               },
             ].map((c) => (
               <article
