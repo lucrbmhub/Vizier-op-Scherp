@@ -899,7 +899,112 @@ function headForSlug(slug: string) {
     };
   }
 
+  if (article.slug === "impostersyndroom-twijfel-als-kracht") {
+    const title =
+      "Je voelt je een bedrieger? Dat zegt iets goeds over je | Vizier op Scherp";
+    const description =
+      "Het impostersyndroom, het gevoel dat je je succes niet verdient, treft juist mensen die hun werk serieus nemen. Waarom twijfel een kracht kan zijn en hoe je ermee leert omgaan. Loopbaancoaching in de regio Amsterdam en Haarlem.";
+    const ogTitle = "Je voelt je een bedrieger? Dat zegt iets goeds over je";
+    const ogDescription =
+      "Het impostersyndroom, het gevoel dat je je succes niet verdient, treft juist mensen die hun werk serieus nemen. Waarom twijfel een kracht kan zijn.";
+    const twitterDescription =
+      "Het impostersyndroom treft juist mensen die hun werk serieus nemen. Waarom twijfel een kracht kan zijn en hoe je ermee leert omgaan.";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching in Amsterdam, Haarlem en omgeving";
+
+    const blogLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: ogTitle,
+      description: ogDescription,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-06-19",
+      dateModified: "2026-06-21",
+      image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      inLanguage: "nl-NL",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Wat is het impostersyndroom?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Het impostersyndroom, ook wel het bedriegersfenomeen, is het hardnekkige gevoel dat je je succes niet verdient en dat anderen er elk moment achter kunnen komen dat je het eigenlijk niet kunt. Dat gevoel houdt stand ook als je resultaten en je vaardigheden het tegendeel laten zien. Het is geen officiële diagnose, maar een veelvoorkomende ervaring, juist bij mensen die hun werk serieus nemen.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Waarom heb ik last van het impostersyndroom terwijl het goed gaat op mijn werk?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Dat is precies het patroon. Het bedriegersgevoel treft vaak mensen die hoge eisen aan zichzelf stellen en hun werk belangrijk vinden. De twijfel zit niet in een gebrek aan kunnen, maar in de betekenis die je aan die twijfel geeft. Je leest je onzekerheid als bewijs dat je het niet kunt, terwijl het vaak juist een teken is dat je betrokken en zorgvuldig bent.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Hoe kom ik van het impostergevoel af?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Helemaal verdwijnen doet het meestal niet, en dat hoeft ook niet. Wat helpt, is het normaliseren: ontdekken dat veel mensen die je bewondert hetzelfde voelen. Daarnaast helpt het om je twijfel anders te leren lezen, niet als falen maar als betrokkenheid, en om je aandacht te verleggen van wat je denkt te missen naar wat je feitelijk doet en kunt.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Wanneer is twijfel meer dan het impostersyndroom?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Twijfel hoort bij werken en groeien. Maar als het gevoel je dagelijks functioneren in de weg zit, je slecht laat slapen of gepaard gaat met aanhoudende somberheid, is het verstandig om er met je huisarts of een professional over te praten. Een loopbaancoach kan helpen bij het anders leren kijken naar je twijfel, maar is geen vervanging voor psychologische hulp wanneer die nodig is.",
+          },
+        },
+      ],
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: ogDescription },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: twitterDescription },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(blogLd) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
+      ],
+    };
+  }
+
   // Default (werkgever-artikel)
+
   return {
     meta: [
       { title: `${article.title} | Inzichten | Vizier op Scherp` },
