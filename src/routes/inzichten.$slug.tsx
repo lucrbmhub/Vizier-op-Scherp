@@ -96,6 +96,8 @@ const ARTICLES: Article[] = [
     audience: "medewerker",
     readMinutes: 5,
   },
+];
+
 
 
 /* ------------------------------------------------------------------ */
