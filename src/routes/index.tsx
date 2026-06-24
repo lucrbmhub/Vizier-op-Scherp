@@ -120,11 +120,11 @@ function Home() {
               <em className="not-italic text-goud">Georganiseerd voor HR.</em>
             </h1>
             <p className="mt-6 text-mint text-[1.08rem] max-w-[50ch] leading-relaxed">
-              Vizier op Scherp helpt organisaties hun mensen sterker te maken in het werk
-              dat ze al doen: met meer energie, effectiever, en met plezier. En zoekt
-              iemand een volgende stap, dan begeleiden we die net zo goed. Eén klein
-              netwerk van gecertificeerde coaches, één aanspreekpunt en heldere afspraken
-              over proces, prijs en privacy.
+              Vizier op Scherp helpt organisaties hun mensen krachtig, effectief en
+              duurzaam inzetbaar te maken: met meer energie en in lijn met talenten. Of
+              wanneer blijkt dat het niet meer past, begeleiding naar een stap buiten de
+              organisatie. Met een&nbsp;klein netwerk van gecertificeerde coaches, één
+              aanspreekpunt en heldere afspraken over proces, prijs en privacy.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link to="/voor-werkgevers" className={btnPrimary}>
@@ -137,7 +137,7 @@ function Home() {
             <ul role="list" className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-x-9 gap-y-6">
               {[
                 ["1.000+", "trajecten begeleid door ons netwerk"],
-                ["Gecertificeerde coaches", "met een brede opleidingsachtergrond en unieke specialisatie"],
+                ["Gecertificeerde coaches", "met een brede opleidingsachtergrond en unieke specialisaties"],
                 ["5 werkdagen", "van intake tot match"],
               ].map(([k, v]) => (
                 <li key={k}>
@@ -183,15 +183,16 @@ function Home() {
             Sterker in je huidige rol, en verder als je wilt
           </h2>
           <p className="mt-5 text-petrol/75 max-w-[64ch] leading-relaxed">
-            Loopbaancoaching wordt vaak gelezen als de deur uit. Maar het werkt twee
-            kanten op, allebei even waardevol: sterker worden in het werk dat je al doet,
-            of een volgende stap zetten als die er is.
+            Loopbaancoaching wordt vaak gelezen als de deur uit. Maar vaak wordt tijdens
+            onze trajecten juist duidelijk dat een verandering in de huidige situatie al
+            heel positieve invloed heeft. meestal gaat dat over verandering van perspectief,
+            overtuigingen, gedrag of het takenpakket.&nbsp;
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-2 items-stretch">
             {[
               {
                 title: "Sterker in je huidige rol",
-                text: "Weer energie en plezier, scherper je prioriteiten, effectiever samenwerken. Voor wie op zijn plek zit en daar beter of energieker wil functioneren.",
+                text: "Weer energie en plezier, heldere prioriteiten, effectiever samenwerken. Voor wie op zijn plek zit en daar beter wil functioneren en zichzelf wil blijven ontwikkelen.",
               },
               {
                 title: "Een nieuwe richting",

@@ -169,7 +169,7 @@ function Page() {
                 {[
                   { s: "5 werkdagen", l: "van intake tot voorstel coach" },
                   { s: "1.000+", l: "trajecten begeleid door ons netwerk" },
-                  { s: "Gecertificeerde coaches", l: "met een brede opleidingsachtergrond en unieke specialisatie" },
+                  { s: "Gecertificeerde coaches", l: "met een brede opleidingsachtergrond en unieke specialisaties" },
                 ].map((m) => (
                   <div key={m.s}>
                     <dt className="font-display text-xl text-linnen-licht leading-tight">
