@@ -257,7 +257,7 @@ function Page() {
             {[
               [
                 "Gecertificeerde coaches",
-                "met een brede opleidingsachtergrond en unieke specialisatie",
+                "met een brede opleidingsachtergrond en unieke specialisaties",
               ],
               [
                 "Intervisie",
