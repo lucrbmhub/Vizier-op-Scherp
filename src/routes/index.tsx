@@ -183,10 +183,11 @@ function Home() {
             Sterker in je huidige rol, en verder als je wilt
           </h2>
           <p className="mt-5 text-petrol/75 max-w-[64ch] leading-relaxed">
-            Loopbaancoaching wordt vaak gelezen als de deur uit. Maar tijdens een groot deel
-            van onze trajecten wordt juist duidelijk dat een aanpassing in gedrag,
-            perspectief of taken in de huidige situatie al heel veel positieve verandering
-            brengt.&nbsp;
+            Loopbaancoaching wordt vaak gelezen als 'de deur uit'. Maar tijdens een
+            groot deel van onze trajecten, wordt juist duidelijk dat een
+            aanpassing&nbsp;in de huidige situatie al heel veel positieve
+            verandering brengt. Bijvoorbeeld een door een
+            ander&nbsp;perspectief, gedrag, takenpakket of andere mindset.
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-2 items-stretch">
             {[
@@ -196,7 +197,7 @@ function Home() {
               },
               {
                 title: "Een nieuwe richting",
-                text: "Twijfel ordenen, ontdekken wat past, een volgende stap zetten. Intern waar het kan, extern waar dat beter past, op het tempo van de medewerker.",
+                text: "Twijfel ordenen, ontdekken wat past, een volgende stap zetten. Intern waar het kan, extern waar dat beter is, op het tempo van de medewerker.",
               },
             ].map((c) => (
               <article
