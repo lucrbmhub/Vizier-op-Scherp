@@ -1076,7 +1076,11 @@ function ArticlePage() {
   if (article.slug === "goede-loopbaancoach-kiezen") {
     return <GoedeCoachKiezenArticle article={article} />;
   }
+  if (article.slug === "impostersyndroom-twijfel-als-kracht") {
+    return <ImpostersyndroomArticle article={article} />;
+  }
   return <WervenNaarBehoudenArticle article={article} />;
+
 }
 
 /* ------------------------------------------------------------------ */
