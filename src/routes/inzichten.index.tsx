@@ -260,6 +260,8 @@ function Page() {
               "Solliciteren en arbeidsmarkt",
               "Persoonlijke effectiviteit",
               "Een coach kiezen",
+              "Zelfvertrouwen en twijfel",
+
               "Medewerkers begeleiden als HR",
             ].map((t) => (
               <li
