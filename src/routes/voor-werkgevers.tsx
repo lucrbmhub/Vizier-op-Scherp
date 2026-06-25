@@ -613,6 +613,11 @@ function Page() {
           en budget.
         </CTAStrip>
       </Section>
+      <LeidraadDownloadModal
+        open={leidraadOpen}
+        onOpenChange={setLeidraadOpen}
+        pagina="/voor-werkgevers"
+      />
     </>
   );
 }
