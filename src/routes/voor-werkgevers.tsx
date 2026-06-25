@@ -129,6 +129,7 @@ const situaties = [
 
 
 function Page() {
+  const [leidraadOpen, setLeidraadOpen] = useState(false);
   return (
     <>
       {/* HERO — petrol */}
