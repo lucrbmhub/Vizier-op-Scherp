@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { LeidraadDownloadModal } from "@/components/LeidraadDownloadModal";
 import heroImg from "../assets/coaching-gesprek.jpg.asset.json";
 import maaikePhoto from "../assets/maaike.jpg.asset.json";
 import liannePhoto from "../assets/lianne.jpg.asset.json";
@@ -103,6 +105,7 @@ const btnSecondaryOnDark =
   "inline-flex items-center rounded-md border border-mint-dof px-7 py-3.5 text-base font-medium text-linnen-licht hover:border-goud transition";
 
 function Home() {
+  const [leidraadOpen, setLeidraadOpen] = useState(false);
   return (
     <>
       {/* HERO */}
@@ -530,13 +533,13 @@ function Home() {
                 gesprek te voeren met uw medewerkers, met voorbeeldvragen en do's en don'ts.
               </p>
             </div>
-            <a
-              href="/loopbaangesprek-leidraad.pdf"
-              download
+            <button
+              type="button"
+              onClick={() => setLeidraadOpen(true)}
               className="inline-flex items-center rounded-md bg-petrol px-7 py-3.5 text-base font-medium text-linnen-licht hover:bg-[#16302E] transition shrink-0"
             >
               Download de leidraad
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -587,6 +590,11 @@ function Home() {
           </div>
         </div>
       </section>
+      <LeidraadDownloadModal
+        open={leidraadOpen}
+        onOpenChange={setLeidraadOpen}
+        pagina="/"
+      />
     </>
   );
 }

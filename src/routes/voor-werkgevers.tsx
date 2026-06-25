@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "../assets/coaching-werkgever.jpg.asset.json";
 import { Section, Eyebrow, Label, FAQ, CTAStrip } from "../components/ui-blocks";
+import { LeidraadDownloadModal } from "@/components/LeidraadDownloadModal";
 
 const TITLE = "Loopbaancoaching voor uw medewerkers | Vizier op Scherp";
 const DESC =
@@ -127,6 +129,7 @@ const situaties = [
 
 
 function Page() {
+  const [leidraadOpen, setLeidraadOpen] = useState(false);
   return (
     <>
       {/* HERO — petrol */}
@@ -582,13 +585,13 @@ function Page() {
               en do's en don'ts.
             </p>
           </div>
-          <a
-            href="/loopbaangesprek-leidraad.pdf"
-            download
+          <button
+            type="button"
+            onClick={() => setLeidraadOpen(true)}
             className="inline-block bg-petrol text-linnen-licht font-medium rounded-md px-7 py-3.5 hover:bg-[#16302E] transition-colors shrink-0"
           >
             Download de leidraad
-          </a>
+          </button>
         </div>
       </Section>
 
@@ -610,6 +613,11 @@ function Page() {
           en budget.
         </CTAStrip>
       </Section>
+      <LeidraadDownloadModal
+        open={leidraadOpen}
+        onOpenChange={setLeidraadOpen}
+        pagina="/voor-werkgevers"
+      />
     </>
   );
 }
