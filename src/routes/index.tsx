@@ -590,6 +590,11 @@ function Home() {
           </div>
         </div>
       </section>
+      <LeidraadDownloadModal
+        open={leidraadOpen}
+        onOpenChange={setLeidraadOpen}
+        pagina="/"
+      />
     </>
   );
 }
