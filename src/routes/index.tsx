@@ -105,6 +105,7 @@ const btnSecondaryOnDark =
   "inline-flex items-center rounded-md border border-mint-dof px-7 py-3.5 text-base font-medium text-linnen-licht hover:border-goud transition";
 
 function Home() {
+  const [leidraadOpen, setLeidraadOpen] = useState(false);
   return (
     <>
       {/* HERO */}
