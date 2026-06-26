@@ -48,6 +48,13 @@ export const submitLeidraadLead = createServerFn({ method: "POST" })
         const when = new Date().toLocaleString("nl-NL", {
           timeZone: "Europe/Amsterdam",
         });
+        const escHtml = (s: string) =>
+          s
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#39;");
         const res = await fetch(
           "https://connector-gateway.lovable.dev/resend/emails",
           {
