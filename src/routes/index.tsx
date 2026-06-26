@@ -225,7 +225,7 @@ function Home() {
 
           <div className="mt-11 border-t border-mint-dof">
             {[
-              ["De stille twijfelaar", "Een goede medewerker functioneert prima, maar twijfelt al maanden over de volgende stap. Niemand weet het. Tot de ontslagbrief op tafel ligt. Een loopbaangesprek op tijd had het verschil gemaakt."],
+              ["De stille twijfelaar", "Een goede medewerker twijfelt al maanden over een volgende stap. Niemand weet het, tot de ontslagbrief er ligt."],
               ["De vastgelopen professional", "Iemand zit niet meer op de juiste plek, maar weet zelf ook niet waar dan wél. De motivatie zakt, het team merkt het, en HR heeft de capaciteit niet om dit zelf op te pakken."],
               ["De HR-afdeling zonder vaste partner", "U wilt medewerkers loopbaanbegeleiding kunnen aanbieden, maar elke keer opnieuw een coach zoeken, offertes vergelijken en kwaliteit beoordelen kost te veel tijd. En de kwaliteit wisselt."],
             ].map(([t, p]) => (
@@ -255,8 +255,7 @@ function Home() {
             Drie vormen van loopbaancoaching, één werkwijze
           </h2>
           <p className={introCls}>
-            Waar u ook instapt, een gespreksronde, een los traject of een vaste jaarafspraak:
-            de werkwijze is altijd dezelfde. Intake, matching met een passende coach,
+            Waar u ook instapt, de werkwijze is altijd dezelfde: intake, matching met een passende coach,
             begeleiding en evaluatie op procesniveau, met vooraf heldere privacyafspraken.
           </p>
 
@@ -396,9 +395,7 @@ function Home() {
             Een klein netwerk met bewezen ervaring
           </h2>
           <p className="mt-4 text-mint max-w-[64ch] text-base md:text-[1.05rem]">
-            Geen grote organisatie met wisselende gezichten, maar een bewust klein gehouden
-            netwerk. Daardoor kennen wij elke coach persoonlijk, en weet u precies wie er bij
-            uw medewerkers aan tafel zit.
+            Geen grote organisatie met wisselende gezichten, maar een bewust klein netwerk. Zo weet u precies wie er bij uw medewerkers aan tafel zit.
           </p>
 
           <div className="my-12 grid gap-8 grid-cols-2 lg:grid-cols-4">
@@ -452,7 +449,7 @@ function Home() {
             Vizier op Scherp werkt met een klein, vast netwerk van zelfstandige coaches.
             Elke coach is gecertificeerd en heeft meerdere coachingopleidingen en
             nascholing gedaan, met achtergronden in coaching, psychologie, maatschappelijk
-            werk en therapeutisch werk. De ingang is vaak de werkcontext. De begeleiding
+            werk en HR. De ingang is vaak de werkcontext. De begeleiding
             is persoonlijk en gaat de diepte in.
           </p>
 
