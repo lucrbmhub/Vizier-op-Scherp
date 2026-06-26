@@ -298,11 +298,8 @@ function Page() {
 }
 
 function badgeClassesFor(article: Article) {
-  if (article.badgeTone === "mint") {
-    return "bg-mint text-petrol border border-mint-dof";
-  }
   return article.audience === "werkgever"
-    ? "bg-goud text-[color:var(--color-on-goud-title)]"
+    ? "bg-linnen-licht text-petrol border border-goud"
     : "bg-mint text-petrol";
 }
 
