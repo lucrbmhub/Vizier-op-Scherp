@@ -1125,9 +1125,11 @@ function WervenNaarBehoudenArticle({ article }: { article: Article }) {
           >
             ← Inzichten
           </Link>
-          <span className="mt-6 inline-block rounded-full bg-goud px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-[color:var(--color-on-goud-title)]">
-            Voor werkgevers &amp; HR
-          </span>
+          <div className="mt-6">
+            <span className="inline-flex items-center rounded-full bg-goud px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-[color:var(--color-on-goud-title)]">
+              Voor werkgevers &amp; HR
+            </span>
+          </div>
           <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-linnen-licht max-w-[30ch] leading-[1.15]">
             {article.title}
           </h1>
@@ -2097,9 +2099,11 @@ function DuurzameInzetbaarheidWerkgeverArticle({
           >
             ← Inzichten
           </Link>
-          <span className="mt-6 inline-block rounded-full bg-goud px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-[color:var(--color-on-goud-title)]">
-            Voor werkgevers &amp; HR
-          </span>
+          <div className="mt-6">
+            <span className="inline-flex items-center rounded-full bg-goud px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-[color:var(--color-on-goud-title)]">
+              Voor werkgevers &amp; HR
+            </span>
+          </div>
           <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-linnen-licht max-w-[30ch] leading-[1.15]">
             {article.title}
           </h1>
@@ -2580,9 +2584,11 @@ function LoopbaangesprekArticle({ article }: { article: Article }) {
           >
             ← Inzichten
           </Link>
-          <span className="mt-6 inline-block rounded-full bg-goud px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-[color:var(--color-on-goud-title)]">
-            Voor werkgevers &amp; HR
-          </span>
+          <div className="mt-6">
+            <span className="inline-flex items-center rounded-full bg-goud px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-[color:var(--color-on-goud-title)]">
+              Voor werkgevers &amp; HR
+            </span>
+          </div>
           <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-linnen-licht max-w-[30ch] leading-[1.15]">
             {article.title}
           </h1>
