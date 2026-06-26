@@ -1125,7 +1125,7 @@ function WervenNaarBehoudenArticle({ article }: { article: Article }) {
           >
             ← Inzichten
           </Link>
-          <span className="mt-6 inline-block rounded-full bg-mint border border-mint-dof px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-petrol">
+          <span className="mt-6 inline-block rounded-full bg-goud px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-[color:var(--color-on-goud-title)]">
             Voor werkgevers &amp; HR
           </span>
           <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-linnen-licht max-w-[30ch] leading-[1.15]">
@@ -1370,7 +1370,7 @@ function RichtingVindenArticle({ article }: { article: Article }) {
             ← Inzichten
           </Link>
           <div className="mt-6">
-            <span className="inline-flex items-center rounded-full bg-goud px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-[color:var(--color-on-goud-title)]">
+            <span className="inline-flex items-center rounded-full bg-mint border border-mint-dof px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-petrol">
               Voor medewerkers
             </span>
           </div>
@@ -1580,7 +1580,7 @@ function EnergieMotivatieArticle({ article }: { article: Article }) {
             ← Inzichten
           </Link>
           <div className="mt-6">
-            <span className="inline-flex items-center rounded-full bg-goud px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-[color:var(--color-on-goud-title)]">
+            <span className="inline-flex items-center rounded-full bg-mint border border-mint-dof px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-petrol">
               Voor medewerkers
             </span>
           </div>
@@ -1866,7 +1866,7 @@ function SolliciterenArticle({ article }: { article: Article }) {
             ← Inzichten
           </Link>
           <div className="mt-6">
-            <span className="inline-flex items-center rounded-full bg-goud px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-[color:var(--color-on-goud-title)]">
+            <span className="inline-flex items-center rounded-full bg-mint border border-mint-dof px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-petrol">
               Voor medewerkers
             </span>
           </div>
@@ -2097,7 +2097,7 @@ function DuurzameInzetbaarheidWerkgeverArticle({
           >
             ← Inzichten
           </Link>
-          <span className="mt-6 inline-block rounded-full bg-mint border border-mint-dof px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-petrol">
+          <span className="mt-6 inline-block rounded-full bg-goud px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-[color:var(--color-on-goud-title)]">
             Voor werkgevers &amp; HR
           </span>
           <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-linnen-licht max-w-[30ch] leading-[1.15]">
@@ -2327,7 +2327,7 @@ function PersoonlijkeEffectiviteitArticle({ article }: { article: Article }) {
             ← Inzichten
           </Link>
           <div className="mt-6">
-            <span className="inline-flex items-center rounded-full bg-goud px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-[color:var(--color-on-goud-title)]">
+            <span className="inline-flex items-center rounded-full bg-mint border border-mint-dof px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-petrol">
               Voor medewerkers
             </span>
           </div>
@@ -2580,7 +2580,7 @@ function LoopbaangesprekArticle({ article }: { article: Article }) {
           >
             ← Inzichten
           </Link>
-          <span className="mt-6 inline-block rounded-full bg-mint border border-mint-dof px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-petrol">
+          <span className="mt-6 inline-block rounded-full bg-goud px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-[color:var(--color-on-goud-title)]">
             Voor werkgevers &amp; HR
           </span>
           <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-linnen-licht max-w-[30ch] leading-[1.15]">
@@ -2810,7 +2810,7 @@ function GoedeCoachKiezenArticle({ article }: { article: Article }) {
             ← Inzichten
           </Link>
           <div className="mt-6">
-            <span className="inline-flex items-center rounded-full bg-goud px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-[color:var(--color-on-goud-title)]">
+            <span className="inline-flex items-center rounded-full bg-mint border border-mint-dof px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-petrol">
               Voor medewerkers
             </span>
           </div>
@@ -3059,7 +3059,7 @@ function ImpostersyndroomArticle({ article }: { article: Article }) {
             ← Inzichten
           </Link>
           <div className="mt-6">
-            <span className="inline-flex items-center rounded-full bg-goud px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-[color:var(--color-on-goud-title)]">
+            <span className="inline-flex items-center rounded-full bg-mint border border-mint-dof px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-petrol">
               Voor medewerkers
             </span>
           </div>
