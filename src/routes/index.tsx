@@ -375,10 +375,8 @@ function Home() {
                 Wat je bespreekt, blijft vertrouwelijk
               </h3>
               <p className="text-[0.94rem] text-[color:var(--color-on-goud-sub)]">
-                Ook als je werkgever het traject betaalt: de inhoud van jullie gesprekken
-                blijft tussen jou en je coach. Je werkgever hoort alleen óf het traject
-                loopt, nooit waarover het gaat. Die afspraak leggen we bij de start vast,
-                zodat jij vrijuit kunt spreken.
+                Ook als je werkgever het traject betaalt, blijft de inhoud tussen jou en je coach.
+                Je werkgever hoort alleen óf het loopt, nooit waarover het gaat.
               </p>
             </div>
           </div>
