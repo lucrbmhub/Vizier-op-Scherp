@@ -71,10 +71,10 @@ export const submitLeidraadLead = createServerFn({ method: "POST" })
               subject: `Nieuwe download leidraad: ${data.email}`,
               html: `<p>Er is een nieuwe download van de loopbaangesprek-leidraad.</p>
 <ul>
-  <li><strong>E-mailadres:</strong> ${data.email}</li>
-  <li><strong>Datum/tijd:</strong> ${when}</li>
+  <li><strong>E-mailadres:</strong> ${escHtml(data.email)}</li>
+  <li><strong>Datum/tijd:</strong> ${escHtml(when)}</li>
   <li><strong>Bron:</strong> De loopbaangesprek-leidraad</li>
-  <li><strong>Pagina:</strong> ${data.pagina ?? "(onbekend)"}</li>
+  <li><strong>Pagina:</strong> ${escHtml(data.pagina ?? "(onbekend)")}</li>
 </ul>`,
             }),
           },
