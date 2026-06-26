@@ -183,7 +183,7 @@ function Page() {
       {/* HERO donker */}
       <section className="bg-petrol text-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <span className="inline-flex items-center rounded-full border border-mint-dof/40 px-3 py-1 text-xs font-medium uppercase tracking-wide text-mint">
+          <span className="inline-flex items-center rounded-full border border-goud px-3 py-1 text-xs font-medium uppercase tracking-wide text-goud">
             Inzichten
           </span>
           <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-linnen-licht max-w-[18ch] leading-[1.1]">
