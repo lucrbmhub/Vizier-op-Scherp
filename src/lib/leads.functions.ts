@@ -48,6 +48,13 @@ export const submitLeidraadLead = createServerFn({ method: "POST" })
         const when = new Date().toLocaleString("nl-NL", {
           timeZone: "Europe/Amsterdam",
         });
+        const escHtml = (s: string) =>
+          s
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#39;");
         const res = await fetch(
           "https://connector-gateway.lovable.dev/resend/emails",
           {
@@ -64,10 +71,10 @@ export const submitLeidraadLead = createServerFn({ method: "POST" })
               subject: `Nieuwe download leidraad: ${data.email}`,
               html: `<p>Er is een nieuwe download van de loopbaangesprek-leidraad.</p>
 <ul>
-  <li><strong>E-mailadres:</strong> ${data.email}</li>
-  <li><strong>Datum/tijd:</strong> ${when}</li>
+  <li><strong>E-mailadres:</strong> ${escHtml(data.email)}</li>
+  <li><strong>Datum/tijd:</strong> ${escHtml(when)}</li>
   <li><strong>Bron:</strong> De loopbaangesprek-leidraad</li>
-  <li><strong>Pagina:</strong> ${data.pagina ?? "(onbekend)"}</li>
+  <li><strong>Pagina:</strong> ${escHtml(data.pagina ?? "(onbekend)")}</li>
 </ul>`,
             }),
           },
