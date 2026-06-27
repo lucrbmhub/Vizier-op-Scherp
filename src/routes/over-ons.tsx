@@ -225,7 +225,7 @@ function Page() {
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             <Card tone="linnen">
               <h3 className="font-display text-xl text-petrol mb-3">
-                Haarlem, hoofdkantoor
+                Haarlem
               </h3>
               <p className="text-petrol/80">
                 Klein Heiligland 84
