@@ -56,7 +56,7 @@ export function Footer() {
         </div>
 
         <div className="pt-6 flex flex-wrap justify-between gap-3 text-xs">
-          <span>© {new Date().getFullYear()} Vizier op Scherp · KVK 81088701 · BTW NL003529887B45</span>
+          <span>© 2016 - {new Date().getFullYear()} Vizier op Scherp · KVK 81088701 · BTW NL003529887B45</span>
           <a
             href="https://www.linkedin.com/company/10002759/"
             rel="noopener"
