@@ -61,7 +61,7 @@ const coaches: Coach[] = [
     bio: "Psychosociaal therapeut met een achtergrond in sociaal ondernemerschap, de creatieve industrie en het hoger onderwijs. Zelah helpt je je zelfinzicht en zelfvertrouwen te vergroten, zodat je je ontwikkeling vormgeeft op een manier die bij je past. Open, positief en analytisch. Werkt vanuit een eigen praktijk in het centrum van Amsterdam.",
     tags: [
       { label: "RBCZ-geregistreerd", reg: true },
-      { label: "ACT & acceptance therapie" },
+      { label: "ACT Coaching" },
       { label: "Zingeving" },
       { label: "Amsterdam" },
     ],
