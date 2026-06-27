@@ -41,7 +41,7 @@ export function Footer() {
           <div>
             <h2 className={colHead}>Contact</h2>
             <address className="not-italic text-sm mb-3 leading-relaxed">
-              <strong className="block font-medium text-mint">Haarlem, hoofdkantoor</strong>
+              <strong className="block font-medium text-mint">Haarlem</strong>
               Klein Heiligland 84, 2011 EJ Haarlem
             </address>
             <address className="not-italic text-sm mb-3 leading-relaxed">
