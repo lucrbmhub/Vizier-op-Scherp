@@ -117,11 +117,8 @@ function Page() {
             </strong>
           </p>
           <p>
-            Wat in die groei bewust is gebleven: de persoonlijke aanpak. Geen
-            anonieme coachdatabase, geen wisselende gezichten, geen
-            standaardtrajecten van de plank. Wel: echte kennismakingen, een
-            vaste coach, en begeleiding die verder gaat dan het cv, want
-            loopbaanvragen zijn zelden alléén werkvragen.
+            Wat in die groei bewust is gebleven: de persoonlijke aanpak, echte
+            kennismakingen, betrokken coaches en kwalitatieve begeleiding.
           </p>
         </div>
       </Section>
