@@ -28,7 +28,7 @@ const coaches: Coach[] = [
   {
     photo: maaikePhoto.url,
     name: "Maaike Pannekoek-Hänschen",
-    role: "Loopbaancoach, trainer & organisatieadviseur",
+    role: "Loopbaancoach & organisatieadviseur",
     quote: "Ik geloof dat er voor ieder mens een juiste plek is.",
     bio: "Maaike liep zelf ooit vast in een baan die niet bij haar paste, en weet hoe het is om de vraag te stellen: wat wil ik nou eigenlijk? Ze werkt veel met mensen in onderwijs en zorg, met jonge ouders en met leidinggevenden. Rustig, betrokken en altijd gericht op een concrete volgende stap.",
     tags: [
