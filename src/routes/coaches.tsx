@@ -92,7 +92,7 @@ const coaches: Coach[] = [
       { label: "Noloc RL", reg: true },
       { label: "Richting & keuzes" },
       { label: "HR en recruitmentachtergrond" },
-      { label: "Traineeships" },
+      { label: "Intervisiebegeleiding" },
     ],
     linkedin: "https://www.linkedin.com/in/lbuurman/",
   },
