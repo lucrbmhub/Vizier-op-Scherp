@@ -90,8 +90,8 @@ const coaches: Coach[] = [
     bio: "Luc kent vanuit zijn achtergrond als recruitment consultant de werkgeverskant van binnenuit. Hij begeleidt vooral eind-twintigers, dertigers en jonge professionals die richting zoeken en scherper willen weten waar ze voor staan. Open, nuchter, zo luchtig als mogelijk en zo serieus als nodig.",
     tags: [
       { label: "Noloc RL", reg: true },
-      { label: "Richting & keuzes" },
-      { label: "HR en recruitmentachtergrond" },
+      { label: "Zakelijke dienstverlening" },
+      { label: "Onderwijs & zorg" },
       { label: "Intervisiebegeleiding" },
     ],
     linkedin: "https://www.linkedin.com/in/lbuurman/",
