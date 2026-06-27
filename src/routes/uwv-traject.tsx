@@ -237,7 +237,7 @@ function Page() {
       <Section>
         <Label>Hoe het werkt</Label>
         <h2 className="font-display text-2xl md:text-3xl text-petrol">
-          In vier rustige stappen
+          In vier stappen
         </h2>
         <ol className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {stappen.map((s, i) => (
@@ -282,8 +282,8 @@ function Page() {
                 We houden UWV op de hoogte van de voortgang van je traject. Dat
                 hoort erbij en dat weet je vooraf. Maar wat jij persoonlijk met
                 je coach bespreekt, behandelen we zorgvuldig. Je coach legt je
-                bij de start precies uit wat er wel en niet gedeeld wordt,
-                zodat je nergens voor hoeft te schrikken.
+                bij de start precies uit wat er wel en niet gedeeld wordt en
+                blijft hierover met je in gesprek.
               </p>
             </div>
           </div>
