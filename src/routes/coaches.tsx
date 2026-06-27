@@ -50,6 +50,8 @@ const coaches: Coach[] = [
       { label: "Psycholoog", reg: true },
       { label: "Persoonlijk leiderschap" },
       { label: "Vitaliteit" },
+      { label: "Zorg" },
+      { label: "Teamcoaching" },
     ],
     linkedin: "https://www.linkedin.com/in/lianneboth/",
   },
