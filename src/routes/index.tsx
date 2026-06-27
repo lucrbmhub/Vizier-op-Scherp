@@ -63,7 +63,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "https://vizieropscherp.nl/" },
       {
         property: "og:title",
-        content: "Loopbaancoaching voor werkgevers, Vizier op Scherp",
+        content: "Loopbaancoaching georganiseerd voor HR | Vizier op Scherp",
       },
       {
         property: "og:description",
@@ -72,7 +72,7 @@ export const Route = createFileRoute("/")({
       },
       {
         name: "twitter:title",
-        content: "Loopbaancoaching voor werkgevers, Vizier op Scherp",
+        content: "Loopbaancoaching georganiseerd voor HR | Vizier op Scherp",
       },
       {
         name: "twitter:description",
