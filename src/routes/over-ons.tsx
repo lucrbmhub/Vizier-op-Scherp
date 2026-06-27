@@ -99,7 +99,7 @@ function Page() {
         </h2>
         <div className="mt-8 max-w-[68ch] space-y-5 text-petrol/80 leading-relaxed">
           <p>
-            Vizier op Scherp is ontstaan als persoonlijke coachpraktijk,
+            Vizier op Scherp is in 2016 ontstaan als persoonlijke coachpraktijk,
             gebouwd op een warme en ontwikkelgerichte visie op
             loopbaanbegeleiding: zorgvuldig luisteren, aandacht voor
             zelfkennis, en begeleiding met een duidelijke methodische opbouw.
@@ -117,11 +117,8 @@ function Page() {
             </strong>
           </p>
           <p>
-            Wat in die groei bewust is gebleven: de persoonlijke aanpak. Geen
-            anonieme coachdatabase, geen wisselende gezichten, geen
-            standaardtrajecten van de plank. Wel: echte kennismakingen, een
-            vaste coach, en begeleiding die verder gaat dan het cv, want
-            loopbaanvragen zijn zelden alléén werkvragen.
+            Wat in die groei bewust is gebleven: de persoonlijke aanpak, echte
+            kennismakingen, betrokken coaches en kwalitatieve begeleiding.
           </p>
         </div>
       </Section>
@@ -228,7 +225,7 @@ function Page() {
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             <Card tone="linnen">
               <h3 className="font-display text-xl text-petrol mb-3">
-                Haarlem, hoofdkantoor
+                Haarlem
               </h3>
               <p className="text-petrol/80">
                 Klein Heiligland 84
@@ -250,8 +247,7 @@ function Page() {
                 1076 CV Amsterdam
               </p>
               <p className="mt-3 text-petrol/75 leading-relaxed">
-                Goed bereikbare locatie in Amsterdam-Zuid. Gesprekken kunnen
-                ook bij u op kantoor of online.
+                Goed bereikbare locatie in Amsterdam-Zuid.&nbsp;
               </p>
             </Card>
           </div>
