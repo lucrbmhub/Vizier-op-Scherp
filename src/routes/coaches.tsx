@@ -35,8 +35,8 @@ const coaches: Coach[] = [
     tags: [
       { label: "RBCZ-geregistreerd", reg: true },
       { label: "ACT Coaching" },
-      { label: "Zingeving" },
-      { label: "Amsterdam" },
+      { label: "Onderwijs & zorg" },
+      { label: "Zakelijke dienstverlening" },
     ],
     linkedin: "https://www.linkedin.com/in/zelah-dorrestijn/",
   },
