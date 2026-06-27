@@ -99,7 +99,7 @@ function Page() {
         </h2>
         <div className="mt-8 max-w-[68ch] space-y-5 text-petrol/80 leading-relaxed">
           <p>
-            Vizier op Scherp is ontstaan als persoonlijke coachpraktijk,
+            Vizier op Scherp is in 2016 ontstaan als persoonlijke coachpraktijk,
             gebouwd op een warme en ontwikkelgerichte visie op
             loopbaanbegeleiding: zorgvuldig luisteren, aandacht voor
             zelfkennis, en begeleiding met een duidelijke methodische opbouw.
