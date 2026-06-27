@@ -84,7 +84,7 @@ const coaches: Coach[] = [
   {
     photo: lucPhoto.url,
     name: "Luc Buurman",
-    role: "Loopbaancoach, trainer & intervisiebegeleider",
+    role: "Loopbaancoach, trainer & eigenaar",
     quote:
       "Krijg scherp waar je talenten liggen en wat je belangrijk vindt. Dan kun je gerichte keuzes maken.",
     bio: "Luc kent vanuit zijn achtergrond als recruitment consultant de werkgeverskant van binnenuit. Hij begeleidt vooral eind-twintigers, dertigers en jonge professionals die richting zoeken en scherper willen weten waar ze voor staan. Open, nuchter, zo luchtig als mogelijk en zo serieus als nodig.",
