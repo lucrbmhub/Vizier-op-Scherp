@@ -26,18 +26,19 @@ type Coach = {
 
 const coaches: Coach[] = [
   {
-    photo: maaikePhoto.url,
-    name: "Maaike Pannekoek-Hänschen",
-    role: "Loopbaancoach & organisatieadviseur",
-    quote: "Ik geloof dat er voor ieder mens een juiste plek is.",
-    bio: "Maaike liep zelf ooit vast in een baan die niet bij haar paste, en weet hoe het is om de vraag te stellen: wat wil ik nou eigenlijk? Ze werkt veel met mensen in onderwijs en zorg, met jonge ouders en met leidinggevenden. Rustig, betrokken en altijd gericht op een concrete volgende stap.",
+    photo: zelahPhoto.url,
+    name: "Zelah Dorrestijn",
+    role: "Loopbaancoach, therapeut & trainer",
+    quote:
+      "Neem je volgende stap vanuit gevoel en het kennen van je behoeften.",
+    bio: "Psychosociaal therapeut met een achtergrond in sociaal ondernemerschap, de creatieve industrie en het hoger onderwijs. Zelah helpt je je zelfinzicht en zelfvertrouwen te vergroten, zodat je je ontwikkeling vormgeeft op een manier die bij je past. Open, positief en analytisch. Werkt vanuit een eigen praktijk in het centrum van Amsterdam.",
     tags: [
-      { label: "Onderwijs & zorg" },
-      { label: "Jonge ouders" },
-      { label: "Leidinggevenden" },
+      { label: "RBCZ-geregistreerd", reg: true },
+      { label: "ACT Coaching" },
+      { label: "Zingeving" },
+      { label: "Amsterdam" },
     ],
-    linkedin:
-      "https://www.linkedin.com/in/maaike-pannekoek-h%C3%A4nschen-6093b094/",
+    linkedin: "https://www.linkedin.com/in/zelah-dorrestijn/",
   },
   {
     photo: liannePhoto.url,
@@ -53,19 +54,18 @@ const coaches: Coach[] = [
     linkedin: "https://www.linkedin.com/in/lianneboth/",
   },
   {
-    photo: zelahPhoto.url,
-    name: "Zelah Dorrestijn",
-    role: "Loopbaancoach, therapeut & trainer",
-    quote:
-      "Neem je volgende stap vanuit gevoel en het kennen van je behoeften.",
-    bio: "Psychosociaal therapeut met een achtergrond in sociaal ondernemerschap, de creatieve industrie en het hoger onderwijs. Zelah helpt je je zelfinzicht en zelfvertrouwen te vergroten, zodat je je ontwikkeling vormgeeft op een manier die bij je past. Open, positief en analytisch. Werkt vanuit een eigen praktijk in het centrum van Amsterdam.",
+    photo: maaikePhoto.url,
+    name: "Maaike Pannekoek-Hänschen",
+    role: "Loopbaancoach & organisatieadviseur",
+    quote: "Ik geloof dat er voor ieder mens een juiste plek is.",
+    bio: "Maaike liep zelf ooit vast in een baan die niet bij haar paste, en weet hoe het is om de vraag te stellen: wat wil ik nou eigenlijk? Ze werkt veel met mensen in onderwijs en zorg, met jonge ouders en met leidinggevenden. Rustig, betrokken en altijd gericht op een concrete volgende stap.",
     tags: [
-      { label: "RBCZ-geregistreerd", reg: true },
-      { label: "ACT Coaching" },
-      { label: "Zingeving" },
-      { label: "Amsterdam" },
+      { label: "Onderwijs & zorg" },
+      { label: "Jonge ouders" },
+      { label: "Leidinggevenden" },
     ],
-    linkedin: "https://www.linkedin.com/in/zelah-dorrestijn/",
+    linkedin:
+      "https://www.linkedin.com/in/maaike-pannekoek-h%C3%A4nschen-6093b094/",
   },
   {
     photo: floorPhoto.url,
