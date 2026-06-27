@@ -28,7 +28,7 @@ const coaches: Coach[] = [
   {
     photo: maaikePhoto.url,
     name: "Maaike Pannekoek-Hänschen",
-    role: "Loopbaancoach, trainer & organisatieadviseur",
+    role: "Loopbaancoach & organisatieadviseur",
     quote: "Ik geloof dat er voor ieder mens een juiste plek is.",
     bio: "Maaike liep zelf ooit vast in een baan die niet bij haar paste, en weet hoe het is om de vraag te stellen: wat wil ik nou eigenlijk? Ze werkt veel met mensen in onderwijs en zorg, met jonge ouders en met leidinggevenden. Rustig, betrokken en altijd gericht op een concrete volgende stap.",
     tags: [
@@ -61,7 +61,7 @@ const coaches: Coach[] = [
     bio: "Psychosociaal therapeut met een achtergrond in sociaal ondernemerschap, de creatieve industrie en het hoger onderwijs. Zelah helpt je je zelfinzicht en zelfvertrouwen te vergroten, zodat je je ontwikkeling vormgeeft op een manier die bij je past. Open, positief en analytisch. Werkt vanuit een eigen praktijk in het centrum van Amsterdam.",
     tags: [
       { label: "RBCZ-geregistreerd", reg: true },
-      { label: "ACT & acceptance therapie" },
+      { label: "ACT Coaching" },
       { label: "Zingeving" },
       { label: "Amsterdam" },
     ],
@@ -84,7 +84,7 @@ const coaches: Coach[] = [
   {
     photo: lucPhoto.url,
     name: "Luc Buurman",
-    role: "Loopbaancoach, trainer & intervisiebegeleider",
+    role: "Loopbaancoach, trainer & eigenaar",
     quote:
       "Krijg scherp waar je talenten liggen en wat je belangrijk vindt. Dan kun je gerichte keuzes maken.",
     bio: "Luc kent vanuit zijn achtergrond als recruitment consultant de werkgeverskant van binnenuit. Hij begeleidt vooral eind-twintigers, dertigers en jonge professionals die richting zoeken en scherper willen weten waar ze voor staan. Open, nuchter, zo luchtig als mogelijk en zo serieus als nodig.",
@@ -92,7 +92,7 @@ const coaches: Coach[] = [
       { label: "Noloc RL", reg: true },
       { label: "Richting & keuzes" },
       { label: "HR en recruitmentachtergrond" },
-      { label: "Traineeships" },
+      { label: "Intervisiebegeleiding" },
     ],
     linkedin: "https://www.linkedin.com/in/lbuurman/",
   },
