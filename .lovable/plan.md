@@ -1,15 +1,9 @@
-## Probleem
-Op `/inzichten` hebben de badges "Voor medewerkers" en "Voor werkgevers & HR" nu dezelfde mint-kleur, omdat alle werkgevers-artikelen `badgeTone: "mint"` hebben en `badgeClassesFor` daardoor de mint-stijl gebruikt in plaats van de goud-stijl.
+Maak de drie aanbod-kaarten op `/voor-werkgevers` even hoog.
 
-## Aanpassing (alleen visueel, in `src/routes/inzichten.index.tsx`)
+**Wijziging in `src/routes/voor-werkgevers.tsx` (regels 252–323):**
 
-1. **Werkgevers-badge** → goud omlijnd op linnen achtergrond:
-   - `bg-linnen-licht text-petrol border border-goud`
-2. **Medewerkers-badge** → ongewijzigd, zonder rand:
-   - `bg-mint text-petrol` (geen border)
-3. `badgeTone: "mint"` en `badgeLabel: "Voor werkgevers & HR"` op de werkgevers-artikelen verwijderen, zodat `badgeClassesFor` puur op `audience` differentieert en het label via `audienceLabel` consistent "Voor werkgevers" wordt (of we behouden het langere label — zie vraag hieronder).
+1. Regel 252: verwijder `md:items-end` uit de grid-classes, zodat de kaarten standaard `stretch` worden (gelijke hoogte per rij).
+2. Regel 277: verwijder de extra `md:pb-14` van de petrol-kaart (stap 2).
+3. Regel 300: verwijder de extra `md:pb-20` van de koraal-kaart (stap 3).
 
-## Open vraag
-Wil je het werkgevers-label houden als **"Voor werkgevers & HR"** (langere variant), of mag het terug naar **"Voor werkgevers"** zoals `audienceLabel` standaard geeft? Ik ga er nu vanuit dat je **"Voor werkgevers & HR"** wilt houden — dan laat ik `badgeLabel` staan en verwijder alleen `badgeTone`.
-
-Geen andere wijzigingen.
+Doordat elke kaart al `flex flex-col` is met `mt-auto` op het laatste label, blijft de onderste regel netjes onderaan staan. Resultaat: stap 1, 2 en 3 zijn op desktop precies even hoog.

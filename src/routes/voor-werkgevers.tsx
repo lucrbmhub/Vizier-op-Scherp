@@ -249,7 +249,7 @@ function Page() {
             evaluatie op procesniveau. Het verschil zit in de vorm en de schaal.
           </p>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3 md:items-end">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
             {/* Goud */}
             <article className="rounded-2xl p-7 bg-goud flex flex-col gap-3.5 text-[color:var(--color-on-goud-sub)]">
               <span className="text-xs font-medium uppercase tracking-wider text-[color:var(--color-on-goud-title)]">
@@ -274,7 +274,7 @@ function Page() {
             </article>
 
             {/* Petrol */}
-            <article className="rounded-2xl p-7 md:pb-14 bg-petrol flex flex-col gap-3.5 text-mint">
+            <article className="rounded-2xl p-7 bg-petrol flex flex-col gap-3.5 text-mint">
               <span className="text-xs font-medium uppercase tracking-wider text-goud">
                 Vorm 2 · Per medewerker
               </span>
@@ -297,7 +297,7 @@ function Page() {
             </article>
 
             {/* Koraal — leadproduct */}
-            <article className="rounded-2xl p-7 md:pb-20 bg-koraal flex flex-col gap-3.5 text-[color:var(--color-on-koraal-sub)]">
+            <article className="rounded-2xl p-7 bg-koraal flex flex-col gap-3.5 text-[color:var(--color-on-koraal-sub)]">
               <span className="self-start bg-white/40 text-[color:var(--color-on-koraal-title)] text-xs font-medium rounded-full px-3 py-1">
                 Leadproduct
               </span>
