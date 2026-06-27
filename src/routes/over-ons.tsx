@@ -247,8 +247,7 @@ function Page() {
                 1076 CV Amsterdam
               </p>
               <p className="mt-3 text-petrol/75 leading-relaxed">
-                Goed bereikbare locatie in Amsterdam-Zuid. Gesprekken kunnen
-                ook bij u op kantoor of online.
+                Goed bereikbare locatie in Amsterdam-Zuid.&nbsp;
               </p>
             </Card>
           </div>
