@@ -237,7 +237,7 @@ function Page() {
       <Section>
         <Label>Hoe het werkt</Label>
         <h2 className="font-display text-2xl md:text-3xl text-petrol">
-          In vier rustige stappen
+          In vier stappen
         </h2>
         <ol className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {stappen.map((s, i) => (
