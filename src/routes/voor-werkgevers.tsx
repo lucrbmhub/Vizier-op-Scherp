@@ -366,7 +366,7 @@ function Page() {
             <div className="md:border-l md:border-mint/25 md:pl-10 flex flex-col md:flex-col gap-6 md:justify-center border-t md:border-t-0 border-mint/25 pt-7 md:pt-0">
               {[
                 ["1 contact", "voor uw hele organisatie, het hele jaar door"],
-                ["0 offertes", "per geval. Alles valt binnen de jaarafspraak"],
+                ["1 offerte", "Alles valt binnen de jaarafspraak"],
                 ["Vast coachteam", "die uw mensen en organisatie leren kennen en proactief meedenken"],
               ].map(([s, l]) => (
                 <div key={s}>
@@ -577,7 +577,7 @@ function Page() {
           <div className="max-w-2xl">
             <Label>Gratis voor HR</Label>
             <h2 className="font-display text-xl md:text-2xl text-petrol mb-2 leading-snug">
-              Nog niet toe aan een gesprek?
+              Nog niet klaar om een coach in te schakelen?
             </h2>
             <p className="text-petrol/75 text-[0.97rem] leading-relaxed">
               Download de loopbaangesprek-leidraad: een praktische gids om zelf
