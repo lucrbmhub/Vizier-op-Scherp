@@ -282,8 +282,8 @@ function Page() {
                 We houden UWV op de hoogte van de voortgang van je traject. Dat
                 hoort erbij en dat weet je vooraf. Maar wat jij persoonlijk met
                 je coach bespreekt, behandelen we zorgvuldig. Je coach legt je
-                bij de start precies uit wat er wel en niet gedeeld wordt,
-                zodat je nergens voor hoeft te schrikken.
+                bij de start precies uit wat er wel en niet gedeeld wordt en
+                blijft hierover met je in gesprek.
               </p>
             </div>
           </div>
