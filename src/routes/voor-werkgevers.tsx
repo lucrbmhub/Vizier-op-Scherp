@@ -466,9 +466,7 @@ function Page() {
                 ))}
               </ul>
               <p className="text-petrol/75 mt-3">
-                Komt uw vraag daar wél op neer? Dan verwijzen we u zorgvuldig
-                door. Een bureau dat zijn grenzen kent, kunt u vertrouwen binnen
-                die grenzen.
+                Komt uw vraag daar wél op neer? Dan verwijzen we u zorgvuldig door.
               </p>
             </div>
           </div>
@@ -492,7 +490,7 @@ function Page() {
           </p>
           <div className="mt-12 grid gap-8 grid-cols-2 md:grid-cols-4">
             {[
-              ["Gecertificeerde coaches", "met een brede opleidingsachtergrond en unieke specialisatie"],
+              ["Gecertificeerde coaches", "met een brede opleidingsachtergrond en unieke specialisaties"],
               ["Intervisie", "structurele kwaliteitsbewaking binnen het netwerk"],
               ["Evaluatie", "na elk traject meten we tevredenheid en resultaat"],
               ["8–12", "coaches, bewust klein, zorgvuldig geselecteerd"],
