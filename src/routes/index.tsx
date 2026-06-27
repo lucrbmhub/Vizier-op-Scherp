@@ -521,7 +521,7 @@ function Home() {
                 id="leadmagnet-titel"
                 className="font-display text-[1.35rem] text-petrol leading-snug mt-1.5 mb-2"
               >
-                Nog niet toe aan een gesprek?
+                Nog niet klaar om een coach in te schakelen?
               </h2>
               <p className="text-[0.97rem] text-petrol/70 leading-relaxed">
                 Download de loopbaangesprek-leidraad: een praktische gids om zelf het goede
