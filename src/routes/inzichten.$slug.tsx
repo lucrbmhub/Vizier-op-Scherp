@@ -1191,6 +1191,9 @@ function ArticlePage() {
   if (article.slug === "impostersyndroom-twijfel-als-kracht") {
     return <ImpostersyndroomArticle article={article} />;
   }
+  if (article.slug === "skillsgericht-werven") {
+    return <SkillsgerichtWervenArticle article={article} />;
+  }
   return <WervenNaarBehoudenArticle article={article} />;
 
 }
