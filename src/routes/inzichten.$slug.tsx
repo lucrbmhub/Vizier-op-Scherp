@@ -1011,7 +1011,111 @@ function headForSlug(slug: string) {
     };
   }
 
+  if (article.slug === "skillsgericht-werven") {
+    const title =
+      "De ideale kandidaat bestaat niet, de geschikte wel: skillsgericht werven | Vizier op Scherp";
+    const description =
+      "In een krappe markt is de kandidaat met het perfecte diploma onvindbaar. Door naar skills te kijken in plaats van diploma's vergroot u uw vijver en ziet u intern talent. Voor werkgevers in de regio Amsterdam en Haarlem.";
+    const ogTitle =
+      "De ideale kandidaat bestaat niet, de geschikte wel: skillsgericht werven";
+    const twitterDescription =
+      "In een krappe markt is de kandidaat met het perfecte diploma onvindbaar. Door naar skills te kijken vergroot u uw vijver en ziet u intern talent.";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching voor werkgevers in Amsterdam, Haarlem en omgeving";
+
+    const blogLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: ogTitle,
+      description,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-06-19",
+      dateModified: "2026-06-21",
+      image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      inLanguage: "nl-NL",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Wat is skillsgericht werven?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Skillsgericht werven betekent dat u kijkt naar wat iemand kan, de vaardigheden en kennis die iemand inzet, in plaats van uitsluitend naar diploma's en functieprofielen. Vaardigheden worden niet alleen op het werk opgedaan, maar ook daarbuiten, bijvoorbeeld als vrijwilliger of bestuurslid. Door daarnaar te kijken ontstaat een completer beeld van wat iemand in zijn mars heeft.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Waarom zou ik niet gewoon op diploma's werven?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Omdat de kandidaat met precies het juiste diploma in een krappe markt vaak niet te vinden is, en omdat een diploma weinig zegt over wat iemand vandaag kan. De beroepsbevolking krimpt en functies veranderen door technologie. Wie alleen op diploma's selecteert, mist geschikte mensen die hun vaardigheden langs een andere route hebben opgebouwd.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is skillsgericht werken een tijdelijke trend?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Daar lijkt het niet op. Met de lancering van CompetentNL in september 2025 is er voor het eerst een landelijke standaard om vaardigheden eenduidig te beschrijven, ontwikkeld door TNO in opdracht van de overheid. Door de krimpende beroepsbevolking en veranderende functies wordt skillsgericht werken gezien als een structurele ontwikkeling, geen modegril.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Vervangt een skillsbenadering het gesprek met de medewerker?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Nee. Een skillstaal is een hulpmiddel, geen doel op zich. Motivatie, drijfveren, context en zingeving laten zich niet vangen in een lijst vaardigheden. Het herkennen van talent en het voeren van een goed gesprek over wat iemand wil en kan, blijft mensenwerk. De techniek levert een raamwerk, geen vervanging.",
+          },
+        },
+      ],
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: twitterDescription },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(blogLd) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
+      ],
+    };
+  }
+
   // Default (werkgever-artikel)
+
 
   return {
     meta: [
