@@ -169,6 +169,16 @@ const ARTICLES: Article[] = [
     audience: "medewerker",
     readMinutes: 5,
   },
+  {
+    slug: "skillsgericht-werven",
+    title: "De ideale kandidaat bestaat niet, de geschikte wel",
+    summary:
+      "Waarom werven op diploma's u talent kost, en hoe skillsgericht kijken uw vijver vergroot en intern talent zichtbaar maakt.",
+    audience: "werkgever",
+    readMinutes: 6,
+    badgeTone: "mint",
+    badgeLabel: "Voor werkgevers & HR",
+  },
 
 ];
 
