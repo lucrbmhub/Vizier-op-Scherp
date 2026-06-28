@@ -273,6 +273,7 @@ function Page() {
               "Zelfvertrouwen en twijfel",
 
               "Medewerkers begeleiden als HR",
+              "Skillsgericht werven",
             ].map((t) => (
               <li
                 key={t}
