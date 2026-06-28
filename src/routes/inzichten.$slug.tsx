@@ -96,6 +96,14 @@ const ARTICLES: Article[] = [
     audience: "medewerker",
     readMinutes: 5,
   },
+  {
+    slug: "skillsgericht-werven",
+    title: "De ideale kandidaat bestaat niet, de geschikte wel",
+    summary:
+      "Waarom werven op diploma's u talent kost, en hoe skillsgericht kijken uw vijver vergroot en intern talent zichtbaar maakt.",
+    audience: "werkgever",
+    readMinutes: 6,
+  },
 ];
 
 
@@ -1003,7 +1011,111 @@ function headForSlug(slug: string) {
     };
   }
 
+  if (article.slug === "skillsgericht-werven") {
+    const title =
+      "De ideale kandidaat bestaat niet, de geschikte wel: skillsgericht werven | Vizier op Scherp";
+    const description =
+      "In een krappe markt is de kandidaat met het perfecte diploma onvindbaar. Door naar skills te kijken in plaats van diploma's vergroot u uw vijver en ziet u intern talent. Voor werkgevers in de regio Amsterdam en Haarlem.";
+    const ogTitle =
+      "De ideale kandidaat bestaat niet, de geschikte wel: skillsgericht werven";
+    const twitterDescription =
+      "In een krappe markt is de kandidaat met het perfecte diploma onvindbaar. Door naar skills te kijken vergroot u uw vijver en ziet u intern talent.";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching voor werkgevers in Amsterdam, Haarlem en omgeving";
+
+    const blogLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: ogTitle,
+      description,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-06-19",
+      dateModified: "2026-06-21",
+      image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      inLanguage: "nl-NL",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Wat is skillsgericht werven?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Skillsgericht werven betekent dat u kijkt naar wat iemand kan, de vaardigheden en kennis die iemand inzet, in plaats van uitsluitend naar diploma's en functieprofielen. Vaardigheden worden niet alleen op het werk opgedaan, maar ook daarbuiten, bijvoorbeeld als vrijwilliger of bestuurslid. Door daarnaar te kijken ontstaat een completer beeld van wat iemand in zijn mars heeft.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Waarom zou ik niet gewoon op diploma's werven?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Omdat de kandidaat met precies het juiste diploma in een krappe markt vaak niet te vinden is, en omdat een diploma weinig zegt over wat iemand vandaag kan. De beroepsbevolking krimpt en functies veranderen door technologie. Wie alleen op diploma's selecteert, mist geschikte mensen die hun vaardigheden langs een andere route hebben opgebouwd.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is skillsgericht werken een tijdelijke trend?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Daar lijkt het niet op. Met de lancering van CompetentNL in september 2025 is er voor het eerst een landelijke standaard om vaardigheden eenduidig te beschrijven, ontwikkeld door TNO in opdracht van de overheid. Door de krimpende beroepsbevolking en veranderende functies wordt skillsgericht werken gezien als een structurele ontwikkeling, geen modegril.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Vervangt een skillsbenadering het gesprek met de medewerker?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Nee. Een skillstaal is een hulpmiddel, geen doel op zich. Motivatie, drijfveren, context en zingeving laten zich niet vangen in een lijst vaardigheden. Het herkennen van talent en het voeren van een goed gesprek over wat iemand wil en kan, blijft mensenwerk. De techniek levert een raamwerk, geen vervanging.",
+          },
+        },
+      ],
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: twitterDescription },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(blogLd) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
+      ],
+    };
+  }
+
   // Default (werkgever-artikel)
+
 
   return {
     meta: [
@@ -1078,6 +1190,9 @@ function ArticlePage() {
   }
   if (article.slug === "impostersyndroom-twijfel-als-kracht") {
     return <ImpostersyndroomArticle article={article} />;
+  }
+  if (article.slug === "skillsgericht-werven") {
+    return <SkillsgerichtWervenArticle article={article} />;
   }
   return <WervenNaarBehoudenArticle article={article} />;
 
@@ -3207,6 +3322,265 @@ function ImpostersyndroomArticle({ article }: { article: Article }) {
               className="inline-flex items-center rounded-full border-[1.5px] border-[color:var(--color-on-koraal-sub,#712B13)] px-6 py-3 font-medium text-[color:var(--color-on-koraal-title,#4A1B0C)] hover:border-[color:var(--color-on-koraal-title,#4A1B0C)] transition"
             >
               Bekijk onze coaches
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Werkgever-artikel — Skillsgericht werven                          */
+/* ------------------------------------------------------------------ */
+
+function SkillsgerichtWervenArticle({ article }: { article: Article }) {
+  const para = "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
+  const h2 = "mt-12 font-display text-2xl md:text-[1.7rem] text-petrol";
+
+  const faq = [
+    {
+      q: "Wat is skillsgericht werven?",
+      a: "Skillsgericht werven betekent dat u kijkt naar wat iemand kan, de vaardigheden en kennis die iemand inzet, in plaats van uitsluitend naar diploma's en functieprofielen. Vaardigheden worden niet alleen op het werk opgedaan, maar ook daarbuiten, bijvoorbeeld als vrijwilliger of bestuurslid. Door daarnaar te kijken ontstaat een completer beeld van wat iemand in zijn mars heeft.",
+    },
+    {
+      q: "Waarom zou ik niet gewoon op diploma's werven?",
+      a: "Omdat de kandidaat met precies het juiste diploma in een krappe markt vaak niet te vinden is, en omdat een diploma weinig zegt over wat iemand vandaag kan. De beroepsbevolking krimpt en functies veranderen door technologie. Wie alleen op diploma's selecteert, mist geschikte mensen die hun vaardigheden langs een andere route hebben opgebouwd.",
+    },
+    {
+      q: "Is skillsgericht werken een tijdelijke trend?",
+      a: "Daar lijkt het niet op. Met de lancering van CompetentNL in september 2025 is er voor het eerst een landelijke standaard om vaardigheden eenduidig te beschrijven, ontwikkeld door TNO in opdracht van de overheid. Door de krimpende beroepsbevolking en veranderende functies wordt skillsgericht werken gezien als een structurele ontwikkeling, geen modegril.",
+    },
+    {
+      q: "Vervangt een skillsbenadering het gesprek met de medewerker?",
+      a: "Nee. Een skillstaal is een hulpmiddel, geen doel op zich. Motivatie, drijfveren, context en zingeving laten zich niet vangen in een lijst vaardigheden. Het herkennen van talent en het voeren van een goed gesprek over wat iemand wil en kan, blijft mensenwerk. De techniek levert een raamwerk, geen vervanging.",
+    },
+  ];
+
+  return (
+    <>
+      {/* HERO donker */}
+      <section className="bg-petrol text-linnen-licht">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <Link
+            to="/inzichten"
+            className="inline-flex items-center text-sm text-mint-dof hover:text-goud transition"
+          >
+            ← Inzichten
+          </Link>
+          <div className="mt-6">
+            <span className="inline-flex items-center rounded-full bg-mint px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-petrol">
+              Voor werkgevers &amp; HR
+            </span>
+          </div>
+          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-linnen-licht max-w-[28ch] leading-[1.15]">
+            {article.title}
+          </h1>
+          <p className="mt-6 text-mint text-[1.1rem] leading-relaxed max-w-[62ch]">
+            U zoekt al maanden iemand met precies het juiste diploma, de
+            juiste jaren ervaring en het juiste rijtje vaardigheden. Die
+            persoon komt niet. Niet omdat u te kieskeurig bent, maar omdat
+            de ideale kandidaat een papieren constructie is. De geschikte
+            kandidaat bestaat wel, alleen herkent u die pas als u anders
+            leert kijken.
+          </p>
+          <div className="mt-6 flex items-center gap-2.5 text-sm text-mint-dof">
+            <span>Voor werkgevers &amp; HR</span>
+            <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-koraal" />
+            <span>{article.readMinutes} min lezen</span>
+          </div>
+        </div>
+      </section>
+
+      {/* BODY linnen */}
+      <article className="bg-linnen">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+          <p className="text-petrol/70 text-[1.05rem] leading-relaxed">
+            In dit stuk leest u waarom werven op diploma's u talent kost,
+            wat skillsgericht werken inhoudt, en hoe het ook uw eigen
+            mensen zichtbaar maakt.
+          </p>
+
+          <h2 className={h2}>Het probleem met de perfecte kandidaat</h2>
+          <p className={para}>
+            De meeste vacatures beschrijven een ideaal: een opleiding, een
+            aantal jaren ervaring in precies deze functie, en een lijst
+            eisen waaraan iemand moet voldoen. Dat profiel voelt veilig,
+            maar het kost u kandidaten. Het sluit namelijk iedereen uit die
+            hetzelfde kan, maar het langs een andere weg heeft geleerd.
+          </p>
+          <p className={para}>
+            En die mensen zijn er volop. Iemand die geen diploma in een
+            vakgebied heeft, maar de vaardigheden wel bezit door eerder
+            werk, een zijstap of activiteiten buiten het werk. In een
+            arbeidsmarkt waarin de beroepsbevolking krimpt en functies door
+            technologie steeds sneller veranderen, wordt de kandidaat die
+            precies in het hokje past bovendien steeds zeldzamer.
+            Vasthouden aan het ideaal betekent dan simpelweg dat de
+            functie lang openstaat.
+          </p>
+
+          <h2 className={h2}>Wat skillsgericht werken inhoudt</h2>
+          <p className={para}>
+            Skillsgericht werken draait de vraag om. Niet "welk diploma
+            heeft iemand gehaald", maar "wat kan iemand, en wat moet
+            diegene nog leren". Skills zijn de bouwstenen van wat mensen
+            kunnen, los van diploma, leeftijd of achtergrond. En ze worden
+            niet alleen op het werk opgebouwd. Ervaring als voetbaltrainer,
+            als bestuurslid op school of als vrijwilliger in de zorg levert
+            vaardigheden op die in een functie waardevol zijn.
+          </p>
+          <p className={para}>
+            Veel van die vaardigheden zijn bovendien niet aan één beroep
+            gebonden. Wie helder krijgt welke overdraagbare vaardigheden
+            iemand heeft, ziet ineens kandidaten uit heel andere sectoren
+            in beeld komen. Dat dit geen vaag ideaal meer is, blijkt uit de
+            infrastructuur eromheen: in september 2025 werd CompetentNL
+            gelanceerd, een landelijke standaard om vaardigheden eenduidig
+            te beschrijven, ontwikkeld door TNO in opdracht van de
+            overheid. De taal om skills te benoemen ligt er nu.
+          </p>
+
+          {/* Uitgelicht goud blok */}
+          <aside className="mt-10 rounded-2xl border-l-[6px] border-koraal bg-goud/20 p-7 md:p-9">
+            <span className="block text-koraal text-[0.74rem] font-semibold tracking-[0.12em] uppercase mb-2">
+              Een andere blik op uw vacature
+            </span>
+            <h2 className="font-display text-[1.4rem] md:text-[1.55rem] text-petrol mt-1">
+              Drie vragen die uw vijver vergroten
+            </h2>
+            <p className="mt-3 text-petrol/80 leading-relaxed text-[1.02rem]">
+              U hoeft uw werving niet meteen om te gooien. Begin bij de
+              eerstvolgende vacature met drie vragen:
+            </p>
+            <ul className="mt-4 list-disc pl-5 space-y-2 text-petrol/80 leading-relaxed text-[1.02rem]">
+              <li>
+                Welke van deze eisen zijn echt noodzakelijk om de taak te
+                kunnen doen, en welke staan er vooral omdat ze er altijd al
+                stonden?
+              </li>
+              <li>
+                Welke gevraagde vaardigheden kan iemand ook op een andere
+                plek of in een ander vak hebben opgedaan?
+              </li>
+              <li>
+                Wat kan iemand binnen een paar maanden leren, en hoeft dus
+                niet op dag één al aanwezig te zijn?
+              </li>
+            </ul>
+            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.02rem]">
+              Wat overblijft, is een eerlijker beeld van wie u echt zoekt.
+              Vaak blijkt de vijver een stuk groter dan u dacht.
+            </p>
+          </aside>
+
+          <h2 className={h2}>Het werkt ook naar binnen</h2>
+          <p className={para}>
+            Skillsgericht kijken levert niet alleen meer kandidaten van
+            buiten op. Het maakt ook zichtbaar wat u al in huis heeft. In
+            veel organisaties zit talent verstopt: mensen met vaardigheden
+            die niet op hun functietitel staan, en die daardoor over het
+            hoofd worden gezien bij een nieuwe rol. Zo wordt extern
+            geworven terwijl de geschikte persoon al binnen rondloopt.
+          </p>
+          <p className={para}>
+            Als u uw mensen leert kennen op het niveau van wat ze kunnen
+            en willen, in plaats van alleen op hun huidige functie,
+            ontstaat ruimte voor interne doorgroei. Dat bespaart
+            wervingskosten, het houdt mensen langer betrokken, en het laat
+            zien dat ontwikkeling bij u serieus wordt genomen.
+          </p>
+
+          {/* Kernzin petrol */}
+          <aside className="mt-12 rounded-2xl bg-petrol p-8 md:p-10 text-linnen-licht">
+            <span className="block text-goud text-[0.74rem] font-semibold tracking-[0.12em] uppercase mb-3">
+              In het kort
+            </span>
+            <p className="font-display text-[1.3rem] md:text-[1.4rem] leading-[1.45] text-linnen-licht">
+              Wie werft op diploma's selecteert op het verleden. Wie werft
+              op skills selecteert op wat iemand nu kan en morgen kan
+              leren.
+            </p>
+          </aside>
+
+          <h2 className={h2}>Skills zijn een kompas, geen bestemming</h2>
+          <p className={para}>
+            Een kanttekening hoort hierbij, en die is belangrijk. Een
+            skillsbenadering is een hulpmiddel, geen doel op zich. Als
+            vaardigheden alleen nog gegevens in een systeem worden,
+            verdwijnt de mens naar de achtergrond. En werk gaat over meer
+            dan meetbare vaardigheden. Motivatie, drijfveren, gezondheid,
+            de context van iemands leven en de vraag of het werk klopt
+            voor diegene, wegen minstens zo zwaar.
+          </p>
+          <p className={para}>
+            Daarom blijft het herkennen van talent en het voeren van een
+            goed gesprek mensenwerk. Een lijst skills vertelt u wat iemand
+            kan, maar niet of iemand op zijn plek zit, energie houdt of
+            wil blijven. Die vragen beantwoordt u alleen in gesprek. De
+            skillstaal wijst de richting, maar het gesprek brengt u op de
+            bestemming.
+          </p>
+
+          {/* Bronnenregel */}
+          <p className="mt-10 border-t border-petrol/15 pt-4 text-[0.85rem] text-petrol/60 leading-relaxed">
+            <strong className="font-semibold">Bronnen:</strong> Loopbaanvisie
+            (januari 2026), over CompetentNL en de skillstaal van TNO, met
+            een beschouwing vanuit Noloc; CompetentNL (TNO, in opdracht van
+            de ministeries van SZW en OCW), gelanceerd september 2025.
+          </p>
+
+          {/* FAQ */}
+          <section aria-labelledby="faq-sk-kop" className="mt-14">
+            <h2
+              id="faq-sk-kop"
+              className="font-display text-2xl md:text-[1.7rem] text-petrol"
+            >
+              Veelgestelde vragen
+            </h2>
+            <div className="mt-6 space-y-7">
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-display text-[1.15rem] text-petrol">
+                    {item.q}
+                  </h3>
+                  <p className="mt-2 text-petrol/80 leading-relaxed text-[1.02rem]">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </article>
+
+      {/* CTA-strip koraal */}
+      <section aria-labelledby="cta-sk-kop" className="bg-koraal">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <h2
+            id="cta-sk-kop"
+            className="font-display text-2xl md:text-[2rem] text-[color:var(--color-on-koraal-title,#4A1B0C)]"
+          >
+            Het talent zien dat u al in huis heeft?
+          </h2>
+          <p className="mt-4 text-[1.05rem] leading-relaxed text-[color:var(--color-on-koraal-sub,#712B13)] max-w-[62ch]">
+            Vizier op Scherp helpt werkgevers in de regio Amsterdam en
+            Haarlem om de vaardigheden en ambities van medewerkers in
+            beeld te brengen, zodat interne doorgroei zichtbaar wordt en
+            talent niet onbenut blijft.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3.5">
+            <Link
+              to="/kennismaken"
+              className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
+            >
+              Plan een kennismaking
+            </Link>
+            <Link
+              to="/voor-werkgevers"
+              className="inline-flex items-center rounded-full border-[1.5px] border-[color:var(--color-on-koraal-sub,#712B13)] px-6 py-3 font-medium text-[color:var(--color-on-koraal-title,#4A1B0C)] hover:border-[color:var(--color-on-koraal-title,#4A1B0C)] transition"
+            >
+              Lees meer voor werkgevers
             </Link>
           </div>
         </div>
