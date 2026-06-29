@@ -104,7 +104,17 @@ const ARTICLES: Article[] = [
     audience: "werkgever",
     readMinutes: 6,
   },
+  {
+    slug: "kosten-van-een-verkeerde-match",
+    title:
+      "De verkeerde match: wat een medewerker op de verkeerde plek u elke dag kost",
+    summary:
+      "De duurste medewerker is niet wie vertrekt, maar wie blijft op de verkeerde plek. Lees hoe u een stille mismatch herkent en herstelt.",
+    audience: "werkgever",
+    readMinutes: 6,
+  },
 ];
+
 
 
 
@@ -1114,7 +1124,111 @@ function headForSlug(slug: string) {
     };
   }
 
+  if (article.slug === "kosten-van-een-verkeerde-match") {
+    const title =
+      "De verkeerde match: wat een medewerker op de verkeerde plek u elke dag kost | Vizier op Scherp";
+    const description =
+      "De duurste medewerker is niet degene die vertrekt, maar degene die blijft op de verkeerde plek. Hoe u een stille mismatch herkent en de match herstelt. Voor werkgevers in de regio Amsterdam en Haarlem.";
+    const ogTitle =
+      "De verkeerde match: wat een medewerker op de verkeerde plek u elke dag kost";
+    const twitterDescription =
+      "De duurste medewerker is niet degene die vertrekt, maar degene die blijft op de verkeerde plek. Hoe u een stille mismatch herkent en herstelt.";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching voor werkgevers in Amsterdam, Haarlem en omgeving";
+
+    const blogLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: ogTitle,
+      description,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-06-19",
+      dateModified: "2026-06-21",
+      image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      inLanguage: "nl-NL",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Wat is een mismatch tussen medewerker en functie?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Een mismatch betekent dat iemands sterke kanten, drijfveren of manier van werken niet aansluiten bij wat de functie vraagt. De medewerker kan voldoende functioneren en toch elke dag energie verliezen, omdat het werk geen beroep doet op waar hij goed in is of plezier aan beleeft.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Hoe herken ik dat een medewerker niet op zijn plek zit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Vaak aan subtiele signalen: de vonk en het initiatief van vroeger zijn weg, bepaalde taken worden vermeden, de energie zakt in, en iemand levert wat gevraagd wordt maar niets meer. Stuk voor stuk makkelijk te missen, maar samen schetsen ze het beeld van iemand die niet op de goede plek zit.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Moet ik iemand met een mismatch laten gaan?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Meestal niet. Vervangen is duur en vaak onnodig. De betere vraag is waar deze persoon met deze kwaliteiten wel tot zijn recht komt. Vaak ligt het antwoord binnen de organisatie: een andere rol, een andere taakverdeling of ruimte om het werk anders in te richten.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Hoe kom ik erachter of er een mismatch speelt?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Niet met cijfers, maar met een gesprek dat gaat over energie, sterke kanten en ambities in plaats van over prestaties. Medewerkers praten daarover vaak eerlijker met een onafhankelijke gesprekspartner dan met hun eigen leidinggevende, omdat daar de beoordeling niet meespeelt.",
+          },
+        },
+      ],
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: twitterDescription },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(blogLd) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
+      ],
+    };
+  }
+
   // Default (werkgever-artikel)
+
 
 
   return {
@@ -1194,7 +1308,11 @@ function ArticlePage() {
   if (article.slug === "skillsgericht-werven") {
     return <SkillsgerichtWervenArticle article={article} />;
   }
+  if (article.slug === "kosten-van-een-verkeerde-match") {
+    return <VerkeerdeMatchArticle article={article} />;
+  }
   return <WervenNaarBehoudenArticle article={article} />;
+
 
 }
 
