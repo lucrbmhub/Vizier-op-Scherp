@@ -104,7 +104,17 @@ const ARTICLES: Article[] = [
     audience: "werkgever",
     readMinutes: 6,
   },
+  {
+    slug: "kosten-van-een-verkeerde-match",
+    title:
+      "De verkeerde match: wat een medewerker op de verkeerde plek u elke dag kost",
+    summary:
+      "De duurste medewerker is niet wie vertrekt, maar wie blijft op de verkeerde plek. Lees hoe u een stille mismatch herkent en herstelt.",
+    audience: "werkgever",
+    readMinutes: 6,
+  },
 ];
+
 
 
 
@@ -1114,7 +1124,111 @@ function headForSlug(slug: string) {
     };
   }
 
+  if (article.slug === "kosten-van-een-verkeerde-match") {
+    const title =
+      "De verkeerde match: wat een medewerker op de verkeerde plek u elke dag kost | Vizier op Scherp";
+    const description =
+      "De duurste medewerker is niet degene die vertrekt, maar degene die blijft op de verkeerde plek. Hoe u een stille mismatch herkent en de match herstelt. Voor werkgevers in de regio Amsterdam en Haarlem.";
+    const ogTitle =
+      "De verkeerde match: wat een medewerker op de verkeerde plek u elke dag kost";
+    const twitterDescription =
+      "De duurste medewerker is niet degene die vertrekt, maar degene die blijft op de verkeerde plek. Hoe u een stille mismatch herkent en herstelt.";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching voor werkgevers in Amsterdam, Haarlem en omgeving";
+
+    const blogLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: ogTitle,
+      description,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-06-19",
+      dateModified: "2026-06-21",
+      image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      inLanguage: "nl-NL",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Wat is een mismatch tussen medewerker en functie?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Een mismatch betekent dat iemands sterke kanten, drijfveren of manier van werken niet aansluiten bij wat de functie vraagt. De medewerker kan voldoende functioneren en toch elke dag energie verliezen, omdat het werk geen beroep doet op waar hij goed in is of plezier aan beleeft.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Hoe herken ik dat een medewerker niet op zijn plek zit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Vaak aan subtiele signalen: de vonk en het initiatief van vroeger zijn weg, bepaalde taken worden vermeden, de energie zakt in, en iemand levert wat gevraagd wordt maar niets meer. Stuk voor stuk makkelijk te missen, maar samen schetsen ze het beeld van iemand die niet op de goede plek zit.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Moet ik iemand met een mismatch laten gaan?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Meestal niet. Vervangen is duur en vaak onnodig. De betere vraag is waar deze persoon met deze kwaliteiten wel tot zijn recht komt. Vaak ligt het antwoord binnen de organisatie: een andere rol, een andere taakverdeling of ruimte om het werk anders in te richten.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Hoe kom ik erachter of er een mismatch speelt?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Niet met cijfers, maar met een gesprek dat gaat over energie, sterke kanten en ambities in plaats van over prestaties. Medewerkers praten daarover vaak eerlijker met een onafhankelijke gesprekspartner dan met hun eigen leidinggevende, omdat daar de beoordeling niet meespeelt.",
+          },
+        },
+      ],
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: twitterDescription },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(blogLd) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
+      ],
+    };
+  }
+
   // Default (werkgever-artikel)
+
 
 
   return {
@@ -1194,7 +1308,11 @@ function ArticlePage() {
   if (article.slug === "skillsgericht-werven") {
     return <SkillsgerichtWervenArticle article={article} />;
   }
+  if (article.slug === "kosten-van-een-verkeerde-match") {
+    return <VerkeerdeMatchArticle article={article} />;
+  }
   return <WervenNaarBehoudenArticle article={article} />;
+
 
 }
 
@@ -3588,3 +3706,265 @@ function SkillsgerichtWervenArticle({ article }: { article: Article }) {
     </>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/*  De verkeerde match (werkgever)                                    */
+/* ------------------------------------------------------------------ */
+
+function VerkeerdeMatchArticle({ article }: { article: Article }) {
+  const para = "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
+  const h2 = "mt-12 font-display text-2xl md:text-[1.7rem] text-petrol";
+
+  const faq = [
+    {
+      q: "Wat is een mismatch tussen medewerker en functie?",
+      a: "Een mismatch betekent dat iemands sterke kanten, drijfveren of manier van werken niet aansluiten bij wat de functie vraagt. De medewerker kan voldoende functioneren en toch elke dag energie verliezen, omdat het werk geen beroep doet op waar hij goed in is of plezier aan beleeft.",
+    },
+    {
+      q: "Hoe herken ik dat een medewerker niet op zijn plek zit?",
+      a: "Vaak aan subtiele signalen: de vonk en het initiatief van vroeger zijn weg, bepaalde taken worden vermeden, de energie zakt in, en iemand levert wat gevraagd wordt maar niets meer. Stuk voor stuk makkelijk te missen, maar samen schetsen ze het beeld van iemand die niet op de goede plek zit.",
+    },
+    {
+      q: "Moet ik iemand met een mismatch laten gaan?",
+      a: "Meestal niet. Vervangen is duur en vaak onnodig. De betere vraag is waar deze persoon met deze kwaliteiten wel tot zijn recht komt. Vaak ligt het antwoord binnen de organisatie: een andere rol, een andere taakverdeling of ruimte om het werk anders in te richten.",
+    },
+    {
+      q: "Hoe kom ik erachter of er een mismatch speelt?",
+      a: "Niet met cijfers, maar met een gesprek dat gaat over energie, sterke kanten en ambities in plaats van over prestaties. Medewerkers praten daarover vaak eerlijker met een onafhankelijke gesprekspartner dan met hun eigen leidinggevende, omdat daar de beoordeling niet meespeelt.",
+    },
+  ];
+
+  return (
+    <>
+      {/* HERO donker */}
+      <section className="bg-petrol text-linnen-licht">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <Link
+            to="/inzichten"
+            className="inline-flex items-center text-sm text-mint-dof hover:text-goud transition"
+          >
+            ← Inzichten
+          </Link>
+          <div className="mt-6">
+            <span className="inline-flex items-center rounded-full bg-mint px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-petrol">
+              Voor werkgevers &amp; HR
+            </span>
+          </div>
+          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-linnen-licht max-w-[28ch] leading-[1.15]">
+            {article.title}
+          </h1>
+          <p className="mt-6 text-mint text-[1.1rem] leading-relaxed max-w-[62ch]">
+            Niet iedere medewerker die vertrekt is een verlies, en niet iedere
+            medewerker die blijft is winst. Soms zit uw grootste stille
+            kostenpost gewoon op kantoor: iemand die voldoende functioneert,
+            niet klaagt, en toch elke dag een beetje energie verliest omdat
+            de functie niet past bij wie hij is. Die mismatch kost u meer dan
+            u denkt, juist omdat u hem niet ziet.
+          </p>
+          <div className="mt-6 flex items-center gap-2.5 text-sm text-mint-dof">
+            <span>Voor werkgevers &amp; HR</span>
+            <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-koraal" />
+            <span>{article.readMinutes} min lezen</span>
+          </div>
+        </div>
+      </section>
+
+      {/* BODY linnen */}
+      <article className="bg-linnen">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+          <p className="text-petrol/70 text-[1.05rem] leading-relaxed">
+            In dit stuk leest u waarom de stilste mismatch de duurste is,
+            waarom het zelden aan de persoon ligt, en hoe u de match
+            herstelt zonder meteen aan vervanging te denken.
+          </p>
+
+          <h2 className={h2}>De duurste mismatch is de stille</h2>
+          <p className={para}>
+            Bij een mismatch denken de meeste mensen aan een medewerker die
+            zichtbaar onderpresteert of klaagt. Maar de kostbaarste
+            mismatch is juist de onzichtbare. Iemand doet zijn werk, haalt
+            zijn deadlines, valt niet op. En toch zit het niet goed. De
+            energie is eruit, het initiatief is weg, en wat ooit met
+            plezier ging, gebeurt nu op de automatische piloot.
+          </p>
+          <p className={para}>
+            Dat kost u op meerdere manieren. De productiviteit zakt, niet
+            dramatisch maar gestaag. De ideeën en het initiatief die iemand
+            op de juiste plek wel zou tonen, blijven uit. En het werkt
+            aanstekelijk: een gedemotiveerde collega drukt op de sfeer en
+            de energie van een heel team. Omdat niemand er direct last van
+            lijkt te hebben, blijft het vaak jaren zo doorsudderen.
+          </p>
+
+          <h2 className={h2}>Het ligt zelden aan de persoon</h2>
+          <p className={para}>
+            Hier is een belangrijk inzicht uit de psychologie: als werk
+            voelt als falen, ligt dat vaak niet aan de persoon, en ook niet
+            aan het werk, maar aan de match tussen die twee. Iemand kan
+            goed zijn in werk dat hem toch niet past, omdat zijn echte
+            sterke kanten ergens anders liggen en in deze functie
+            nauwelijks worden aangesproken.
+          </p>
+          <p className={para}>
+            Dat is een geruststellende en bruikbare gedachte. Het betekent
+            dat u niet te maken heeft met een slechte medewerker, maar met
+            goede kwaliteiten op de verkeerde plek. Onderzoek naar
+            werkplezier laat keer op keer zien dat mensen pas opbloeien
+            als hun werk aansluit bij hun sterke kanten, en als er genoeg
+            ruimte is voor eigen regie, verbondenheid en betekenis.
+            Ontbreekt die aansluiting, dan helpt geen enkele bonus of
+            teamuitje daar structureel iets aan.
+          </p>
+
+          {/* Uitgelicht goud blok */}
+          <aside className="mt-10 rounded-2xl border-l-[6px] border-koraal bg-goud/20 p-7 md:p-9">
+            <span className="block text-koraal text-[0.74rem] font-semibold tracking-[0.12em] uppercase mb-2">
+              Waar u op kunt letten
+            </span>
+            <h2 className="font-display text-[1.4rem] md:text-[1.55rem] text-petrol mt-1">
+              De signalen van een verkeerde plek
+            </h2>
+            <p className="mt-3 text-petrol/80 leading-relaxed text-[1.02rem]">
+              Een mismatch kondigt zich zelden hardop aan. Maar er zijn
+              signalen:
+            </p>
+            <ul className="mt-4 list-disc pl-5 space-y-2 text-petrol/80 leading-relaxed text-[1.02rem]">
+              <li>
+                Iemand functioneert prima, maar de vonk en het initiatief
+                van vroeger zijn weg.
+              </li>
+              <li>
+                Bepaalde taken worden stelselmatig uitgesteld of vermeden,
+                terwijl iemand bij ander werk juist opleeft.
+              </li>
+              <li>
+                De energie zakt zichtbaar in de loop van de week, zonder
+                duidelijke aanleiding.
+              </li>
+              <li>
+                Iemand levert wat gevraagd wordt, maar niets meer, en lijkt
+                innerlijk al een stap teruggedaan te hebben.
+              </li>
+            </ul>
+            <p className="mt-4 text-petrol/80 leading-relaxed text-[1.02rem]">
+              Stuk voor stuk geen alarmbellen, en juist daarom makkelijk te
+              missen. Bij elkaar schetsen ze het beeld van iemand die niet
+              op de goede plek zit.
+            </p>
+          </aside>
+
+          <h2 className={h2}>De oplossing is zelden vervangen</h2>
+          <p className={para}>
+            De reflex bij een mismatch is denken in vervanging: deze
+            persoon past niet, dus we zoeken iemand anders. Maar dat is
+            duur, traag, en vaak onnodig. De betere vraag is: waar zou
+            deze persoon, met deze kwaliteiten, wel tot zijn recht komen?
+          </p>
+          <p className={para}>
+            Verrassend vaak ligt het antwoord dichterbij dan gedacht. Een
+            andere rol binnen de organisatie, een andere verdeling van
+            taken, of ruimte om het werk anders in te richten kan iemand
+            weer laten opbloeien. Een strakke functieomschrijving heeft
+            namelijk een valkuil: als iedereen zich precies aan zijn vakje
+            houdt, blijft veel talent onbenut. Wie durft te schuiven met
+            taken en rollen, ontdekt soms dat de oplossing al in huis was.
+          </p>
+
+          <h2 className={h2}>Hoe u een mismatch op het spoor komt</h2>
+          <p className={para}>
+            Het lastige aan een stille mismatch is dat hij niet in uw
+            cijfers staat. De verzuimcijfers zijn in orde, de
+            beoordelingen zijn voldoende, er is geen formele aanleiding. U
+            komt een mismatch niet op het spoor met data, maar met een
+            gesprek. Een gesprek dat niet gaat over presteren, maar over
+            wat iemand energie geeft, waar hij goed in is en wat hij
+            eigenlijk zou willen.
+          </p>
+          <p className={para}>
+            Zulke gesprekken voert een medewerker niet snel met zijn eigen
+            leidinggevende, want daar speelt de beoordeling op de
+            achtergrond mee. Tegen een onafhankelijke gesprekspartner is
+            iemand eerder eerlijk over het feit dat de rek eruit is. Juist
+            daar komt boven wat een mismatch veroorzaakt, en wat ervoor
+            nodig is om iemand weer op de goede plek te krijgen.
+          </p>
+
+          {/* Kernzin petrol */}
+          <aside className="mt-12 rounded-2xl bg-petrol p-8 md:p-10 text-linnen-licht">
+            <span className="block text-goud text-[0.74rem] font-semibold tracking-[0.12em] uppercase mb-3">
+              In het kort
+            </span>
+            <p className="font-display text-[1.3rem] md:text-[1.4rem] leading-[1.45] text-linnen-licht">
+              De duurste medewerker is niet degene die vertrekt. Het is
+              degene die blijft, op een plek die niet bij hem past.
+            </p>
+          </aside>
+
+          {/* Bronnenregel */}
+          <p className="mt-10 border-t border-petrol/15 pt-4 text-[0.85rem] text-petrol/60 leading-relaxed">
+            <strong className="font-semibold">Bronnen:</strong> inzichten
+            uit de positieve psychologie over de match tussen mens en werk
+            (onder andere Peeters en Steensma) en de zelfdeterminatietheorie
+            (Ryan en Deci), beschreven in Tijdschrift Positieve Psychologie
+            en Loopbaanvisie.
+          </p>
+
+          {/* FAQ */}
+          <section aria-labelledby="faq-vm-kop" className="mt-14">
+            <h2
+              id="faq-vm-kop"
+              className="font-display text-2xl md:text-[1.7rem] text-petrol"
+            >
+              Veelgestelde vragen
+            </h2>
+            <div className="mt-6 space-y-7">
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-display text-[1.15rem] text-petrol">
+                    {item.q}
+                  </h3>
+                  <p className="mt-2 text-petrol/80 leading-relaxed text-[1.02rem]">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </article>
+
+      {/* CTA-strip koraal */}
+      <section aria-labelledby="cta-vm-kop" className="bg-koraal">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+          <h2
+            id="cta-vm-kop"
+            className="font-display text-2xl md:text-[2rem] text-[color:var(--color-on-koraal-title,#4A1B0C)]"
+          >
+            Zit iedereen bij u op de juiste plek?
+          </h2>
+          <p className="mt-4 text-[1.05rem] leading-relaxed text-[color:var(--color-on-koraal-sub,#712B13)] max-w-[62ch]">
+            Vizier op Scherp helpt werkgevers in de regio Amsterdam en
+            Haarlem om verborgen mismatches zichtbaar te maken en mensen
+            weer op een plek te krijgen die bij hen past, voordat de
+            motivatie stilletjes wegsijpelt.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3.5">
+            <Link
+              to="/kennismaken"
+              className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
+            >
+              Plan een kennismaking
+            </Link>
+            <Link
+              to="/voor-werkgevers"
+              className="inline-flex items-center rounded-full border-[1.5px] border-[color:var(--color-on-koraal-sub,#712B13)] px-6 py-3 font-medium text-[color:var(--color-on-koraal-title,#4A1B0C)] hover:border-[color:var(--color-on-koraal-title,#4A1B0C)] transition"
+            >
+              Lees meer voor werkgevers
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+

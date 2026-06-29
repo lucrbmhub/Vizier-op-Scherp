@@ -179,6 +179,18 @@ const ARTICLES: Article[] = [
     badgeTone: "mint",
     badgeLabel: "Voor werkgevers & HR",
   },
+  {
+    slug: "kosten-van-een-verkeerde-match",
+    title:
+      "De verkeerde match: wat een medewerker op de verkeerde plek u elke dag kost",
+    summary:
+      "De duurste medewerker is niet wie vertrekt, maar wie blijft op de verkeerde plek. Lees hoe u een stille mismatch herkent en herstelt.",
+    audience: "werkgever",
+    readMinutes: 6,
+    badgeTone: "mint",
+    badgeLabel: "Voor werkgevers & HR",
+  },
+
 
 ];
 
@@ -274,6 +286,8 @@ function Page() {
 
               "Medewerkers begeleiden als HR",
               "Skillsgericht werven",
+              "De juiste match",
+
             ].map((t) => (
               <li
                 key={t}
