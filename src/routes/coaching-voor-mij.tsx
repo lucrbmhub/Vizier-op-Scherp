@@ -442,6 +442,15 @@ function Page() {
           jij.
         </CTASoft>
       </Section>
+
+      <WerkboekDownloadModal
+        open={activeWorkbook !== null}
+        onOpenChange={(o) => {
+          if (!o) setActiveWorkbook(null);
+        }}
+        workbook={activeWorkbook}
+        pagina="/coaching-voor-mij"
+      />
     </>
   );
 }
