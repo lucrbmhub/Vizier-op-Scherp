@@ -1,6 +1,24 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
+const WORKBOOKS = {
+  "wat-wil-ik": {
+    title: "Wat wil ik nu eigenlijk?",
+    path: "/werkboek-wat-wil-ik.pdf",
+  },
+  "vind-werk": {
+    title: "Vind werk via mensen, niet via vacatures",
+    path: "/werkboek-vind-werk-via-mensen.pdf",
+  },
+  "aan-het-roer": {
+    title: "Aan het roer van je werk",
+    path: "/werkboek-aan-het-roer.pdf",
+  },
+} as const;
+
+export type WorkbookKey = keyof typeof WORKBOOKS;
+export const workbooks = WORKBOOKS;
+
 const inputSchema = z.object({
   email: z.string().trim().email().max(320),
   pagina: z.string().trim().max(200).optional(),
