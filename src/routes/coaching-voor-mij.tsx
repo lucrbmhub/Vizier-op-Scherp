@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Label, FAQ, CTASoft } from "../components/ui-blocks";
+import { WerkboekDownloadModal } from "../components/WerkboekDownloadModal";
+import type { WorkbookKey } from "../lib/leads.functions";
 
 const TITLE = "Loopbaancoaching voor jou | Vizier op Scherp Amsterdam & Haarlem";
 const DESC =
