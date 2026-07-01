@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Label, FAQ, CTASoft } from "../components/ui-blocks";
+import { WerkboekDownloadModal } from "../components/WerkboekDownloadModal";
+import type { WorkbookKey } from "../lib/leads.functions";
 
 const TITLE = "Loopbaancoaching voor jou | Vizier op Scherp Amsterdam & Haarlem";
 const DESC =
@@ -128,6 +131,29 @@ const fasen = [
 ];
 
 function Page() {
+  const [activeWorkbook, setActiveWorkbook] = useState<WorkbookKey | null>(null);
+
+  const werkboeken: { key: WorkbookKey; titel: string; tekst: string }[] = [
+    {
+      key: "wat-wil-ik",
+      titel: "Wat wil ik nu eigenlijk?",
+      tekst:
+        "Kom je er niet uit wat je nu echt wilt? In vijf korte oefeningen ontdek je waar je energie zit, wat je kunt en welke richting bij je past.",
+    },
+    {
+      key: "vind-werk",
+      titel: "Vind werk via mensen, niet via vacatures",
+      tekst:
+        "Blijf je solliciteren zonder resultaat? Dit doe-werkboek helpt je werk te vinden via je netwerk, met kleine, haalbare stappen.",
+    },
+    {
+      key: "aan-het-roer",
+      titel: "Aan het roer van je werk",
+      tekst:
+        "Wil je meer grip op je werk en je ontwikkeling? Vijf oefeningen om de regie te pakken over je tijd, je energie en je groei.",
+    },
+  ];
+
   return (
     <>
       {/* HERO — licht */}
@@ -263,6 +289,42 @@ function Page() {
 
       </Section>
 
+      {/* WERKBOEKEN — gratis download */}
+      <Section className="pt-0">
+        <div className="rounded-2xl border border-goud bg-linnen-licht p-8 md:p-12">
+          <Label>Gratis aan de slag</Label>
+          <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
+            Drie werkboeken om zelf te beginnen
+          </h2>
+          <p className="mt-3 text-petrol/75 max-w-[64ch]">
+            Drie werkboeken die je meteen zelf kunt invullen, zonder kosten en
+            zonder verplichting.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {werkboeken.map((w) => (
+              <div
+                key={w.key}
+                className="flex flex-col bg-linnen border border-mint-dof rounded-2xl p-6 md:p-7"
+              >
+                <h3 className="font-display text-lg text-petrol mb-2.5">
+                  {w.titel}
+                </h3>
+                <p className="text-[0.95rem] text-petrol/75">{w.tekst}</p>
+                <button
+                  type="button"
+                  onClick={() => setActiveWorkbook(w.key)}
+                  className="mt-6 inline-flex justify-center items-center rounded-md bg-koraal px-5 py-3 text-[0.95rem] font-medium text-white hover:bg-[#D4623B] transition"
+                >
+                  Download het werkboek
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+
+
       {/* PRAKTISCH + TESTIMONIALS */}
       <section className="bg-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
@@ -380,6 +442,15 @@ function Page() {
           jij.
         </CTASoft>
       </Section>
+
+      <WerkboekDownloadModal
+        open={activeWorkbook !== null}
+        onOpenChange={(o) => {
+          if (!o) setActiveWorkbook(null);
+        }}
+        workbook={activeWorkbook}
+        pagina="/coaching-voor-mij"
+      />
     </>
   );
 }
