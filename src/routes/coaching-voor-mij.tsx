@@ -136,7 +136,7 @@ function Page() {
   const werkboeken: { key: WorkbookKey; titel: string; tekst: string }[] = [
     {
       key: "wat-wil-ik",
-      titel: "Wat wil ik nu eigenlijk?",
+      titel: "Je richting scherp krijgen",
       tekst:
         "Kom je er niet uit wat je nu echt wilt? In vijf korte oefeningen ontdek je waar je energie zit, wat je kunt en welke richting bij je past.",
     },
