@@ -289,6 +289,42 @@ function Page() {
 
       </Section>
 
+      {/* WERKBOEKEN — gratis download */}
+      <Section className="pt-0">
+        <div className="rounded-2xl border border-goud bg-linnen-licht p-8 md:p-12">
+          <Label>Gratis aan de slag</Label>
+          <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
+            Drie werkboeken om zelf te beginnen
+          </h2>
+          <p className="mt-3 text-petrol/75 max-w-[64ch]">
+            Drie werkboeken die je meteen zelf kunt invullen, zonder kosten en
+            zonder verplichting.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {werkboeken.map((w) => (
+              <div
+                key={w.key}
+                className="flex flex-col bg-linnen border border-mint-dof rounded-2xl p-6 md:p-7"
+              >
+                <h3 className="font-display text-lg text-petrol mb-2.5">
+                  {w.titel}
+                </h3>
+                <p className="text-[0.95rem] text-petrol/75">{w.tekst}</p>
+                <button
+                  type="button"
+                  onClick={() => setActiveWorkbook(w.key)}
+                  className="mt-6 inline-flex justify-center items-center rounded-md bg-koraal px-5 py-3 text-[0.95rem] font-medium text-white hover:bg-[#D4623B] transition"
+                >
+                  Download het werkboek
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+
+
       {/* PRAKTISCH + TESTIMONIALS */}
       <section className="bg-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
