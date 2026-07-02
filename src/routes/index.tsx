@@ -43,6 +43,8 @@ const jsonLdBusiness = {
     "loopbaancoaching","loopbaanbegeleiding","coachingpool",
     "duurzame inzetbaarheid","loopbaangesprekken",
   ],
+  sameAs: ["https://www.linkedin.com/company/10002759/"],
+  logo: "https://vizieropscherp.nl/og-image.png",
 };
 
 export const Route = createFileRoute("/")({
