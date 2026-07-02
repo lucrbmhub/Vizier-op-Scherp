@@ -1572,6 +1572,8 @@ function WervenNaarBehoudenArticle({ article }: { article: Article }) {
         </div>
       </article>
 
+      <RelatedArticles slug="van-werven-naar-behouden" />
+
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-kop-werven" className="bg-koraal">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
