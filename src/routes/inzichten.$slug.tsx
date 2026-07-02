@@ -4008,3 +4008,62 @@ function VerkeerdeMatchArticle({ article }: { article: Article }) {
   );
 }
 
+/* ------------------------------------------------------------------ */
+/*  Verder lezen — related articles                                    */
+/* ------------------------------------------------------------------ */
+
+const RELATED: Record<string, [string, string]> = {
+  "van-werven-naar-behouden": ["loopbaangesprek-met-medewerker", "duurzame-inzetbaarheid-werkgever"],
+  "duurzame-inzetbaarheid-werkgever": ["loopbaangesprek-met-medewerker", "van-werven-naar-behouden"],
+  "loopbaangesprek-met-medewerker": ["van-werven-naar-behouden", "kosten-van-een-verkeerde-match"],
+  "skillsgericht-werven": ["kosten-van-een-verkeerde-match", "van-werven-naar-behouden"],
+  "kosten-van-een-verkeerde-match": ["skillsgericht-werven", "loopbaangesprek-met-medewerker"],
+  "richting-vinden-in-je-loopbaan": ["energie-en-motivatie-in-werk", "persoonlijke-effectiviteit"],
+  "energie-en-motivatie-in-werk": ["richting-vinden-in-je-loopbaan", "persoonlijke-effectiviteit"],
+  "solliciteren-en-arbeidsmarkt": ["richting-vinden-in-je-loopbaan", "goede-loopbaancoach-kiezen"],
+  "persoonlijke-effectiviteit": ["impostersyndroom-twijfel-als-kracht", "energie-en-motivatie-in-werk"],
+  "impostersyndroom-twijfel-als-kracht": ["persoonlijke-effectiviteit", "goede-loopbaancoach-kiezen"],
+  "goede-loopbaancoach-kiezen": ["richting-vinden-in-je-loopbaan", "impostersyndroom-twijfel-als-kracht"],
+};
+
+function RelatedArticles({ slug }: { slug: string }) {
+  const pair = RELATED[slug];
+  if (!pair) return null;
+  const items = pair
+    .map((s) => ARTICLES.find((a) => a.slug === s))
+    .filter((a): a is Article => Boolean(a));
+  if (items.length === 0) return null;
+  return (
+    <section aria-labelledby="verder-lezen-kop" className="bg-linnen-licht border-t border-petrol/10">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+        <h2
+          id="verder-lezen-kop"
+          className="font-display text-2xl md:text-[1.7rem] text-petrol"
+        >
+          Verder lezen
+        </h2>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {items.map((a) => (
+            <Link
+              key={a.slug}
+              to={`/inzichten/${a.slug}`}
+              aria-label={`Lees: ${a.title}`}
+              className="group flex flex-col gap-3 rounded-2xl border border-petrol/15 bg-linnen p-7 transition-[transform,border-color] duration-150 hover:border-goud motion-safe:hover:-translate-y-1"
+            >
+              <h3 className="font-display text-xl text-petrol leading-tight">
+                {a.title}
+              </h3>
+              <p className="text-petrol/75 leading-relaxed text-[0.96rem]">
+                {a.summary}
+              </p>
+              <span className="mt-auto pt-2 text-sm font-medium text-koraal">
+                Lees verder →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
