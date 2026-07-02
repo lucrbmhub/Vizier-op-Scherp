@@ -358,7 +358,7 @@ function Page() {
               </ul>
               <Link
                 to="/kennismaken"
-                className="inline-block bg-koraal text-white font-medium rounded-md px-7 py-3.5 hover:bg-[#D4623B] transition-colors"
+                className="inline-block bg-koraal text-[color:var(--color-on-koraal-title)] font-medium rounded-md px-7 py-3.5 hover:brightness-95 transition"
               >
                 Vraag een voorstel aan
               </Link>
