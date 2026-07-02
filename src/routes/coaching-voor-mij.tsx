@@ -313,7 +313,7 @@ function Page() {
                 <button
                   type="button"
                   onClick={() => setActiveWorkbook(w.key)}
-                  className="mt-6 inline-flex justify-center items-center rounded-md bg-koraal px-5 py-3 text-[0.95rem] font-medium text-white hover:bg-[#D4623B] transition"
+                  className="mt-6 inline-flex justify-center items-center rounded-md bg-koraal px-5 py-3 text-[0.95rem] font-medium text-[color:var(--color-on-koraal-title)] hover:brightness-95 transition"
                 >
                   Download het werkboek
                 </button>
