@@ -335,9 +335,6 @@ function Page() {
               <h3 className="font-display text-2xl md:text-3xl text-linnen-licht max-w-[26ch] mb-4">
                 Hoe een jaar met Vizier op Scherp eruitziet
               </h3>
-              <p className="text-mint max-w-[54ch]">
-                {"\n"}
-              </p>
               <ul className="my-6 space-y-0">
                 {[
                   ["Jaarafspraak", "we leggen samen het kader vast: verwachte omvang, prijsafspraken, privacykaders en wie bij u het aanspreekpunt is."],
