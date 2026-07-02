@@ -3712,6 +3712,8 @@ function SkillsgerichtWervenArticle({ article }: { article: Article }) {
         </div>
       </article>
 
+      <RelatedArticles slug="skillsgericht-werven" />
+
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-sk-kop" className="bg-koraal">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
