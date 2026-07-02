@@ -3487,7 +3487,7 @@ function SkillsgerichtWervenArticle({ article }: { article: Article }) {
             ← Inzichten
           </Link>
           <div className="mt-6">
-            <span className="inline-flex items-center rounded-full bg-mint px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-petrol">
+            <span className="inline-flex items-center rounded-full bg-goud px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-[color:var(--color-on-goud-title)]">
               Voor werkgevers &amp; HR
             </span>
           </div>
