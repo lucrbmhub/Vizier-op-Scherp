@@ -477,6 +477,45 @@ function headForSlug(slug: string) {
       image,
     };
 
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Wat is het verschil tussen moe zijn en je energie kwijt zijn?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Moe zijn gaat over na rust: na een weekend of een paar rustige avonden ben je weer de oude. Energieverlies blijft: je begint de week al met een lege tank. Het zit dan niet in je uren, maar in de balans tussen wat je werk je kost en wat het je teruggeeft.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Hoe ontdek ik waar mijn energie naartoe gaat?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Houd twee weken per dagdeel bij of je energie omhoog of omlaag ging, en bij welke taak. Zo zie je snel welke taken je opladen en welke je leegtrekken. Die patronen zeggen meer dan een algemeen gevoel van drukte.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Wat kan ik zelf doen als mijn energie structureel wegzakt?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Wissel energievreters af met energiegevers in plaats van ze op te stapelen, bouw korte herstelmomenten in op je werkdag, en bespreek met je leidinggevende of taken anders verdeeld kunnen worden. Begin met één kleine aanpassing die je deze week al kunt doen.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Wanneer is het verstandig om hulp te zoeken?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Houden de klachten weken tot maanden aan, en raken ze je slaap, je stemming of je leven buiten werk, bespreek het dan met je huisarts of een professional. Een loopbaancoach kijkt met je mee naar de werkkant. Op tijd aan de bel trekken voorkomt dat je verder leegloopt.",
+          },
+        },
+      ],
+    };
+
     return {
       meta: [
         { title },
@@ -500,6 +539,7 @@ function headForSlug(slug: string) {
       links: [{ rel: "canonical", href: canonical }],
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(ld) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
       ],
     };
   }
