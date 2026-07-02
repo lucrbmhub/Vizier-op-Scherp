@@ -2050,8 +2050,41 @@ function EnergieMotivatieArticle({ article }: { article: Article }) {
             werk je weer kan geven. Een loopbaancoach kijkt daar samen met je
             naar, in jouw tempo. Wat je bespreekt, blijft vertrouwelijk.
           </p>
+
+          <section aria-labelledby="faq-kop-em" className="mt-14">
+            <h2 id="faq-kop-em" className="font-display text-2xl md:text-[1.7rem] text-petrol">
+              Veelgestelde vragen
+            </h2>
+            <div className="mt-6 space-y-7">
+              {[
+                {
+                  q: "Wat is het verschil tussen moe zijn en je energie kwijt zijn?",
+                  a: "Moe zijn gaat over na rust: na een weekend of een paar rustige avonden ben je weer de oude. Energieverlies blijft: je begint de week al met een lege tank. Het zit dan niet in je uren, maar in de balans tussen wat je werk je kost en wat het je teruggeeft.",
+                },
+                {
+                  q: "Hoe ontdek ik waar mijn energie naartoe gaat?",
+                  a: "Houd twee weken per dagdeel bij of je energie omhoog of omlaag ging, en bij welke taak. Zo zie je snel welke taken je opladen en welke je leegtrekken. Die patronen zeggen meer dan een algemeen gevoel van drukte.",
+                },
+                {
+                  q: "Wat kan ik zelf doen als mijn energie structureel wegzakt?",
+                  a: "Wissel energievreters af met energiegevers in plaats van ze op te stapelen, bouw korte herstelmomenten in op je werkdag, en bespreek met je leidinggevende of taken anders verdeeld kunnen worden. Begin met één kleine aanpassing die je deze week al kunt doen.",
+                },
+                {
+                  q: "Wanneer is het verstandig om hulp te zoeken?",
+                  a: "Houden de klachten weken tot maanden aan, en raken ze je slaap, je stemming of je leven buiten werk, bespreek het dan met je huisarts of een professional. Een loopbaancoach kijkt met je mee naar de werkkant. Op tijd aan de bel trekken voorkomt dat je verder leegloopt.",
+                },
+              ].map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-display text-lg text-petrol">{item.q}</h3>
+                  <p className="mt-2 text-petrol/80 leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </article>
+
+      <RelatedArticles slug="energie-en-motivatie-in-werk" />
 
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-kop-em" className="bg-koraal">
