@@ -124,10 +124,11 @@ function Home() {
             </h1>
             <p className="mt-6 text-mint text-[1.08rem] max-w-[50ch] leading-relaxed">
               Vizier op Scherp helpt organisaties hun mensen krachtig, effectief en
-              duurzaam inzetbaar te maken: met meer energie en in lijn met talenten. Of
-              wanneer blijkt dat het niet meer past, begeleiding naar een stap buiten de
-              organisatie. Met een&nbsp;klein netwerk van gecertificeerde coaches, één
-              aanspreekpunt en heldere afspraken over proces, prijs en privacy.
+              duurzaam inzetbaar te maken: met meer energie en in lijn met talenten. En
+              als blijkt dat het echt niet meer past, begeleiden we de stap naar een plek
+              buiten de organisatie. Met een&nbsp;klein netwerk van gecertificeerde
+              coaches, één aanspreekpunt en heldere afspraken over proces, prijs en
+              privacy.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link to="/voor-werkgevers" className={btnPrimary}>
