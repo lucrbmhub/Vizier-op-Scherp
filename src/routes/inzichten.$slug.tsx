@@ -477,6 +477,45 @@ function headForSlug(slug: string) {
       image,
     };
 
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Wat is het verschil tussen moe zijn en je energie kwijt zijn?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Moe zijn gaat over na rust: na een weekend of een paar rustige avonden ben je weer de oude. Energieverlies blijft: je begint de week al met een lege tank. Het zit dan niet in je uren, maar in de balans tussen wat je werk je kost en wat het je teruggeeft.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Hoe ontdek ik waar mijn energie naartoe gaat?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Houd twee weken per dagdeel bij of je energie omhoog of omlaag ging, en bij welke taak. Zo zie je snel welke taken je opladen en welke je leegtrekken. Die patronen zeggen meer dan een algemeen gevoel van drukte.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Wat kan ik zelf doen als mijn energie structureel wegzakt?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Wissel energievreters af met energiegevers in plaats van ze op te stapelen, bouw korte herstelmomenten in op je werkdag, en bespreek met je leidinggevende of taken anders verdeeld kunnen worden. Begin met één kleine aanpassing die je deze week al kunt doen.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Wanneer is het verstandig om hulp te zoeken?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Houden de klachten weken tot maanden aan, en raken ze je slaap, je stemming of je leven buiten werk, bespreek het dan met je huisarts of een professional. Een loopbaancoach kijkt met je mee naar de werkkant. Op tijd aan de bel trekken voorkomt dat je verder leegloopt.",
+          },
+        },
+      ],
+    };
+
     return {
       meta: [
         { title },
@@ -500,6 +539,7 @@ function headForSlug(slug: string) {
       links: [{ rel: "canonical", href: canonical }],
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(ld) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
       ],
     };
   }
@@ -1532,6 +1572,8 @@ function WervenNaarBehoudenArticle({ article }: { article: Article }) {
         </div>
       </article>
 
+      <RelatedArticles slug="van-werven-naar-behouden" />
+
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-kop-werven" className="bg-koraal">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
@@ -1759,6 +1801,8 @@ function RichtingVindenArticle({ article }: { article: Article }) {
         </div>
       </article>
 
+      <RelatedArticles slug="richting-vinden-in-je-loopbaan" />
+
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-kop" className="bg-koraal">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
@@ -1829,12 +1873,12 @@ function EnergieMotivatieArticle({ article }: { article: Article }) {
             energie kwijt zijn, zijn twee verschillende dingen.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-petrol/65">
-            <span>Energie &amp; motivatie</span>
+            <span>Voor medewerkers</span>
             <span
               aria-hidden="true"
               className="inline-block h-1.5 w-1.5 rounded-full bg-koraal"
             />
-            <span>{article.readMinutes} min leestijd</span>
+            <span>{article.readMinutes} min lezen</span>
           </div>
         </div>
       </section>
@@ -2010,8 +2054,41 @@ function EnergieMotivatieArticle({ article }: { article: Article }) {
             werk je weer kan geven. Een loopbaancoach kijkt daar samen met je
             naar, in jouw tempo. Wat je bespreekt, blijft vertrouwelijk.
           </p>
+
+          <section aria-labelledby="faq-kop-em" className="mt-14">
+            <h2 id="faq-kop-em" className="font-display text-2xl md:text-[1.7rem] text-petrol">
+              Veelgestelde vragen
+            </h2>
+            <div className="mt-6 space-y-7">
+              {[
+                {
+                  q: "Wat is het verschil tussen moe zijn en je energie kwijt zijn?",
+                  a: "Moe zijn gaat over na rust: na een weekend of een paar rustige avonden ben je weer de oude. Energieverlies blijft: je begint de week al met een lege tank. Het zit dan niet in je uren, maar in de balans tussen wat je werk je kost en wat het je teruggeeft.",
+                },
+                {
+                  q: "Hoe ontdek ik waar mijn energie naartoe gaat?",
+                  a: "Houd twee weken per dagdeel bij of je energie omhoog of omlaag ging, en bij welke taak. Zo zie je snel welke taken je opladen en welke je leegtrekken. Die patronen zeggen meer dan een algemeen gevoel van drukte.",
+                },
+                {
+                  q: "Wat kan ik zelf doen als mijn energie structureel wegzakt?",
+                  a: "Wissel energievreters af met energiegevers in plaats van ze op te stapelen, bouw korte herstelmomenten in op je werkdag, en bespreek met je leidinggevende of taken anders verdeeld kunnen worden. Begin met één kleine aanpassing die je deze week al kunt doen.",
+                },
+                {
+                  q: "Wanneer is het verstandig om hulp te zoeken?",
+                  a: "Houden de klachten weken tot maanden aan, en raken ze je slaap, je stemming of je leven buiten werk, bespreek het dan met je huisarts of een professional. Een loopbaancoach kijkt met je mee naar de werkkant. Op tijd aan de bel trekken voorkomt dat je verder leegloopt.",
+                },
+              ].map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-display text-lg text-petrol">{item.q}</h3>
+                  <p className="mt-2 text-petrol/80 leading-relaxed">{item.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </article>
+
+      <RelatedArticles slug="energie-en-motivatie-in-werk" />
 
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-kop-em" className="bg-koraal">
@@ -2258,6 +2335,8 @@ function SolliciterenArticle({ article }: { article: Article }) {
         </div>
       </article>
 
+      <RelatedArticles slug="solliciteren-en-arbeidsmarkt" />
+
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-kop-soll" className="bg-koraal">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
@@ -2490,6 +2569,8 @@ function DuurzameInzetbaarheidWerkgeverArticle({
           </section>
         </div>
       </article>
+
+      <RelatedArticles slug="duurzame-inzetbaarheid-werkgever" />
 
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-di-kop" className="bg-koraal">
@@ -2744,6 +2825,8 @@ function PersoonlijkeEffectiviteitArticle({ article }: { article: Article }) {
         </div>
       </article>
 
+      <RelatedArticles slug="persoonlijke-effectiviteit" />
+
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-kop-pe" className="bg-koraal">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
@@ -2975,6 +3058,8 @@ function LoopbaangesprekArticle({ article }: { article: Article }) {
           </section>
         </div>
       </article>
+
+      <RelatedArticles slug="loopbaangesprek-met-medewerker" />
 
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-kop-loop" className="bg-koraal">
@@ -3224,6 +3309,8 @@ function GoedeCoachKiezenArticle({ article }: { article: Article }) {
         </div>
       </article>
 
+      <RelatedArticles slug="goede-loopbaancoach-kiezen" />
+
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-kop-coach" className="bg-koraal">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
@@ -3416,6 +3503,8 @@ function ImpostersyndroomArticle({ article }: { article: Article }) {
         </div>
       </article>
 
+      <RelatedArticles slug="impostersyndroom-twijfel-als-kracht" />
+
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-kop-imposter" className="bg-koraal">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
@@ -3487,7 +3576,7 @@ function SkillsgerichtWervenArticle({ article }: { article: Article }) {
             ← Inzichten
           </Link>
           <div className="mt-6">
-            <span className="inline-flex items-center rounded-full bg-mint px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-petrol">
+            <span className="inline-flex items-center rounded-full bg-goud px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-[color:var(--color-on-goud-title)]">
               Voor werkgevers &amp; HR
             </span>
           </div>
@@ -3671,6 +3760,8 @@ function SkillsgerichtWervenArticle({ article }: { article: Article }) {
           </section>
         </div>
       </article>
+
+      <RelatedArticles slug="skillsgericht-werven" />
 
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-sk-kop" className="bg-koraal">
@@ -3933,6 +4024,8 @@ function VerkeerdeMatchArticle({ article }: { article: Article }) {
         </div>
       </article>
 
+      <RelatedArticles slug="kosten-van-een-verkeerde-match" />
+
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-vm-kop" className="bg-koraal">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
@@ -3965,6 +4058,65 @@ function VerkeerdeMatchArticle({ article }: { article: Article }) {
         </div>
       </section>
     </>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Verder lezen — related articles                                    */
+/* ------------------------------------------------------------------ */
+
+const RELATED: Record<string, [string, string]> = {
+  "van-werven-naar-behouden": ["loopbaangesprek-met-medewerker", "duurzame-inzetbaarheid-werkgever"],
+  "duurzame-inzetbaarheid-werkgever": ["loopbaangesprek-met-medewerker", "van-werven-naar-behouden"],
+  "loopbaangesprek-met-medewerker": ["van-werven-naar-behouden", "kosten-van-een-verkeerde-match"],
+  "skillsgericht-werven": ["kosten-van-een-verkeerde-match", "van-werven-naar-behouden"],
+  "kosten-van-een-verkeerde-match": ["skillsgericht-werven", "loopbaangesprek-met-medewerker"],
+  "richting-vinden-in-je-loopbaan": ["energie-en-motivatie-in-werk", "persoonlijke-effectiviteit"],
+  "energie-en-motivatie-in-werk": ["richting-vinden-in-je-loopbaan", "persoonlijke-effectiviteit"],
+  "solliciteren-en-arbeidsmarkt": ["richting-vinden-in-je-loopbaan", "goede-loopbaancoach-kiezen"],
+  "persoonlijke-effectiviteit": ["impostersyndroom-twijfel-als-kracht", "energie-en-motivatie-in-werk"],
+  "impostersyndroom-twijfel-als-kracht": ["persoonlijke-effectiviteit", "goede-loopbaancoach-kiezen"],
+  "goede-loopbaancoach-kiezen": ["richting-vinden-in-je-loopbaan", "impostersyndroom-twijfel-als-kracht"],
+};
+
+function RelatedArticles({ slug }: { slug: string }) {
+  const pair = RELATED[slug];
+  if (!pair) return null;
+  const items = pair
+    .map((s) => ARTICLES.find((a) => a.slug === s))
+    .filter((a): a is Article => Boolean(a));
+  if (items.length === 0) return null;
+  return (
+    <section aria-labelledby="verder-lezen-kop" className="bg-linnen-licht border-t border-petrol/10">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+        <h2
+          id="verder-lezen-kop"
+          className="font-display text-2xl md:text-[1.7rem] text-petrol"
+        >
+          Verder lezen
+        </h2>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {items.map((a) => (
+            <Link
+              key={a.slug}
+              to={`/inzichten/${a.slug}`}
+              aria-label={`Lees: ${a.title}`}
+              className="group flex flex-col gap-3 rounded-2xl border border-petrol/15 bg-linnen p-7 transition-[transform,border-color] duration-150 hover:border-goud motion-safe:hover:-translate-y-1"
+            >
+              <h3 className="font-display text-xl text-petrol leading-tight">
+                {a.title}
+              </h3>
+              <p className="text-petrol/75 leading-relaxed text-[0.96rem]">
+                {a.summary}
+              </p>
+              <span className="mt-auto pt-2 text-sm font-medium text-koraal">
+                Lees verder →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 

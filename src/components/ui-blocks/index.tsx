@@ -86,16 +86,15 @@ export function FAQ({ items }: { items: FAQItem[] }) {
                 </span>
               </button>
             </h3>
-            {isOpen && (
-              <div
-                id={panelId}
-                role="region"
-                aria-labelledby={btnId}
-                className="pb-5 pr-10 text-petrol/80 leading-relaxed"
-              >
-                {item.a}
-              </div>
-            )}
+            <div
+              id={panelId}
+              role="region"
+              aria-labelledby={btnId}
+              hidden={!isOpen}
+              className="pb-5 pr-10 text-petrol/80 leading-relaxed"
+            >
+              {item.a}
+            </div>
           </li>
         );
       })}

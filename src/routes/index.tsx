@@ -43,6 +43,8 @@ const jsonLdBusiness = {
     "loopbaancoaching","loopbaanbegeleiding","coachingpool",
     "duurzame inzetbaarheid","loopbaangesprekken",
   ],
+  sameAs: ["https://www.linkedin.com/company/10002759/"],
+  logo: "https://vizieropscherp.nl/og-image.png",
 };
 
 export const Route = createFileRoute("/")({
@@ -124,10 +126,11 @@ function Home() {
             </h1>
             <p className="mt-6 text-mint text-[1.08rem] max-w-[50ch] leading-relaxed">
               Vizier op Scherp helpt organisaties hun mensen krachtig, effectief en
-              duurzaam inzetbaar te maken: met meer energie en in lijn met talenten. Of
-              wanneer blijkt dat het niet meer past, begeleiding naar een stap buiten de
-              organisatie. Met een&nbsp;klein netwerk van gecertificeerde coaches, één
-              aanspreekpunt en heldere afspraken over proces, prijs en privacy.
+              duurzaam inzetbaar te maken: met meer energie en in lijn met talenten. En
+              als blijkt dat het echt niet meer past, begeleiden we de stap naar een plek
+              buiten de organisatie. Met een&nbsp;klein netwerk van gecertificeerde
+              coaches, één aanspreekpunt en heldere afspraken over proces, prijs en
+              privacy.
             </p>
             <div className="mt-8 flex flex-wrap gap-3.5">
               <Link to="/voor-werkgevers" className={btnPrimary}>
@@ -186,11 +189,10 @@ function Home() {
             Sterker in je huidige rol, en verder als je wilt
           </h2>
           <p className="mt-5 text-petrol/75 max-w-[64ch] leading-relaxed">
-            Loopbaancoaching wordt vaak gelezen als 'de deur uit'. Maar tijdens een
-            groot deel van onze trajecten, wordt juist duidelijk dat een
-            aanpassing&nbsp;in de huidige situatie al heel veel positieve
-            verandering brengt. Bijvoorbeeld een door een
-            ander&nbsp;perspectief, gedrag, takenpakket of andere mindset.
+            Loopbaancoaching wordt vaak gelezen als 'de deur uit'. In een groot
+            deel van onze trajecten blijkt juist dat een aanpassing in de
+            huidige situatie al veel verandert: een ander perspectief, ander
+            gedrag, een passender takenpakket of een frissere kijk op het werk.
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-2 items-stretch">
             {[
@@ -259,7 +261,7 @@ function Home() {
             begeleiding en evaluatie op procesniveau, met vooraf heldere privacyafspraken.
           </p>
 
-          <div className="mt-13 grid gap-6 md:grid-cols-3 md:items-end mt-12">
+          <div className="mt-12 grid gap-6 md:grid-cols-3 md:items-end">
             {/* Trede 1 */}
             <article className="rounded-2xl p-7 md:p-8 bg-goud flex flex-col gap-3.5">
               <span className="text-[0.76rem] font-medium uppercase tracking-[0.08em] text-[color:var(--color-on-goud-title)]">

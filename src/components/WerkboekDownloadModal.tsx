@@ -175,7 +175,7 @@ export function WerkboekDownloadModal({
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="w-full inline-flex justify-center items-center rounded-md bg-koraal px-6 py-3 text-base font-medium text-white hover:bg-[#D4623B] transition disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full inline-flex justify-center items-center rounded-md bg-koraal px-6 py-3 text-base font-medium text-[color:var(--color-on-koraal-title)] hover:brightness-95 transition disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {status === "submitting"
                 ? "Bezig met verzenden…"

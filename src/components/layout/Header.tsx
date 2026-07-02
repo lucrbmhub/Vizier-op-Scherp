@@ -55,37 +55,36 @@ export function Header() {
         </button>
       </div>
 
-      {open && (
-        <nav
-          id="mobile-nav"
-          aria-label="Mobiele navigatie"
-          className="lg:hidden border-t border-petrol/10 bg-linnen"
-        >
-          <ul className="px-4 sm:px-6 py-3 flex flex-col gap-1">
-            {navItems.map((item) => (
-              <li key={item.to}>
-                <Link
-                  to={item.to}
-                  onClick={() => setOpen(false)}
-                  className="block px-2 py-3 text-petrol/90 hover:text-petrol"
-                  activeProps={{ className: "text-petrol font-medium" }}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-            <li className="pt-2">
+      <nav
+        id="mobile-nav"
+        aria-label="Mobiele navigatie"
+        hidden={!open}
+        className="lg:hidden border-t border-petrol/10 bg-linnen"
+      >
+        <ul className="px-4 sm:px-6 py-3 flex flex-col gap-1">
+          {navItems.map((item) => (
+            <li key={item.to}>
               <Link
-                to="/kennismaken"
+                to={item.to}
                 onClick={() => setOpen(false)}
-                className="block text-center rounded-full bg-koraal px-4 py-3 font-medium text-[#4A1B0C]"
+                className="block px-2 py-3 text-petrol/90 hover:text-petrol"
+                activeProps={{ className: "text-petrol font-medium" }}
               >
-                Kennismaken
+                {item.label}
               </Link>
             </li>
-          </ul>
-        </nav>
-      )}
+          ))}
+          <li className="pt-2">
+            <Link
+              to="/kennismaken"
+              onClick={() => setOpen(false)}
+              className="block text-center rounded-full bg-koraal px-4 py-3 font-medium text-[#4A1B0C]"
+            >
+              Kennismaken
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 }

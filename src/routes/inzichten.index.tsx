@@ -329,7 +329,7 @@ function badgeClassesFor(article: Article) {
 }
 
 function audienceLabel(audience: Audience) {
-  return audience === "werkgever" ? "Voor werkgevers" : "Voor medewerkers";
+  return audience === "werkgever" ? "Voor werkgevers & HR" : "Voor medewerkers";
 }
 
 function badgeLabelFor(article: Article) {
