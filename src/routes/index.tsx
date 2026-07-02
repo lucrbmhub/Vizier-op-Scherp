@@ -259,7 +259,7 @@ function Home() {
             begeleiding en evaluatie op procesniveau, met vooraf heldere privacyafspraken.
           </p>
 
-          <div className="mt-13 grid gap-6 md:grid-cols-3 md:items-end mt-12">
+          <div className="mt-12 grid gap-6 md:grid-cols-3 md:items-end">
             {/* Trede 1 */}
             <article className="rounded-2xl p-7 md:p-8 bg-goud flex flex-col gap-3.5">
               <span className="text-[0.76rem] font-medium uppercase tracking-[0.08em] text-[color:var(--color-on-goud-title)]">
