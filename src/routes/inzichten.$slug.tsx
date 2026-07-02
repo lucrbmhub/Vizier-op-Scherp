@@ -1829,12 +1829,12 @@ function EnergieMotivatieArticle({ article }: { article: Article }) {
             energie kwijt zijn, zijn twee verschillende dingen.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-petrol/65">
-            <span>Energie &amp; motivatie</span>
+            <span>Voor medewerkers</span>
             <span
               aria-hidden="true"
               className="inline-block h-1.5 w-1.5 rounded-full bg-koraal"
             />
-            <span>{article.readMinutes} min leestijd</span>
+            <span>{article.readMinutes} min lezen</span>
           </div>
         </div>
       </section>
