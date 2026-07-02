@@ -2531,6 +2531,8 @@ function DuurzameInzetbaarheidWerkgeverArticle({
         </div>
       </article>
 
+      <RelatedArticles slug="duurzame-inzetbaarheid-werkgever" />
+
       {/* CTA-strip koraal */}
       <section aria-labelledby="cta-di-kop" className="bg-koraal">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
