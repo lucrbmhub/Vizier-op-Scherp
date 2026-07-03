@@ -1275,6 +1275,107 @@ function headForSlug(slug: string) {
     };
   }
 
+  if (article.slug === "outplacement-of-loopbaancoaching") {
+    const title =
+      "Outplacement of loopbaancoaching: wat past wanneer? | Vizier op Scherp";
+    const description =
+      "Zoekt u outplacement voor een medewerker? Vaak is de vraag eigenlijk een andere. Het verschil tussen outplacement en loopbaancoaching, wanneer welke vorm past, en wat Vizier op Scherp wel en bewust niet doet. Voor werkgevers in de regio Amsterdam en Haarlem.";
+    const ogTitle = "Outplacement of loopbaancoaching: wat past wanneer?";
+    const twitterDescription =
+      "Wie outplacement zoekt, is meestal twee gesprekken te laat. Het verschil tussen beide vormen, en hoe u bepaalt wat uw situatie vraagt.";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching voor werkgevers in Amsterdam, Haarlem en omgeving";
+
+    const blogLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: ogTitle,
+      description,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-07-01",
+      dateModified: "2026-07-01",
+      image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Wat is het verschil tussen outplacement en loopbaancoaching?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Outplacement start als het besluit tot afscheid al is genomen en richt zich volledig op het vinden van werk buiten de organisatie, vaak als onderdeel van een vaststellingsovereenkomst of sociaal plan. Loopbaancoaching start eerder, bij twijfel, motivatievragen of ontwikkelbehoefte, en kent twee mogelijke uitkomsten: sterker verder in de huidige rol, of een goed voorbereide stap naar iets anders, binnen of buiten de organisatie.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Wanneer kiest u voor outplacement?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Als het afscheid vaststaat en u begeleiding naar ander werk heeft toegezegd, bijvoorbeeld in een vaststellingsovereenkomst of sociaal plan. Kies dan een partij die in outplacement is gespecialiseerd. Vizier op Scherp doet geen klassiek outplacement; met die vraag verwijzen wij u zorgvuldig door.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Kan loopbaancoaching outplacement voorkomen?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Vaak wel. De meeste vertrekwensen beginnen als motivatie- of matchvraag die maandenlang onbesproken blijft. Wie die vraag op tijd op tafel krijgt, lost het regelmatig binnen de organisatie op. En als vertrek toch de beste uitkomst is, dan is een vrijwillige, goed begeleide stap vrijwel altijd goedkoper en prettiger dan een gedwongen traject.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Wat doet Vizier op Scherp wel en niet?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Wij organiseren loopbaancoaching voor werkgevers: proactieve loopbaangesprekken, individuele coachtrajecten en een coachingpool als jaarafspraak. Daarbinnen begeleiden we ook de stap naar een plek buiten de organisatie als dat de beste uitkomst is. Wat we bewust niet doen: klassiek outplacement, 2e spoor re-integratie, verzuimbegeleiding, casemanagement en Poortwachtertrajecten. Bij zo'n vraag verwijzen we zorgvuldig door.",
+          },
+        },
+      ],
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: description },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: twitterDescription },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(blogLd) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
+      ],
+    };
+  }
+
   // Default (werkgever-artikel)
 
 
