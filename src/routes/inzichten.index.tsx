@@ -190,6 +190,16 @@ const ARTICLES: Article[] = [
     badgeTone: "mint",
     badgeLabel: "Voor werkgevers & HR",
   },
+  {
+    slug: "outplacement-of-loopbaancoaching",
+    title: "Outplacement of loopbaancoaching: wat past wanneer?",
+    summary:
+      "Wie outplacement zoekt, is meestal twee gesprekken te laat. Het verschil tussen beide vormen, wanneer welke past, en wat wij bewust wel en niet doen.",
+    audience: "werkgever",
+    readMinutes: 6,
+    badgeTone: "mint",
+    badgeLabel: "Voor werkgevers & HR",
+  },
 
 
 ];
