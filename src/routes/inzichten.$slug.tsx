@@ -1460,6 +1460,9 @@ function ArticlePage() {
   if (article.slug === "kosten-van-een-verkeerde-match") {
     return <VerkeerdeMatchArticle article={article} />;
   }
+  if (article.slug === "outplacement-of-loopbaancoaching") {
+    return <OutplacementLoopbaancoachingArticle article={article} />;
+  }
   return <WervenNaarBehoudenArticle article={article} />;
 
 
