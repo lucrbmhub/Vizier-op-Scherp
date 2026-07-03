@@ -4174,6 +4174,286 @@ function VerkeerdeMatchArticle({ article }: { article: Article }) {
 }
 
 /* ------------------------------------------------------------------ */
+/*  Werkgever-artikel — Outplacement of loopbaancoaching                */
+/* ------------------------------------------------------------------ */
+
+function OutplacementLoopbaancoachingArticle({ article }: { article: Article }) {
+  const para = "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
+  const h2 = "mt-12 font-display text-2xl md:text-[1.7rem] text-petrol";
+
+  const faq = [
+    {
+      q: "Wat is het verschil tussen outplacement en loopbaancoaching?",
+      a: "Outplacement start als het besluit tot afscheid al is genomen en richt zich volledig op het vinden van werk buiten de organisatie, vaak als onderdeel van een vaststellingsovereenkomst of sociaal plan. Loopbaancoaching start eerder, bij twijfel, motivatievragen of ontwikkelbehoefte, en kent twee mogelijke uitkomsten: sterker verder in de huidige rol, of een goed voorbereide stap naar iets anders, binnen of buiten de organisatie.",
+    },
+    {
+      q: "Wanneer kiest u voor outplacement?",
+      a: "Als het afscheid vaststaat en u begeleiding naar ander werk heeft toegezegd, bijvoorbeeld in een vaststellingsovereenkomst of sociaal plan. Kies dan een partij die in outplacement is gespecialiseerd. Vizier op Scherp doet geen klassiek outplacement; met die vraag verwijzen wij u zorgvuldig door.",
+    },
+    {
+      q: "Kan loopbaancoaching outplacement voorkomen?",
+      a: "Vaak wel. De meeste vertrekwensen beginnen als motivatie- of matchvraag die maandenlang onbesproken blijft. Wie die vraag op tijd op tafel krijgt, lost het regelmatig binnen de organisatie op. En als vertrek toch de beste uitkomst is, dan is een vrijwillige, goed begeleide stap vrijwel altijd goedkoper en prettiger dan een gedwongen traject.",
+    },
+    {
+      q: "Wat doet Vizier op Scherp wel en niet?",
+      a: "Wij organiseren loopbaancoaching voor werkgevers: proactieve loopbaangesprekken, individuele coachtrajecten en een coachingpool als jaarafspraak. Daarbinnen begeleiden we ook de stap naar een plek buiten de organisatie als dat de beste uitkomst is. Wat we bewust niet doen: klassiek outplacement, 2e spoor re-integratie, verzuimbegeleiding, casemanagement en Poortwachtertrajecten. Bij zo'n vraag verwijzen we zorgvuldig door.",
+    },
+  ];
+
+  return (
+    <>
+      {/* HERO donker */}
+      <section className="bg-petrol text-linnen-licht">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <Link
+            to="/inzichten"
+            className="inline-flex items-center text-sm text-mint-dof hover:text-goud transition"
+          >
+            ← Inzichten
+          </Link>
+          <div className="mt-6">
+            <span className="inline-flex items-center rounded-full bg-goud px-4 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.06em] text-[color:var(--color-on-goud-title)]">
+              Voor werkgevers &amp; HR
+            </span>
+          </div>
+          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-linnen-licht max-w-[30ch] leading-[1.15]">
+            {article.title}
+          </h1>
+          <p className="mt-6 text-mint text-[1.1rem] leading-relaxed max-w-[62ch]">
+            Wanneer HR naar outplacement zoekt, is er meestal al maanden iets
+            aan de hand: een medewerker die niet meer op zijn plek zit,
+            gesprekken die zijn uitgesteld, een dossier dat zich vult. Toch is
+            outplacement lang niet altijd het antwoord op die situatie. Vaak
+            is de vraag een andere, en die verdient een ander instrument.
+          </p>
+          <div className="mt-6 flex items-center gap-2.5 text-sm text-mint-dof">
+            <span>Voor werkgevers &amp; HR</span>
+            <span aria-hidden="true" className="inline-block h-1 w-1 rounded-full bg-koraal" />
+            <span>{article.readMinutes} min lezen</span>
+          </div>
+        </div>
+      </section>
+
+      {/* BODY linnen */}
+      <article className="bg-linnen">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+          <p className="text-petrol/70 text-[1.05rem] leading-relaxed">
+            In dit stuk leest u wat outplacement en loopbaancoaching wezenlijk
+            onderscheidt, wanneer welke vorm past, en waarom de vraag achter
+            de vraag meestal eerder op tafel had gekund.
+          </p>
+
+          <h2 className={h2}>Twee woorden die door elkaar lopen, en één wezenlijk verschil</h2>
+          <p className={para}>
+            Outplacement begint bij een besluit. Het afscheid staat vast, vaak
+            vastgelegd in een vaststellingsovereenkomst, een reorganisatieplan
+            of een sociaal plan, en de begeleiding richt zich volledig op één
+            uitkomst: ander werk buiten de organisatie. Het is een respectabel
+            vak, maar het is per definitie reactief. Het repareert wat al is
+            besloten.
+          </p>
+          <p className={para}>
+            Loopbaancoaching begint bij een vraag. Iemand twijfelt, de
+            motivatie zakt, de rol knelt, of er is behoefte aan ontwikkeling.
+            Er staat nog niets vast, en juist daarom zijn er twee uitkomsten
+            mogelijk: sterker verder in de huidige rol, of een goed
+            voorbereide stap naar iets anders, binnen of buiten de
+            organisatie. Het verschil zit dus niet in de gesprekstechniek. Het
+            zit in het moment, en in de ruimte die de uitkomst nog heeft.
+          </p>
+
+          <h2 className={h2}>Wanneer outplacement wél het juiste antwoord is</h2>
+          <p className={para}>
+            Soms is het besluit genomen en is dat ook de juiste uitkomst. Er
+            ligt een vaststellingsovereenkomst, er verdwijnen functies bij een
+            reorganisatie, en u heeft begeleiding naar ander werk toegezegd.
+            Dan zoekt u een partij die daarin is gespecialiseerd, met ervaring
+            in het gedwongen kader, de bijbehorende termijnen en de juridische
+            context.
+          </p>
+          <p className={para}>
+            Wij zijn die partij bewust niet. Vizier op Scherp doet geen
+            klassiek outplacement, net zomin als 2e spoor re-integratie,
+            verzuimbegeleiding of Poortwachtertrajecten. Komt uw vraag daar
+            wel op neer, dan verwijzen we u zorgvuldig door. Dat kost ons een
+            opdracht en levert u iets belangrijkers op: de zekerheid dat een
+            bureau dat zijn grenzen benoemt, ook binnen die grenzen te
+            vertrouwen is.
+          </p>
+
+          {/* Uitgelicht kader */}
+          <section
+            aria-labelledby="outplacement-drie-vragen"
+            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+          >
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
+              Zelf bepalen wat u zoekt
+            </span>
+            <p
+              id="outplacement-drie-vragen"
+              className="mt-3 font-display text-xl md:text-[1.45rem] text-petrol leading-snug"
+            >
+              Drie vragen om te bepalen wat u nodig heeft
+            </p>
+            <ol className="mt-5 list-decimal space-y-3 pl-5 text-petrol/85 leading-relaxed text-[1.02rem] marker:text-koraal marker:font-medium">
+              <li>
+                Staat het besluit tot afscheid al vast, bijvoorbeeld in een
+                vaststellingsovereenkomst of reorganisatie? Dan zoekt u
+                outplacement, bij een partij die daarin is gespecialiseerd.
+              </li>
+              <li>
+                Speelt er langdurig verzuim of een Poortwachtertraject? Dan
+                zoekt u een re-integratiepartij, geen loopbaancoach.
+              </li>
+              <li>
+                Gaat het om motivatie, twijfel, richting of ontwikkeling, en
+                staat er nog niets vast? Dan is dit een loopbaanvraag, en die
+                is nog alle kanten op te begeleiden.
+              </li>
+            </ol>
+            <p className="mt-5 text-petrol/75 italic text-[0.98rem] leading-relaxed">
+              Onze ervaring: veruit de meeste vragen die als
+              outplacementvraag binnenkomen, horen bij de derde categorie.
+            </p>
+          </section>
+
+          <h2 className={h2}>De vraag achter de vraag</h2>
+          <p className={para}>
+            De zin die wij in kennismakingsgesprekken het vaakst horen, is een
+            variant van: "We willen eigenlijk afscheid nemen, maar het is
+            nooit echt besproken." Dat is geen outplacementvraag. Dat is een
+            loopbaangesprek dat maanden of jaren is uitgesteld, tot de enige
+            taal die overbleef de taal van het afscheid was.
+          </p>
+          <p className={para}>
+            Ook beleidsmatig verschuift de aandacht die kant op: de overheid
+            zet nadrukkelijk in op de stap van werk naar werk, niet pas bij
+            ontslag, maar juist wanneer werk niet langer past of mensen zich
+            willen ontwikkelen. Wie eerder begint, heeft simpelweg meer
+            opties: herstel van de match in de huidige rol, een andere rol
+            binnen de organisatie, of een vrijwillige, goed voorbereide stap
+            naar buiten.
+          </p>
+
+          <h2 className={h2}>Wat loopbaancoaching kan wat outplacement niet kan</h2>
+          <p className={para}>
+            Het eerste verschil is de uitkomstruimte. In een loopbaantraject
+            wordt gekozen uit twee richtingen in plaats van gewerkt naar één.
+            Een aanzienlijk deel van de trajecten eindigt niet in vertrek,
+            maar in een herstelde match: een ander takenpakket, een andere
+            rol, hernieuwde motivatie. Die uitkomst bestaat in outplacement
+            per definitie niet.
+          </p>
+          <p className={para}>
+            Het tweede verschil is de positie van de medewerker. In coaching
+            zit iemand in de regie; in outplacement zit iemand in een
+            regeling. Dat verschil voelt de medewerker, en het bepaalt hoe
+            het traject wordt ontvangen, hoe de werkrelatie eindigt en wat
+            collega's ervan meekrijgen.
+          </p>
+          <p className={para}>
+            En het derde verschil is de rekening. Een gedwongen afscheid kost
+            een vergoeding, juridische begeleiding, een outplacementbudget en
+            een vacature. Een loopbaantraject op tijd kost een fractie
+            daarvan. En als de uitkomst tóch buiten de organisatie ligt,
+            begeleiden wij die stap gewoon, alleen dan als vrijwillige
+            beweging vanuit het traject, niet als sluitstuk van een conflict.
+          </p>
+
+          <h2 className={h2}>Wat wij doen, en wat bewust niet</h2>
+          <p className={para}>
+            Vizier op Scherp organiseert loopbaancoaching voor werkgevers:
+            proactieve loopbaangesprekken, individuele coachtrajecten en een
+            coachingpool als jaarafspraak. Binnen die trajecten hoort ook de
+            begeleiding naar een plek buiten de organisatie, wanneer dat de
+            beste uitkomst blijkt. Wat we bewust niet doen: klassiek
+            outplacement, 2e spoor re-integratie, verzuimbegeleiding,
+            casemanagement en Poortwachtertrajecten. Niet omdat we het niet
+            zouden kunnen leren, maar omdat kwaliteit vraagt om focus, en
+            omdat u moet kunnen vertrouwen op wat wij beloven.
+          </p>
+
+          {/* Kernzin — petrol vlak */}
+          <aside className="mt-14 rounded-2xl bg-petrol px-7 py-9 md:px-10 md:py-11">
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud">
+              In het kort
+            </span>
+            <p className="mt-3 font-display text-xl md:text-2xl text-linnen-licht leading-snug">
+              Outplacement repareert een afscheid. Loopbaancoaching voorkomt
+              dat het zover hoeft te komen.
+            </p>
+          </aside>
+
+          {/* Bronnenregel */}
+          <p className="mt-10 border-t border-petrol/15 pt-4 text-xs text-petrol/60 leading-relaxed">
+            Met inzichten uit vakblad Loopbaanvisie (Noloc) over
+            loopbaantransities en het ontwikkelgesprek, en de kabinetsinzet op
+            de stap van werk naar werk.
+          </p>
+
+          {/* FAQ */}
+          <section aria-labelledby="faq-kop-outplacement" className="mt-14">
+            <h2
+              id="faq-kop-outplacement"
+              className="font-display text-2xl md:text-[1.7rem] text-petrol"
+            >
+              Veelgestelde vragen
+            </h2>
+            <div className="mt-6 space-y-7">
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-display text-lg text-petrol">
+                    {item.q}
+                  </h3>
+                  <p className="mt-2 text-petrol/80 leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </article>
+
+      <RelatedArticles slug="outplacement-of-loopbaancoaching" />
+
+      {/* CTA-strip koraal */}
+      <section aria-labelledby="cta-kop-outplacement" className="bg-koraal">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+          <h2
+            id="cta-kop-outplacement"
+            className="font-display text-2xl md:text-3xl text-[color:var(--color-on-koraal-title,#4A1B0C)]"
+          >
+            Twijfelt u wat uw situatie vraagt?
+          </h2>
+          <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
+            Leg uw situatie vrijblijvend aan ons voor. Is het een
+            loopbaanvraag, dan doen we een concreet voorstel. Vraagt het om
+            outplacement of re-integratie, dan verwijzen we u zorgvuldig
+            door. Zo weet u binnen één gesprek waar u aan toe bent.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link
+              to="/kennismaken"
+              className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
+            >
+              Plan een kennismaking
+            </Link>
+            <Link
+              to="/voor-werkgevers"
+              className="inline-flex items-center rounded-full border-[1.5px] border-[color:var(--color-on-koraal-sub,#712B13)] px-6 py-3 font-medium text-[color:var(--color-on-koraal-title,#4A1B0C)] hover:border-[color:var(--color-on-koraal-title,#4A1B0C)] transition"
+            >
+              Lees meer voor werkgevers
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+
+/* ------------------------------------------------------------------ */
 /*  Verder lezen — related articles                                    */
 /* ------------------------------------------------------------------ */
 
