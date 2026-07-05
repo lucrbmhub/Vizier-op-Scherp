@@ -1544,6 +1544,9 @@ function ArticlePage() {
   const article = ARTICLES.find((a) => a.slug === slug);
   if (!article) throw notFound();
 
+  if (article.slug === "loopbaanswitch-na-je-40e") {
+    return <LoopbaanswitchArticle article={article} />;
+  }
   if (article.slug === "richting-vinden-in-je-loopbaan") {
     return <RichtingVindenArticle article={article} />;
   }
