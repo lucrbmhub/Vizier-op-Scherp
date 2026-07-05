@@ -461,6 +461,111 @@ function headForSlug(slug: string) {
   }
 
 
+  if (article.slug === "loopbaanswitch-na-je-40e") {
+    const title =
+      "Een loopbaanswitch na je 40e of 50e: waarom het geen achterstand is | Vizier op Scherp";
+    const description =
+      "Denk je aan een carrièreswitch na je 40e of 50e, maar voel je je te oud? Waarom je ervaring juist je voorsprong is, hoe je omgaat met leeftijdsdiscriminatie, en met welke route een switch wél lukt. Loopbaancoaching in de regio Amsterdam en Haarlem.";
+    const ogTitle =
+      "Een loopbaanswitch na je 40e of 50e: waarom het geen achterstand is";
+    const ogDescription =
+      "Je bent niet te oud om te switchen. Je hebt alleen meer bewijs van wat je kunt, en dat is precies je voorsprong. Over de rekensom, je bewijsmap en de route die wél werkt.";
+    const twitterDescription =
+      "Je bent niet te oud om te switchen. Je hebt alleen meer bewijs van wat je kunt, en dat is precies je voorsprong.";
+    const image = "https://vizieropscherp.nl/og-image.png";
+    const imageAlt =
+      "Vizier op Scherp, loopbaancoaching in Amsterdam, Haarlem en omgeving";
+
+    const blogLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: ogTitle,
+      description,
+      inLanguage: "nl-NL",
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        url: "https://vizieropscherp.nl/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vizier op Scherp",
+        logo: { "@type": "ImageObject", url: image },
+      },
+      datePublished: "2026-07-01",
+      dateModified: "2026-07-01",
+      image,
+    };
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Ben ik te oud om nog van loopbaan te veranderen?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Nee. Wie op zijn 45e switcht, heeft vaak nog ruim twintig werkjaren voor zich, meer dan er sinds je eerste echte baan achter je ligt. Werkgevers kampen bovendien met een structurele vervangingsvraag. Je leeftijd is een gegeven; wat je in die jaren hebt opgebouwd, is je bewijs.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Moet ik dan helemaal opnieuw beginnen?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Bijna nooit. Het grootste deel van je vaardigheden is niet aan één vak of functietitel gebonden en gaat gewoon met je mee. Een switch is meestal een zijstap waarin je ervaring een nieuwe toepassing krijgt, geen sprong terug naar af. Soms verandert je salaris tijdelijk, maar onderaan de ladder beginnen klopt vrijwel nooit.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Hoe ga ik om met leeftijdsdiscriminatie bij het solliciteren?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Door te erkennen dat het bestaat en er niet jouw conclusie van te maken. Afwijzingen op leeftijd zeggen iets over de werving, niet over jouw waarde. Praktisch werkt het om minder op vacatures en brieven te leunen en meer op gesprekken en je netwerk: in een gesprek verdwijnt leeftijd naar de achtergrond en telt wat je hebt laten zien.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Kan een loopbaancoach helpen bij een switch op latere leeftijd?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Ja. Je zit vaak te dicht op je eigen ervaring om te zien wat ervan overdraagbaar is. Een coach helpt je je bewijs te ordenen, je verhaal te vertalen naar een nieuwe richting en een route te kiezen die past bij deze arbeidsmarkt, in jouw tempo.",
+          },
+        },
+      ],
+    };
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { name: "robots", content: "index, follow" },
+        { property: "og:type", content: "article" },
+        { property: "og:locale", content: "nl_NL" },
+        { property: "og:site_name", content: "Vizier op Scherp" },
+        { property: "og:title", content: ogTitle },
+        { property: "og:description", content: ogDescription },
+        { property: "og:url", content: canonical },
+        { property: "og:image", content: image },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: ogTitle },
+        { name: "twitter:description", content: twitterDescription },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: canonical }],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(blogLd) },
+        { type: "application/ld+json", children: JSON.stringify(faqLd) },
+      ],
+    };
+  }
+
+
   if (article.slug === "energie-en-motivatie-in-werk") {
     const title =
       "Energie en motivatie in je werk terugvinden | Vizier op Scherp";
