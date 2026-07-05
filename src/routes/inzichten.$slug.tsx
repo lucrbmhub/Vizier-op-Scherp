@@ -121,6 +121,15 @@ const ARTICLES: Article[] = [
     audience: "werkgever",
     readMinutes: 6,
   },
+  {
+    slug: "loopbaanswitch-na-je-40e",
+    title:
+      "Een loopbaanswitch na je 40e of 50e: waarom het geen achterstand is",
+    summary:
+      "Voel je je te oud voor een switch? Waarom je ervaring je voorsprong is, hoe je met leeftijdsdiscriminatie omgaat, en met welke route het wél lukt.",
+    audience: "medewerker",
+    readMinutes: 5,
+  },
 ];
 
 
