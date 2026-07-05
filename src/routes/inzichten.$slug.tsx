@@ -4859,6 +4859,7 @@ const RELATED: Record<string, [string, string]> = {
   "kosten-van-een-verkeerde-match": ["skillsgericht-werven", "loopbaangesprek-met-medewerker"],
   "outplacement-of-loopbaancoaching": ["van-werven-naar-behouden", "loopbaangesprek-met-medewerker"],
   "richting-vinden-in-je-loopbaan": ["energie-en-motivatie-in-werk", "persoonlijke-effectiviteit"],
+  "loopbaanswitch-na-je-40e": ["richting-vinden-in-je-loopbaan", "solliciteren-en-arbeidsmarkt"],
   "energie-en-motivatie-in-werk": ["richting-vinden-in-je-loopbaan", "persoonlijke-effectiviteit"],
   "solliciteren-en-arbeidsmarkt": ["richting-vinden-in-je-loopbaan", "goede-loopbaancoach-kiezen"],
   "persoonlijke-effectiviteit": ["impostersyndroom-twijfel-als-kracht", "energie-en-motivatie-in-werk"],
