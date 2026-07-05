@@ -2068,6 +2068,283 @@ function RichtingVindenArticle({ article }: { article: Article }) {
 }
 
 /* ------------------------------------------------------------------ */
+/*  Medewerker-artikel — Loopbaanswitch na je 40e of 50e               */
+/* ------------------------------------------------------------------ */
+
+function LoopbaanswitchArticle({ article }: { article: Article }) {
+  const para = "mt-4 text-petrol/80 leading-relaxed text-[1.05rem]";
+  const h2 = "mt-12 font-display text-2xl md:text-[1.7rem] text-petrol";
+
+  const faq = [
+    {
+      q: "Ben ik te oud om nog van loopbaan te veranderen?",
+      a: "Nee. Wie op zijn 45e switcht, heeft vaak nog ruim twintig werkjaren voor zich, meer dan er sinds je eerste echte baan achter je ligt. Werkgevers kampen bovendien met een structurele vervangingsvraag. Je leeftijd is een gegeven; wat je in die jaren hebt opgebouwd, is je bewijs.",
+    },
+    {
+      q: "Moet ik dan helemaal opnieuw beginnen?",
+      a: "Bijna nooit. Het grootste deel van je vaardigheden is niet aan één vak of functietitel gebonden en gaat gewoon met je mee. Een switch is meestal een zijstap waarin je ervaring een nieuwe toepassing krijgt, geen sprong terug naar af. Soms verandert je salaris tijdelijk, maar onderaan de ladder beginnen klopt vrijwel nooit.",
+    },
+    {
+      q: "Hoe ga ik om met leeftijdsdiscriminatie bij het solliciteren?",
+      a: "Door te erkennen dat het bestaat en er niet jouw conclusie van te maken. Afwijzingen op leeftijd zeggen iets over de werving, niet over jouw waarde. Praktisch werkt het om minder op vacatures en brieven te leunen en meer op gesprekken en je netwerk: in een gesprek verdwijnt leeftijd naar de achtergrond en telt wat je hebt laten zien.",
+    },
+    {
+      q: "Kan een loopbaancoach helpen bij een switch op latere leeftijd?",
+      a: "Ja. Je zit vaak te dicht op je eigen ervaring om te zien wat ervan overdraagbaar is. Een coach helpt je je bewijs te ordenen, je verhaal te vertalen naar een nieuwe richting en een route te kiezen die past bij deze arbeidsmarkt, in jouw tempo.",
+    },
+  ];
+
+  return (
+    <>
+      {/* Lichte hero */}
+      <section className="bg-linnen-licht">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-12 pb-14 md:pt-16 md:pb-20">
+          <Link
+            to="/inzichten"
+            className="inline-flex items-center text-sm text-petrol/70 hover:text-koraal transition"
+          >
+            ← Inzichten
+          </Link>
+          <div className="mt-6">
+            <span className="inline-flex items-center rounded-full bg-mint border border-mint-dof px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] text-petrol">
+              Voor medewerkers
+            </span>
+          </div>
+          <h1 className="mt-5 font-display text-3xl md:text-4xl lg:text-[2.6rem] text-petrol leading-[1.2] max-w-[28ch]">
+            {article.title}
+          </h1>
+          <p className="mt-6 text-petrol/75 leading-relaxed text-[1.1rem] max-w-[62ch]">
+            Je loopt al een tijd rond met het idee dat je iets anders wilt.
+            Maar dan komt de rem: ben ik daar niet te oud voor? Wie neemt mij
+            nog aan? En kan ik het me wel veroorloven om opnieuw te beginnen?
+            Dat gevoel is begrijpelijk. En het klopt bijna nergens.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-petrol/65">
+            <span>Voor medewerkers</span>
+            <span
+              aria-hidden="true"
+              className="inline-block h-1.5 w-1.5 rounded-full bg-koraal"
+            />
+            <span>{article.readMinutes} min lezen</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Body */}
+      <article className="bg-linnen">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+          <p className="text-petrol/85 leading-relaxed text-[1.1rem]">
+            In dit stuk lees je waar het gevoel dat je te laat bent vandaan
+            komt, waarom je ervaring je voorsprong is in plaats van je
+            ballast, en met welke route een switch na je 40e of 50e wél
+            werkt.
+          </p>
+
+          <h2 className={h2}>Waar het gevoel "te laat" vandaan komt</h2>
+          <p className={para}>
+            Laten we beginnen met eerlijk zijn: leeftijdsdiscriminatie op de
+            arbeidsmarkt bestaat, en het is zelfs de meest voorkomende vorm
+            van arbeidsmarktdiscriminatie. Onderzoek in opdracht van het
+            College voor de Rechten van de Mens telt ruim honderdduizend
+            vacatureteksten per jaar waarin oudere kandidaten direct of
+            indirect worden uitgesloten. En een kandidaat van zestig heeft
+            ongeveer half zoveel kans om te worden uitgenodigd voor een
+            gesprek als een vergelijkbare kandidaat van 35.
+          </p>
+          <p className={para}>
+            Dat is oneerlijk, en het verdient benoemd te worden. Maar kijk
+            goed naar wat die cijfers wél en niet zeggen. Ze gaan over
+            wervingsprocessen en vooroordelen. Ze zeggen niets over wat jij
+            kunt, wat je waard bent of wat er voor jou mogelijk is. Het
+            gevoel "te laat" is dus geen feit over jou. Het is een reactie
+            op een systeem, en dat systeem kun je slimmer bespelen dan met
+            nog een sollicitatiebrief.
+          </p>
+
+          <h2 className={h2}>De rekensom die bijna niemand maakt</h2>
+          <p className={para}>
+            Wie op zijn 45e van richting verandert, heeft nog ruim twintig
+            werkjaren voor zich. Dat is langer dan de hele periode sinds je
+            eerste echte baan. Wie op zijn 52e switcht, werkt daarna nog
+            zo'n vijftien jaar, langer dan de meeste mensen ooit bij één
+            werkgever blijven.
+          </p>
+          <p className={para}>
+            Draai de vraag daarom eens om. De vraag is niet of een switch
+            nog loont voor die jaren. De vraag is of je het je kunt
+            veroorloven om vijftien tot twintig jaar te blijven zitten in
+            werk dat niet meer past. Onderzoek naar "opgesloten zitten in je
+            baan" laat zien wat er dan gebeurt: mensen blijven uit angst
+            zitten waar ze niet gelukkig zijn, en dat vreet aan motivatie en
+            energie. Blijven is ook een keuze, en op deze termijn vaak de
+            duurste.
+          </p>
+
+          <h2 className={h2}>Je ervaring is overdraagbaarder dan je functietitel</h2>
+          <p className={para}>
+            De vooroordelen over veertig-, vijftig- en zestigplussers zijn
+            hardnekkig, maar onderzoek naar dit verschijnsel prikt ze door.
+            Nee, oudere werknemers melden zich niet vaker ziek. Nee, ze zijn
+            niet digitaal onhandig: wie vijftig is, heeft veertig jaar aan
+            nieuwe systemen zien komen en ze telkens onder de knie gekregen.
+            En al die werk- en levenservaring levert iets op wat niet te
+            trainen valt: rust bij werkdruk en tegenslag.
+          </p>
+          <p className={para}>
+            Belangrijker nog: het grootste deel van wat je kunt, is niet aan
+            je vak gebonden. Wie kan plannen, mensen kan meekrijgen,
+            problemen kan ontrafelen of veeleisende relaties tevreden houdt,
+            neemt dat mee naar elke sector. Je functietitel blijft achter
+            bij je oude werkgever. Je vaardigheden verhuizen gewoon mee.
+          </p>
+
+          {/* Uitgelicht blok — bewijsmap */}
+          <section
+            aria-labelledby="bewijsmap"
+            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+          >
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
+              Een praktische oefening
+            </span>
+            <h2
+              id="bewijsmap"
+              className="mt-2 font-display text-2xl md:text-[1.6rem] text-petrol"
+            >
+              Maak je bewijsmap
+            </h2>
+            <p className="mt-4 text-petrol/80 leading-relaxed">
+              Het verschil tussen "ik ben 51" en "ik heb 25 jaar bewijs" zit
+              in hoe je je ervaring ordent. Drie stappen:
+            </p>
+            <ol className="mt-4 list-decimal space-y-3 pl-5 text-petrol/80 leading-relaxed marker:text-koraal marker:font-medium">
+              <li>
+                Noteer vijf resultaten waar je trots op bent, uit werk of
+                daarbuiten. Beschrijf per resultaat kort de situatie, wat jij
+                deed en wat het opleverde.
+              </li>
+              <li>
+                Vertaal elk resultaat naar de vaardigheid eronder, in gewone
+                woorden zonder vakjargon. Niet "ik deed het accountbeheer",
+                maar "ik hield twintig veeleisende relaties tegelijk
+                tevreden".
+              </li>
+              <li>
+                Leg je lijst voor aan twee mensen buiten je vakgebied en vraag
+                wat zij erin zien. Wat voor jou vanzelfsprekend is, blijkt
+                voor een ander vaak precies wat gezocht wordt.
+              </li>
+            </ol>
+            <p className="mt-4 text-petrol/80 leading-relaxed">
+              Deze map is geen cv. Het is de grondstof voor je verhaal, in
+              welke nieuwe richting dan ook.
+            </p>
+          </section>
+
+          <h2 className={h2}>De route: niet solliciteren zoals een 25-jarige</h2>
+          <p className={para}>
+            De cv-selectie is precies de plek waar het vooroordeel toeslaat.
+            Dus hoe minder je route via stapels brieven loopt, hoe beter je
+            kansen. Zoek het in gesprekken: oud-collega's, mensen die werken
+            in de richting die je interesseert, kennissen van kennissen. In
+            een gesprek verdwijnt je geboortejaar naar de achtergrond en
+            telt wat je laat zien.
+          </p>
+          <p className={para}>
+            En bedenk: een switch hoeft geen sprong te zijn. Vaak is een
+            zijstap slimmer: een andere rol in je eigen sector, of dezelfde
+            rol in een andere sector. Elke stap maakt de volgende
+            makkelijker, en je bouwt onderweg nieuw bewijs op.
+          </p>
+
+          <h2 className={h2}>Wachten op het perfecte moment is ook een keuze</h2>
+          <p className={para}>
+            Het perfecte moment komt niet. Er is altijd een hypotheek, een
+            druk najaar, een reden om het nog een jaar aan te kijken. Maar
+            een switch begint niet met ontslag nemen. Hij begint met één
+            gesprek deze maand, of met een uur voor je bewijsmap. Klein
+            genoeg om vandaag te doen, groot genoeg om beweging te brengen.
+          </p>
+
+          {/* Kernzin — petrol vlak */}
+          <aside className="mt-14 rounded-2xl bg-petrol px-7 py-9 md:px-10 md:py-11">
+            <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud">
+              In het kort
+            </span>
+            <p className="mt-3 font-display text-xl md:text-2xl text-linnen-licht leading-snug">
+              Je bent niet te oud om te switchen. Je hebt alleen meer bewijs
+              van wat je kunt, en dat is precies je voorsprong.
+            </p>
+          </aside>
+
+          {/* Bronnenregel */}
+          <p className="mt-10 border-t border-petrol/15 pt-4 text-xs text-petrol/60 leading-relaxed">
+            Met inzichten uit vakblad Loopbaanvisie (april 2026), waaronder
+            Tineke van Kooten over leeftijd als belemmering, onderzoek naar
+            seniorisme (Ridderinkhof), en cijfers van het College voor de
+            Rechten van de Mens en het TA Audit Institute.
+          </p>
+
+          {/* FAQ */}
+          <section aria-labelledby="faq-kop" className="mt-14">
+            <h2 id="faq-kop" className="font-display text-2xl md:text-[1.7rem] text-petrol">
+              Veelgestelde vragen
+            </h2>
+            <div className="mt-6 space-y-7">
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-display text-lg text-petrol">
+                    {item.q}
+                  </h3>
+                  <p className="mt-2 text-petrol/80 leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </article>
+
+      <RelatedArticles slug="loopbaanswitch-na-je-40e" />
+
+      {/* CTA-strip koraal */}
+      <section aria-labelledby="cta-kop" className="bg-koraal">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 md:py-16">
+          <h2
+            id="cta-kop"
+            className="font-display text-2xl md:text-3xl text-[color:var(--color-on-koraal-title,#4A1B0C)]"
+          >
+            Benieuwd welke switch bij jou past?
+          </h2>
+          <p className="mt-4 text-[color:var(--color-on-koraal-sub,#712B13)] leading-relaxed text-[1.05rem]">
+            Bij Vizier op Scherp kijk je samen met een coach naar wat je hebt
+            opgebouwd, wat daarvan meegaat naar een nieuwe richting en welke
+            stap daarbij past. In jouw tempo, en wat je bespreekt blijft
+            tussen jou en je coach.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link
+              to="/kennismaken"
+              className="inline-flex items-center rounded-full bg-petrol px-6 py-3 font-medium text-linnen-licht hover:brightness-110 transition"
+            >
+              Maak kennis met een coach
+            </Link>
+            <Link
+              to="/coaches"
+              className="inline-flex items-center rounded-full border-[1.5px] border-[color:var(--color-on-koraal-sub,#712B13)] px-6 py-3 font-medium text-[color:var(--color-on-koraal-title,#4A1B0C)] hover:border-[color:var(--color-on-koraal-title,#4A1B0C)] transition"
+            >
+              Bekijk onze coaches
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+
+
+/* ------------------------------------------------------------------ */
 /*  Medewerker-artikel — Energie en motivatie                          */
 /* ------------------------------------------------------------------ */
 
