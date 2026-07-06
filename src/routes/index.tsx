@@ -123,7 +123,6 @@ function Home() {
             >
               Persoonlijk voor de medewerker.{" "}
               <em className="not-italic text-goud">Georganiseerd voor HR.</em>
-              <span aria-hidden="true" className="vs-accent-dot" />
             </h1>
             <p className="mt-6 text-mint text-[1.08rem] max-w-[50ch] leading-relaxed">
               Vizier op Scherp helpt organisaties hun mensen krachtig, effectief en

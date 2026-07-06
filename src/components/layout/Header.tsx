@@ -23,15 +23,15 @@ export function Header() {
             <Link
               key={item.to}
               to={item.to}
-              className="text-sm text-petrol/70 hover:text-petrol transition-colors pb-1 border-b-2 border-transparent"
-              activeProps={{ className: "text-petrol font-medium border-b-2 border-koraal" }}
+              className="text-sm text-petrol/85 hover:text-petrol transition-colors"
+              activeProps={{ className: "text-petrol font-medium" }}
             >
               {item.label}
             </Link>
           ))}
           <Link
             to="/kennismaken"
-            className="inline-flex items-center rounded-[10px] bg-koraal px-5 py-2.5 text-sm font-medium text-[color:var(--color-on-koraal-text)] hover:brightness-95 transition"
+            className="inline-flex items-center rounded-full bg-koraal px-4 py-2 text-sm font-medium text-[#4A1B0C] hover:brightness-95 transition"
           >
             Kennismaken
           </Link>

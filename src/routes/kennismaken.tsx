@@ -70,7 +70,6 @@ function Page() {
             className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-petrol max-w-4xl leading-[1.1]"
           >
             Laten we kennismaken.
-            <span aria-hidden="true" className="vs-accent-dot" />
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-petrol/75 leading-relaxed">
             Vertel wat er speelt, voor jezelf of in de organisatie. Dan kijken we

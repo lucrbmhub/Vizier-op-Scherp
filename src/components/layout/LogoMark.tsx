@@ -6,13 +6,41 @@ type Props = {
   size?: number;
 };
 
-/**
- * Merkicoon "De Stap" — een open pentagon-achtige stap-vorm,
- * met een goud "doel" in het hart en een koraal "opening"-punt.
- */
-export function LogoMark({ variant = "primary", light = false, size = 34 }: Props) {
-  const stroke = light ? "#F5EFE3" : "#1F3D3B";
-  const s = variant === "symbol" ? size - 4 : size;
+export function LogoMark({ variant = "primary", light = false, size = 32 }: Props) {
+  const mark =
+    variant === "symbol" ? (
+      <svg width={size} height={size} viewBox="0 0 100 100" aria-hidden="true" className="shrink-0">
+        <rect x="8" y="8" width="84" height="84" rx="22" fill="#F5EFE3" />
+        <rect
+          x="33"
+          y="33"
+          width="34"
+          height="34"
+          rx="5"
+          fill="none"
+          stroke="#1F3D3B"
+          strokeWidth="6"
+          transform="rotate(45 50 50)"
+        />
+        <circle cx="50" cy="50" r="6.5" fill="#E8714A" />
+      </svg>
+    ) : (
+      <svg width={size} height={size} viewBox="0 0 100 100" aria-hidden="true" className="shrink-0">
+        <rect x="8" y="8" width="84" height="84" rx="22" fill="#1F3D3B" />
+        <rect
+          x="33"
+          y="33"
+          width="34"
+          height="34"
+          rx="5"
+          fill="none"
+          stroke="#E8714A"
+          strokeWidth="6"
+          transform="rotate(45 50 50)"
+        />
+        <circle cx="50" cy="50" r="6.5" fill="#F2C879" />
+      </svg>
+    );
 
   return (
     <Link
@@ -20,24 +48,7 @@ export function LogoMark({ variant = "primary", light = false, size = 34 }: Prop
       className="flex items-center gap-2.5 no-underline"
       aria-label="Vizier op Scherp — naar de homepage"
     >
-      <svg
-        width={s}
-        height={s}
-        viewBox="0 0 120 120"
-        aria-hidden="true"
-        className="shrink-0"
-      >
-        <path
-          d="M78 34 L104 60 L60 104 L16 60 L60 16 L62 18"
-          fill="none"
-          stroke={stroke}
-          strokeWidth="10"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <circle cx="60" cy="60" r="11" fill="#F2C879" />
-        <circle cx="70" cy="26" r="11" fill="#E8714A" />
-      </svg>
+      {mark}
       <span
         className="font-display text-[1.15rem]"
         style={{
@@ -48,28 +59,5 @@ export function LogoMark({ variant = "primary", light = false, size = 34 }: Prop
         Vizier op Scherp
       </span>
     </Link>
-  );
-}
-
-/**
- * Woordmerk-variant: "vizier op scherp" lowercase Lora,
- * met een koraal ruitje als i-punt en een goud rond slotpunt.
- * Voor plekken zonder icoon-ruimte.
- */
-export function Wordmark({
-  light = false,
-  className = "",
-}: {
-  light?: boolean;
-  className?: string;
-}) {
-  return (
-    <span
-      className={`vs-wordmark ${className}`}
-      style={{ color: light ? "#F5EFE3" : "#1F3D3B" }}
-    >
-      v<span className="vs-idot">ı</span>zier op scherp
-      <span className="vs-end-dot" aria-hidden="true" />
-    </span>
   );
 }
