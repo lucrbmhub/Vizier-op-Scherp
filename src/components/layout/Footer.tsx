@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { LogoMark } from "./LogoMark";
+import { LogoMark, Wordmark } from "./LogoMark";
 
 const colHead =
   "font-sans text-xs font-medium uppercase tracking-[0.08em] text-goud mb-4";
