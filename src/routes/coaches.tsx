@@ -206,6 +206,7 @@ function Page() {
             className="font-display text-3xl md:text-5xl leading-tight text-petrol max-w-[22ch]"
           >
             Echte mensen, geen anonieme database.
+            <span aria-hidden="true" className="vs-accent-dot" />
           </h1>
           <p className="mt-5 text-petrol/75 max-w-[60ch] text-lg">
             Vizier op Scherp werkt met een klein, vast netwerk van zelfstandige

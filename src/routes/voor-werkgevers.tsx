@@ -146,6 +146,7 @@ function Page() {
               >
                 Loopbaancoaching die u ontzorgt, en uw mensen{" "}
                 <em className="not-italic text-goud">in beweging brengt.</em>
+                <span aria-hidden="true" className="vs-accent-dot" />
               </h1>
               <p className="mt-5 text-mint max-w-[52ch]">
                 U wilt medewerkers goed begeleiden bij loopbaanvragen, zonder er

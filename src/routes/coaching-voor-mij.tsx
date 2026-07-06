@@ -170,6 +170,7 @@ function Page() {
             className="font-display text-3xl md:text-5xl leading-tight text-petrol max-w-[22ch]"
           >
             Even niet weten welke kant je op wilt, daar begint het vaak.
+            <span aria-hidden="true" className="vs-accent-dot" />
           </h1>
           <p className="mt-5 text-petrol/75 max-w-[56ch] text-lg">
             Misschien ben je doorverwezen door je werkgever. Misschien loop je
