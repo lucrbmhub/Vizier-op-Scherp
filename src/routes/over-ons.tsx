@@ -80,6 +80,7 @@ function Page() {
           <Eyebrow>Over ons</Eyebrow>
           <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-petrol max-w-4xl leading-[1.1]">
             Professioneel voor HR en menselijk voor de medewerker.
+            <span aria-hidden="true" className="vs-accent-dot" />
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-petrol/75 leading-relaxed">
             Die ene zin is onze lat, voor elke coach, elk traject en elke

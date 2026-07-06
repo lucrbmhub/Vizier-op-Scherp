@@ -35,6 +35,7 @@ function Page() {
           <Eyebrow>Achtergrond</Eyebrow>
           <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-petrol max-w-4xl leading-[1.1]">
             Leiderschap &amp; talentontwikkeling
+            <span aria-hidden="true" className="vs-accent-dot" />
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-petrol/75 leading-relaxed">
             Naast loopbaancoaching voert Vizier op Scherp enkele lopende

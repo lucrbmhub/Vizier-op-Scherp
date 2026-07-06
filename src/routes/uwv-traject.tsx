@@ -140,6 +140,7 @@ function Page() {
             className="font-display text-3xl md:text-5xl leading-tight text-petrol max-w-[22ch]"
           >
             Weer stappen zetten richting werk, in jouw tempo.
+            <span aria-hidden="true" className="vs-accent-dot" />
           </h1>
           <p className="mt-5 text-petrol/75 max-w-[56ch] text-lg">
             Krijg je via UWV ondersteuning om weer aan het werk te gaan? Dan
