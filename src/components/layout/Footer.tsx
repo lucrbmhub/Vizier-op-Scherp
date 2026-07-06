@@ -12,12 +12,15 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr] pb-10 border-b border-mint-dof/20">
           <div>
-            <LogoMark variant="symbol" light />
+            <LogoMark variant="symbol" light size={30} />
             <p className="mt-4 text-sm leading-relaxed max-w-[34ch]">
               Regionaal netwerk voor loopbaancoaching, voor werkgevers en hun medewerkers
               in Amsterdam, Haarlem en omgeving. Persoonlijk, professioneel en gericht op
               concrete stappen in werk.
             </p>
+            <div className="mt-5 text-[1.05rem]">
+              <Wordmark light />
+            </div>
           </div>
 
           <div>
@@ -55,12 +58,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-6 flex flex-wrap justify-between gap-3 text-xs">
+        <div className="pt-6 flex flex-wrap justify-between gap-3 text-xs text-[color:var(--color-footer-meta)]">
           <span>© 2016 - {new Date().getFullYear()} Vizier op Scherp · KVK 81088701 · BTW NL003529887B45</span>
           <a
             href="https://www.linkedin.com/company/10002759/"
             rel="noopener"
-            className="border-b border-mint-dof hover:text-linnen-licht"
+            className="border-b border-[color:var(--color-footer-meta)] hover:text-linnen-licht"
           >
             LinkedIn
           </a>
