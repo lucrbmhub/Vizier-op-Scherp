@@ -7,13 +7,28 @@
   --color-goud: #F2C879;
   --color-linnen: #FAF6EF;
   --color-linnen-licht: #F5EFE3;
+  --color-papier: #FAF6EF;
+  --color-warm-card: #FBF1D7;
   --color-mint: #D8E5E2;
   --color-mint-dof: #B8CFCB;
+  --color-salie: #D8E5E2;
+  --color-salie-dof: #BFD0CB;
+  --color-goud-dof: #A8834B;
+  --color-footer-meta: #8FA6A0;
+  --color-border-warm: #EDE5D4;
+  --color-border-warm-2: #E4DCC8;
+  --color-border-warm-3: #DED5C2;
+  --color-body-light: #4A5550;
+  --color-body-light-2: #3D4A44;
+  --color-body-warm: #5A5442;
+  --color-meta-mute: #7A7466;
+  --color-meta-mute-2: #9A9284;
 
   --color-on-goud-title: #5C3A0E;
   --color-on-goud-sub: #7A5318;
   --color-on-koraal-title: #4A1B0C;
   --color-on-koraal-sub: #712B13;
+  --color-on-koraal-text: #3A241A;
 
   --font-display: "Lora", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
@@ -64,4 +79,196 @@
 }
 .skip-link:focus {
   top: 1rem;
+}
+
+/* ---------- Merkelementen ---------- */
+
+/* Klein koraal ruitje (bullet, eyebrow-marker) */
+@utility vs-diamond {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--color-koraal);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* Groter koraal ruitje voor hero i-punt */
+@utility vs-diamond-i {
+  position: absolute;
+  width: 0.42em;
+  height: 0.42em;
+  background: var(--color-koraal);
+  transform: rotate(45deg);
+  left: 50%;
+  translate: -50% 0;
+  top: 0.02em;
+}
+
+/* Goud rond stipje (slotpunt na hero-kop / CTA-titel) */
+@utility vs-accent-dot {
+  display: inline-block;
+  width: 0.36em;
+  height: 0.36em;
+  border-radius: 9999px;
+  background: var(--color-goud);
+  margin-left: 0.18em;
+  vertical-align: 0.28em;
+  flex-shrink: 0;
+}
+
+/* Knoppen */
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-koraal);
+  color: var(--color-on-koraal-text);
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 14px 26px;
+  transition: filter 0.15s ease;
+}
+@utility btn-primary-hover {
+  filter: brightness(0.95);
+}
+
+@utility btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--color-petrol);
+  color: var(--color-petrol);
+  background: transparent;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 12.5px 24px;
+  transition: background 0.15s ease;
+}
+
+@utility btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--color-salie-dof);
+  color: var(--color-linnen-licht);
+  background: transparent;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 12.5px 24px;
+  transition: border-color 0.15s ease;
+}
+
+/* Kaart met "opening" — feature-variant */
+@utility vs-card-feature {
+  position: relative;
+  border: 2px solid var(--color-petrol);
+  border-radius: 14px;
+  background: var(--color-linnen-licht);
+}
+@utility vs-card-feature-opening {
+  position: absolute;
+  top: -2px;
+  left: 40%;
+  width: 46px;
+  height: 4px;
+  background: var(--vs-card-bg, var(--color-linnen));
+  pointer-events: none;
+}
+@utility vs-card-feature-dot {
+  position: absolute;
+  top: -8px;
+  left: calc(40% + 16px);
+  width: 13px;
+  height: 13px;
+  border-radius: 9999px;
+  background: var(--color-koraal);
+}
+
+/* Kaart soft — met hangend ruitje */
+@utility vs-card-soft {
+  position: relative;
+  border-radius: 14px;
+  background: var(--color-warm-card);
+}
+@utility vs-card-soft-hang {
+  position: absolute;
+  top: -7px;
+  left: 22px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-koraal);
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 5px var(--color-warm-card);
+}
+
+/* CTA gefacet — dubbele afgeschuinde rand */
+@utility vs-cta-facet {
+  --clip: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+  background: var(--color-goud);
+  padding: 2px;
+  clip-path: var(--clip);
+}
+@utility vs-cta-facet-inner {
+  --clip: polygon(21px 0, 100% 0, 100% calc(100% - 21px), calc(100% - 21px) 100%, 0 100%, 0 21px);
+  background: var(--color-warm-card);
+  clip-path: var(--clip);
+  padding: 2rem 2rem;
+}
+
+/* Fotoframe — diagonaal + duotone */
+@utility vs-photo {
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, calc(100% - 46px) 0, 100% 46px, 100% 100%, 0 100%);
+}
+@utility vs-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg,
+    rgba(31,61,59,0.58) 0%,
+    rgba(31,61,59,0.24) 55%,
+    rgba(232,113,74,0.17) 100%);
+  pointer-events: none;
+}
+@utility vs-photo-anchor {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  background: var(--color-koraal);
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 5px var(--color-linnen);
+  left: 18px;
+  bottom: 18px;
+}
+
+/* Wordmark: i-punt vervanging */
+.vs-wordmark {
+  font-family: var(--font-display);
+  font-weight: 500;
+  text-transform: lowercase;
+  letter-spacing: 0.01em;
+}
+.vs-wordmark .vs-idot {
+  position: relative;
+  display: inline-block;
+}
+.vs-wordmark .vs-idot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -0.32em;
+  width: 0.36em;
+  height: 0.36em;
+  background: var(--color-koraal);
+  transform: translateX(-50%) rotate(45deg);
+}
+.vs-wordmark .vs-end-dot {
+  display: inline-block;
+  width: 0.34em;
+  height: 0.34em;
+  border-radius: 9999px;
+  background: var(--color-goud);
+  margin-left: 0.14em;
+  vertical-align: 0.16em;
 }
