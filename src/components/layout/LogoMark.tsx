@@ -6,41 +6,35 @@ type Props = {
   size?: number;
 };
 
-export function LogoMark({ variant = "primary", light = false, size = 32 }: Props) {
-  const mark =
-    variant === "symbol" ? (
-      <svg width={size} height={size} viewBox="0 0 100 100" aria-hidden="true" className="shrink-0">
-        <rect x="8" y="8" width="84" height="84" rx="22" fill="#F5EFE3" />
-        <rect
-          x="33"
-          y="33"
-          width="34"
-          height="34"
-          rx="5"
-          fill="none"
-          stroke="#1F3D3B"
-          strokeWidth="6"
-          transform="rotate(45 50 50)"
-        />
-        <circle cx="50" cy="50" r="6.5" fill="#E8714A" />
-      </svg>
-    ) : (
-      <svg width={size} height={size} viewBox="0 0 100 100" aria-hidden="true" className="shrink-0">
-        <rect x="8" y="8" width="84" height="84" rx="22" fill="#1F3D3B" />
-        <rect
-          x="33"
-          y="33"
-          width="34"
-          height="34"
-          rx="5"
-          fill="none"
-          stroke="#E8714A"
-          strokeWidth="6"
-          transform="rotate(45 50 50)"
-        />
-        <circle cx="50" cy="50" r="6.5" fill="#F2C879" />
-      </svg>
-    );
+export function LogoMark({ variant = "primary", light = false, size = 34 }: Props) {
+  const isSymbol = variant === "symbol";
+  const bgFill = isSymbol ? "#F5EFE3" : "#1F3D3B";
+  const strokeColor = isSymbol ? "#1F3D3B" : "#E8714A";
+  const dotFill = isSymbol ? "#E8714A" : "#F2C879";
+
+  const mark = (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      aria-hidden="true"
+      className="shrink-0"
+    >
+      <rect x="8" y="8" width="84" height="84" rx="22" fill={bgFill} />
+      <rect
+        x="33"
+        y="33"
+        width="34"
+        height="34"
+        rx="5"
+        fill="none"
+        stroke={strokeColor}
+        strokeWidth="6"
+        transform="rotate(45 50 50)"
+      />
+      <circle cx="50" cy="50" r="6.5" fill={dotFill} />
+    </svg>
+  );
 
   return (
     <Link
@@ -50,9 +44,11 @@ export function LogoMark({ variant = "primary", light = false, size = 32 }: Prop
     >
       {mark}
       <span
-        className="font-display text-[1.15rem]"
+        className="font-display"
         style={{
           fontWeight: 500,
+          fontSize: isSymbol ? "1.125rem" : "1.1875rem",
+          letterSpacing: "-0.015em",
           color: light ? "#F5EFE3" : "#1F3D3B",
         }}
       >
