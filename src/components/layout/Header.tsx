@@ -14,24 +14,35 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-linnen/90 backdrop-blur border-b border-petrol/10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <LogoMark />
+    <header
+      className="sticky top-0 z-40"
+      style={{
+        background: "rgba(250, 246, 239, 0.92)",
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
+        borderBottom: "1px solid #EDE5D4",
+      }}
+    >
+      <div className="mx-auto max-w-[1200px] px-5 sm:px-8 flex items-center justify-between h-[68px]">
+        <LogoMark size={34} />
 
-        <nav aria-label="Hoofdnavigatie" className="hidden lg:flex items-center gap-7">
+        <nav aria-label="Hoofdnavigatie" className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className="text-sm text-petrol/85 hover:text-petrol transition-colors"
-              activeProps={{ className: "text-petrol font-medium" }}
+              className="text-[14.5px] text-petrol/85 hover:text-petrol transition-colors py-1"
+              activeProps={{
+                className:
+                  "text-petrol font-medium border-b-2 border-koraal pb-[2px]",
+              }}
             >
               {item.label}
             </Link>
           ))}
           <Link
             to="/kennismaken"
-            className="inline-flex items-center rounded-full bg-koraal px-4 py-2 text-sm font-medium text-[#4A1B0C] hover:brightness-95 transition"
+            className="inline-flex items-center rounded-full bg-koraal px-5 py-2.5 text-sm font-medium text-[#3A241A] hover:brightness-95 transition"
           >
             Kennismaken
           </Link>
@@ -59,9 +70,10 @@ export function Header() {
         id="mobile-nav"
         aria-label="Mobiele navigatie"
         hidden={!open}
-        className="lg:hidden border-t border-petrol/10 bg-linnen"
+        className="lg:hidden border-t border-lijn-soft bg-paper"
+        style={{ background: "#FAF6EF" }}
       >
-        <ul className="px-4 sm:px-6 py-3 flex flex-col gap-1">
+        <ul className="px-5 sm:px-8 py-3 flex flex-col gap-1">
           {navItems.map((item) => (
             <li key={item.to}>
               <Link
@@ -78,7 +90,7 @@ export function Header() {
             <Link
               to="/kennismaken"
               onClick={() => setOpen(false)}
-              className="block text-center rounded-full bg-koraal px-4 py-3 font-medium text-[#4A1B0C]"
+              className="block text-center rounded-full bg-koraal px-4 py-3 font-medium text-[#3A241A]"
             >
               Kennismaken
             </Link>
