@@ -26,7 +26,7 @@ const inputSchema = z.object({
 });
 
 export const submitLeidraadLead = createServerFn({ method: "POST" })
-  .inputValidator((data) => inputSchema.parse(data))
+  .validator((data) => inputSchema.parse(data))
   .handler(async ({ data }) => {
     // Silently succeed on honeypot — don't tip off bots.
     if (data.website && data.website.length > 0) {
@@ -124,7 +124,7 @@ const werkboekInputSchema = z.object({
 });
 
 export const submitWerkboekLead = createServerFn({ method: "POST" })
-  .inputValidator((data) => werkboekInputSchema.parse(data))
+  .validator((data) => werkboekInputSchema.parse(data))
   .handler(async ({ data }) => {
     if (data.website && data.website.length > 0) {
       return { ok: true, mail: false };
