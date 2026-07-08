@@ -114,15 +114,18 @@
 .eyebrow-on-petrol { color: var(--color-goud); }
 .eyebrow-on-petrol::before { background: var(--color-goud); }
 
-/* IDot: replace dot of first "i" in hero H1 */
-.idot { position: relative; display: inline-block; }
+/* IDot: replace dot of first "i" in hero H1.
+   line-height:1 anchors the pseudo-elements to the glyph's em box rather than
+   the (taller) heading line box, so the diamond stays seated on the letter
+   regardless of the heading's line-height. */
+.idot { position: relative; display: inline-block; line-height: 1; }
 .idot::before {
   content: "";
   position: absolute;
   left: 50%;
-  top: 0;
-  width: 0.19em;
-  height: 0.27em;
+  top: 0.02em;
+  width: 0.2em;
+  height: 0.3em;
   background: var(--idot-bg, var(--color-paper));
   transform: translateX(-50%);
 }
@@ -130,9 +133,9 @@
   content: "";
   position: absolute;
   left: 50%;
-  top: 0.075em;
-  width: 0.17em;
-  height: 0.17em;
+  top: 0.15em;
+  width: 0.15em;
+  height: 0.15em;
   background: var(--color-koraal);
   transform: translateX(-50%) rotate(45deg);
 }
