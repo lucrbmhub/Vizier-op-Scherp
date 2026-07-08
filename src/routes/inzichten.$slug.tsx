@@ -1700,7 +1700,7 @@ function WervenNaarBehoudenArticle({ article }: { article: Article }) {
           {/* Uitgelicht blok — Het kritieke moment */}
           <section
             aria-labelledby="werven-kern"
-            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+            className="mt-12 rounded-2xl bg-goud/15 p-7 md:p-9"
           >
             <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
               Het kritieke moment
@@ -1945,7 +1945,7 @@ function RichtingVindenArticle({ article }: { article: Article }) {
           {/* Uitgelicht blok — zoek je rode draad */}
           <section
             aria-labelledby="rode-draad"
-            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+            className="mt-12 rounded-2xl bg-goud/15 p-7 md:p-9"
           >
             <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
               Een praktische oefening
@@ -2201,7 +2201,7 @@ function LoopbaanswitchArticle({ article }: { article: Article }) {
           {/* Uitgelicht blok — bewijsmap */}
           <section
             aria-labelledby="bewijsmap"
-            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+            className="mt-12 rounded-2xl bg-goud/15 p-7 md:p-9"
           >
             <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
               Een praktische oefening
@@ -2755,7 +2755,7 @@ function SolliciterenArticle({ article }: { article: Article }) {
           {/* Uitgelicht blok — 25/75 vuistregel */}
           <section
             aria-labelledby="vuistregel"
-            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+            className="mt-12 rounded-2xl bg-goud/15 p-7 md:p-9"
           >
             <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
               Een vuistregel
@@ -2985,7 +2985,7 @@ function DuurzameInzetbaarheidWerkgeverArticle({
           </p>
 
           {/* Uitgelicht goud blok */}
-          <aside className="mt-10 rounded-2xl border-l-[6px] border-koraal bg-goud/20 p-7 md:p-9">
+          <aside className="mt-10 rounded-2xl bg-goud/20 p-7 md:p-9">
             <span className="block text-koraal text-[0.74rem] font-semibold tracking-[0.12em] uppercase mb-2">
               Het echte knelpunt
             </span>
@@ -3223,7 +3223,7 @@ function PersoonlijkeEffectiviteitArticle({ article }: { article: Article }) {
           {/* Uitgelicht handvat — zacht goud met dikke koraal linkerrand */}
           <section
             aria-labelledby="zeven-kop"
-            className="mt-12 rounded-2xl bg-goud/15 border-l-4 border-koraal p-7 md:p-9"
+            className="mt-12 rounded-2xl bg-goud/15 p-7 md:p-9"
           >
             <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
               Een praktische oefening
@@ -3475,7 +3475,7 @@ function LoopbaangesprekArticle({ article }: { article: Article }) {
           {/* Uitgelicht blok — De kern */}
           <section
             aria-labelledby="loopbaan-kern"
-            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+            className="mt-12 rounded-2xl bg-goud/15 p-7 md:p-9"
           >
             <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
               De kern
@@ -3702,7 +3702,7 @@ function GoedeCoachKiezenArticle({ article }: { article: Article }) {
           {/* Uitgelicht blok — kennismakingsgesprek */}
           <section
             aria-labelledby="kennismaking-kern"
-            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+            className="mt-12 rounded-2xl bg-goud/15 p-7 md:p-9"
           >
             <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
               Het kennismakingsgesprek
@@ -3935,7 +3935,7 @@ function ImpostersyndroomArticle({ article }: { article: Article }) {
           {/* Uitgelicht blok */}
           <section
             aria-labelledby="hv-kop"
-            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+            className="mt-12 rounded-2xl bg-goud/15 p-7 md:p-9"
           >
             <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
               Een andere blik
@@ -4155,7 +4155,7 @@ function SkillsgerichtWervenArticle({ article }: { article: Article }) {
           </p>
 
           {/* Uitgelicht goud blok */}
-          <aside className="mt-10 rounded-2xl border-l-[6px] border-koraal bg-goud/20 p-7 md:p-9">
+          <aside className="mt-10 rounded-2xl bg-goud/20 p-7 md:p-9">
             <span className="block text-koraal text-[0.74rem] font-semibold tracking-[0.12em] uppercase mb-2">
               Een andere blik op uw vacature
             </span>
@@ -4166,7 +4166,7 @@ function SkillsgerichtWervenArticle({ article }: { article: Article }) {
               U hoeft uw werving niet meteen om te gooien. Begin bij de
               eerstvolgende vacature met drie vragen:
             </p>
-            <ul className="mt-4 list-disc pl-5 space-y-2 text-petrol/80 leading-relaxed text-[1.02rem]">
+            <ul className="mt-4 dia-bullets pl-1 space-y-2 text-petrol/80 leading-relaxed text-[1.02rem]">
               <li>
                 Welke van deze eisen zijn echt noodzakelijk om de taak te
                 kunnen doen, en welke staan er vooral omdat ze er altijd al
@@ -4414,7 +4414,7 @@ function VerkeerdeMatchArticle({ article }: { article: Article }) {
           </p>
 
           {/* Uitgelicht goud blok */}
-          <aside className="mt-10 rounded-2xl border-l-[6px] border-koraal bg-goud/20 p-7 md:p-9">
+          <aside className="mt-10 rounded-2xl bg-goud/20 p-7 md:p-9">
             <span className="block text-koraal text-[0.74rem] font-semibold tracking-[0.12em] uppercase mb-2">
               Waar u op kunt letten
             </span>
@@ -4425,7 +4425,7 @@ function VerkeerdeMatchArticle({ article }: { article: Article }) {
               Een mismatch kondigt zich zelden hardop aan. Maar er zijn
               signalen:
             </p>
-            <ul className="mt-4 list-disc pl-5 space-y-2 text-petrol/80 leading-relaxed text-[1.02rem]">
+            <ul className="mt-4 dia-bullets pl-1 space-y-2 text-petrol/80 leading-relaxed text-[1.02rem]">
               <li>
                 Iemand functioneert prima, maar de vonk en het initiatief
                 van vroeger zijn weg.
@@ -4678,7 +4678,7 @@ function OutplacementLoopbaancoachingArticle({ article }: { article: Article }) 
           {/* Uitgelicht kader */}
           <section
             aria-labelledby="outplacement-drie-vragen"
-            className="mt-12 rounded-2xl border-l-[6px] border-koraal bg-goud/15 p-7 md:p-9"
+            className="mt-12 rounded-2xl bg-goud/15 p-7 md:p-9"
           >
             <span className="block text-xs font-medium uppercase tracking-[0.14em] text-koraal">
               Zelf bepalen wat u zoekt

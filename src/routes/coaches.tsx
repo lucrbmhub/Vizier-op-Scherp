@@ -158,8 +158,9 @@ function CoachCard({ c }: { c: Coach }) {
         <span className="block text-sm text-koraal font-medium mt-1 mb-3">
           {c.role}
         </span>
-        <blockquote className="font-display text-petrol italic border-l-2 border-goud pl-4 mb-3">
+        <blockquote className="quote-rail mb-3">
           "{c.quote}"
+          <span className="quote-dot" aria-hidden="true" />
         </blockquote>
         <p className="text-petrol/75 text-[0.96rem] mb-4">{c.bio}</p>
         <div className="flex flex-wrap gap-2 mb-4">
@@ -205,7 +206,7 @@ function Page() {
             id="hero-titel"
             className="font-display text-3xl md:text-5xl leading-tight text-petrol max-w-[22ch]"
           >
-            Echte mensen, geen anonieme database.
+            Echte mensen, geen anon<span className="idot" style={{ ["--idot-bg" as never]: "#F5EFE3" }}>i</span>eme database<span className="slotpunt">.</span>
           </h1>
           <p className="mt-5 text-petrol/75 max-w-[60ch] text-lg">
             Vizier op Scherp werkt met een klein, vast netwerk van zelfstandige

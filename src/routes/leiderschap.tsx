@@ -34,7 +34,7 @@ function Page() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <Eyebrow>Achtergrond</Eyebrow>
           <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-petrol max-w-4xl leading-[1.1]">
-            Leiderschap &amp; talentontwikkeling
+            Le<span className="idot" style={{ ["--idot-bg" as never]: "#F5EFE3" }}>i</span>derschap &amp; talentontwikkeling
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-petrol/75 leading-relaxed">
             Naast loopbaancoaching voert Vizier op Scherp enkele lopende

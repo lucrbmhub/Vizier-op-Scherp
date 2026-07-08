@@ -131,7 +131,7 @@ export function LeidraadDownloadModal({
                 disabled={status === "submitting"}
                 aria-invalid={errorMsg ? true : undefined}
                 aria-describedby={errorMsg ? "leidraad-email-err" : undefined}
-                className="w-full rounded-md border border-mint-dof bg-white px-3 py-2.5 text-petrol placeholder:text-petrol/40 focus:outline-none focus:ring-2 focus:ring-koraal/40 focus:border-koraal"
+                className="w-full rounded-md border border-mint-dof bg-paper px-3 py-2.5 text-petrol placeholder:text-petrol/40 focus:outline-none focus:ring-2 focus:ring-koraal/40 focus:border-koraal"
               />
               {errorMsg && (
                 <p

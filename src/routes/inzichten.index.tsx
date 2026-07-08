@@ -228,7 +228,7 @@ function Page() {
             Inzichten
           </span>
           <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-linnen-licht max-w-[18ch] leading-[1.1]">
-            Korte stukken over werk, loopbaan en ontwikkeling
+            Korte stukken over werk, loopbaan en ontw<span className="idot" style={{ ["--idot-bg" as never]: "#1F3D3B" }}>i</span>kkeling
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-mint leading-relaxed">
             Praktische inzichten voor wie nadenkt over een volgende stap, en

@@ -169,7 +169,7 @@ function Page() {
             id="hero-titel"
             className="font-display text-3xl md:text-5xl leading-tight text-petrol max-w-[22ch]"
           >
-            Even niet weten welke kant je op wilt, daar begint het vaak.
+            Even n<span className="idot" style={{ ["--idot-bg" as never]: "#F5EFE3" }}>i</span>et weten welke kant je op wilt, daar begint het vaak<span className="slotpunt">.</span>
           </h1>
           <p className="mt-5 text-petrol/75 max-w-[56ch] text-lg">
             Misschien ben je doorverwezen door je werkgever. Misschien loop je
