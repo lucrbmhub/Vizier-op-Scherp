@@ -144,7 +144,7 @@ function Page() {
                 id="hero-titel"
                 className="font-display text-3xl md:text-5xl leading-tight text-linnen-licht max-w-[20ch]"
               >
-                Loopbaancoaching die u ontzorgt, en uw mensen{" "}
+                Loopbaancoach<span className="idot" style={{ ["--idot-bg" as never]: "#1F3D3B" }}>i</span>ng die u ontzorgt, en uw mensen{" "}
                 <em className="not-italic text-goud">in beweging brengt.</em>
               </h1>
               <p className="mt-5 text-mint max-w-[52ch]">
@@ -298,7 +298,7 @@ function Page() {
 
             {/* Koraal — leadproduct */}
             <article className="rounded-2xl p-7 bg-koraal flex flex-col gap-3.5 text-[color:var(--color-on-koraal-sub)]">
-              <span className="self-start bg-white/40 text-[color:var(--color-on-koraal-title)] text-xs font-medium rounded-full px-3 py-1">
+              <span className="self-start bg-goud text-[color:var(--color-on-goud-title)] text-xs font-medium rounded-full px-3 py-1">
                 Leadproduct
               </span>
               <span className="text-xs font-medium uppercase tracking-wider text-[color:var(--color-on-koraal-title)]">

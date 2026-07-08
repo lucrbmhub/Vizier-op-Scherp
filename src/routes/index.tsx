@@ -121,7 +121,7 @@ function Home() {
               id="hero-titel"
               className="font-display text-[2.05rem] md:text-[2.7rem] leading-[1.18] text-linnen-licht max-w-[18ch]"
             >
-              Persoonlijk voor de medewerker.{" "}
+              Persoonl<span className="idot" style={{ ["--idot-bg" as never]: "#1F3D3B" }}>i</span>jk voor de medewerker.{" "}
               <em className="not-italic text-goud">Georganiseerd voor HR.</em>
             </h1>
             <p className="mt-6 text-mint text-[1.08rem] max-w-[50ch] leading-relaxed">

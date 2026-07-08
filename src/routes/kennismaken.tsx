@@ -69,7 +69,7 @@ function Page() {
             id="hero-titel"
             className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-petrol max-w-4xl leading-[1.1]"
           >
-            Laten we kennismaken.
+            Laten we kenn<span className="idot" style={{ ["--idot-bg" as never]: "#F5EFE3" }}>i</span>smaken<span className="slotpunt">.</span>
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-petrol/75 leading-relaxed">
             Vertel wat er speelt, voor jezelf of in de organisatie. Dan kijken we
