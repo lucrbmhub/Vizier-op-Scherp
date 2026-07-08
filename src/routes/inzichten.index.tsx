@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Section, Label, Eyebrow, CTAStrip } from "../components/ui-blocks";
+import { Section, Eyebrow, CTAStrip } from "../components/ui-blocks";
 
 const TITLE = "Inzichten over werk en loopbaan | Vizier op Scherp";
 const DESC =
@@ -224,9 +224,7 @@ function Page() {
       {/* HERO donker */}
       <section className="bg-petrol text-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <span className="inline-flex items-center rounded-full border border-goud px-3 py-1 text-xs font-medium uppercase tracking-wide text-goud">
-            Inzichten
-          </span>
+          <Eyebrow onPetrol>Inzichten</Eyebrow>
           <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-linnen-licht max-w-[18ch] leading-[1.1]">
             Korte stukken over werk, loopbaan en ontw<span className="idot" style={{ ["--idot-bg" as never]: "#1F3D3B" }}>i</span>kkeling
           </h1>
@@ -243,7 +241,7 @@ function Page() {
           {/* Uitgelicht */}
           {featured && (
             <Section>
-              <Label>Uitgelicht</Label>
+              <Eyebrow>Uitgelicht</Eyebrow>
               <h2 className="font-display text-3xl md:text-4xl text-petrol max-w-3xl">
                 Om mee te beginnen
               </h2>
@@ -254,7 +252,7 @@ function Page() {
           {/* Recent */}
           <section className="bg-linnen-licht">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-              <Label>Recent</Label>
+              <Eyebrow>Recent</Eyebrow>
               <h2 className="font-display text-3xl md:text-4xl text-petrol max-w-3xl">
                 Meer inzichten
               </h2>
@@ -283,9 +281,7 @@ function Page() {
       {/* Thema's — donker */}
       <section className="bg-petrol text-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud mb-2">
-            Waar we over schrijven
-          </span>
+          <Eyebrow onPetrol>Waar we over schrijven</Eyebrow>
           <h2 className="font-display text-3xl md:text-4xl text-linnen-licht max-w-3xl">
             Thema's die terugkomen
           </h2>
@@ -415,5 +411,3 @@ function FeaturedCard({ article }: { article: Article }) {
   );
 }
 
-// Voorkomt 'unused' waarschuwing voor de Eyebrow-helper als hij elders nog niet gebruikt wordt.
-void Eyebrow;

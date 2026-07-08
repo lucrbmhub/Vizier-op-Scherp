@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Section, Label, FAQ, CTASoft } from "../components/ui-blocks";
+import { Section, Eyebrow, FAQ, CTASoft, Card } from "../components/ui-blocks";
 import { WerkboekDownloadModal } from "../components/WerkboekDownloadModal";
 import type { WorkbookKey } from "../lib/leads.functions";
 
@@ -196,7 +196,7 @@ function Page() {
 
       {/* HERKEN JE DIT */}
       <Section>
-        <Label>Herken je dit?</Label>
+        <Eyebrow>Herken je dit?</Eyebrow>
         <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[28ch]">
           Vier momenten waarop coaching helpt
         </h2>
@@ -206,7 +206,10 @@ function Page() {
               key={m.h}
               className="grid gap-2 md:grid-cols-[260px_1fr] md:gap-8 py-6 border-b border-mint-dof"
             >
-              <h3 className="font-display text-base text-petrol">{m.h}</h3>
+              <h3 className="font-display text-base text-petrol flex gap-2.5 items-start">
+                <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rotate-45 bg-koraal" />
+                <span>{m.h}</span>
+              </h3>
               <p className="text-petrol/75 text-[0.97rem] max-w-[62ch]">{m.p}</p>
             </li>
           ))}
@@ -222,7 +225,7 @@ function Page() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="grid gap-10 md:gap-12 md:grid-cols-[1.2fr_0.8fr] md:items-center">
             <div>
-              <Label>Doorverwezen door je werkgever?</Label>
+              <Eyebrow>Doorverwezen door je werkgever?</Eyebrow>
               <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[24ch]">
                 Dan kies jij alsnog zelf.
               </h2>
@@ -231,20 +234,14 @@ function Page() {
                 moet weten: jij bepaalt met wie je in zee gaat, en zo hoort het
                 ook. Bij ons werkt dat zo:
               </p>
-              <ul className="mt-5 mb-7 space-y-0">
+              <ul className="dia-checklist mt-5 mb-7 text-petrol text-[0.96rem]">
                 {[
                   "Je maakt eerst kennis met je coach, voordat er iets vastligt",
                   "Klikt het niet? Dan stellen we iemand anders voor",
                   "Geen anonieme database: echte mensen, met een eigen verhaal en aanpak",
                   "Begeleiding in jouw tempo, gericht op concrete stappen",
                 ].map((l) => (
-                  <li
-                    key={l}
-                    className="py-2 text-petrol text-[0.96rem] flex gap-3"
-                  >
-                    <span className="text-koraal font-medium shrink-0">✓</span>
-                    {l}
-                  </li>
+                  <li key={l}>{l}</li>
                 ))}
               </ul>
               <Link
@@ -269,7 +266,7 @@ function Page() {
 
       {/* TRAJECT IN 4 FASEN */}
       <Section>
-        <Label>Hoe een traject eruitziet</Label>
+        <Eyebrow>Hoe een traject eruitziet</Eyebrow>
         <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
           Van onrust naar concrete stappen, in vier fasen
         </h2>
@@ -292,7 +289,7 @@ function Page() {
       {/* WERKBOEKEN — gratis download */}
       <Section className="pt-0">
         <div className="rounded-2xl border border-goud bg-linnen-licht p-8 md:p-12">
-          <Label>Gratis aan de slag</Label>
+          <Eyebrow>Gratis aan de slag</Eyebrow>
           <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
             Drie werkboeken om zelf te beginnen
           </h2>
@@ -302,10 +299,7 @@ function Page() {
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {werkboeken.map((w) => (
-              <div
-                key={w.key}
-                className="flex flex-col bg-linnen border border-mint-dof rounded-2xl p-6 md:p-7"
-              >
+              <Card key={w.key} tone="linnen" className="flex flex-col">
                 <h3 className="font-display text-lg text-petrol mb-2.5">
                   {w.titel}
                 </h3>
@@ -317,7 +311,7 @@ function Page() {
                 >
                   Download het werkboek
                 </button>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
@@ -328,12 +322,12 @@ function Page() {
       {/* PRAKTISCH + TESTIMONIALS */}
       <section className="bg-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Praktisch</Label>
+          <Eyebrow>Praktisch</Eyebrow>
           <h2 className="font-display text-2xl md:text-3xl text-petrol">
             Goed om te weten
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <div className="bg-linnen border border-mint-dof rounded-2xl p-8">
+            <Card tone="linnen">
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 Waar en hoe
               </h3>
@@ -343,8 +337,8 @@ function Page() {
                 jou goed werkt. Je spreekt af in een tempo dat bij je past,
                 coaching is geen sprint.
               </p>
-            </div>
-            <div className="bg-linnen border border-mint-dof rounded-2xl p-8">
+            </Card>
+            <Card tone="linnen">
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 Wie betaalt het traject?
               </h3>
@@ -358,15 +352,16 @@ function Page() {
                 heldere prijsafspraak, zodat je precies weet waar je aan toe
                 bent.
               </p>
-            </div>
+            </Card>
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             <figure className="border border-mint-dof rounded-2xl p-8 bg-linnen-licht">
-              <blockquote className="font-display text-[1.06rem] text-petrol leading-relaxed mb-4">
+              <blockquote className="quote-rail font-display text-[1.06rem] text-petrol leading-relaxed mb-4">
                 "Het traject heeft me geholpen om rustig te kijken naar wat ik
                 echt wilde. Geen druk, wel concrete stappen. Ik heb nu een rol
                 die beter past bij wat ik kan en wil."
+                <span className="quote-dot" aria-hidden="true" />
               </blockquote>
               <figcaption className="text-sm text-petrol/65 not-italic">
                 <cite className="not-italic">
@@ -375,10 +370,11 @@ function Page() {
               </figcaption>
             </figure>
             <figure className="border border-mint-dof rounded-2xl p-8 bg-linnen-licht">
-              <blockquote className="font-display text-[1.06rem] text-petrol leading-relaxed mb-4">
+              <blockquote className="quote-rail font-display text-[1.06rem] text-petrol leading-relaxed mb-4">
                 "Wij zetten Vizier op Scherp structureel in voor medewerkers met
                 loopbaanvragen. Korte lijnen, professionele coaches en altijd
                 een zorgvuldige match."
+                <span className="quote-dot" aria-hidden="true" />
               </blockquote>
               <figcaption className="text-sm text-petrol/65 not-italic">
                 <cite className="not-italic">
@@ -392,7 +388,7 @@ function Page() {
 
       {/* FAQ */}
       <Section>
-        <Label>Veelgestelde vragen</Label>
+        <Eyebrow>Veelgestelde vragen</Eyebrow>
         <h2 className="font-display text-2xl md:text-3xl text-petrol mb-8">
           Wat mensen ons vooraf vragen
         </h2>
@@ -404,7 +400,7 @@ function Page() {
       {/* UWV */}
       <section className="bg-linnen">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <div className="rounded-2xl border border-mint-dof p-7 md:p-9 flex flex-wrap justify-between items-center gap-6 bg-linnen-licht">
+          <Card tone="linnen" className="flex flex-wrap justify-between items-center gap-6">
             <div className="max-w-[58ch]">
               <h2 className="font-display text-[1.25rem] text-petrol mb-2">
                 Kom je via UWV?
@@ -420,7 +416,7 @@ function Page() {
             >
               Lees over UWV-trajecten
             </Link>
-          </div>
+          </Card>
         </div>
       </section>
 

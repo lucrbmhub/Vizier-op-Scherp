@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LeidraadDownloadModal } from "@/components/LeidraadDownloadModal";
+import { Eyebrow, CTAStrip } from "../components/ui-blocks";
 import heroImg from "../assets/coaching-gesprek.jpg.asset.json";
 import maaikePhoto from "../assets/maaike.jpg.asset.json";
 import liannePhoto from "../assets/lianne.jpg.asset.json";
@@ -94,8 +95,6 @@ export const Route = createFileRoute("/")({
 
 const wrap = "mx-auto max-w-[1140px] px-6";
 const sectionCls = "py-20 md:py-[84px]";
-const labelCls =
-  "block text-[0.82rem] font-medium uppercase tracking-[0.1em] text-koraal mb-3";
 const h2Cls =
   "font-display text-3xl md:text-[2rem] leading-[1.25] text-petrol max-w-[26ch]";
 const introCls = "mt-4 text-petrol/75 max-w-[64ch] text-base md:text-[1.05rem]";
@@ -157,13 +156,15 @@ function Home() {
           </div>
 
           <aside className="rounded-2xl overflow-hidden bg-linnen border border-mint/25">
-            <img
-              src={heroImg.url}
-              alt="Loopbaancoach in gesprek met een medewerker in een rustige werkomgeving"
-              width={1280}
-              height={832}
-              className="w-full h-[230px] md:h-[320px] object-cover"
-            />
+            <div className="photo-duotone photo-duotone-anchor">
+              <img
+                src={heroImg.url}
+                alt="Loopbaancoach in gesprek met een medewerker in een rustige werkomgeving"
+                width={1280}
+                height={832}
+                className="w-full h-[230px] md:h-[320px] object-cover"
+              />
+            </div>
             <div className="p-6 md:p-7">
               <span className="inline-block bg-goud text-[color:var(--color-on-goud-title)] text-xs font-medium tracking-[0.02em] px-3 py-1 rounded-full mb-3">
                 Ons leadproduct
@@ -184,7 +185,7 @@ function Home() {
       {/* TWEE RICHTINGEN */}
       <section aria-labelledby="twee-richtingen-titel" className={`${sectionCls} bg-linnen`}>
         <div className={wrap}>
-          <span className={labelCls}>Twee richtingen</span>
+          <Eyebrow>Twee richtingen</Eyebrow>
           <h2 id="twee-richtingen-titel" className={h2Cls}>
             Sterker in je huidige rol, en verder als je wilt
           </h2>
@@ -220,7 +221,7 @@ function Home() {
       {/* HERKENBAAR */}
       <section aria-labelledby="herkenbaar-titel" className={`${sectionCls} bg-linnen`}>
         <div className={wrap}>
-          <span className={labelCls}>Herkenbaar?</span>
+          <Eyebrow>Herkenbaar?</Eyebrow>
           <h2 id="herkenbaar-titel" className={h2Cls}>
             Loopbaanvragen blijven vaak liggen. Tot het te laat is
           </h2>
@@ -235,7 +236,10 @@ function Home() {
                 key={t}
                 className="grid gap-2 md:gap-8 md:grid-cols-[200px_1fr] py-7 border-b border-mint-dof"
               >
-                <h3 className="font-display text-[1.05rem] text-petrol">{t}</h3>
+                <h3 className="font-display text-[1.05rem] text-petrol flex gap-2.5 items-start">
+                  <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rotate-45 bg-koraal" />
+                  <span>{t}</span>
+                </h3>
                 <p className="text-petrol/70 max-w-[62ch] text-[0.98rem]">{p}</p>
               </div>
             ))}
@@ -252,7 +256,7 @@ function Home() {
       {/* AANBOD — trapleuning */}
       <section aria-labelledby="aanbod-titel" className={`${sectionCls} bg-linnen-licht`}>
         <div className={wrap}>
-          <span className={labelCls}>Ons aanbod voor werkgevers</span>
+          <Eyebrow>Ons aanbod voor werkgevers</Eyebrow>
           <h2 id="aanbod-titel" className={h2Cls}>
             Drie vormen van loopbaancoaching, één werkwijze
           </h2>
@@ -340,7 +344,7 @@ function Home() {
         <div className={wrap}>
           <div className="rounded-2xl border border-goud bg-linnen-licht p-8 md:p-[52px] grid gap-10 lg:gap-12 lg:grid-cols-[1.2fr_0.8fr] items-center">
             <div>
-              <span className={labelCls}>Voor medewerkers</span>
+              <Eyebrow>Voor medewerkers</Eyebrow>
               <h2
                 id="medewerkers-titel"
                 className="font-display text-[1.6rem] md:text-[1.8rem] text-petrol max-w-[26ch]"
@@ -352,20 +356,14 @@ function Home() {
                 misschien oriënteer je je zelf en kwam je hier terecht. In beide gevallen
                 geldt: jij bepaalt met wie je in zee gaat, en dat hoort ook zo.
               </p>
-              <ul className="mt-5 mb-7">
+              <ul className="dia-checklist mt-5 mb-7 text-[0.96rem] text-petrol">
                 {[
                   "Je maakt eerst kennis met je coach, voordat er iets vastligt",
                   "Klikt het niet? Dan stellen we iemand anders voor",
                   "Geen anonieme database. Echte mensen, met een eigen verhaal",
                   "Begeleiding in jouw tempo, gericht op concrete stappen",
                 ].map((li) => (
-                  <li
-                    key={li}
-                    className="py-2 text-[0.96rem] text-petrol flex gap-3 items-baseline"
-                  >
-                    <span aria-hidden="true" className="text-koraal font-medium">✓</span>
-                    <span>{li}</span>
-                  </li>
+                  <li key={li}>{li}</li>
                 ))}
               </ul>
               <Link to="/coaching-voor-mij" className={btnOutline}>
@@ -388,9 +386,7 @@ function Home() {
       {/* BEWIJS — stats + testimonials */}
       <section aria-labelledby="bewijs-titel" className={`${sectionCls} bg-petrol text-linnen-licht`}>
         <div className={wrap}>
-          <span className="block text-[0.82rem] font-medium uppercase tracking-[0.1em] text-goud mb-3">
-            Waarom Vizier op Scherp
-          </span>
+          <Eyebrow onPetrol>Waarom Vizier op Scherp</Eyebrow>
           <h2 id="bewijs-titel" className="font-display text-3xl md:text-[2rem] leading-[1.25] text-linnen-licht max-w-[26ch]">
             Een klein netwerk met bewezen ervaring
           </h2>
@@ -426,8 +422,9 @@ function Home() {
               ],
             ].map(([q, c]) => (
               <figure key={c} className="rounded-2xl border border-mint/20 p-8">
-                <blockquote className="font-display text-[1.05rem] md:text-[1.08rem] text-linnen-licht leading-relaxed mb-4">
+                <blockquote className="quote-rail quote-rail-on-petrol font-display text-[1.05rem] md:text-[1.08rem] text-linnen-licht leading-relaxed mb-4">
                   “{q}”
+                  <span className="quote-dot" aria-hidden="true" />
                 </blockquote>
                 <figcaption>
                   <cite className="not-italic text-[0.9rem] text-mint-dof">{c}</cite>
@@ -441,7 +438,7 @@ function Home() {
       {/* TEAM */}
       <section aria-labelledby="team-titel" className={`${sectionCls} bg-linnen`}>
         <div className={wrap}>
-          <span className={labelCls}>Het team</span>
+          <Eyebrow>Het team</Eyebrow>
           <h2 id="team-titel" className={h2Cls}>
             Ons coachnetwerk
           </h2>
@@ -492,7 +489,7 @@ function Home() {
       {/* REGIO */}
       <section aria-labelledby="regio-titel" className={`${sectionCls} bg-linnen-licht`}>
         <div className={wrap}>
-          <span className={labelCls}>Werkgebied</span>
+          <Eyebrow>Werkgebied</Eyebrow>
           <h2 id="regio-titel" className={h2Cls}>
             Loopbaancoaching in Amsterdam, Haarlem en omgeving
           </h2>
@@ -518,7 +515,7 @@ function Home() {
         <div className={wrap}>
           <div className="rounded-2xl border border-goud bg-linnen-licht px-6 py-7 md:px-8 md:py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="max-w-[640px]">
-              <span className={labelCls}>Gratis voor HR</span>
+              <Eyebrow>Gratis voor HR</Eyebrow>
               <h2
                 id="leadmagnet-titel"
                 className="font-display text-[1.35rem] text-petrol leading-snug mt-1.5 mb-2"
@@ -542,28 +539,22 @@ function Home() {
       </section>
 
       {/* CTA STRIP */}
-      <section aria-labelledby="cta-titel" className="pt-10 pb-24 bg-linnen">
+      <section aria-label="Kennismaken" className="pt-10 pb-24 bg-linnen">
         <div className={wrap}>
-          <div className="rounded-3xl bg-koraal p-8 md:p-14 flex flex-wrap justify-between items-center gap-8">
-            <div>
-              <h2
-                id="cta-titel"
-                className="font-display text-[1.5rem] md:text-[1.75rem] text-[color:var(--color-on-koraal-title)] leading-[1.25] max-w-[22ch]"
+          <CTAStrip
+            title="Benieuwd wat dit voor uw organisatie kan betekenen?"
+            action={
+              <Link
+                to="/kennismaken"
+                className="inline-flex items-center rounded-md bg-petrol px-6 py-3 text-base font-medium text-linnen-licht hover:bg-[#16302E] transition shrink-0"
               >
-                Benieuwd wat dit voor uw organisatie kan betekenen?
-              </h2>
-              <p className="mt-2.5 text-[color:var(--color-on-koraal-sub)] max-w-[46ch]">
-                Plan een vrijblijvend kennismakingsgesprek. We luisteren eerst, denken dan
-                mee, en komen met een concreet voorstel dat past bij uw situatie en budget.
-              </p>
-            </div>
-            <Link
-              to="/kennismaken"
-              className="inline-flex items-center rounded-md bg-petrol px-6 py-3 text-base font-medium text-linnen-licht hover:bg-[#16302E] transition shrink-0"
-            >
-              Plan een kennismakingsgesprek
-            </Link>
-          </div>
+                Plan een kennismakingsgesprek
+              </Link>
+            }
+          >
+            Plan een vrijblijvend kennismakingsgesprek. We luisteren eerst, denken dan
+            mee, en komen met een concreet voorstel dat past bij uw situatie en budget.
+          </CTAStrip>
         </div>
       </section>
 

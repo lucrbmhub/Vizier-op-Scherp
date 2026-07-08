@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Eyebrow, Label, Section, Card } from "../components/ui-blocks";
+import { Eyebrow, Section, Card } from "../components/ui-blocks";
 import { supabase } from "@/integrations/supabase/client";
 
 
@@ -106,7 +106,7 @@ function Page() {
 
       {/* Even contact */}
       <Section>
-        <Label>Even contact</Label>
+        <Eyebrow>Even contact</Eyebrow>
         <h2 className="font-display text-3xl md:text-4xl text-petrol max-w-3xl">
           Hoe wil je iets laten weten?
         </h2>
@@ -170,7 +170,7 @@ function Page() {
       {/* De gesprekken */}
       <section className="bg-linnen-licht" aria-labelledby="route-titel">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>De gesprekken</Label>
+          <Eyebrow>De gesprekken</Eyebrow>
           <h2
             id="route-titel"
             className="font-display text-3xl md:text-4xl text-petrol max-w-3xl"
@@ -229,7 +229,7 @@ function Page() {
       {/* Formulier */}
       <section id="bericht-form" aria-labelledby="form-titel">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Of laat iets achter</Label>
+          <Eyebrow>Of laat iets achter</Eyebrow>
           <h2
             id="form-titel"
             className="font-display text-3xl md:text-4xl text-petrol max-w-3xl"

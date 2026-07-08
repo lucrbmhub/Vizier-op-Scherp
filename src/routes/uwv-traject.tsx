@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Section, Label, FAQ, CTASoft } from "../components/ui-blocks";
+import { Section, Eyebrow, FAQ, CTASoft, Card } from "../components/ui-blocks";
 
 const TITLE = "Werkfit Maken & Naar Werk via UWV | Vizier op Scherp";
 const DESC =
@@ -167,7 +167,7 @@ function Page() {
 
       {/* VOOR WIE */}
       <Section>
-        <Label>Voor wie</Label>
+        <Eyebrow>Voor wie</Eyebrow>
         <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
           Misschien herken je een van deze situaties
         </h2>
@@ -177,7 +177,10 @@ function Page() {
               key={s.h}
               className="grid gap-2 md:grid-cols-[260px_1fr] md:gap-8 py-6 border-b border-mint-dof"
             >
-              <h3 className="font-display text-base text-petrol">{s.h}</h3>
+              <h3 className="font-display text-base text-petrol flex gap-2.5 items-start">
+                <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rotate-45 bg-koraal" />
+                <span>{s.h}</span>
+              </h3>
               <p className="text-petrol/75 text-[0.97rem] max-w-[62ch]">{s.p}</p>
             </li>
           ))}
@@ -191,7 +194,7 @@ function Page() {
       {/* WAT WE SAMEN DOEN */}
       <section className="bg-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Wat we samen doen</Label>
+          <Eyebrow>Wat we samen doen</Eyebrow>
           <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
             Twee soorten trajecten, één manier van begeleiden
           </h2>
@@ -201,7 +204,7 @@ function Page() {
             In het kort:
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <div className="bg-linnen border border-mint-dof rounded-2xl p-8">
+            <Card tone="linnen">
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 Werkfit Maken
               </h3>
@@ -214,8 +217,8 @@ function Page() {
                 Denk aan: structuur in je week, weer onder de mensen komen,
                 ontdekken waar je energie van krijgt.
               </p>
-            </div>
-            <div className="bg-linnen border border-mint-dof rounded-2xl p-8">
+            </Card>
+            <Card tone="linnen">
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 Naar Werk
               </h3>
@@ -228,23 +231,20 @@ function Page() {
                 Denk aan: je verhaal helder krijgen, sollicitaties voorbereiden,
                 werkgevers benaderen die bij je passen.
               </p>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* HOE HET WERKT */}
       <Section>
-        <Label>Hoe het werkt</Label>
+        <Eyebrow>Hoe het werkt</Eyebrow>
         <h2 className="font-display text-2xl md:text-3xl text-petrol">
           In vier stappen
         </h2>
         <ol className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {stappen.map((s, i) => (
-            <li
-              key={s.h}
-              className="bg-linnen-licht border border-mint-dof rounded-2xl p-6"
-            >
+            <li key={s.h} className="anchor-card !p-6">
               <span className="inline-block font-display text-sm font-medium text-koraal border-b-2 border-goud pb-1 mb-3">
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -258,12 +258,12 @@ function Page() {
       {/* GOED OM TE WETEN */}
       <section className="bg-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Goed om te weten</Label>
+          <Eyebrow>Goed om te weten</Eyebrow>
           <h2 className="font-display text-2xl md:text-3xl text-petrol">
             Eerlijk over hoe het geregeld is
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <div className="bg-linnen border border-mint-dof rounded-2xl p-8">
+            <Card tone="linnen">
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 Het kost jou niets, en jij kiest
               </h3>
@@ -273,8 +273,8 @@ function Page() {
                 traject doet. Wil je met ons werken? Geef dat aan bij je
                 contactpersoon bij UWV, of neem eerst contact met ons op.
               </p>
-            </div>
-            <div className="bg-linnen border border-mint-dof rounded-2xl p-8">
+            </Card>
+            <Card tone="linnen">
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 Wat we wel en niet delen
               </h3>
@@ -285,14 +285,14 @@ function Page() {
                 bij de start precies uit wat er wel en niet gedeeld wordt en
                 blijft hierover met je in gesprek.
               </p>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
       <Section>
-        <Label>Veelgestelde vragen</Label>
+        <Eyebrow>Veelgestelde vragen</Eyebrow>
         <h2 className="font-display text-2xl md:text-3xl text-petrol mb-8">
           Vragen die we vaak krijgen
         </h2>
