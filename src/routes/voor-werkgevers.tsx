@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "../assets/coaching-werkgever.jpg.asset.json";
-import { Section, Eyebrow, Label, FAQ, CTAStrip } from "../components/ui-blocks";
+import { Section, Eyebrow, FAQ, CTAStrip, Card } from "../components/ui-blocks";
 import { LeidraadDownloadModal } from "@/components/LeidraadDownloadModal";
 
 const TITLE = "Loopbaancoaching voor uw medewerkers | Vizier op Scherp";
@@ -184,14 +184,16 @@ function Page() {
               </dl>
             </div>
             <div className="bg-linnen rounded-2xl overflow-hidden border border-mint/25">
-              <img
-                src={heroImg.url}
-                alt="Loopbaancoach in gesprek met een medewerker"
-                width={560}
-                height={300}
-                loading="eager"
-                className="w-full h-56 md:h-72 object-cover"
-              />
+              <div className="photo-duotone photo-duotone-anchor">
+                <img
+                  src={heroImg.url}
+                  alt="Loopbaancoach in gesprek met een medewerker"
+                  width={560}
+                  height={300}
+                  loading="eager"
+                  className="w-full h-56 md:h-72 object-cover"
+                />
+              </div>
               <div className="p-6 md:p-7">
                 <span className="inline-block bg-goud text-[color:var(--color-on-goud-title)] text-xs font-medium rounded-full px-3 py-1 mb-3 tracking-wide">
                   Meest gekozen door HR
@@ -212,7 +214,7 @@ function Page() {
 
       {/* SITUATIES */}
       <Section>
-        <Label>Wanneer schakelt u ons in?</Label>
+        <Eyebrow>Wanneer schakelt u ons in?</Eyebrow>
         <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[28ch]">
           Zes situaties waarin een loopbaancoach het verschil maakt
         </h2>
@@ -222,7 +224,10 @@ function Page() {
               key={s.h}
               className="grid gap-2 md:grid-cols-[220px_1fr] md:gap-8 py-6 border-b border-mint-dof"
             >
-              <h3 className="font-display text-base text-petrol">{s.h}</h3>
+              <h3 className="font-display text-base text-petrol flex gap-2.5 items-start">
+                <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rotate-45 bg-koraal" />
+                <span>{s.h}</span>
+              </h3>
               <p className="text-petrol/75 text-[0.97rem] max-w-[62ch]">{s.p}</p>
             </li>
           ))}
@@ -239,7 +244,7 @@ function Page() {
       {/* AANBOD */}
       <section className="bg-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Het aanbod</Label>
+          <Eyebrow>Het aanbod</Eyebrow>
           <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
             Drie vormen: u stapt in waar het past, en groeit in uw eigen tempo
           </h2>
@@ -346,7 +351,7 @@ function Page() {
                     key={k}
                     className="py-2.5 border-b border-mint/20 text-mint text-[0.96rem] flex gap-3"
                   >
-                    <span aria-hidden="true" className="text-goud shrink-0 mt-2 w-1.5 h-1.5 rounded-full bg-goud" />
+                    <span aria-hidden="true" className="shrink-0 mt-2 h-2 w-2 rotate-45 bg-koraal" />
                     <span>
                       <strong className="font-medium text-linnen-licht">{k}</strong>: {v}
                     </span>
@@ -380,7 +385,7 @@ function Page() {
 
       {/* WERKWIJZE */}
       <Section>
-        <Label>Werkwijze per traject</Label>
+        <Eyebrow>Werkwijze per traject</Eyebrow>
         <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
           Vijf stappen, en wat wij bij elke stap regelen
         </h2>
@@ -418,12 +423,12 @@ function Page() {
       {/* VERTROUWEN */}
       <section className="bg-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Heldere afspraken</Label>
+          <Eyebrow>Heldere afspraken</Eyebrow>
           <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
             Duidelijk over privacy, en over wat we níet doen
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <div className="bg-linnen border border-mint-dof rounded-2xl p-8">
+            <Card tone="linnen">
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 Privacy: inhoud is vertrouwelijk, proces is deelbaar
               </h3>
@@ -438,8 +443,8 @@ function Page() {
                 waar het traject staat. Precies die combinatie maakt coaching
                 effectief.
               </p>
-            </div>
-            <div className="bg-linnen border border-mint-dof rounded-2xl p-8">
+            </Card>
+            <Card tone="linnen">
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 Wat wij bewust niet doen
               </h3>
@@ -447,25 +452,19 @@ function Page() {
                 Vizier op Scherp is een bureau voor loopbaancoaching, geen
                 verzuim- of re-integratiepartij. Wij doen daarom geen:
               </p>
-              <ul className="space-y-0">
+              <ul className="dia-bullets text-petrol/75 text-[0.95rem]">
                 {[
                   "verzuimbegeleiding of casemanagement",
                   "2e spoor re-integratie of Poortwachtertrajecten",
                   "klassiek outplacement of arbodienstverlening",
                 ].map((l) => (
-                  <li
-                    key={l}
-                    className="py-1.5 text-petrol/75 text-[0.95rem] flex gap-2.5"
-                  >
-                    <span aria-hidden="true" className="shrink-0 mt-2 w-1.5 h-1.5 rounded-full bg-koraal" />
-                    {l}
-                  </li>
+                  <li key={l}>{l}</li>
                 ))}
               </ul>
               <p className="text-petrol/75 mt-3">
                 Komt uw vraag daar wél op neer? Dan verwijzen we u zorgvuldig door.
               </p>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
@@ -473,9 +472,7 @@ function Page() {
       {/* KWALITEIT — donker */}
       <section className="bg-petrol text-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud mb-3">
-            Kwaliteit, georganiseerd
-          </span>
+          <Eyebrow onPetrol>Kwaliteit, georganiseerd</Eyebrow>
           <h2 className="font-display text-2xl md:text-3xl text-linnen-licht max-w-[32ch]">
             Een klein netwerk waar u op kunt bouwen
           </h2>
@@ -503,10 +500,11 @@ function Page() {
 
           <div className="mt-12 grid gap-7 md:grid-cols-2">
             <figure className="border border-mint/20 rounded-2xl p-8">
-              <blockquote className="font-display text-[1.06rem] text-linnen-licht leading-relaxed mb-4">
+              <blockquote className="quote-rail quote-rail-on-petrol font-display text-[1.06rem] text-linnen-licht leading-relaxed mb-4">
                 "Wij zetten Vizier op Scherp structureel in voor medewerkers met
                 loopbaanvragen. Korte lijnen, professionele coaches en altijd
                 een zorgvuldige match. Dat scheelt ons als HR enorm."
+                <span className="quote-dot" aria-hidden="true" />
               </blockquote>
               <figcaption className="text-sm text-mint-dof not-italic">
                 <cite className="not-italic">
@@ -515,10 +513,11 @@ function Page() {
               </figcaption>
             </figure>
             <figure className="border border-mint/20 rounded-2xl p-8">
-              <blockquote className="font-display text-[1.06rem] text-linnen-licht leading-relaxed mb-4">
+              <blockquote className="quote-rail quote-rail-on-petrol font-display text-[1.06rem] text-linnen-licht leading-relaxed mb-4">
                 "Het traject heeft me geholpen om rustig te kijken naar wat ik
                 echt wilde. Geen druk, wel concrete stappen. Ik heb nu een rol
                 die beter past bij wat ik kan en wil."
+                <span className="quote-dot" aria-hidden="true" />
               </blockquote>
               <figcaption className="text-sm text-mint-dof not-italic">
                 <cite className="not-italic">
@@ -532,7 +531,7 @@ function Page() {
 
       {/* ROUTEWIJZER MEDEWERKER */}
       <Section>
-        <div className="bg-linnen-licht border border-mint-dof rounded-2xl p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <Card tone="linnen" className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
             <h2 className="font-display text-xl md:text-2xl text-petrol">
               Ook uw medewerker moet overtuigd zijn
@@ -550,13 +549,13 @@ function Page() {
           >
             Bekijk de pagina voor medewerkers
           </Link>
-        </div>
+        </Card>
       </Section>
 
       {/* FAQ */}
       <section className="bg-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Veelgestelde vragen</Label>
+          <Eyebrow>Veelgestelde vragen</Eyebrow>
           <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch] mb-8">
             Wat HR ons het vaakst vraagt
           </h2>
@@ -570,7 +569,7 @@ function Page() {
       <Section>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-7 bg-linnen-licht border border-goud rounded-2xl px-8 py-7 md:px-10">
           <div className="max-w-2xl">
-            <Label>Gratis voor HR</Label>
+            <Eyebrow>Gratis voor HR</Eyebrow>
             <h2 className="font-display text-xl md:text-2xl text-petrol mb-2 leading-snug">
               Nog niet klaar om een coach in te schakelen?
             </h2>

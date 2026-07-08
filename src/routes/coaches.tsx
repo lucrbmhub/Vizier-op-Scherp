@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Section, Label, CTASoft } from "../components/ui-blocks";
+import { Section, Eyebrow, CTASoft, Card } from "../components/ui-blocks";
 import maaikePhoto from "../assets/maaike.jpg.asset.json";
 import liannePhoto from "../assets/lianne.jpg.asset.json";
 import zelahPhoto from "../assets/zelah.jpg.asset.json";
@@ -220,7 +220,7 @@ function Page() {
 
       {/* COACHES */}
       <Section>
-        <Label>Onze coaches</Label>
+        <Eyebrow>Onze coaches</Eyebrow>
         <h2 className="font-display text-2xl md:text-3xl text-petrol">
           Met wie je kunt kennismaken
         </h2>
@@ -242,9 +242,7 @@ function Page() {
         className="bg-petrol text-linnen-licht"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <span className="block text-xs font-medium uppercase tracking-[0.14em] text-goud mb-3">
-            Eén netwerk, één manier van werken
-          </span>
+          <Eyebrow onPetrol>Eén netwerk, één manier van werken</Eyebrow>
           <h2
             id="netwerk-titel"
             className="font-display text-2xl md:text-3xl text-linnen-licht max-w-[32ch]"
@@ -285,12 +283,12 @@ function Page() {
       {/* MATCHING */}
       <section className="bg-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Hoe de match werkt</Label>
+          <Eyebrow>Hoe de match werkt</Eyebrow>
           <h2 className="font-display text-2xl md:text-3xl text-petrol">
             Eerst kennismaken, dan pas kiezen
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <div className="bg-linnen border border-mint-dof rounded-2xl p-8">
+            <Card tone="linnen">
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 Zo komen we tot een goede match
               </h3>
@@ -303,8 +301,8 @@ function Page() {
                 Een goede klik is geen luxe, maar de basis van een traject dat
                 werkt.
               </p>
-            </div>
-            <div className="bg-linnen border border-mint-dof rounded-2xl p-8">
+            </Card>
+            <Card tone="linnen">
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 En als het niet klikt?
               </h3>
@@ -317,7 +315,7 @@ function Page() {
                 Liever zelf een voorkeur aangeven? Dat kan; vertel het ons
                 gewoon bij de aanmelding.
               </p>
-            </div>
+            </Card>
           </div>
         </div>
       </section>

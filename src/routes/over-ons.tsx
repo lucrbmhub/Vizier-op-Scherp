@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Section, Eyebrow, Label, Card, CTAStrip } from "../components/ui-blocks";
+import { Section, Eyebrow, Card, CTAStrip } from "../components/ui-blocks";
 import teamAsset from "../assets/team-vizier-op-scherp.png.asset.json";
 
 const TITLE = "Over Vizier op Scherp | Regionaal netwerk voor loopbaancoaching";
@@ -93,7 +93,7 @@ function Page() {
 
       {/* Ons verhaal */}
       <Section>
-        <Label>Ons verhaal</Label>
+        <Eyebrow>Ons verhaal</Eyebrow>
         <h2 className="font-display text-3xl md:text-4xl text-petrol max-w-3xl">
           Van persoonlijke praktijk naar netwerkbureau
         </h2>
@@ -126,7 +126,7 @@ function Page() {
       {/* Waar we in geloven */}
       <section className="bg-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Waar we in geloven</Label>
+          <Eyebrow>Waar we in geloven</Eyebrow>
           <h2 className="font-display text-3xl md:text-4xl text-petrol max-w-3xl">
             Op tijd ondersteunen werkt beter dan repareren
           </h2>
@@ -176,7 +176,7 @@ function Page() {
 
       {/* Het netwerk */}
       <Section>
-        <Label>Het netwerk</Label>
+        <Eyebrow>Het netwerk</Eyebrow>
         <h2 className="font-display text-3xl md:text-4xl text-petrol max-w-3xl">
           Bewust klein, zorgvuldig samengesteld
         </h2>
@@ -198,11 +198,13 @@ function Page() {
             overheid en zakelijke dienstverlening. Binnen het netwerk borgen we
             kwaliteit met intervisie en evalueren we elk traject.
           </p>
-          <img
-            src={teamAsset.url}
-            alt="Team Vizier op Scherp"
-            className="mt-8 w-full rounded-2xl object-cover"
-          />
+          <div className="photo-duotone photo-duotone-anchor mt-8">
+            <img
+              src={teamAsset.url}
+              alt="Team Vizier op Scherp"
+              className="w-full object-cover"
+            />
+          </div>
           <p>
             <Link
               to="/coaches"
@@ -217,7 +219,7 @@ function Page() {
       {/* Waar we werken */}
       <section className="bg-linnen-licht">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Label>Waar we werken</Label>
+          <Eyebrow>Waar we werken</Eyebrow>
           <h2 className="font-display text-3xl md:text-4xl text-petrol max-w-3xl">
             Twee locaties, één regio
           </h2>
