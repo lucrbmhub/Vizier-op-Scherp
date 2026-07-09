@@ -222,8 +222,9 @@ function Page() {
   return (
     <>
       {/* HERO donker */}
-      <section className="bg-petrol text-linnen-licht">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <section className="relative overflow-hidden bg-petrol text-linnen-licht">
+        <span aria-hidden="true" className="watermark" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <Eyebrow onPetrol>Inzichten</Eyebrow>
           <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-linnen-licht max-w-[18ch] leading-[1.1]">
             Korte stukken over werk, loopbaan en ontw<span className="idot" style={{ ["--idot-bg" as never]: "#1F3D3B" }}>i</span>kkeling

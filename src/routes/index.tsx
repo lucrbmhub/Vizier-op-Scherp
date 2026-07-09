@@ -110,8 +110,9 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section aria-labelledby="hero-titel" className="bg-petrol text-linnen-licht">
-        <div className={`${wrap} py-16 md:py-20 grid gap-10 lg:gap-14 lg:grid-cols-[1.15fr_0.85fr] items-center`}>
+      <section aria-labelledby="hero-titel" className="relative overflow-hidden bg-petrol text-linnen-licht">
+        <span aria-hidden="true" className="watermark" />
+        <div className={`relative z-10 ${wrap} py-16 md:py-20 grid gap-10 lg:gap-14 lg:grid-cols-[1.15fr_0.85fr] items-center`}>
           <div>
             <span className="inline-block text-[0.82rem] font-medium tracking-[0.03em] text-goud border border-goud rounded-full px-4 py-1.5 mb-6">
               Loopbaancoaching · Amsterdam, Haarlem en omgeving
