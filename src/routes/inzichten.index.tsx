@@ -222,8 +222,9 @@ function Page() {
   return (
     <>
       {/* HERO donker */}
-      <section className="bg-petrol text-linnen-licht">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <section className="relative overflow-hidden bg-petrol text-linnen-licht">
+        <span aria-hidden="true" className="watermark" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <Eyebrow onPetrol>Inzichten</Eyebrow>
           <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-linnen-licht max-w-[18ch] leading-[1.1]">
             Korte stukken over werk, loopbaan en ontw<span className="idot" style={{ ["--idot-bg" as never]: "#1F3D3B" }}>i</span>kkeling
@@ -356,7 +357,7 @@ function ArticleCard({ article }: { article: Article }) {
     <Link
       to={`/inzichten/${article.slug}`}
       aria-label={`Lees: ${article.title}`}
-      className="group relative flex flex-col gap-3 rounded-2xl border border-petrol/15 bg-linnen-licht p-7 transition-[transform,border-color] duration-150 hover:border-goud motion-safe:hover:-translate-y-1"
+      className="group relative flex flex-col gap-3 rounded-2xl bg-paper p-7 transition-transform duration-150 motion-safe:hover:-translate-y-1"
     >
       <span
         className={`self-start rounded-full px-3 py-1 text-[0.7rem] font-medium uppercase tracking-[0.04em] ${badgeClassesFor(article)}`}
@@ -384,7 +385,7 @@ function FeaturedCard({ article }: { article: Article }) {
     <Link
       to={`/inzichten/${article.slug}`}
       aria-label={`Lees het uitgelichte artikel: ${article.title}`}
-      className="group mt-10 grid overflow-hidden rounded-2xl border border-petrol/15 md:grid-cols-[1.2fr_1fr] motion-safe:transition-transform motion-safe:hover:-translate-y-1"
+      className="group mt-10 grid overflow-hidden rounded-[18px] border-2 border-petrol md:grid-cols-[1.2fr_1fr] motion-safe:transition-transform motion-safe:hover:-translate-y-1"
     >
       <div className="bg-linnen-licht p-8 md:p-12">
         <span className="text-xs text-petrol/60 uppercase tracking-[0.08em]">

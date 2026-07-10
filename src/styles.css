@@ -114,15 +114,18 @@
 .eyebrow-on-petrol { color: var(--color-goud); }
 .eyebrow-on-petrol::before { background: var(--color-goud); }
 
-/* IDot: replace dot of first "i" in hero H1 */
-.idot { position: relative; display: inline-block; }
+/* IDot: replace dot of first "i" in hero H1.
+   line-height:1 anchors the pseudo-elements to the glyph's em box rather than
+   the (taller) heading line box, so the diamond stays seated on the letter
+   regardless of the heading's line-height. */
+.idot { position: relative; display: inline-block; line-height: 1; }
 .idot::before {
   content: "";
   position: absolute;
   left: 50%;
-  top: 0;
-  width: 0.19em;
-  height: 0.27em;
+  top: -0.04em;
+  width: 0.2em;
+  height: 0.32em;
   background: var(--idot-bg, var(--color-paper));
   transform: translateX(-50%);
 }
@@ -130,15 +133,47 @@
   content: "";
   position: absolute;
   left: 50%;
-  top: 0.075em;
-  width: 0.17em;
-  height: 0.17em;
+  top: 0.06em;
+  width: 0.15em;
+  height: 0.15em;
   background: var(--color-koraal);
   transform: translateX(-50%) rotate(45deg);
 }
 
 /* Gouden slotpunt */
 .slotpunt { color: var(--color-goud); }
+
+/* Gouden markering in lopende tekst (uit site-v2: .mark-gold) */
+.mark-gold {
+  background: linear-gradient(transparent 58%, var(--color-goud) 58%);
+  padding: 0 2px;
+}
+
+/* Zwevende kaart over de hero-foto (uit site-v2: .float-card) */
+.float-card {
+  position: absolute;
+  left: 12px;
+  bottom: -56px;
+  width: min(380px, 88%);
+  background: var(--color-warm);
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 12px 32px rgba(31, 61, 59, 0.22);
+}
+@media (min-width: 1024px) {
+  .float-card { left: -36px; }
+}
+.float-card::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 24px;
+  width: 11px;
+  height: 11px;
+  background: var(--color-koraal);
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 5px var(--color-warm);
+}
 
 /* DiaBullet list */
 ul.dia-bullets { list-style: none; padding-left: 0; }

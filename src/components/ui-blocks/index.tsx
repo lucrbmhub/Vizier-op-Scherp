@@ -41,7 +41,7 @@ export function Label({ children }: { children: ReactNode }) {
   );
 }
 
-type CardTone = "goud" | "petrol" | "koraal" | "linnen" | "warm";
+type CardTone = "goud" | "petrol" | "koraal" | "linnen" | "warm" | "paper";
 
 export function Card({
   tone = "linnen",
@@ -58,9 +58,12 @@ export function Card({
     koraal: "bg-koraal text-[color:var(--color-on-koraal-title)]",
     linnen: "anchor-card",
     warm: "anchor-card tone-warm",
+    paper: "anchor-card tone-paper",
   };
   const baseRadius =
-    tone === "linnen" || tone === "warm" ? "" : "rounded-2xl p-6 md:p-8";
+    tone === "linnen" || tone === "warm" || tone === "paper"
+      ? ""
+      : "rounded-2xl p-6 md:p-8";
   return (
     <div className={`${baseRadius} ${tones[tone]} ${className}`}>{children}</div>
   );

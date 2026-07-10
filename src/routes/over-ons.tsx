@@ -75,8 +75,9 @@ function Page() {
   return (
     <>
       {/* HERO licht */}
-      <section className="bg-linnen-licht">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <section className="relative overflow-hidden bg-linnen-licht">
+        <span aria-hidden="true" className="watermark watermark-light" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <Eyebrow>Over ons</Eyebrow>
           <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-petrol max-w-4xl leading-[1.1]">
             Profess<span className="idot" style={{ ["--idot-bg" as never]: "#F5EFE3" }}>i</span>oneel voor HR en menselijk voor de medewerker<span className="slotpunt">.</span>

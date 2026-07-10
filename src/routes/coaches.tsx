@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Section, Eyebrow, CTASoft, Card } from "../components/ui-blocks";
+import { Section, Eyebrow, CTASoft } from "../components/ui-blocks";
+import { BrandIcon } from "@/components/BrandIcon";
 import maaikePhoto from "../assets/maaike.jpg.asset.json";
 import liannePhoto from "../assets/lianne.jpg.asset.json";
 import zelahPhoto from "../assets/zelah.jpg.asset.json";
@@ -196,10 +197,11 @@ function Page() {
       {/* HERO */}
       <section
         aria-labelledby="hero-titel"
-        className="bg-linnen-licht border-b border-mint-dof"
+        className="relative overflow-hidden bg-linnen-licht border-b border-mint-dof"
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
-          <span className="inline-block text-xs font-medium border border-koraal text-koraal rounded-full px-4 py-1.5 tracking-wide mb-6">
+        <span aria-hidden="true" className="watermark watermark-light" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+          <span className="inline-block rounded-full border border-[rgba(31,61,59,0.28)] bg-[rgba(216,229,226,0.4)] px-4 py-2 text-[11.5px] font-medium uppercase tracking-[0.16em] text-petrol mb-6">
             Het team
           </span>
           <h1
@@ -288,7 +290,8 @@ function Page() {
             Eerst kennismaken, dan pas kiezen
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <Card tone="linnen">
+            <div className="rounded-2xl bg-paper p-7 md:p-8">
+              <BrandIcon name="vizier" size={44} className="mb-4" />
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 Zo komen we tot een goede match
               </h3>
@@ -301,8 +304,9 @@ function Page() {
                 Een goede klik is geen luxe, maar de basis van een traject dat
                 werkt.
               </p>
-            </Card>
-            <Card tone="linnen">
+            </div>
+            <div className="rounded-2xl bg-paper p-7 md:p-8">
+              <BrandIcon name="gesprek" size={44} className="mb-4" />
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 En als het niet klikt?
               </h3>
@@ -315,7 +319,7 @@ function Page() {
                 Liever zelf een voorkeur aangeven? Dat kan; vertel het ons
                 gewoon bij de aanmelding.
               </p>
-            </Card>
+            </div>
           </div>
         </div>
       </section>

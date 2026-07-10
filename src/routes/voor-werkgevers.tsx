@@ -133,8 +133,9 @@ function Page() {
   return (
     <>
       {/* HERO — petrol */}
-      <section aria-labelledby="hero-titel" className="bg-petrol text-linnen-licht">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+      <section aria-labelledby="hero-titel" className="relative overflow-hidden bg-petrol text-linnen-licht">
+        <span aria-hidden="true" className="watermark" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-20">
           <div className="grid gap-10 md:gap-14 md:grid-cols-[1.15fr_0.85fr] items-center">
             <div>
               <span className="inline-block text-xs font-medium border border-goud text-goud rounded-full px-4 py-1.5 tracking-wide mb-6">

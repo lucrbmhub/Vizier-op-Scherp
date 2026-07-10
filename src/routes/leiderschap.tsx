@@ -30,8 +30,9 @@ export const Route = createFileRoute("/leiderschap")({
 function Page() {
   return (
     <>
-      <section className="bg-linnen-licht">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <section className="relative overflow-hidden bg-linnen-licht">
+        <span aria-hidden="true" className="watermark watermark-light" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <Eyebrow>Achtergrond</Eyebrow>
           <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-petrol max-w-4xl leading-[1.1]">
             Le<span className="idot" style={{ ["--idot-bg" as never]: "#F5EFE3" }}>i</span>derschap &amp; talentontwikkeling

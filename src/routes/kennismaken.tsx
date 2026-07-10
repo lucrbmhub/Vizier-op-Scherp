@@ -62,8 +62,9 @@ function Page() {
     <>
       
       {/* HERO licht */}
-      <section className="bg-linnen-licht" aria-labelledby="hero-titel">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+      <section className="relative overflow-hidden bg-linnen-licht" aria-labelledby="hero-titel">
+        <span aria-hidden="true" className="watermark watermark-light" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <Eyebrow>Kennismaken</Eyebrow>
           <h1
             id="hero-titel"

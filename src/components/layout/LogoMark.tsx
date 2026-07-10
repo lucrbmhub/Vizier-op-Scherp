@@ -20,19 +20,22 @@ export function LogoMark({ variant = "primary", light = false, size = 34 }: Prop
       aria-hidden="true"
       className="shrink-0"
     >
-      <rect x="8" y="8" width="84" height="84" rx="22" fill={bgFill} />
-      <rect
-        x="33"
-        y="33"
-        width="34"
-        height="34"
-        rx="5"
+      <rect x="8" y="8" width="84" height="84" rx="10" fill={bgFill} />
+      <path
+        d="M50 26 L74 50 L50 74 L26 50 Z"
         fill="none"
         stroke={strokeColor}
         strokeWidth="6"
+        strokeLinejoin="miter"
+      />
+      <rect
+        x="44"
+        y="44"
+        width="12"
+        height="12"
+        fill={dotFill}
         transform="rotate(45 50 50)"
       />
-      <circle cx="50" cy="50" r="6.5" fill={dotFill} />
     </svg>
   );
 
