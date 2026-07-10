@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LeidraadDownloadModal } from "@/components/LeidraadDownloadModal";
+import { BrandIcon } from "@/components/BrandIcon";
 import { Eyebrow, CTAStrip } from "../components/ui-blocks";
 import heroImg from "../assets/coaching-gesprek.jpg.asset.json";
 import maaikePhoto from "../assets/maaike.jpg.asset.json";
@@ -114,7 +115,7 @@ function Home() {
         <span aria-hidden="true" className="watermark" />
         <div className={`relative z-10 ${wrap} py-16 md:py-20 grid gap-10 lg:gap-14 lg:grid-cols-[1.15fr_0.85fr] items-center`}>
           <div>
-            <span className="inline-block text-[0.82rem] font-medium tracking-[0.03em] text-goud border border-goud rounded-full px-4 py-1.5 mb-6">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#56716B] px-4 py-2 text-[11.5px] font-medium uppercase tracking-[0.16em] text-mint mb-6">
               Loopbaancoaching · Amsterdam, Haarlem en omgeving
             </span>
             <h1
@@ -140,51 +141,62 @@ function Home() {
                 Ik ben doorverwezen of zoek zelf coaching
               </Link>
             </div>
-            <ul role="list" className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-x-9 gap-y-6">
+            <ul
+              role="list"
+              className="mt-10 flex flex-wrap items-center gap-x-[18px] gap-y-3 text-sm text-mint-dof"
+            >
               {[
                 ["1.000+", "trajecten begeleid door ons netwerk"],
                 ["Gecertificeerde coaches", "met een brede opleidingsachtergrond en unieke specialisaties"],
                 ["5 werkdagen", "van intake tot match"],
-              ].map(([k, v]) => (
-                <li key={k}>
-                  <strong className="block font-display font-medium text-[1.45rem] text-linnen-licht leading-tight">
-                    {k}
-                  </strong>
-                  <span className="text-[0.86rem] text-mint-dof">{v}</span>
+              ].map(([k, v], i) => (
+                <li key={k} className="flex items-center gap-x-[18px]">
+                  {i > 0 && (
+                    <span aria-hidden="true" className="h-1.5 w-1.5 rotate-45 bg-koraal shrink-0" />
+                  )}
+                  <span>
+                    <strong className="font-display font-semibold text-lg text-linnen-licht">
+                      {k}
+                    </strong>{" "}
+                    {v}
+                  </span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <aside className="rounded-2xl overflow-hidden bg-linnen border border-mint/25">
+          <div className="relative z-[2] -mb-20 lg:-mb-[120px]">
             <div className="photo-duotone photo-duotone-anchor">
               <img
                 src={heroImg.url}
                 alt="Loopbaancoach in gesprek met een medewerker in een rustige werkomgeving"
                 width={1280}
                 height={832}
-                className="w-full h-[230px] md:h-[320px] object-cover"
+                className="w-full h-[340px] md:h-[440px] object-cover"
               />
             </div>
-            <div className="p-6 md:p-7">
-              <span className="inline-block bg-goud text-[color:var(--color-on-goud-title)] text-xs font-medium tracking-[0.02em] px-3 py-1 rounded-full mb-3">
+            <div className="float-card">
+              <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-goudlabel">
                 Ons leadproduct
               </span>
-              <h2 className="font-display text-[1.15rem] text-petrol mb-2">
+              <h2 className="font-display text-xl text-petrol mt-1.5 mb-2">
                 De coachingpool als jaarafspraak
               </h2>
-              <p className="text-[0.94rem] text-petrol/70 leading-relaxed">
+              <p className="text-[13.5px] text-[color:var(--color-body-warm)] leading-relaxed">
                 Eén geformaliseerde jaarlijkse overeenkomst waarmee uw medewerkers het hele
                 jaar door kunnen instromen. Intake, matching, begeleiding en evaluatie:
                 georganiseerd, voorspelbaar en zonder losse offertes per geval.
               </p>
             </div>
-          </aside>
+          </div>
         </div>
       </section>
 
       {/* TWEE RICHTINGEN */}
-      <section aria-labelledby="twee-richtingen-titel" className={`${sectionCls} bg-linnen`}>
+      <section
+        aria-labelledby="twee-richtingen-titel"
+        className="bg-linnen pb-20 md:pb-[84px] pt-[150px] lg:pt-[200px]"
+      >
         <div className={wrap}>
           <Eyebrow>Twee richtingen</Eyebrow>
           <h2 id="twee-richtingen-titel" className={h2Cls}>
@@ -197,24 +209,25 @@ function Home() {
             gedrag, een passender takenpakket of een frissere kijk op het werk.
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-2 items-stretch">
-            {[
-              {
-                title: "Sterker in je huidige rol",
-                text: "Weer energie en plezier, heldere prioriteiten, effectiever samenwerken. Voor wie op zijn plek zit en daar beter wil functioneren en zichzelf wil blijven ontwikkelen.",
-              },
-              {
-                title: "Een nieuwe richting",
-                text: "Twijfel ordenen, ontdekken wat past, een volgende stap zetten. Intern waar het kan, extern waar dat beter is, op het tempo van de medewerker.",
-              },
-            ].map((c) => (
-              <article
-                key={c.title}
-                className="h-full bg-linnen-licht border border-mint-dof border-t-2 border-t-koraal rounded-2xl p-7 md:p-8"
-              >
-                <h3 className="font-display text-xl text-petrol mb-3">{c.title}</h3>
-                <p className="text-petrol/75 leading-relaxed">{c.text}</p>
-              </article>
-            ))}
+            <article className="open-card h-full">
+              <h3 className="font-display text-xl text-petrol mb-3">
+                Sterker in je huidige rol
+              </h3>
+              <p className="text-petrol/75 leading-relaxed">
+                Weer energie en plezier, heldere prioriteiten, effectiever samenwerken.
+                Voor wie op zijn plek zit en daar beter wil functioneren en zichzelf wil
+                blijven ontwikkelen.
+              </p>
+            </article>
+            <article className="anchor-card h-full">
+              <h3 className="font-display text-xl text-petrol mb-3">
+                Een nieuwe richting
+              </h3>
+              <p className="text-petrol/75 leading-relaxed">
+                Twijfel ordenen, ontdekken wat past, een volgende stap zetten. Intern waar
+                het kan, extern waar dat beter is, op het tempo van de medewerker.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -222,35 +235,40 @@ function Home() {
       {/* HERKENBAAR */}
       <section aria-labelledby="herkenbaar-titel" className={`${sectionCls} bg-linnen`}>
         <div className={wrap}>
-          <Eyebrow>Herkenbaar?</Eyebrow>
-          <h2 id="herkenbaar-titel" className={h2Cls}>
-            Loopbaanvragen blijven vaak liggen. Tot het te laat is
-          </h2>
-
-          <div className="mt-11 border-t border-mint-dof">
-            {[
-              ["De stille twijfelaar", "Een goede medewerker twijfelt al maanden over een volgende stap. Niemand weet het, tot de ontslagbrief er ligt."],
-              ["De vastgelopen professional", "Iemand zit niet meer op de juiste plek, maar weet zelf ook niet waar dan wél. De motivatie zakt, het team merkt het, en HR heeft de capaciteit niet om dit zelf op te pakken."],
-              ["De HR-afdeling zonder vaste partner", "U wilt medewerkers loopbaanbegeleiding kunnen aanbieden, maar elke keer opnieuw een coach zoeken, offertes vergelijken en kwaliteit beoordelen kost te veel tijd. En de kwaliteit wisselt."],
-            ].map(([t, p]) => (
-              <div
-                key={t}
-                className="grid gap-2 md:gap-8 md:grid-cols-[200px_1fr] py-7 border-b border-mint-dof"
-              >
-                <h3 className="font-display text-[1.05rem] text-petrol flex gap-2.5 items-start">
-                  <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rotate-45 bg-koraal" />
-                  <span>{t}</span>
-                </h3>
-                <p className="text-petrol/70 max-w-[62ch] text-[0.98rem]">{p}</p>
+          <div className="grid gap-8 lg:grid-cols-[5fr_7fr] lg:gap-16 items-start">
+            <div>
+              <Eyebrow>Herkenbaar?</Eyebrow>
+              <h2 id="herkenbaar-titel" className={h2Cls}>
+                Loopbaanvragen blijven vaak liggen. Tot het te laat is
+              </h2>
+            </div>
+            <div>
+              <div className="border-t border-mint-dof">
+                {[
+                  ["De stille twijfelaar", "Een goede medewerker twijfelt al maanden over een volgende stap. Niemand weet het, tot de ontslagbrief er ligt."],
+                  ["De vastgelopen professional", "Iemand zit niet meer op de juiste plek, maar weet zelf ook niet waar dan wél. De motivatie zakt, het team merkt het, en HR heeft de capaciteit niet om dit zelf op te pakken."],
+                  ["De HR-afdeling zonder vaste partner", "U wilt medewerkers loopbaanbegeleiding kunnen aanbieden, maar elke keer opnieuw een coach zoeken, offertes vergelijken en kwaliteit beoordelen kost te veel tijd. En de kwaliteit wisselt."],
+                ].map(([t, p]) => (
+                  <div
+                    key={t}
+                    className="grid gap-2 md:gap-8 md:grid-cols-[220px_1fr] py-6 border-b border-mint-dof"
+                  >
+                    <h3 className="font-display text-[1.05rem] text-petrol flex gap-2.5 items-start">
+                      <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rotate-45 bg-koraal" />
+                      <span>{t}</span>
+                    </h3>
+                    <p className="text-petrol/70 max-w-[62ch] text-[0.98rem]">{p}</p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          <p className="mt-10 font-display text-[1.25rem] md:text-[1.4rem] leading-[1.45] text-petrol max-w-[52ch]">
-            Eén goed gesprek op het juiste moment maakt het verschil. Vizier op Scherp
-            organiseert dat moment,{" "}
-            <span className="text-koraal">vóórdat iemand uitvalt of vertrekt.</span>
-          </p>
+              <p className="mt-8 font-display text-[1.25rem] md:text-[1.4rem] leading-[1.45] text-petrol max-w-[52ch]">
+                Eén goed gesprek op het juiste moment maakt het verschil. Vizier op Scherp
+                organiseert dat moment,{" "}
+                <span className="mark-gold">vóórdat iemand uitvalt of vertrekt.</span>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -266,27 +284,27 @@ function Home() {
             begeleiding en evaluatie op procesniveau, met vooraf heldere privacyafspraken.
           </p>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3 md:items-end">
-            {/* Trede 1 */}
-            <article className="rounded-2xl p-7 md:p-8 bg-goud flex flex-col gap-3.5">
-              <span className="text-[0.76rem] font-medium uppercase tracking-[0.08em] text-[color:var(--color-on-goud-title)]">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {/* Vorm 1 */}
+            <article className="anchor-card tone-warm flex flex-col gap-3.5">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-goudlabel">
                 Stap 1 · Laagdrempelig kennismaken
               </span>
-              <h3 className="font-display text-[1.3rem] leading-snug text-[color:var(--color-on-goud-title)]">
+              <h3 className="font-display text-[1.3rem] leading-snug text-petrol">
                 Proactieve loopbaangesprekken
               </h3>
-              <p className="text-[0.95rem] text-[color:var(--color-on-goud-sub)]">
+              <p className="text-[0.95rem] text-[color:var(--color-body-warm)]">
                 Een ronde gesprekken met een groep medewerkers over energie, motivatie en
                 ontwikkelbehoefte. U ziet wat er speelt vóór iemand vastloopt.
               </p>
-              <span className="text-[0.86rem] font-medium mt-auto pt-2.5 text-[color:var(--color-on-goud-title)]">
+              <span className="text-sm font-medium mt-auto pt-2.5 text-goudlabel">
                 Voor organisaties die willen beginnen
               </span>
             </article>
 
-            {/* Trede 2 */}
-            <article className="rounded-2xl p-7 md:p-8 pb-10 md:pb-14 bg-petrol flex flex-col gap-3.5">
-              <span className="text-[0.76rem] font-medium uppercase tracking-[0.08em] text-goud">
+            {/* Vorm 2 */}
+            <article className="rounded-2xl p-7 md:p-8 bg-petrol flex flex-col gap-3.5">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-goud">
                 Stap 2 · Per medewerker
               </span>
               <h3 className="font-display text-[1.3rem] leading-snug text-linnen-licht">
@@ -296,27 +314,27 @@ function Home() {
                 Loopbaancoaching voor een medewerker die u doorverwijst. Eén traject, één
                 heldere prijsafspraak, één vast aanspreekpunt.
               </p>
-              <span className="text-[0.86rem] font-medium mt-auto pt-2.5 text-goud">
+              <span className="text-sm font-medium mt-auto pt-2.5 text-goud">
                 Voor concrete, actuele loopbaanvragen
               </span>
             </article>
 
-            {/* Trede 3 */}
-            <article className="rounded-2xl p-7 md:p-8 pb-12 md:pb-[78px] bg-koraal flex flex-col gap-3.5">
-              <span className="self-start text-[0.78rem] font-medium px-3 py-1 rounded-full bg-linnen-licht/45 text-[color:var(--color-on-koraal-title)]">
+            {/* Vorm 3 — leadproduct */}
+            <article className="rounded-2xl p-7 md:p-8 bg-goud flex flex-col gap-3.5 shadow-[0_16px_36px_rgba(31,61,59,0.16)] md:-translate-y-2.5">
+              <span className="self-start text-xs font-semibold px-3 py-1 rounded-full bg-[rgba(250,246,239,0.5)] text-[color:var(--color-on-goud-title)]">
                 Leadproduct
               </span>
-              <span className="text-[0.76rem] font-medium uppercase tracking-[0.08em] text-[color:var(--color-on-koraal-title)]">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[color:var(--color-on-goud-title)]">
                 Stap 3 · Structureel geregeld
               </span>
-              <h3 className="font-display text-[1.3rem] leading-snug text-[color:var(--color-on-koraal-title)]">
+              <h3 className="font-display text-[1.3rem] leading-snug text-[color:var(--color-on-goud-title)]">
                 Coachingpool als jaarafspraak
               </h3>
-              <p className="text-[0.95rem] text-[color:var(--color-on-koraal-sub)]">
+              <p className="text-[0.95rem] text-[color:var(--color-on-goud-sub)]">
                 Eén jaarlijkse overeenkomst, medewerkers stromen het hele jaar door in.
                 Voorspelbaar in kosten, georganiseerd in proces.
               </p>
-              <span className="text-[0.86rem] font-medium mt-auto pt-2.5 text-[color:var(--color-on-koraal-title)]">
+              <span className="text-sm font-medium mt-auto pt-2.5 text-[color:var(--color-on-goud-title)]">
                 Voor organisaties die het goed willen regelen
               </span>
             </article>
@@ -343,7 +361,7 @@ function Home() {
       {/* MEDEWERKERS */}
       <section aria-labelledby="medewerkers-titel" className={`${sectionCls} bg-linnen`}>
         <div className={wrap}>
-          <div className="rounded-2xl border border-goud bg-linnen-licht p-8 md:p-[52px] grid gap-10 lg:gap-12 lg:grid-cols-[1.2fr_0.8fr] items-center">
+          <div className="open-card !rounded-[18px] !p-8 md:!p-[52px] grid gap-10 lg:gap-12 lg:grid-cols-[1.2fr_0.8fr] items-center">
             <div>
               <Eyebrow>Voor medewerkers</Eyebrow>
               <h2
@@ -371,11 +389,12 @@ function Home() {
                 Lees hoe coaching bij ons werkt
               </Link>
             </div>
-            <div className="rounded-xl bg-goud p-7">
-              <h3 className="font-display text-[1.1rem] text-[color:var(--color-on-goud-title)] mb-2.5">
+            <div className="rounded-2xl bg-warm p-7 md:p-8">
+              <BrandIcon name="vertrouwelijk" size={44} className="mb-4" />
+              <h3 className="font-display text-[1.1rem] text-petrol mb-2.5">
                 Wat je bespreekt, blijft vertrouwelijk
               </h3>
-              <p className="text-[0.94rem] text-[color:var(--color-on-goud-sub)]">
+              <p className="text-[0.94rem] text-[color:var(--color-body-warm)]">
                 Ook als je werkgever het traject betaalt, blijft de inhoud tussen jou en je coach.
                 Je werkgever hoort alleen óf het loopt, nooit waarover het gaat.
               </p>
@@ -422,12 +441,12 @@ function Home() {
                 "Anouk V., Beleidsadviseur, publieke sector",
               ],
             ].map(([q, c]) => (
-              <figure key={c} className="rounded-2xl border border-mint/20 p-8">
+              <figure key={c} className="m-0">
                 <blockquote className="quote-rail quote-rail-on-petrol font-display text-[1.05rem] md:text-[1.08rem] text-linnen-licht leading-relaxed mb-4">
                   “{q}”
                   <span className="quote-dot" aria-hidden="true" />
                 </blockquote>
-                <figcaption>
+                <figcaption className="pl-8">
                   <cite className="not-italic text-[0.9rem] text-mint-dof">{c}</cite>
                 </figcaption>
               </figure>
@@ -514,7 +533,7 @@ function Home() {
       {/* LEADMAGNET */}
       <section aria-labelledby="leadmagnet-titel" className="pt-10 pb-4 bg-linnen">
         <div className={wrap}>
-          <div className="rounded-2xl border border-goud bg-linnen-licht px-6 py-7 md:px-8 md:py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="anchor-card tone-warm !px-6 !py-7 md:!px-10 md:!py-9 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="max-w-[640px]">
               <Eyebrow>Gratis voor HR</Eyebrow>
               <h2
