@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Eyebrow, FAQ, CTASoft, Card } from "../components/ui-blocks";
+import { BrandIcon } from "@/components/BrandIcon";
 import { WerkboekDownloadModal } from "../components/WerkboekDownloadModal";
 import type { WorkbookKey } from "../lib/leads.functions";
 
@@ -163,7 +164,7 @@ function Page() {
       >
         <span aria-hidden="true" className="watermark watermark-light" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
-          <span className="inline-block text-xs font-medium border border-koraal text-koraal rounded-full px-4 py-1.5 tracking-wide mb-6">
+          <span className="inline-block rounded-full border border-[rgba(31,61,59,0.28)] bg-[rgba(216,229,226,0.4)] px-4 py-2 text-[11.5px] font-medium uppercase tracking-[0.16em] text-petrol mb-6">
             Voor medewerkers en particulieren
           </span>
           <h1
@@ -197,28 +198,32 @@ function Page() {
 
       {/* HERKEN JE DIT */}
       <Section>
-        <Eyebrow>Herken je dit?</Eyebrow>
-        <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[28ch]">
-          Vier momenten waarop coaching helpt
-        </h2>
-        <ul className="mt-10 border-t border-mint-dof">
-          {momenten.map((m) => (
-            <li
-              key={m.h}
-              className="grid gap-2 md:grid-cols-[260px_1fr] md:gap-8 py-6 border-b border-mint-dof"
-            >
-              <h3 className="font-display text-base text-petrol flex gap-2.5 items-start">
-                <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rotate-45 bg-koraal" />
-                <span>{m.h}</span>
-              </h3>
-              <p className="text-petrol/75 text-[0.97rem] max-w-[62ch]">{m.p}</p>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-9 font-display text-xl md:text-2xl text-petrol max-w-[54ch] leading-snug">
-          Wat deze momenten gemeen hebben: je hoeft het niet alleen uit te
-          zoeken. <span className="text-koraal">Samen kijken werkt beter.</span>
-        </p>
+        <div className="grid gap-8 lg:grid-cols-[5fr_7fr] lg:gap-16 items-start">
+          <div>
+            <Eyebrow>Herken je dit?</Eyebrow>
+            <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[28ch]">
+              Vier momenten waarop coaching helpt
+            </h2>
+            <p className="mt-8 font-display text-xl text-petrol max-w-[40ch] leading-snug">
+              Wat deze momenten gemeen hebben: je hoeft het niet alleen uit te
+              zoeken. <span className="mark-gold">Samen kijken werkt beter.</span>
+            </p>
+          </div>
+          <ul className="border-t border-mint-dof">
+            {momenten.map((m) => (
+              <li
+                key={m.h}
+                className="grid gap-2 md:grid-cols-[220px_1fr] md:gap-8 py-6 border-b border-mint-dof"
+              >
+                <h3 className="font-display text-base text-petrol flex gap-2.5 items-start">
+                  <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rotate-45 bg-koraal" />
+                  <span>{m.h}</span>
+                </h3>
+                <p className="text-petrol/75 text-[0.97rem] max-w-[62ch]">{m.p}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Section>
 
       {/* DOORVERWEZEN */}
@@ -252,8 +257,9 @@ function Page() {
                 Leer onze coaches kennen
               </Link>
             </div>
-            <aside className="bg-goud rounded-2xl p-7 md:p-8 text-[color:var(--color-on-goud-sub)]">
-              <h3 className="font-display text-lg text-[color:var(--color-on-goud-title)] mb-3">
+            <aside className="bg-warm rounded-2xl p-7 md:p-8 text-[color:var(--color-body-warm)]">
+              <BrandIcon name="vertrouwelijk" size={44} className="mb-4" />
+              <h3 className="font-display text-lg text-petrol mb-3">
                 Wat je bespreekt, blijft vertrouwelijk
               </h3>
               <p className="text-[0.95rem]">
@@ -276,11 +282,21 @@ function Page() {
           herkenbaar. Hoeveel gesprekken je nodig hebt en in welk tempo, stem je
           af met je coach.
         </p>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {fasen.map((f) => (
-            <div key={f.h} className="border-t-[3px] border-goud pt-4">
-              <h3 className="font-display text-base text-petrol mb-2">{f.h}</h3>
-              <p className="text-[0.93rem] text-petrol/75">{f.p}</p>
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {fasen.map((f, i) => (
+            <div
+              key={f.h}
+              className="relative border-t-2 border-petrol pt-[18px] flex flex-col gap-2.5"
+            >
+              <span
+                aria-hidden="true"
+                className="absolute -top-1.5 left-0 h-2.5 w-2.5 rotate-45 bg-koraal"
+              />
+              <span className="font-display font-semibold text-[15px] text-goudlabel">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="font-display text-xl text-petrol">{f.h}</h3>
+              <p className="text-[14.5px] text-petrol/75">{f.p}</p>
             </div>
           ))}
         </div>
@@ -289,7 +305,8 @@ function Page() {
 
       {/* WERKBOEKEN — gratis download */}
       <Section className="pt-0">
-        <div className="rounded-2xl border border-goud bg-linnen-licht p-8 md:p-12">
+        <div className="facet-cta">
+          <div className="facet-inner !block">
           <Eyebrow>Gratis aan de slag</Eyebrow>
           <h2 className="font-display text-2xl md:text-3xl text-petrol max-w-[32ch]">
             Drie werkboeken om zelf te beginnen
@@ -300,7 +317,7 @@ function Page() {
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {werkboeken.map((w) => (
-              <Card key={w.key} tone="linnen" className="flex flex-col">
+              <div key={w.key} className="rounded-2xl bg-paper p-6 md:p-7 flex flex-col">
                 <h3 className="font-display text-lg text-petrol mb-2.5">
                   {w.titel}
                 </h3>
@@ -312,8 +329,9 @@ function Page() {
                 >
                   Download het werkboek
                 </button>
-              </Card>
+              </div>
             ))}
+          </div>
           </div>
         </div>
       </Section>
@@ -328,7 +346,7 @@ function Page() {
             Goed om te weten
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <Card tone="linnen">
+            <Card tone="paper">
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 Waar en hoe
               </h3>
@@ -339,7 +357,7 @@ function Page() {
                 coaching is geen sprint.
               </p>
             </Card>
-            <Card tone="linnen">
+            <div className="rounded-2xl bg-paper p-7">
               <h3 className="font-display text-lg text-petrol mb-3.5">
                 Wie betaalt het traject?
               </h3>
@@ -353,31 +371,31 @@ function Page() {
                 heldere prijsafspraak, zodat je precies weet waar je aan toe
                 bent.
               </p>
-            </Card>
+            </div>
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <figure className="border border-mint-dof rounded-2xl p-8 bg-linnen-licht">
-              <blockquote className="quote-rail font-display text-[1.06rem] text-petrol leading-relaxed mb-4">
+            <figure className="m-0">
+              <blockquote className="quote-rail font-display text-[1.06rem] text-petrol leading-relaxed mb-3">
                 "Het traject heeft me geholpen om rustig te kijken naar wat ik
                 echt wilde. Geen druk, wel concrete stappen. Ik heb nu een rol
                 die beter past bij wat ik kan en wil."
                 <span className="quote-dot" aria-hidden="true" />
               </blockquote>
-              <figcaption className="text-sm text-petrol/65 not-italic">
+              <figcaption className="pl-8 text-sm text-petrol/65 not-italic">
                 <cite className="not-italic">
                   Anouk V., Beleidsadviseur, publieke sector
                 </cite>
               </figcaption>
             </figure>
-            <figure className="border border-mint-dof rounded-2xl p-8 bg-linnen-licht">
-              <blockquote className="quote-rail font-display text-[1.06rem] text-petrol leading-relaxed mb-4">
+            <figure className="m-0">
+              <blockquote className="quote-rail font-display text-[1.06rem] text-petrol leading-relaxed mb-3">
                 "Wij zetten Vizier op Scherp structureel in voor medewerkers met
                 loopbaanvragen. Korte lijnen, professionele coaches en altijd
                 een zorgvuldige match."
                 <span className="quote-dot" aria-hidden="true" />
               </blockquote>
-              <figcaption className="text-sm text-petrol/65 not-italic">
+              <figcaption className="pl-8 text-sm text-petrol/65 not-italic">
                 <cite className="not-italic">
                   Marleen B., HR-manager, zorginstelling
                 </cite>
@@ -401,7 +419,7 @@ function Page() {
       {/* UWV */}
       <section className="bg-linnen">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <Card tone="linnen" className="flex flex-wrap justify-between items-center gap-6">
+          <div className="open-card md:!px-10 md:!py-9 flex flex-wrap justify-between items-center gap-6">
             <div className="max-w-[58ch]">
               <h2 className="font-display text-[1.25rem] text-petrol mb-2">
                 Kom je via UWV?
@@ -417,7 +435,7 @@ function Page() {
             >
               Lees over UWV-trajecten
             </Link>
-          </Card>
+          </div>
         </div>
       </section>
 
